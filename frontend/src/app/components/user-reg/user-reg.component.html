@@ -1,3 +1,5 @@
+<app-back-button></app-back-button>
+
 <div class="container">
     <div class="row">
       <div class="col-sm"></div>
@@ -32,10 +34,11 @@
 
         <div class="custom-control custom-checkbox my-1 mr-sm-2">
             <input type="checkbox" class="custom-control-input" id="customControlInline">
-            <label class="custom-control-label" for="customControlInline">I Confirm that the above information is true</label>
+            <label class="custom-control-label" for="customControlInline">I confirm that the above information is true</label>
           </div>
         
-          <button type="submit" class="btn btn-primary my-1">Submit</button>
+          <button type="button" class="btn btn-dark" (click)="myFunction()">Submit</button>
+          <!--button  class="btn btn-primary my-1" (click)="myFunction()">Submit</button-->
         </form>
       </div>
       <div class="col-sm"></div>

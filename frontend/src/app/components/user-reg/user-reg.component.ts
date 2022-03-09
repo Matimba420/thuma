@@ -12,4 +12,5 @@ export class UserRegComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  myFunction(){console.log("i am clicked")}
 }
