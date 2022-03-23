@@ -1,15 +1,16 @@
 
 .app {
-  background-color: #b3e5fc !important;
+  background-color: #fff !important;
   position:d-flex absolute;
   width: 100%;
   float: left;
   height: 100%;
 }
-.card {
+
+ 
+.card:hover {
   border: none;
-  border-radius: 6px;
-  background-color: #fff;
+  border-radius: 6px; 
 }
 .text1 {
   font-size: 13px;
@@ -46,6 +47,8 @@
   .certifying {
     background-color: #286783;
   }
+
+
   .lawmowingcost span {
     color: #286783;
     font-weight: bold;
@@ -67,33 +70,8 @@
   display: flex;
   justify-content: center;
 }
-.image-container:nth-child(1) {
-  transition: opacity 10s ease;
-}
-.image-container:hover .xyz-replacement {
-  display: block;
-  animation: fade_in_show 0.5s;
-}
-.xyz-replacement {
-  display: none;
-  position: absolute;
-  bottom: 0;
-  z-index: 9;
-  transition: opacity 10s ease;
-}
-@keyframes fade_in_show {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-.cart-text {
-  transition: all 0.2s ease-in-out;
-}
+
+
 .cart:hover .cart-text {
   font-size: 18px;
 }
