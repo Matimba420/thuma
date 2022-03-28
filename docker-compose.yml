@@ -1,12 +1,29 @@
 version: '3.4'
-
 services:
-  thumamina:
-    image: thumamina
-    build:
-      context: frontend/thumamina
-      dockerfile: ./Dockerfile
-    environment:
-      NODE_ENV: production
+  # Create frontend container
+  frontend: # Name of our service
+    build: ./frontend # path to dockerfile
+    ports: # Port binding to host from docker container
+      - "4302:4302" # Bind port 4302 of host to 4302 of container
+    container_name: frontend-docker
+    restart: always # What to do if container crashes
+    links:
+      - backend
+  # Create backend container
+  backend:
+    # Create backend container
+    build: ./Backend
     ports:
-      - 4303:4303
+      - "4304:43041"
+    container_name: backend-docker
+    restart: always
+    links:
+      - db
+  # Create database container
+  db:
+    image: postgres:11.6-alpine
+    ports:
+    - "5432:5432"
+    container_name: smart-errands
+    restart: always
+
