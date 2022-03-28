@@ -1,4 +1,5 @@
 create table service(
+<<<<<<< HEAD
      id serial primary key,
       cost numeric (5,2),
      name varchar(50)
@@ -19,10 +20,33 @@ create table request(
     service_id integer,
     runner_id integer,
     status varchar(20) default 'Pending'
+=======
+	 id serial primary key,
+ 	 cost numeric (5,2),
+	 name varchar(50)
+);
+
+create table client(
+ 	 id serial primary key,
+  	 name varchar(50),
+ 	 surname varchar(50),
+ 	 cell_no  varchar(15) unique,
+  	 password varchar(15),
+	 is_active boolean default true
+);
+
+create table request(
+	id serial primary key,
+	client_id integer,
+	service_id integer,
+	runner_id integer,
+	status varchar(20) default 'Pending'
+>>>>>>> 29794a6ac8cbb94bb42dc7d2521eab527d6ef361
 );
 
 
 create table admin(
+<<<<<<< HEAD
     id serial primary key,
      name varchar(50),
       surname varchar(50),
@@ -48,6 +72,33 @@ create table review(
      client_id integer,
      rating numeric (1),
      reason varchar(250)
+=======
+	id serial primary key,
+	 name varchar(50),
+ 	 surname varchar(50),
+	 email varchar (30) unique,
+  	 password varchar(15),
+	 is_active boolean default true
+);
+
+create table runner(
+ 	 id serial primary key,
+  	 name varchar(50),
+ 	 surname varchar(50),
+ 	 cell_no varchar(15)unique ,
+	 email varchar (30)unique,
+  	 password varchar(15),
+ 	 rating numeric(1),
+	 is_active boolean default false
+);
+
+create table review(
+	 id serial primary key,
+	 runner_id integer,
+     client_id integer,
+	 rating numeric (1),
+	 reason varchar(250)
+>>>>>>> 29794a6ac8cbb94bb42dc7d2521eab527d6ef361
 );
 
 create table address(
@@ -60,6 +111,7 @@ create table address(
     
 );
 
+<<<<<<< HEAD
 INSERT INTO admin(name,surname, email, password)
 VALUES
 ('Sane','kunene', 'Sane@gmail.com', '12345');
@@ -69,6 +121,10 @@ VALUES
 INSERT INTO admin(name,surname, email, password)
 VALUES
 ('jojo','zuma', 'jojo@gmail.com', '12345');
+=======
+
+
+>>>>>>> 29794a6ac8cbb94bb42dc7d2521eab527d6ef361
 
 
 
