@@ -1,11 +1,23 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.thedigitalacademy.co.za/TommyTV/thuma-mina-project.git"
+  },
+  "description": "",
+  "devDependencies": {
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "expressjs": "^1.0.1"
+  }
 }
