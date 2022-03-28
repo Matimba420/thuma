@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  thumamina:
+    image: thumamina
+    build:
+      context: frontend/thumamina
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: development
+    ports:
+      - 4303:4303
+      - 9229:9229
+    command: ["node", "--inspect=0.0.0.0:9229", "index.js"]

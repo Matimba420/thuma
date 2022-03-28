@@ -1,0 +1,39 @@
+
+.button {
+	background-color: rgb(212, 112, 66);
+	border:wheat;
+	color: rgb(255, 255, 255);
+	padding: 10px 20px;
+	text-align: center;
+	
+	margin-bottom: 3rem;
+	cursor: pointer;
+	border-radius: 16px;
+    width: 100%;
+  }
+
+input[type="text"] {
+    width: 100%;
+    height: 50px;
+}
+input[type="password"] {
+    width: 100%;
+    height: 50px;
+}
+label{
+    color: aliceblue;
+    padding-top: 0px;
+}
+h1{color: whitesmoke;
+font-family:'Times New Roman', Times, serif;
+align-content: center;}
+p{
+    color: aliceblue;
+}
+
+.liv{
+    position: floor($number: 22%);
+    background:linear-gradient(#223C50,#223C50);
+    margin-bottom: 3rem;
+
+}
