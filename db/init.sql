@@ -60,8 +60,15 @@ create table address(
     
 );
 
-
-
+INSERT INTO admin(name,surname, email, password)
+VALUES
+('Sane','kunene', 'Sane@gmail.com', '12345');
+INSERT INTO admin(name,surname, email, password
+VALUES
+('Matimba','Chauke', 'Matimba@gmail.com', '12345');
+INSERT INTO admin(name,surname, email, password)
+VALUES
+('jojo','zuma', 'jojo@gmail.com', '12345');
 
 
 
