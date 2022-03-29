@@ -39,7 +39,7 @@ export class CreateComponent implements OnInit {
 
   myFunction()
   {
-      console.log("i am working");
+      // console.log("i am working");
       console.log(this.registerForm.value.number);
       console.log(this.registerForm.value.password);
       
