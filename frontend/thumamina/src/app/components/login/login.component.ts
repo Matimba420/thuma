@@ -16,8 +16,11 @@ export class LoginComponent implements OnInit {
     password: new FormControl(''),
     confirmPassword: new FormControl(''),
     acceptTerms: new FormControl(false),
+
     
   });
+
+  sessionTrue: boolean = false;
   submitted = false;
   registerForm: FormGroup | undefined;
   constructor(private formBuilder: FormBuilder) {
