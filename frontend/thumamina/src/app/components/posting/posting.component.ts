@@ -12,4 +12,8 @@ export class PostingComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  post(){
+    console.log("Successful posted")
+  }
+
 }
