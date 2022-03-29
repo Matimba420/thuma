@@ -84,5 +84,11 @@ export class LoginComponent implements OnInit {
       event.preventDefault();
     }
   }
+
+  myFunction(){
+    console.log(this.form.value);
+    
+  }
+
 }
   
