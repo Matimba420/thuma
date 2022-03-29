@@ -7,13 +7,15 @@ import { LandingComponent } from './components/landing/landing.component';
 import { LoginComponent } from './components/login/login.component';
 import { CreateComponent } from './components/create/create.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NavComponent } from './components/nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
     LoginComponent,
-    CreateComponent
+    CreateComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
