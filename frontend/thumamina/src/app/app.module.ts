@@ -8,6 +8,8 @@ import { LoginComponent } from './components/login/login.component';
 import { CreateComponent } from './components/create/create.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RunnerHomeComponent } from './components/runner-home/runner-home.component';
+import { ItemsComponent } from './components/items/items.component';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { RunnerHomeComponent } from './components/runner-home/runner-home.compon
     LandingComponent,
     LoginComponent,
     CreateComponent,
-    RunnerHomeComponent
+    RunnerHomeComponent,
+    ItemsComponent,
+  
   ],
   imports: [
     BrowserModule,
