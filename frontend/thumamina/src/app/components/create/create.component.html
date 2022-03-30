@@ -15,10 +15,10 @@
             <form class="what" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
               <h1>LOGIN</h1>
               <br>
-              <select class="form-select" aria-label="Default select example">
+              <select class="form-select" formControlName="role" aria-label="Default select example">
                 <option selected>Select your role</option>
-                <option value="1">Client</option>
-                <option value="2">Service provider</option>
+                <option value="Client">Client</option>
+                <option value="Service provider">Service provider</option>
   
               </select>
               <br>
@@ -38,7 +38,7 @@
                   <div *ngIf="f.password.errors.required">Password is required</div>
               </div>
           </div>
-            <button class="button "(click)="myFunction()" >LOGIN</button>
+            <button class="button "(click)="nextPage()" >LOGIN</button>
         
           <ul class="list-group list-group-flush">
             
