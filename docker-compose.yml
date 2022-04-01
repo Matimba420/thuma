@@ -12,7 +12,7 @@ services:
   # Create backend container
   backend:
     # Create backend container
-    build: ./backend
+    build: ./Backend
     ports:
       - "4304:43041"
     container_name: backend-docker

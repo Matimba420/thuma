@@ -12,30 +12,111 @@
 
         <div class="col-sm liv mt-5">
 
-          <form class="what" action="/action_page.php">
+          <form class="what"[formGroup]="form" (ngSubmit)="onSubmit()">
             <h1>create account</h1>
             <br>
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" formControlName="role" aria-label="Default select example">
+              
               <option selected>Select your role</option>
-              <option value="1">Client</option>
-              <option value="2">Service provider</option>
+              <option value="Client">Client</option>
+              <option value="Service provider">Service provider</option>
             </select>
             
             <br>
             
-          <label for="fname">First name</label><br>
-          <input type="text" id="fname" name="fname" placeholder="First Name"><br><br>
-          <label for="lname">Last name</label><br>
-          <input type="text" id="lname" name="lname" placeholder="Last Name"><br><br>
+            <label>Full Name</label>
+      <input
+        type="text"
+        formControlName="fullname"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['fullname'].errors }"
+      />
+      <div *ngIf="submitted && f['fullname'].errors" class="invalid-feedback">
+        <div *ngIf="f['fullname'].errors['required']">Fullname is required</div>
+      </div>
+    
+
+
+    <label>Last name</label>
+    <input
+      type="text"
+      formControlName="lastname"
+      class="form-control"
+      [ngClass]="{ 'is-invalid': submitted && f['lastname'].errors }"
+    />
+    <div *ngIf="submitted && f['lastname'].errors" class="invalid-feedback">
+      <div *ngIf="f['lastname'].errors['required']">lastname is required</div>
+      <div *ngIf="f['lastname'].errors['minlength']">
+        lastname must be at least 2 characters
+      </div>
+      <div *ngIf="f['lastname'].errors['maxlength']">
+        lastname must not exceed 20 characters
+      </div>
+    </div>
+    
         
           <label for="fname">mobile Number</label><br>
-          <input type="text" id="fname" name="fname" placeholder="mobile NUmber"><br><br>
+          <input id="inputnumber" type="number" formControlName="number"  [ngClass]="{ 'is-invalid': submitted }"
+          placeholder="" required="" autofocus="" >
+        
+
+
           <label for="lname">Create password</label><br>
-          <input type="password" id="password" name="password" placeholder="create password"><br><br>
+          <input
+        type="password"
+        formControlName="password"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+      />
+      <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+        <div *ngIf="f['password'].errors['required']">Password is required</div>
+        <div *ngIf="f['password'].errors['minlength']">
+          Password must be at least 6 characters
+        </div>
+        <div *ngIf="f['password'].errors['maxlength']">
+          Username must not exceed 12 characters
+        </div>
+      </div>
+
          
           <label for="lname">Confirm password</label><br>
-          <input type="password" id="cpassword" name="cpassword" placeholder="Confirm password"><br><br>
-          <button class="button" > CREATE ACCOUNT</button>
+          <input
+          type="password"
+          formControlName="confirmPassword"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }"
+        />
+        <div
+          *ngIf="submitted && f['confirmPassword'].errors"
+          class="invalid-feedback"
+        >
+          <div *ngIf="f['confirmPassword'].errors['required']">
+            Confirm Password is required
+          </div>
+          <div *ngIf="f['confirmPassword'].errors['matching']">
+            Confirm Password does not match
+          </div>
+        </div>
+        <br>
+        <div class="form-group form-check">
+          <input
+            type="checkbox"
+            formControlName="acceptTerms"
+            class="form-check-input"
+            [ngClass]="{ 'is-invalid': submitted && f['acceptTerms'].errors }"
+          />
+          <label for="acceptTerms" class="form-check-label"
+            >I have read and agree to the Terms</label
+          >
+          <div *ngIf="submitted && f['acceptTerms'].errors" class="invalid-feedback">
+            Accept Terms is required
+          </div>
+        </div>
+      <br>
+      
+    
+          <button class="button" (click)="myFunction()" > CREATE ACCOUNT</button>
+          
         </form>
 
 
