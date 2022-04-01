@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.use(express.json());
-a
+
 app.get('/',(req,res)=>{
     res.send("Smart serve is working")
 });
