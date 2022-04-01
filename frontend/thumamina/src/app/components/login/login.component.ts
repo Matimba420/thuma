@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
     password: new FormControl(''),
     confirmPassword: new FormControl(''),
     acceptTerms: new FormControl(false),
+    role: new FormControl('')
 
     
   });
@@ -23,6 +24,8 @@ export class LoginComponent implements OnInit {
   sessionTrue: boolean = false;
   submitted = false;
   registerForm: FormGroup | undefined;
+  selected: any;
+  option: any;
   constructor(private formBuilder: FormBuilder) {
     registerForm: FormGroup ;
   }
@@ -86,9 +89,10 @@ export class LoginComponent implements OnInit {
   }
 
   myFunction(){
-    console.log(this.form.value);
+    console.log(this.option.value);
     
   }
+  
 
 }
   
