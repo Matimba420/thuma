@@ -1,0 +1,80 @@
+
+.app {
+
+  width: 80%;
+  float: left;
+  height: 30%;
+  margin-left: 10%;
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+  
+}
+
+ 
+.card:hover {
+  border: none;
+  border-radius: 0px; 
+}
+.text1 {
+  font-size: 13px;
+  color: #3d3a3a;
+}
+.info {
+  line-height: 17px;
+}
+
+
+.shoppingcost span {
+  color: #286783;
+  font-weight: bold;
+  font-size: 20px;
+}
+.shopping {
+  background: #286783;
+}
+.queuingcost span {
+  color: #286783;
+  font-weight: bold;
+  font-size: 20px;
+}
+.queuing {
+  background-color: #286783;
+}
+
+
+.certifyingcost span {
+    color: #286783;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .certifying {
+    background-color: #286783;
+  }
+
+
+  .lawmowingcost span {
+    color: #286783;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .lawnmowing {
+    background-color: #286783;
+  }
+    
+
+
+.cursor {
+  cursor: pointer;
+}
+.image-container {
+  position: relative;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+
+.cart:hover .cart-text {
+  font-size: 18px;
+}
