@@ -9,6 +9,9 @@ import { CreateComponent } from './components/create/create.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RunnerHomeComponent } from './components/runner-home/runner-home.component';
 import { ErrandsComponent } from './components/errands/errands.component';
+import { ItemsComponent } from './components/items/items.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -17,12 +20,15 @@ import { ErrandsComponent } from './components/errands/errands.component';
     LoginComponent,
     CreateComponent,
     RunnerHomeComponent,
-    ErrandsComponent
+    ErrandsComponent,
+    ItemsComponent,
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
