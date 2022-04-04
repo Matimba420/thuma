@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
-import Validation from '../../utils/Validation'
+import  Validation from '../../utils/Validation';
+import { UserService } from 'src/app/services/user.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,20 +16,29 @@ export class LoginComponent implements OnInit {
     lastname: new FormControl(''),
     number: new FormControl(''),
     password: new FormControl(''),
+    email: new FormControl(''),
     confirmPassword: new FormControl(''),
-    acceptTerms: new FormControl(false),
-    role: new FormControl('')
-
+    role: new FormControl(''),
+    acceptTerms: new FormControl(false)
     
   });
 
   sessionTrue: boolean = false;
   submitted = false;
   registerForm: FormGroup | undefined;
-  selected: any;
   option: any;
-  constructor(private formBuilder: FormBuilder) {
+  selected:any;
+  constructor(private formBuilder: FormBuilder, private service: UserService){
+    
     registerForm: FormGroup ;
+  }
+
+
+  register(){
+    this.service.addUser(this.form.value).subscribe((res:any)=>{
+      console.log(res)
+    }
+    )
   }
 
   ngOnInit(): void {
@@ -47,6 +58,7 @@ export class LoginComponent implements OnInit {
           ]
         ],
         number: ['', [Validators.required,Validators.pattern("^[0-9]*$"),Validators.minLength(2), Validators.maxLength(10)]],
+      email:[],
         password: [
           '',
           [
@@ -89,10 +101,15 @@ export class LoginComponent implements OnInit {
   }
 
   myFunction(){
-    console.log(this.option.value);
+    console.log(this.form.value);
+    this.register();
     
   }
   
 
 }
   
+function user(user: any) {
+  throw new Error('Function not implemented.');
+}
+
