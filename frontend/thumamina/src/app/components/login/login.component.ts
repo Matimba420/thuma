@@ -12,9 +12,9 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup = new FormGroup({
-    fullname: new FormControl(''),
-    lastname: new FormControl(''),
-    number: new FormControl(''),
+    name: new FormControl(''),
+    surname: new FormControl(''),
+    cell_no: new FormControl(''),
     password: new FormControl(''),
     email: new FormControl(''),
     confirmPassword: new FormControl(''),
@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
   register(){
     this.service.addUser(this.form.value).subscribe((res:any)=>{
       console.log(res)
+      
     }
     )
   }
