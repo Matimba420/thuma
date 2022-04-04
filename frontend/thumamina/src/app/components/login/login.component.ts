@@ -16,15 +16,18 @@ export class LoginComponent implements OnInit {
     lastname: new FormControl(''),
     number: new FormControl(''),
     password: new FormControl(''),
+    email: new FormControl(''),
     confirmPassword: new FormControl(''),
-    acceptTerms: new FormControl(false),
-
+    role: new FormControl(''),
+    acceptTerms: new FormControl(false)
     
   });
 
   sessionTrue: boolean = false;
   submitted = false;
   registerForm: FormGroup | undefined;
+  option: any;
+  selected:any;
   constructor(private formBuilder: FormBuilder, private service: UserService){
     
     registerForm: FormGroup ;
@@ -32,7 +35,7 @@ export class LoginComponent implements OnInit {
 
 
   register(){
-    this.service.getUsers().subscribe((res:any)=>{
+    this.service.addUser(this.form.value).subscribe((res:any)=>{
       console.log(res)
     }
     )
@@ -55,6 +58,7 @@ export class LoginComponent implements OnInit {
           ]
         ],
         number: ['', [Validators.required,Validators.pattern("^[0-9]*$"),Validators.minLength(2), Validators.maxLength(10)]],
+      email:[],
         password: [
           '',
           [
@@ -98,8 +102,14 @@ export class LoginComponent implements OnInit {
 
   myFunction(){
     console.log(this.form.value);
+    this.register();
     
   }
+  
 
 }
   
+function user(user: any) {
+  throw new Error('Function not implemented.');
+}
+
