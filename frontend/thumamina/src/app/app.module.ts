@@ -9,6 +9,8 @@ import { CreateComponent } from './components/create/create.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RunnerHomeComponent } from './components/runner-home/runner-home.component';
 import { ItemsComponent } from './components/items/items.component';
+import { TrackComponent } from './components/track/track.component';
+import { PostComponent } from './components/post/post.component';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { ItemsComponent } from './components/items/items.component';
     CreateComponent,
     RunnerHomeComponent,
     ItemsComponent,
+    TrackComponent,
+    PostComponent,
   
   ],
   imports: [

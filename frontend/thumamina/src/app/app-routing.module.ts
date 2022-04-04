@@ -5,11 +5,13 @@ import { ItemsComponent } from './components/items/items.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { LoginComponent } from './components/login/login.component';
 import { RunnerHomeComponent } from './components/runner-home/runner-home.component';
+import { TrackComponent } from './components/track/track.component';
 
 
 const routes: Routes = [{
   path:'',component:LandingComponent
 },
+{path:'track',component:TrackComponent},
 {
   path:'land',component:LandingComponent
 },
