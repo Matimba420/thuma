@@ -27,7 +27,7 @@ const addClient = async (req,res) => {
                         res.status(500).json({error: 'invalid input'})
                         throw error;
                     }else{
-                        addUserMailer(name, surname, cell_no, email, password);
+                        // addUserMailer(name, surname, cell_no, email, password);
                         res.status(201).json("User created successfully");
                     }
                 });
@@ -44,7 +44,7 @@ const getClient = (req, res) => {
             res.status(404).send(error);
             throw error;
         }
-        res.status(200).json(results.rows)
+        res.status(200).json(results.rows);
     });
 };
 
