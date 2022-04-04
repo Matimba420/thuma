@@ -3,6 +3,7 @@ import { FormControl, FormBuilder, FormGroup, Validators, AbstractControl } from
 import  Validation from '../../utils/Validation';
 import { UserService } from 'src/app/services/user.service';
 import {Router} from '@angular/router';
+import { User } from 'src/app/interface/user';
 
 @Component({
   selector: 'app-login',
@@ -12,9 +13,9 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup = new FormGroup({
-    fullname: new FormControl(''),
-    lastname: new FormControl(''),
-    number: new FormControl(''),
+    name: new FormControl(''),
+    surname: new FormControl(''),
+    cell_no: new FormControl(''),
     password: new FormControl(''),
     email: new FormControl(''),
     confirmPassword: new FormControl(''),
@@ -39,8 +40,9 @@ export class LoginComponent implements OnInit {
       console.log(res)
     }
     )
-  }
 
+  
+  }
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
      
@@ -48,16 +50,9 @@ export class LoginComponent implements OnInit {
 
     this.form = this.formBuilder.group(
       {
-        fullname: ['', Validators.required],
-        lastname: [
-          '',
-          [
-            Validators.required,
-            Validators.minLength(2),
-            Validators.maxLength(20)
-          ]
-        ],
-        number: ['', [Validators.required,Validators.pattern("^[0-9]*$"),Validators.minLength(2), Validators.maxLength(10)]],
+        name: ['', Validators.required],
+        surname: ['',[Validators.required,Validators.minLength(2),Validators.maxLength(20)]],
+        cell_no: ['', [Validators.required,Validators.pattern("^[0-9]*$"),Validators.minLength(2), Validators.maxLength(10)]],
       email:[],
         password: [
           '',
@@ -109,7 +104,7 @@ export class LoginComponent implements OnInit {
 
 }
   
-function user(user: any) {
+function user(user: User) {
   throw new Error('Function not implemented.');
 }
 
