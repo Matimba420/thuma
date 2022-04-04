@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
-import Validation from '../../utils/Validation'
+import  Validation from '../../utils/Validation';
+import { UserService } from 'src/app/services/user.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -23,8 +25,17 @@ export class LoginComponent implements OnInit {
   sessionTrue: boolean = false;
   submitted = false;
   registerForm: FormGroup | undefined;
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private service: UserService){
+    
     registerForm: FormGroup ;
+  }
+
+
+  register(){
+    this.service.getUsers().subscribe((res:any)=>{
+      console.log(res)
+    }
+    )
   }
 
   ngOnInit(): void {

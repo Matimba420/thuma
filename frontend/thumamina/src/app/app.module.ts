@@ -8,6 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import { CreateComponent } from './components/create/create.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RunnerHomeComponent } from './components/runner-home/runner-home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RunnerHomeComponent } from './components/runner-home/runner-home.compon
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
