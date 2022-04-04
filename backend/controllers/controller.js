@@ -51,15 +51,12 @@ const getClient = (req, res) => {
 const getClientById=(req,res) =>{
     const id =parseInt(req.params.id);
     
-    console.log('hello2');
 
 
     pool.query(queries.getClientById,[id],(error, results)=>{
         if(!results) return res.status(400).send("invalid input")
-        console.log('hello1');
         if(!results.rows.length){ 
             res.status(404).send('user not found')
-            console.log('hello');
             //throw error
         }else{
             res.status(200).json(results.rows);
@@ -105,6 +102,94 @@ const getClientByEmail=(req,res) =>{
     } );
 };
 
+//LOGIN PART OF CLIENT AND ADMIN
+
+
+//login client
+
+const clientLogin =async (req,res) =>{
+    const {email} = req.body;
+    const {cell_no}=req.body;
+    const {password} = req.body;
+   
+    pool.query(queries.checkClientCelllExists, [cell_no], (error, results)=> {
+        if (!results.rows.length){
+            res.status(404).json({error:"cell number does not exist in the database"});
+        }else{
+               console.log(password);
+               console.log(results.rows[0].password)
+        pool.query(queries.getClientPasswordByEmail,[email],(error,results)=>{
+            console.log(results.rows[0].password);
+            const queryPassword= bcrypt.compareSync(password, results.rows[0].password);
+            console.log(queryPassword)
+            if(!queryPassword){
+                res.status(404).json({error:"Invalid password or cell number"});
+            }else{
+                res.status(200).json(results.rows);
+                console.log(queryPassword)
+            }
+            
+            //console.log(results)
+        });  
+    }
+    }) 
+};
+
+
+// Admin login
+
+const adminLogin =async (req,res) =>{
+    const {email} = req.body;
+    const {cell_no}=req.body;
+    const {password} = req.body;
+   
+    
+    pool.query(queries.checkClientCelllExists, [cell_no], (error, results) => {
+        if (!results.rows.length){
+            res.status(404).json({error:"cell number does not exist in the database"});
+        }else{
+            console.log(password);
+            pool.query(queries.getAdminPasswordByEmail,[email],(error,results)=>{
+                console.log(results.rows[0]);
+                const queryPassword= bcrypt.compareSync(password, results.rows[0].password);
+                if(!queryPassword){
+                    res.status(404).json({error:"Invalid password or cell number"});
+                }else{
+                    res.status(200).json(results.rows);
+                    console.log(queryPassword)
+                }
+                
+                //console.log(results)
+            });  
+    }
+    }) 
+};
+
+const getAdmins = (req, res) => {
+    pool.query(queries.getAdmins,(error, results) => {
+        if(this.error){
+            console.log("error:"+error);
+            res.status(404).json(error);
+            throw error;
+        }
+        res.status(200).json(results.rows)
+    });
+};
+
+const getAdminById=(req,res) =>{
+    const id =parseInt(req.params.id);
+
+
+    pool.query(queries.getAdminById,[id],(error, results)=>{
+        if(!results) return res.status(400).send("invalid input")
+        if(!results.rows.length){ 
+            res.status(404).json({error:'user not found'});
+            //throw error
+        }else{
+            res.status(200).json(results.rows);
+        }
+    } );
+};
 
 
 module.exports = {
@@ -112,8 +197,10 @@ module.exports = {
     getClient,
     removeClient,
     getClientById,
+    getAdminById,
+    getAdmins,
+    adminLogin,
+    clientLogin,
     getClientByEmail
-
-    
 
 }
