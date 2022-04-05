@@ -1,11 +1,3 @@
-textarea {
-  background-color: #c4c4c4;
-  font-size: 16px;
-  letter-spacing: 1px;
-  height: 18rem;
-  width: 100%;
-  margin-top: 5rem;
-}
 
 .btn {
   color: rgb(243, 240, 239);
@@ -13,10 +5,13 @@ textarea {
   width: 100%;
 }
 
-.form-row {
-  margin-top: 18rem;
+
+.row{
+  margin-top: 5rem;
+  margin-left: .5rem;
+  margin-right: .5rem;
 }
 
-.card {
-  margin-top: 5rem;
+textarea{
+  background-color: #C4C4C4;
 }
