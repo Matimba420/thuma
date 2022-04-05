@@ -9,8 +9,9 @@ import { CreateComponent } from './components/create/create.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RunnerHomeComponent } from './components/runner-home/runner-home.component';
 import { ErrandsComponent } from './components/errands/errands.component';
-import { ItemsComponent } from './components/items/items.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TrackComponent } from './components/track/track.component';
+import { PostComponent } from './components/post/post.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     CreateComponent,
     RunnerHomeComponent,
     ErrandsComponent,
-    ItemsComponent,
+    TrackComponent,
+    PostComponent,
   
   ],
   imports: [
