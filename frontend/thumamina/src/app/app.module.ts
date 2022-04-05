@@ -8,8 +8,12 @@ import { LoginComponent } from './components/login/login.component';
 import { CreateComponent } from './components/create/create.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RunnerHomeComponent } from './components/runner-home/runner-home.component';
-import { ItemsComponent } from './components/items/items.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { NavComponent } from './components/nav/nav.component';
+
+import { PostingComponent } from './components/posting/posting.component';
+import { BackButtonComponent } from './components/back-button/back-button.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +22,16 @@ import { ItemsComponent } from './components/items/items.component';
     LoginComponent,
     CreateComponent,
     RunnerHomeComponent,
-    ItemsComponent,
-  
+   
+    NavComponent,
+   PostingComponent,
+   BackButtonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
