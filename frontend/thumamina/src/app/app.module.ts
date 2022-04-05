@@ -12,6 +12,9 @@ import { RunnerHomeComponent } from './components/runner-home/runner-home.compon
 import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './components/nav/nav.component';
 
+import { TrackComponent } from './components/track/track.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+
 import { PostingComponent } from './components/posting/posting.component';
 import { BackButtonComponent } from './components/back-button/back-button.component';
 
@@ -21,11 +24,12 @@ import { BackButtonComponent } from './components/back-button/back-button.compon
     LandingComponent,
     LoginComponent,
     CreateComponent,
-    RunnerHomeComponent,
-   
     NavComponent,
    PostingComponent,
-   BackButtonComponent
+   BackButtonComponent,
+    TrackComponent,
+    DashboardComponent,
+  
   ],
   imports: [
     BrowserModule,
