@@ -1,0 +1,19 @@
+.card{
+    background:linear-gradient(#223C50,#223C50);
+    margin-top: 2rem;
+    width:fit-content;
+    color: white;
+    font-family: Lora;
+}
+
+.col-sm-6{
+    align-items: right;
+}
+
+.container{
+    margin-top: 5rem;
+}
+
+.h1{
+    text-align: center;
+}
