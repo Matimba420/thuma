@@ -53,12 +53,12 @@ const getClient = (req, res) => {
 };
 
 const getClientById=(req,res) =>{
-    const id =parseInt(req.params.id);
+    const id =parseInt(req.params.client_id);
     
     console.log('hello2');
 
 
-    pool.query(queries.getClientById,[id],(error, results)=>{
+    pool.query(queries.getClientById,[client_id],(error, results)=>{
         if(!results) return res.status(400).send("invalid input")
         console.log('hello1');
         if(!results.rows.length){ 
@@ -229,9 +229,54 @@ const getRequestByClientId=(req,res) =>{
     } );
 };
 
+const getRequestByRunnerId =(req,res) =>{
+    const runner_id = req.params.runner_id;
+    // console.log(client_id)
+   
+
+
+    pool.query(queries.getRequestByRunnerId,[runner_id],(error, results)=>{
+        if(!results) return res.status(400).send("invalid input")
+       
+        if(!results.rows.length){ 
+            res.status(404).send('request not found')
+            console.log(results.rows);
+            
+            //throw error
+        }else{
+            res.status(200).json(results.rows);
+        }
+    } );
+};
+
+
+
+
+// const updateClient = async (req,res) =>{
+//     const client_id = parseInt(req.params.client_id);
+//     const {cell_no } = req.body;
+//     const {password} = req.body
 
     
-
+//     //this.passwordValidator(password);
+//     if(password.length<8){
+//         res.status(400).send('Your Password should be longer than 7 characters');
+//     }else{
+      
+//         pool.query(queries.getClientById,[id],(error, results)=>{
+//             const noUserfound = !results.rows.length;
+//             if(noUserfound){
+//                 res.send("Client does not exist in the database.");
+//             }else{
+            
+//             pool.query(queries.updateClient,[cell_no, password,client_id],(error,results) =>{
+//                 if (error) throw error;
+//                 res.status(200).send("Client updated successfully")
+//             });
+//             }
+//         });
+//     }    
+// };
 
 
 
@@ -248,9 +293,9 @@ module.exports = {
 
     addRequest,
     getRequest,
-    getRequestByClientId
-    //getRequestByRunnerId 
+    getRequestByClientId,
+    getRequestByRunnerId
 
+    // updateClient
     
-
 }
