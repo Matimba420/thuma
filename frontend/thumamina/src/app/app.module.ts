@@ -9,14 +9,18 @@ import { CreateComponent } from './components/create/create.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RunnerHomeComponent } from './components/runner-home/runner-home.component';
 
+
+import { ErrandsComponent } from './components/errands/errands.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TrackComponent } from './components/track/track.component';
 import { NavComponent } from './components/nav/nav.component';
 
-import { TrackComponent } from './components/track/track.component';
+
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 import { PostingComponent } from './components/posting/posting.component';
 import { BackButtonComponent } from './components/back-button/back-button.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +29,18 @@ import { BackButtonComponent } from './components/back-button/back-button.compon
     LoginComponent,
     CreateComponent,
     RunnerHomeComponent,
+    ErrandsComponent,
+    TrackComponent,
+  
+  
    
     NavComponent,
    PostingComponent,
    BackButtonComponent,
-    TrackComponent,
+   
     DashboardComponent,
   
+   ProfileComponent
   ],
   imports: [
     BrowserModule,
