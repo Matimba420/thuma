@@ -41,7 +41,8 @@ create  table service(
 	id serial primary key,
 	name varchar(50),
 	description varchar(255),
-	cost numeric(5,2)
+	cost numeric(5,2),
+	image varchar(200)
 );
 
 alter table request
