@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
   register(){
     this.service.addUser(this.form.value).subscribe((res:any)=>{
       console.log(res)
+      
     }
     )
 

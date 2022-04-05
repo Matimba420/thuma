@@ -8,11 +8,12 @@ import { LoginComponent } from './components/login/login.component';
 import { CreateComponent } from './components/create/create.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RunnerHomeComponent } from './components/runner-home/runner-home.component';
-import { TrackComponent } from './components/track/track.component';
-import { PostComponent } from './components/post/post.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './components/nav/nav.component';
+
+import { TrackComponent } from './components/track/track.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 import { PostingComponent } from './components/posting/posting.component';
 import { BackButtonComponent } from './components/back-button/back-button.component';
@@ -29,7 +30,7 @@ import { BackButtonComponent } from './components/back-button/back-button.compon
    PostingComponent,
    BackButtonComponent,
     TrackComponent,
-    PostComponent
+    DashboardComponent,
   
   ],
   imports: [
