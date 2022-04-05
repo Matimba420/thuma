@@ -12,6 +12,10 @@ router.post('/clients/login',controller.clientLogin);
 router.get('/services', controller.getServices);
 router.post('/services', controller.addServices);
 
+router.post('/address', controller.addAddress);
+router.get('/address', controller.getAddress); 
+
+//router.put('/updateStatus', controller.updateStatus);
 
 
 
