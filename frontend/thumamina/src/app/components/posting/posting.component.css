@@ -3,15 +3,20 @@ textarea {
   font-size: 16px;
   letter-spacing: 1px;
   height: 18rem;
-}
-
-.row {
+  width: 100%;
   margin-top: 5rem;
-  width: 90%;
-  margin-left: 3rem;
 }
 
 .btn {
   color: rgb(243, 240, 239);
   background-color: #e77f58;
+  width: 100%;
+}
+
+.form-row {
+  margin-top: 18rem;
+}
+
+.card {
+  margin-top: 5rem;
 }

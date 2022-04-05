@@ -6,6 +6,7 @@ import { LandingComponent } from './components/landing/landing.component';
 import { LoginComponent } from './components/login/login.component';
 import { RunnerHomeComponent } from './components/runner-home/runner-home.component';
 import { TrackComponent } from './components/track/track.component';
+import { PostingComponent } from './components/posting/posting.component';
 
 
 const routes: Routes = [{
@@ -17,6 +18,7 @@ const routes: Routes = [{
 },
 {path:'create',component:LoginComponent},
 {path:'log',component:CreateComponent},
+{path:'posting',component:PostingComponent},
 
 {path:'run_home', component:RunnerHomeComponent}];
 
