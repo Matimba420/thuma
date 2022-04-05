@@ -13,7 +13,7 @@ const addClient = async (req,res) => {
 
       
 
-        //check if email exists
+        //check if cell number exists
         pool.query(queries.checkClientCelllExists, [cell_no], (error, results) => {
             
             if (results.rows.length){
