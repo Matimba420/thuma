@@ -9,7 +9,7 @@ const Backend = 'http://localhost:3100'
 
 
 export const environment = {
-  production: false,
+  production: true,
   baseUrl:`${BaseUrl}`,
   backend:`${Backend}`
 }

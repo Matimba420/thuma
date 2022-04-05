@@ -11,6 +11,8 @@ import { RunnerHomeComponent } from './components/runner-home/runner-home.compon
 import { ItemsComponent } from './components/items/items.component';
 import { TrackComponent } from './components/track/track.component';
 import { PostComponent } from './components/post/post.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -23,12 +25,14 @@ import { PostComponent } from './components/post/post.component';
     ItemsComponent,
     TrackComponent,
     PostComponent,
+    DashboardComponent,
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
