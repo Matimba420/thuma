@@ -14,6 +14,9 @@ const checkServiceExist = "SELECT * FROM service WHERE name=$1";
 
 const addRequest ="INSERT INTO request(client_id,service_id,comment) VALUES($1, $2, $3)";
 const getRequest ="SELECT * FROM request where status = 'pending' ";
+const getRequestByClientId ="SELECT * FROM request where client_id=$1";
+const getRequestByRunnerId ="SELECT * FROM request where runner_id=$1";
+
 
 
 
@@ -36,5 +39,7 @@ module.exports ={
     checkServiceExist,
 
     addRequest,
-    getRequest
+    getRequest,
+    getRequestByRunnerId,
+    getRequestByClientId 
 };

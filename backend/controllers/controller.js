@@ -207,7 +207,31 @@ const getRequest = (req, res) => {
         res.status(200).json(results.rows);
     });
 };
+
+
+const getRequestByClientId=(req,res) =>{
+    const client_id = req.params.client_id;
+    // console.log(client_id)
+   
+
+
+    pool.query(queries.getRequestByClientId,[client_id],(error, results)=>{
+        if(!results) return res.status(400).send("invalid input")
+       
+        if(!results.rows.length){ 
+            res.status(404).send('request not found')
+            console.log(results.rows);
+            
+            //throw error
+        }else{
+            res.status(200).json(results.rows);
+        }
+    } );
+};
+
+
     
+
 
 
 
@@ -223,7 +247,9 @@ module.exports = {
     addServices,
 
     addRequest,
-    getRequest
+    getRequest,
+    getRequestByClientId
+    //getRequestByRunnerId 
 
     
 
