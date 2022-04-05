@@ -16,6 +16,7 @@ export class UserService {
   //create a user
   addUser(user:User):Observable<any>{
   return this.http.post<any>(`${this,this.baseUrl}`, user);
+  
 }
 
 //read user
