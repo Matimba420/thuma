@@ -16,6 +16,7 @@ import { NavComponent } from './components/nav/nav.component';
 
 import { PostingComponent } from './components/posting/posting.component';
 import { BackButtonComponent } from './components/back-button/back-button.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { BackButtonComponent } from './components/back-button/back-button.compon
    
     NavComponent,
    PostingComponent,
-   BackButtonComponent
+   BackButtonComponent,
+   ProfileComponent
   ],
   imports: [
     BrowserModule,

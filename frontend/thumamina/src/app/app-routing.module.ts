@@ -9,6 +9,7 @@ import { ErrandsComponent } from './components/errands/errands.component';
 
 
 import { TrackComponent } from './components/track/track.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 const routes: Routes = [{
@@ -21,7 +22,8 @@ const routes: Routes = [{
 {path:'create',component:LoginComponent},
 {path:'log',component:CreateComponent},
 {path:'run_home', component:RunnerHomeComponent},
-{path:'errands', component:ErrandsComponent}];
+{path:'errands', component:ErrandsComponent},
+{path:'profile', component:ProfileComponent}];
 
 
 
