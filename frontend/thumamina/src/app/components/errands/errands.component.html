@@ -3,12 +3,14 @@
 
 
           <div class="card-deck">
-            <div class="card" *ngFor="let item of items">
-              <img class="card-img-top" src="../../../assets/shopping.jpg" alt="Card image cap">
+            <div class="card" *ngFor="let item of items"   >
+
+              <img class="card-img-top" src="../../../assets/shopping.jpg" alt="Card image cap" [routerLink]="['/posting']" routerLinkActive="router-link-active" >
               <div class="card-body">
-                <h5 class="card-title" style="text-align: center;">Shopping</h5>
+                <h5 class="card-title" style="text-align: center;">{{item.name}}</h5>
                 <p class="card-text" style="text-align: center;"></p>
-                <p>You can request a runner to do shopping on your behalf</p>
+                <p>{{item.description}}</p>
+                <p style="text-align: center;">{{item.cost}}</p>
                 
               </div>
             </div>

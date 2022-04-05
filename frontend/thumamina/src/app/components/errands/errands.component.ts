@@ -1,5 +1,6 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { Service } from 'src/app/interface/service';
+import { ErrandsService } from 'src/app/services/errands.service';
 
 @Component({
   selector: 'app-errands',
@@ -7,33 +8,53 @@ import { Service } from 'src/app/interface/service';
   styleUrls: ['./errands.component.css']
 })
 export class ErrandsComponent implements OnInit {
+  
 
-  constructor() { }
+  constructor(private errandService:ErrandsService) { }
+
+  // getService(){
+  //   this.errandService.getService(this.Service.value).subscribe((res:any)=>{
+  //     console.log(res)
+      
+  //   });
 
   ngOnInit(): void {
   }
 
 
-  //Items will come from backend id serial primary key,
-	// name varchar(50),
-	// description varchar(255),
-	// cost numeric(5,2)
-  //imgurl()
   
   items: Service[] = [
     {
-      name: "1",
-      description: "fsffds fda f",
+      name: "Shopping",
+      description: " The runner will go shopping on your behalf  ",
+      cost: " R300",
+      imgurl: " "
+    },{
+      name: " Queueing ",
+      description: "  The runner will go shopping on your behalf",
       cost: "r2000.00",
       imgurl: "fs"
-    },{
-      name: "1",
-      description: "fsffds fda f",
+    },
+    {
+      name: " mown lawning ",
+      description: "  The runner will go shopping on your behalf",
+      cost: "r2000.00",
+      imgurl: "fs"
+    },
+    {
+      name: " mown lawning ",
+      description: "  The runner will go shopping on your behalf",
       cost: "r2000.00",
       imgurl: "fs"
     }
+
   ];
 
 
+// getService(){
+//     this.errandService.getService(this.items.value).subscribe((res:Service)=>{
+//       console.log(res)
+      
+//     });
 
 }

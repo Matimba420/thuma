@@ -10,12 +10,14 @@ import { ErrandsComponent } from './components/errands/errands.component';
 
 import { TrackComponent } from './components/track/track.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { PostingComponent } from './components/posting/posting.component';
 
 
 const routes: Routes = [{
   path:'',component:LandingComponent
 },
 {path:'track',component:TrackComponent},
+{path:'posting',component:PostingComponent},
 {
   path:'land',component:LandingComponent
 },
