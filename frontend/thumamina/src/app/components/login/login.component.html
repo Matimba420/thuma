@@ -1,105 +1,80 @@
+<app-nav></app-nav>
+
+<div class="container">
 
 
-        
-     
+  <div class="row">
+    <div class="col-sm">
 
-
-      <app-nav></app-nav>
-      <app-back-button></app-back-button>
-    <div class="container">
-
-   
-      <div class="row">
-        <div class="col-sm">
-          
-        </div>
-
-
-        <div class="col-sm liv mt-5">
-
-          <form class="what"[formGroup]="form" (ngSubmit)="onSubmit()">
-            <h1>create account</h1>
-            <br>
-            <select class="form-select" formControlName="role" aria-label="Default select example">
-              
-              <option selected>Select your role</option>
-              <option value="Client">Client</option>
-              <option value="Service provider">Service provider</option>
-            </select>
-            
-            <br>
-            
-            <label>Full Name</label>
-      <input
-        type="text"
-        formControlName="name"
-        class="form-control"
-        [ngClass]="{ 'is-invalid': submitted && f['name'].errors }"
-      />
-      <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
-        <div *ngIf="f['name'].errors['required']">name is required</div>
-      </div>
-    
-
-
-    <label>Last name</label>
-    <input
-      type="text"
-      formControlName="surname"
-      class="form-control"
-      [ngClass]="{ 'is-invalid': submitted && f['surname'].errors }"
-    />
-    <div *ngIf="submitted && f['surname'].errors" class="invalid-feedback">
-      <div *ngIf="f['surname'].errors['required']">Surname is required</div>
-      <div *ngIf="f['surname'].errors['minlength']">
-        lastname must be at least 2 characters
-      </div>
-      <div *ngIf="f['surname'].errors['maxlength']">
-        Surname must not exceed 20 characters
-      </div>
     </div>
-    
-        
-          <label for="fname">mobile Number</label><br>
-          <input id="inputnumber" type="number" formControlName="cell_no"  [ngClass]="{ 'is-invalid': submitted }"
-          placeholder="" required="" autofocus="" >
-
-          <label>Email</label> <br>
-          <input id="email" type="email" formControlName="email" 
-          placeholder="" required="" autofocus="" class="form-control" > <br>
-
-        
 
 
-          <label for="lname">Create password</label><br>
-          <input
-        type="password"
-        formControlName="password"
-        class="form-control"
-        [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
-      />
-      <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
-        <div *ngIf="f['password'].errors['required']">Password is required</div>
-        <div *ngIf="f['password'].errors['minlength']">
-          Password must be at least 6 characters
+    <div class="col-sm liv mt-5">
+
+      <form class="what" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <h1>create account</h1>
+        <br>
+        <select class="form-select" formControlName="role" aria-label="Default select example">
+
+          <option selected>Select your role</option>
+          <option value="Client">Client</option>
+          <option value="Service provider">Service provider</option>
+        </select>
+
+        <br>
+
+        <label>Full Name</label>
+        <input type="text" formControlName="name" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f['name'].errors }" />
+        <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+          <div *ngIf="f['name'].errors['required']">name is required</div>
         </div>
-        <div *ngIf="f['password'].errors['maxlength']">
-          Username must not exceed 12 characters
-        </div>
-      </div>
 
-         
-          <label for="lname">Confirm password</label><br>
-          <input
-          type="password"
-          formControlName="confirmPassword"
-          class="form-control"
-          [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }"
-        />
-        <div
-          *ngIf="submitted && f['confirmPassword'].errors"
-          class="invalid-feedback"
-        >
+
+
+        <label>Last name</label>
+        <input type="text" formControlName="surname" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f['surname'].errors }" />
+        <div *ngIf="submitted && f['surname'].errors" class="invalid-feedback">
+          <div *ngIf="f['surname'].errors['required']">Surname is required</div>
+          <div *ngIf="f['surname'].errors['minlength']">
+            lastname must be at least 2 characters
+          </div>
+          <div *ngIf="f['surname'].errors['maxlength']">
+            Surname must not exceed 20 characters
+          </div>
+        </div>
+
+
+        <label for="fname">mobile Number</label><br>
+        <input id="inputnumber" type="number" formControlName="cell_no" [ngClass]="{ 'is-invalid': submitted }"
+          placeholder="" required="" autofocus="">
+
+        <label>Email</label> <br>
+        <input id="email" type="email" formControlName="email" placeholder="" required="" autofocus=""
+          class="form-control"> <br>
+
+
+
+
+        <label for="lname">Create password</label><br>
+        <input type="password" formControlName="password" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
+        <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+          <div *ngIf="f['password'].errors['required']">Password is required</div>
+          <div *ngIf="f['password'].errors['minlength']">
+            Password must be at least 6 characters
+          </div>
+          <div *ngIf="f['password'].errors['maxlength']">
+            Username must not exceed 12 characters
+          </div>
+        </div>
+
+
+        <label for="lname">Confirm password</label><br>
+        <input type="password" formControlName="confirmPassword" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }" />
+        <div *ngIf="submitted && f['confirmPassword'].errors" class="invalid-feedback">
           <div *ngIf="f['confirmPassword'].errors['required']">
             Confirm Password is required
           </div>
@@ -109,28 +84,22 @@
         </div>
         <br>
         <div class="form-group form-check">
-          <input
-            type="checkbox"
-            formControlName="acceptTerms"
-            class="form-check-input"
-            [ngClass]="{ 'is-invalid': submitted && f['acceptTerms'].errors }"
-          />
-          <label for="acceptTerms" class="form-check-label"
-            >I have read and agree to the Terms</label
-          >
+          <input type="checkbox" formControlName="acceptTerms" class="form-check-input"
+            [ngClass]="{ 'is-invalid': submitted && f['acceptTerms'].errors }" />
+          <label for="acceptTerms" class="form-check-label">I have read and agree to the Terms</label>
           <div *ngIf="submitted && f['acceptTerms'].errors" class="invalid-feedback">
             Accept Terms is required
           </div>
         </div>
-      <br>
-      
-    
-          <button class="button" (click)="myFunction()" > CREATE ACCOUNT</button>
-          
-        </form>
+        <br>
 
 
-        </div>
-        <div class="col-sm"></div>
-      </div>
+        <button class="button" (click)="myFunction()"> CREATE ACCOUNT</button>
+
+      </form>
+
+
     </div>
+    <div class="col-sm"></div>
+  </div>
+</div>
