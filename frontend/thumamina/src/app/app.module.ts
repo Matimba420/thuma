@@ -12,7 +12,10 @@ import { ErrandsComponent } from './components/errands/errands.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TrackComponent } from './components/track/track.component';
 import { PostComponent } from './components/post/post.component';
+import { NavComponent } from './components/nav/nav.component';
 
+import { PostingComponent } from './components/posting/posting.component';
+import { BackButtonComponent } from './components/back-button/back-button.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,10 @@ import { PostComponent } from './components/post/post.component';
     TrackComponent,
     PostComponent,
   
+   
+    NavComponent,
+   PostingComponent,
+   BackButtonComponent
   ],
   imports: [
     BrowserModule,
