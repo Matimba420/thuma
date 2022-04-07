@@ -9,6 +9,7 @@
   body {
     margin: 2rem;
     color: #414b56;
+    
   }
   /* .card-deck{
       margin-top: 50px;
@@ -53,5 +54,8 @@
   }
   .card-text{
       margin-top: 2px;
+  }
+  .card-title{
+      font-family: serif;
   }
   

@@ -1,12 +1,14 @@
-<div class="col-lg-8">
-    <div class="card" **ngFor="let person of people">
+<app-nav></app-nav>
+
+<!-- <div class="col-lg-8">
+    <div class="card" >
         <div class="card-body">
             <div class="row mb-3">
                 <div class="col-sm-3">
                     <h6 class="mb-0">Name</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                    <h6>{{person.name}}</h6>
+                    <h6>name</h6>
                 </div>
             </div>
             <div class="row mb-3">
@@ -14,7 +16,7 @@
                     <h6 class="mb-0">Surname</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-             <h6>{{person.surname}}</h6>
+             <h6 type = "text"> surname</h6>
                 </div>
             </div>
             <div class="row mb-3">
@@ -22,7 +24,7 @@
                     <h6 class="mb-0">Email</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                    <h6>{{person.email}}</h6>
+                    <h6>email</h6>
                 </div>
             </div>
             <div class="row mb-3">
@@ -30,22 +32,67 @@
                     <h6 class="mb-0">Mobile</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                   <h6>{{person.cell_no}}</h6>
+                   <h6>cell_no</h6>
                 </div>
             </div>
-            <div class="row mb-3">
-                <div class="col-sm-3">
-                    <h6 class="mb-0">Address</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  <h6>{{person.address}}</h6>
-                </div>
-            </div>
+           
             <div class="row">
                 <div class="col-sm-3"></div>
                 <div class="col-sm-9 text-secondary">
-                    <input type="button" class="btn btn-primary px-4" style="background-color: #e77f58;" value="Save Changes">
+                    <input type="button" class="btn btn-primary px-4" style="background-color: #e77f58;" value="Edit" [routerLink]="['/edit']" routerLinkActive="router-link-active">
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+
+    <div class="col-md-8">
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">First Name</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                Kenneth Valdez
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Last name</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                fip@jukmuh.al
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Email</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                (239) 816-9029
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Mobile</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                (320) 380-4539
+              </div>
+            </div>
+            <hr>
+            
+              
+              
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-9 text-secondary">
+                    <input type="button" class="btn btn-primary px-4" style="background-color: #e77f58;" value="Edit" [routerLink]="['/edit']" routerLinkActive="router-link-active">
+                </div>
+
+             
+            </div>
+           

@@ -51,7 +51,7 @@ export class ErrandsComponent implements OnInit {
 getService(){
     this.errandService.getService().subscribe((res:any)=>{
       console.log(res);
-      
+      this.items = res;
     });
   }
 
