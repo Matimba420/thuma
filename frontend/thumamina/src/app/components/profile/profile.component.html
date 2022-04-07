@@ -1,12 +1,12 @@
 <div class="col-lg-8">
-    <div class="card">
+    <div class="card" **ngFor="let person of people">
         <div class="card-body">
             <div class="row mb-3">
                 <div class="col-sm-3">
                     <h6 class="mb-0">Name</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                    <input type="text" class="form-control" value="Sasa">
+                    <h6>{{person.name}}</h6>
                 </div>
             </div>
             <div class="row mb-3">
@@ -14,7 +14,7 @@
                     <h6 class="mb-0">Surname</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                    <input type="text" class="form-control" value="Majozi">
+             <h6>{{person.surname}}</h6>
                 </div>
             </div>
             <div class="row mb-3">
@@ -22,7 +22,7 @@
                     <h6 class="mb-0">Email</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                    <input type="text" class="form-control" value="sasa@gmail.com">
+                    <h6>{{person.email}}</h6>
                 </div>
             </div>
             <div class="row mb-3">
@@ -30,7 +30,7 @@
                     <h6 class="mb-0">Mobile</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                    <input type="text" class="form-control" value="(+27) 678974467">
+                   <h6>{{person.cell_no}}</h6>
                 </div>
             </div>
             <div class="row mb-3">
@@ -38,7 +38,7 @@
                     <h6 class="mb-0">Address</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                    <input type="text" class="form-control" value="44 Stanley, Milpark, jhb">
+                  <h6>{{person.address}}</h6>
                 </div>
             </div>
             <div class="row">

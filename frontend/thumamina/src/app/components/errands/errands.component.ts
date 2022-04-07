@@ -20,29 +20,29 @@ export class ErrandsComponent implements OnInit {
 
   
   items: Service[] = [
-    {
-      name: "Shopping",
-      description: " The runner will go shopping on your behalf  ",
-      cost: " R300",
-      imgurl: " "
-    },{
-      name: " Queueing ",
-      description: "  The runner will go shopping on your behalf",
-      cost: "r2000.00",
-      imgurl: "fs"
-    },
-    {
-      name: " mown lawning ",
-      description: "  The runner will go shopping on your behalf",
-      cost: "r2000.00",
-      imgurl: "fs"
-    },
-    {
-      name: " mown lawning ",
-      description: "  The runner will go shopping on your behalf",
-      cost: "r2000.00",
-      imgurl: "fs"
-    }
+    // {
+    //   name: "Shopping",
+    //   description: " The runner will go shopping on your behalf  ",
+    //   cost: " R300",
+    //   imgurl: " "
+    // },{
+    //   name: " Queueing ",
+    //   description: "  The runner will go shopping on your behalf",
+    //   cost: "r2000.00",
+    //   imgurl: "fs"
+    // },
+    // {
+    //   name: " mown lawning ",
+    //   description: "  The runner will go shopping on your behalf",
+    //   cost: "r2000.00",
+    //   imgurl: "fs"
+    // },
+    // {
+    //   name: " mown lawning ",
+    //   description: "  The runner will go shopping on your behalf",
+    //   cost: "r2000.00",
+    //   imgurl: "fs"
+    // }
 
 
   ];

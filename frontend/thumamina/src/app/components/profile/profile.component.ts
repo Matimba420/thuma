@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/interface/user';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,34 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:UserService) { }
 
+
+  People: User[]=[];
   ngOnInit(): void {
   }
 
 }
-// export class UppassPage implements OnInit {
-//   password: any;
-//   pswUpdate: any;
 
-//   updateForm: any;
-
-//   constructor(private formBuilder: FormBuilder, private service: UpdateService) { }
-
-//   ngOnInit():void {
-    
-// this.updatePass();
-//     this.password=this.formBuilder.group({
-//       pwd:new FormControl()
-//     })
-//   };
-
-//   updatePass(){
-//     this.service.updatePass(this.password.value).subscribe(
-//       (data: any) => {
-//         this.pswUpdate = data.results;
-//       }
-//     )
-//   }
-// }
 
