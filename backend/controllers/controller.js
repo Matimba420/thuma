@@ -118,6 +118,7 @@ const clientLogin =async (req,res) =>{
             res.status(404).json({error:'user not found'})
         }else{
             pool.query(queries.getClientPasswordByEmail,[email],(error, results)=>{
+                // console.log("the password"+ results[0].password)
                 const queryPassword= bcrypt.compareSync(password, results[0].password);
                 if(!queryPassword){
                     res.status(404).json({error:'Invalid credentials'});
