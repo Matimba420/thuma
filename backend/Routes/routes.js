@@ -12,7 +12,22 @@ router.post('/clients/login',controller.clientLogin);
 router.get('/services', controller.getServices);
 router.post('/services', controller.addServices);
 
+router.post('/address', controller.addAddress);
+router.get('/address', controller.getAddress); 
 
+//router.put('/updateStatus', controller.updateStatus);
+router.post('/requests', controller.addRequest);
+router.get('/requests', controller.getRequest);
+router.get('/requests/client/:client_id', controller.getRequestByClientId);
+router.get('/requests/runner/:runner_id', controller.getRequestByRunnerId);
+
+
+// router.put('/clients/update/:id',controller.updateClient);
+
+
+
+
+ 
 
 
 module.exports= router;

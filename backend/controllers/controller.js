@@ -53,12 +53,12 @@ const getClient = (req, res) => {
 };
 
 const getClientById=(req,res) =>{
-    const id =parseInt(req.params.id);
+    const id =parseInt(req.params.client_id);
     
     console.log('hello2');
 
 
-    pool.query(queries.getClientById,[id],(error, results)=>{
+    pool.query(queries.getClientById,[client_id],(error, results)=>{
         if(!results) return res.status(400).send("invalid input")
         console.log('hello1');
         if(!results.rows.length){ 
@@ -175,9 +175,149 @@ const addServices = async (req,res) => {
     
     });
 }
-         
+
+const addAddress = async (req,res) => {
+    // const {firstname, lastname, cell_no, password} = req.body;
+     const {street_address, surburb, city, postal_code} = req.body
      
+            pool.query(queries.addAddress, 
+                [street_address, surburb, city, postal_code],
+                (error,results)=>{
+                if(error){ 
+                    res.status(500).json({error: 'invalid input'})
+                    throw error;
+                }else{
+                         // addUserMailer(name, surname, cell_no, email, password);
+                    res.status(201).json("Address created successfully");
+                }
+            });
+}
+
+
+const getAddress = (req, res) => {
+    pool.query(queries.getAddress,(error, results) => {
+        if(this.error){
+            console.log("error:"+error);
+            res.status(404).send(error);
+            throw error;
+        }
+        res.status(200).json(results.rows);
+    });
+};
+
+// const updateStatus = (req, res) => {
+//     const id = parseInt(req.params.id);
+//     const {status} = req.body;
+
+//     pool.query(queries.updateStatus,[id, status],(error,results) => {
+//         if(error) throw error;
+//         res.status(200).send("Status updated succefully")
+
+//     })
+// }
+        
+
+     
+const addRequest = async (req,res) => {
+    // const {firstname, lastname, cell_no, password} = req.body;
+     const {client_id,service_id,comment} = req.body
     
+            pool.query(queries.addRequest, 
+                [client_id,service_id,comment],
+                (error,results)=>{
+                if(error){ 
+                    res.status(500).json({error: 'invalid input'})
+                    throw error;
+                }else{
+                         // addUserMailer(name, surname, cell_no, email, password);
+                    res.status(201).json("Request created successfully");
+                }
+            });
+        
+    
+    
+}
+
+const getRequest = (req, res) => {
+    pool.query(queries.getRequest,(error, results) => {
+        if(this.error){
+            console.log("error:"+error);
+            res.status(404).send(error);
+            throw error;
+        }
+        res.status(200).json(results.rows);
+    });
+};
+
+
+const getRequestByClientId=(req,res) =>{
+    const client_id = req.params.client_id;
+    // console.log(client_id)
+   
+
+
+    pool.query(queries.getRequestByClientId,[client_id],(error, results)=>{
+        if(!results) return res.status(400).send("invalid input")
+       
+        if(!results.rows.length){ 
+            res.status(404).send('request not found')
+            console.log(results.rows);
+            
+            //throw error
+        }else{
+            res.status(200).json(results.rows);
+        }
+    } );
+};
+
+const getRequestByRunnerId =(req,res) =>{
+    const runner_id = req.params.runner_id;
+    // console.log(client_id)
+   
+
+
+    pool.query(queries.getRequestByRunnerId,[runner_id],(error, results)=>{
+        if(!results) return res.status(400).send("invalid input")
+       
+        if(!results.rows.length){ 
+            res.status(404).send('request not found')
+            console.log(results.rows);
+            
+            //throw error
+        }else{
+            res.status(200).json(results.rows);
+        }
+    } );
+};
+
+
+
+
+// const updateClient = async (req,res) =>{
+//     const client_id = parseInt(req.params.client_id);
+//     const {cell_no } = req.body;
+//     const {password} = req.body
+
+    
+//     //this.passwordValidator(password);
+//     if(password.length<8){
+//         res.status(400).send('Your Password should be longer than 7 characters');
+//     }else{
+      
+//         pool.query(queries.getClientById,[id],(error, results)=>{
+//             const noUserfound = !results.rows.length;
+//             if(noUserfound){
+//                 res.send("Client does not exist in the database.");
+//             }else{
+            
+//             pool.query(queries.updateClient,[cell_no, password,client_id],(error,results) =>{
+//                 if (error) throw error;
+//                 res.status(200).send("Client updated successfully")
+//             });
+//             }
+//         });
+//     }    
+// };
 
 
 
@@ -188,9 +328,18 @@ module.exports = {
     getClientById,
     getClientByEmail,
     clientLogin,
+
     getServices,
-    addServices
+    addServices,
+    addAddress,
+    getAddress,
+    //updateStatus
 
+    addRequest,
+    getRequest,
+    getRequestByClientId,
+    getRequestByRunnerId
+
+    // updateClient
     
-
 }
