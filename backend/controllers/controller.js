@@ -2,6 +2,7 @@ const pool = require('../db');
 const queries = require('../queries/queries')
 const Pool = require('pg').Pool;
 const nodemailer = require('nodemailer');
+const bcrypt = require('bcryptjs')
 
 
 const addClient = async (req,res) => {
@@ -250,33 +251,34 @@ const getRequestByRunnerId =(req,res) =>{
 };
 
 
-
-
-// const updateClient = async (req,res) =>{
-//     const client_id = parseInt(req.params.client_id);
-//     const {cell_no } = req.body;
-//     const {password} = req.body
+const updateClient = async (req,res) =>{
+    const id = req.params.id;
+    const {cell_no } = req.body;
+    const {password} = req.body
 
     
-//     //this.passwordValidator(password);
-//     if(password.length<8){
-//         res.status(400).send('Your Password should be longer than 7 characters');
-//     }else{
-      
-//         pool.query(queries.getClientById,[id],(error, results)=>{
-//             const noUserfound = !results.rows.length;
-//             if(noUserfound){
-//                 res.send("Client does not exist in the database.");
-//             }else{
+  
+    if(password.length<8){
+        res.status(400).send('Your Password should be longer than 7 characters');
+    }else{
+        
+        const salt= await bcrypt.genSalt(10);
+        const passwordHash = await bcrypt.hash(password, salt);
+        pool.query(queries.getClientById,[id],(error, results)=>{
+            const noUserfound = !results.rows.length;
+            if(noUserfound){
+                res.send("User does not exist in the database.");
+            }else{
             
-//             pool.query(queries.updateClient,[cell_no, password,client_id],(error,results) =>{
-//                 if (error) throw error;
-//                 res.status(200).send("Client updated successfully")
-//             });
-//             }
-//         });
-//     }    
-// };
+    
+            pool.query(queries.updateClient,[cell_no, passwordHash,id],(error,results) =>{
+                if (error) throw error;
+                res.status(200).send("User updated successfully")
+            });
+            }
+        });
+    }   
+};
 
 
 
@@ -294,8 +296,8 @@ module.exports = {
     addRequest,
     getRequest,
     getRequestByClientId,
-    getRequestByRunnerId
+    getRequestByRunnerId,
 
-    // updateClient
+    updateClient
     
 }

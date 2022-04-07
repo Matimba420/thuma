@@ -18,7 +18,7 @@ router.get('/requests/client/:client_id', controller.getRequestByClientId);
 router.get('/requests/runner/:runner_id', controller.getRequestByRunnerId);
 
 
-// router.put('/clients/update/:id',controller.updateClient);
+ router.put('/clients/:id',controller.updateClient);
 
 
 
