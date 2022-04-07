@@ -25,8 +25,11 @@ const addClient = async (req,res) => {
                 res.status(409).json({error:"Cell number Already exists"});
                 
             }else{
+                const salt = bcrypt.genSaltSync(10)
+                const hashedPassword = bcrypt.hashSync(password , salt)
+                console.log(hashedPassword)
                 pool.query(queries.addClient, 
-                    [name,surname, cell_no, email, password,role],
+                    [name,surname, cell_no, email, hashedPassword,role],
                     (error,results)=>{
                     if(error){ 
                         res.status(500).json({error: 'invalid input'})
@@ -110,21 +113,45 @@ const getClientByEmail=(req,res) =>{
     } );
 };
 
-const clientLogin =async (req,res) =>{
+const clientLogin = async (req,res) =>{
     const { cell_no,email, password } = req.body;
     pool.query(queries.checkClientEmailCellNoExists,[email,cell_no],(error, results)=>{
-        console.log(results.rows)
+        // console.log(results)
+        
         if(!results.rows.length){ 
+            console.log(email)
             res.status(404).json({error:'user not found'})
         }else{
-            pool.query(queries.getClientPasswordByEmail,[email],(error, results)=>{
-                const queryPassword= bcrypt.compareSync(password, results[0].password);
-                if(!queryPassword){
-                    res.status(404).json({error:'Invalid credentials'});
-                }else{
-                    res.status(200).json(results.rows);
-                }
-            });
+            
+            // IF CELLPHONE IS ENTERED
+            if(cell_no){
+
+                pool.query(queries.getClientPasswordByCelllNo,[cell_no],(error, results)=>{
+                    console.log(results.rows[0].password)
+                    const queryPassword= bcrypt.compareSync(password, results.rows[0].password);
+                    if(!queryPassword){
+                        res.status(404).json({error:'Invalid credentials'});
+                    }else{
+                        res.status(200).json(results.rows);
+                    }
+                });
+
+            } else {
+
+                // IF EMAIL IS ENTERED
+                pool.query(queries.getClientPasswordByEmail,[email],(error, results)=>{
+                    console.log(results.rows[0].password)
+                    const queryPassword= bcrypt.compareSync(password, results.rows[0].password);
+                    if(!queryPassword){
+                        res.status(404).json({error:'Invalid credentials'});
+                    }else{
+                        res.status(200).json(results.rows);
+                    }
+                });
+
+            }
+
+           
 
         }
 
