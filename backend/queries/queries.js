@@ -1,7 +1,8 @@
-const clientLogin = "SELECT id, firstname, lastname, cell_no, email, role FROM users WHERE password=$1 AND cell_no=$2 or email=$2";
+// const clientLogin = "SELECT id, firstname, lastname, cell_no, email, role FROM users WHERE password=$1 AND cell_no=$2 or email=$2";
 const addClient = "INSERT into users (name, surname, cell_no, email, password, role) values($1, $2, $3, $4, $5, $6)";
 const checkClientCelllExists = "SELECT * FROM users WHERE cell_no= $1";
 const checkClientEmailExists = "SELECT * FROM users WHERE email= $1";
+const checkClientEmailCellNoExists="SELECT * FROM users WHERE email= $1 or cell_no=$2 and is_active='true'";
 const getClients = "SELECT * FROM users";
 const removeClient= "DELETE FROM users WHERE id=$1";
 const getClientById = "SELECT * FROM users WHERE id= $1"
@@ -18,7 +19,7 @@ const checkServiceExist = "SELECT * FROM service WHERE name=$1";
 
 
 module.exports ={
-    clientLogin,
+    // clientLogin,
     addClient,
     checkClientCelllExists,
     checkClientEmailExists,
@@ -30,5 +31,6 @@ module.exports ={
 
     getServices,
     addServices,
-    checkServiceExist
+    checkServiceExist,
+    checkClientEmailCellNoExists
 };

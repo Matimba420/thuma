@@ -2,6 +2,7 @@ const pool = require('../db');
 const queries = require('../queries/queries')
 const Pool = require('pg').Pool;
 const nodemailer = require('nodemailer');
+const bcrypt =require('bcryptjs')
 
 
 const addClient = async (req,res) => {
@@ -48,7 +49,7 @@ const getClient = (req, res) => {
             res.status(404).send(error);
             throw error;
         }
-        res.status(200).json(results.rows);
+        res.status(200).json(results);
     });
 };
 
@@ -110,32 +111,24 @@ const getClientByEmail=(req,res) =>{
 };
 
 const clientLogin =async (req,res) =>{
-    const {email} = req.body;
-    const {password} = req.body;
-   
-    
-    
-    pool.query(queries.checkClientEmailExists, [email], (error, results) => {
-        if (!results.rows.length){
-            res.status(404).json({error:"email does not exist in the database"});
+    const { cell_no,email, password } = req.body;
+    pool.query(queries.checkClientEmailCellNoExists,[email,cell_no],(error, results)=>{
+        console.log(results.rows)
+        if(!results.rows.length){ 
+            res.status(404).json({error:'user not found'})
         }else{
-               console.log(password);
-               console.log(results.rows[0].password)
-        pool.query(queries.getClientPasswordByEmail,[email],(error,results)=>{
-            console.log(results.rows[0].password);
-            //const queryPassword= bcrypt.compareSync(password, results.rows[0].password);
-            console.log(queryPassword)
-            if(!queryPassword){
-                res.status(404).json({error:"Invalid password or email"});
-            }else{
-                res.status(200).json(results.rows);
-                console.log(queryPassword)
-            }
-            
-            
-        });  
-    }
-    }) 
+            pool.query(queries.getClientPasswordByEmail,[email],(error, results)=>{
+                const queryPassword= bcrypt.compareSync(password, results[0].password);
+                if(!queryPassword){
+                    res.status(404).json({error:'Invalid credentials'});
+                }else{
+                    res.status(200).json(results.rows);
+                }
+            });
+
+        }
+
+    });
 }
 
 
