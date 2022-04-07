@@ -12,13 +12,9 @@ export class ErrandsComponent implements OnInit {
 
   constructor(private errandService:ErrandsService) { }
 
-  // getService(){
-  //   this.errandService.getService(this.Service.value).subscribe((res:any)=>{
-  //     console.log(res)
-      
-  //   });
 
   ngOnInit(): void {
+   this.getService()
   }
 
 
@@ -48,13 +44,15 @@ export class ErrandsComponent implements OnInit {
       imgurl: "fs"
     }
 
+
   ];
 
 
-// getService(){
-//     this.errandService.getService(this.items.value).subscribe((res:Service)=>{
-//       console.log(res)
+getService(){
+    this.errandService.getService().subscribe((res:any)=>{
+      console.log(res);
       
-//     });
+    });
+  }
 
 }
