@@ -13,9 +13,12 @@ const getServices= "SELECT * FROM service";
 const addServices ="INSERT INTO service(name,description, cost, image) VALUES($1, $2, $3, $4)";
 const checkServiceExist = "SELECT * FROM service WHERE name=$1";
 
+const addRequest ="INSERT INTO request(client_id,service_id,comment) VALUES($1, $2, $3)";
+const getRequest ="SELECT * FROM request where status = 'pending' ";
+const getRequestByClientId ="SELECT * FROM request where client_id=$1";
+const getRequestByRunnerId ="SELECT * FROM request where runner_id=$1";
 
-
-
+const updateClient ="UPDATE users SET cell_no=$1, password=$2 WHERE id = $3";
 
 
 module.exports ={
@@ -32,5 +35,13 @@ module.exports ={
     getServices,
     addServices,
     checkServiceExist,
-    checkClientEmailCellNoExists
+    checkClientEmailCellNoExists,
+
+    addRequest,
+    getRequest,
+    getRequestByRunnerId,
+    getRequestByClientId,
+
+     updateClient
+    
 };

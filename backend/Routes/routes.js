@@ -12,6 +12,18 @@ router.get('/clients/login/:email', controller.getClientByEmail);
 router.get('/services', controller.getServices);
 router.post('/services', controller.addServices);
 
+router.post('/requests', controller.addRequest);
+router.get('/requests', controller.getRequest);
+router.get('/requests/client/:client_id', controller.getRequestByClientId);
+router.get('/requests/runner/:runner_id', controller.getRequestByRunnerId);
+
+
+ router.put('/clients/:id',controller.updateClient);
+
+
+
+
+ 
 
 
 module.exports= router;
