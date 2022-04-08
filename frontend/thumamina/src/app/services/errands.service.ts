@@ -12,7 +12,8 @@ export class ErrandsService {
 
   private baseUrl = 'http://localhost:4304/api/services/';
 
-getService(service:Service):Observable<any>{
+getService():Observable<any>{
+
   return this.http.get<any>(`${this.baseUrl}`);
 }
 

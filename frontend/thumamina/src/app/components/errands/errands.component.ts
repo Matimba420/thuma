@@ -12,49 +12,47 @@ export class ErrandsComponent implements OnInit {
 
   constructor(private errandService:ErrandsService) { }
 
-  // getService(){
-  //   this.errandService.getService(this.Service.value).subscribe((res:any)=>{
-  //     console.log(res)
-      
-  //   });
 
   ngOnInit(): void {
+   this.getService()
   }
 
 
   
   items: Service[] = [
-    {
-      name: "Shopping",
-      description: " The runner will go shopping on your behalf  ",
-      cost: " R300",
-      imgurl: " "
-    },{
-      name: " Queueing ",
-      description: "  The runner will go shopping on your behalf",
-      cost: "r2000.00",
-      imgurl: "fs"
-    },
-    {
-      name: " mown lawning ",
-      description: "  The runner will go shopping on your behalf",
-      cost: "r2000.00",
-      imgurl: "fs"
-    },
-    {
-      name: " mown lawning ",
-      description: "  The runner will go shopping on your behalf",
-      cost: "r2000.00",
-      imgurl: "fs"
-    }
+    // {
+    //   name: "Shopping",
+    //   description: " The runner will go shopping on your behalf  ",
+    //   cost: " R300",
+    //   imgurl: " "
+    // },{
+    //   name: " Queueing ",
+    //   description: "  The runner will go shopping on your behalf",
+    //   cost: "r2000.00",
+    //   imgurl: "fs"
+    // },
+    // {
+    //   name: " mown lawning ",
+    //   description: "  The runner will go shopping on your behalf",
+    //   cost: "r2000.00",
+    //   imgurl: "fs"
+    // },
+    // {
+    //   name: " mown lawning ",
+    //   description: "  The runner will go shopping on your behalf",
+    //   cost: "r2000.00",
+    //   imgurl: "fs"
+    // }
+
 
   ];
 
 
-// getService(){
-//     this.errandService.getService(this.items.value).subscribe((res:Service)=>{
-//       console.log(res)
-      
-//     });
+getService(){
+    this.errandService.getService().subscribe((res:any)=>{
+      console.log(res);
+      this.items = res;
+    });
+  }
 
 }

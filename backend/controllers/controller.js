@@ -195,10 +195,51 @@ const addServices = async (req,res) => {
     
     });
 }
-         
+
+const addAddress = async (req,res) => {
+    // const {firstname, lastname, cell_no, password} = req.body;
+     const {street_address, surburb, city, postal_code} = req.body
+     
+            pool.query(queries.addAddress, 
+                [street_address, surburb, city, postal_code],
+                (error,results)=>{
+                if(error){ 
+                    res.status(500).json({error: 'invalid input'})
+                    throw error;
+                }else{
+                         // addUserMailer(name, surname, cell_no, email, password);
+                    res.status(201).json("Address created successfully");
+                }
+            });
+}
+
+
+const getAddress = (req, res) => {
+    pool.query(queries.getAddress,(error, results) => {
+        if(this.error){
+            console.log("error:"+error);
+            res.status(404).send(error);
+            throw error;
+        }
+        res.status(200).json(results.rows);
+    });
+};
+
+// const updateStatus = (req, res) => {
+//     const id = parseInt(req.params.id);
+//     const {status} = req.body;
+
+//     pool.query(queries.updateStatus,[id, status],(error,results) => {
+//         if(error) throw error;
+//         res.status(200).send("Status updated succefully")
+
+//     })
+// }
+        
+
      
 const addRequest = async (req,res) => {
-    // const {firstname, lastname, cell_no, password} = req.body;
+   
      const {client_id,service_id,comment} = req.body
     
             pool.query(queries.addRequest, 
@@ -299,6 +340,22 @@ const updateClient = async (req,res) =>{
     }   
 };
 
+const cancelRequest= async (req,res)=>{
+    const id = req.params.id;
+    const {name } = "";
+    const {client_id } = "";
+    pool.query(queries.cancelRequest,[name,client_id,id],(error,results)=>{
+        if(error){ 
+            console.status(404).json({error:'bad response '})
+            throw error;
+        }else{
+            mailer('matimbamanyondos@Gmail.com')
+            res.status(201).json("Request cancelled");
+        }
+    });
+};
+
+
 
 
 module.exports = {
@@ -311,12 +368,17 @@ module.exports = {
 
     getServices,
     addServices,
+    addAddress,
+    getAddress,
+    //updateStatus
 
     addRequest,
     getRequest,
     getRequestByClientId,
     getRequestByRunnerId,
 
-    updateClient
+    updateClient,
+
+    cancelRequest
     
 }
