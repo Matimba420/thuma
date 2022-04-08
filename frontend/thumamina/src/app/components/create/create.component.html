@@ -15,15 +15,13 @@
          
 
             <form class="what" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+              <h1>Smart-Serve</h1>
+              <p>Serving You Smart</p>
+              <br>
               <h1>LOGIN</h1>
               <br>
-              <select class="form-select" formControlName="role" aria-label="Default select example">
-                <option selected>Select your role</option>
-                <option value="Client">Client</option>
-                <option value="Service provider">Service provider</option>
-  
-              </select>
-              <br>
+              
+              
               <div class="form-group mb-4">
                 <input id="inputnumber" type="number" formControlName="number"  [ngClass]="{ 'is-invalid': submitted && f.number.errors }"
                  placeholder="phone number" required="" autofocus="" >
