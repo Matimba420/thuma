@@ -13,6 +13,7 @@ import { ErrandsComponent } from './components/errands/errands.component';
 import { TrackComponent } from './components/track/track.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PostingComponent } from './components/posting/posting.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 
 const routes: Routes = [{
@@ -31,7 +32,8 @@ const routes: Routes = [{
 {path:'dash',component:DashboardComponent},
 {path:'run_home', component:RunnerHomeComponent},
 {path:'errands', component:ErrandsComponent},
-{path:'profile', component:ProfileComponent}];
+{path:'profile', component:ProfileComponent},
+{path:'edit', component:EditProfileComponent}];
 
 
 
