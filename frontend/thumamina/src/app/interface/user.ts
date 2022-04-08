@@ -7,3 +7,13 @@ export interface User {
     confimpassword :string;
 
 }
+
+export interface Update {
+    name: string;
+    surname: string;
+    cell_no: number;
+    email :string;
+    
+
+}
+
