@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { AddressService } from 'src/app/services/address.service';
 //import { FormControl, FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 
 
@@ -12,7 +13,7 @@ export class PostingComponent implements OnInit {
   form: FormGroup = new FormGroup({
     comment: new FormControl (''),
     street_address: new FormControl(''),
-    surburb: new FormControl(''),
+    suburb: new FormControl(''),
     city: new FormControl(''),
     postal_code: new FormControl(''),
    
@@ -27,9 +28,16 @@ export class PostingComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(private service: AddressService) { }
+
+  getAddress(){
+    this.service.getAddress(this.form.value).subscribe((res:any)=>{
+      console.log(res)
+    })
+  }
 
   ngOnInit(): void {
+    this.getAddress;
   }
 
 

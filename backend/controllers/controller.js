@@ -198,10 +198,10 @@ const addServices = async (req,res) => {
 
 const addAddress = async (req,res) => {
     // const {firstname, lastname, cell_no, password} = req.body;
-     const {street_address, surburb, city, postal_code} = req.body
+     const {street_address, suburb, city, postal_code} = req.body
      
             pool.query(queries.addAddress, 
-                [street_address, surburb, city, postal_code],
+                [street_address, suburb, city, postal_code],
                 (error,results)=>{
                 if(error){ 
                     res.status(500).json({error: 'invalid input'})

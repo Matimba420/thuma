@@ -25,7 +25,7 @@ create  table address(
 	id serial primary key,
 	request_id integer,
 	street_address varchar(50),
-	surburb varchar(50),
+	suburb varchar(50),
 	city varchar(50),
 	postal_code varchar(4)
 );
