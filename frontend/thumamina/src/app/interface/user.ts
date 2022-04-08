@@ -7,3 +7,9 @@ export interface User {
     confimpassword :string;
 
 }
+
+
+export interface login{
+    cell_no: number;
+    password :string;
+}

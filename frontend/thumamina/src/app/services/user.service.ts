@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
-import { User } from '../interface/user';
+import { login, User } from '../interface/user';
 
 @Injectable({
   providedIn: 'root'
@@ -34,8 +34,8 @@ getUser(id: any): Observable<any>{
     return this.http.put<any>(`${this.baseUrl}/${id}`, user)
   }
 
-  userLogin(user: User): Observable<any>{
-    return this.http.post<any>(`${this.baseUrl}login`, user)
+  userLogin(login: login): Observable<any>{
+    return this.http.post<any>(`${this.baseUrl}login`, login)
     
   }
 
