@@ -6,11 +6,11 @@
     padding: 0;
   }
   
-  body {
+  /*body {
     margin: 2rem;
     color: #414b56;
     
-  }
+  }/*
   /* .card-deck{
       margin-top: 50px;
       align-items: flex-start;
@@ -59,3 +59,13 @@
       font-family: serif;
   }
   
+  h5{
+    font-weight: bolder;
+    text-align: center
+  }
+  .para{font-weight: bold;
+    text-align: center;}
+  .dis{
+    font-weight: lighter;
+    text-align: center;
+  }

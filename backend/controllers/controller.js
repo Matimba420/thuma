@@ -16,6 +16,8 @@ const addClient = async (req,res) => {
         res.status(400).json({error:"Invalid Cell number"});
     }else if(password.length<8){
         res.status(400).json('Your Password should be longer than 7 characters');
+    }else if(role.length<1){
+        res.status(400).json('Please enter your role');
     }else{
 
         //check if email exists
@@ -63,12 +65,11 @@ const getClientById=(req,res) =>{
 
 
     pool.query(queries.getClientById,[client_id],(error, results)=>{
-        if(!results) return res.status(400).send("invalid input")
-        console.log('hello1');
+        if(!results){
+            return res.status(400).send("invalid input");
+        }
         if(!results.rows.length){ 
-            res.status(404).send('user not found')
-            console.log('hello');
-            //throw error
+            res.status(404).send('user not found');
         }else{
             res.status(200).json(results.rows);
         }
@@ -340,6 +341,29 @@ const updateClient = async (req,res) =>{
     }   
 };
 
+//get users by roles
+const getAllClients = (req, res) => {
+    pool.query(queries.getAllClients,(error, results) => {
+        if(this.error){
+            console.log("error:"+error);
+            res.status(404).send(error);
+            throw error;
+        }
+        res.status(200).json(results);
+    });
+};
+
+const getAllRunners = (req, res) => {
+    pool.query(queries.getAllRunners,(error, results) => {
+        if(this.error){
+            console.log("error:"+error);
+            res.status(404).send(error);
+            throw error;
+        }
+        res.status(200).json(results);
+    });
+};
+
 
 
 module.exports = {
@@ -361,6 +385,9 @@ module.exports = {
     getRequestByClientId,
     getRequestByRunnerId,
 
-    updateClient
+    updateClient,
+    getAllRunners,
+    getAllClients
+
     
 }
