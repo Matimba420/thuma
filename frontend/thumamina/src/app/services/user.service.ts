@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
+<<<<<<< HEAD
 import { login, User } from '../interface/user';
+=======
+import { Update, User } from '../interface/user';
+>>>>>>> 867e5259c57596edfe1d966eed6b6f6928ac38e0
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +34,7 @@ getUser(id: any): Observable<any>{
   return this.http.get<any>(`${this.baseUrl}/${id}`)
 }
   //update
-  updateUser(user: User, id: User): Observable<any>{
+  updateUser(user: Update, id: Update): Observable<any>{
     return this.http.put<any>(`${this.baseUrl}/${id}`, user)
   }
 

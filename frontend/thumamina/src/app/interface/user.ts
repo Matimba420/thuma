@@ -8,6 +8,7 @@ export interface User {
 
 }
 
+<<<<<<< HEAD
 
 export interface login{
     cell_no: number;
@@ -25,3 +26,14 @@ export interface address{
 
 
 }
+=======
+export interface Update {
+    name: string;
+    surname: string;
+    cell_no: number;
+    email :string;
+    
+
+}
+
+>>>>>>> 867e5259c57596edfe1d966eed6b6f6928ac38e0
