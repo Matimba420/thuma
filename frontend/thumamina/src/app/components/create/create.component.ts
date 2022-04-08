@@ -47,6 +47,8 @@ export class CreateComponent implements OnInit {
   }
 
   nextPage(){
+    console.log(this.registerForm.value.role);
+    
     if (this.registerForm.value.role==="Service provider"){
       this.router.navigateByUrl('/run_home',{replaceUrl:true});
     }

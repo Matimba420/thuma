@@ -4,10 +4,10 @@ const router = Router();
 
 router.post('/clients', controller.addClient);
 router.get('/clients', controller.getClient);
+router.post('/clients/login', controller.clientLogin);
 router.get('/clients/:id', controller.getClientById);
 router.delete('/clients/:id', controller.removeClient);
 router.get('/clients/login/:email', controller.getClientByEmail);
-router.post('/clients/login',controller.clientLogin);
 
 router.get('/services', controller.getServices);
 router.post('/services', controller.addServices);
@@ -22,6 +22,9 @@ router.get('/requests/client/:client_id', controller.getRequestByClientId);
 router.get('/requests/runner/:runner_id', controller.getRequestByRunnerId);
 
 router.put('/clients/:id',controller.updateClient);
+
+router.get('/client', controller.getAllClients);
+router.get('/runner', controller.getAllRunners);
 
 
 
