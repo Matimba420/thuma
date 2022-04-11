@@ -46,6 +46,9 @@ create  table service(
 	image varchar(200)
 );
 
+
+--constraints
+
 alter table request
 add foreign key(client_id)
 references users(id)
@@ -75,3 +78,13 @@ alter table review
 add foreign key(runner_id)
 references users(id)
 on delete cascade;
+
+
+--Adding services
+insert into service(name, description, cost, image)
+values('Lawn Mowing', 'Get someone to mow the lawn for you', 99.99, 'https://i.ibb.co/myQkmvp/lawn-mowing.jpg'),
+('Shopping', 'Get someone to do shopping for you', 150,'https://i.ibb.co/RjK8Jvw/shoping.jpg'),
+('Certify Documents', 'Send someone to certify documents for you, give him/her your copies and originals', 75 ,'https://i.ibb.co/H7db2Ds/certify-doc.jpg'),
+('Queuing' , 'Send someone to stand in a queue for you and you will find him/her there standing on your behalf', 90, 'https://i.ibb.co/rc3WrCC/queue.jpg');
+
+--

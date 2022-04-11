@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/interface/user';
+import { Update} from 'src/app/interface/user';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -12,17 +12,27 @@ export class ProfileComponent implements OnInit {
   constructor(private service:UserService) { }
 
 
-  People: any=[];
+  People: Update[]=[
+
+    {
+        name: " mown lawning ",
+        surname: "  The runner will go shopping on your behalf",
+        cell_no: 0,
+        email: "fs"
+      }
+  ];
   ngOnInit(): void {
-    // this.getUser();
+   
   }
-  // getUser(){
-  //   this.service.getUsers().subscribe((res:any)=>{
-  //     console.log(res);
-  //     this.People = res;
-  //   });
-  // }
+
+  getUser(id:any){
+    this.service.getUser(id).subscribe(res=>{
+      this.People=res;
+    
+      
+    });
 
 }
 
 
+}

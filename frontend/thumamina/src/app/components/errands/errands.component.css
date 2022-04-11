@@ -59,3 +59,13 @@
       font-family: serif;
   }
   
+  h5{
+    font-weight: bolder;
+    text-align: center
+  }
+  .para{font-weight: bold;
+    text-align: center;}
+  .dis{
+    font-weight: lighter;
+    text-align: center;
+  }

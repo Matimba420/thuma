@@ -12,10 +12,14 @@
     <div class="col-sm liv mt-5">
 
       <form class="what" [formGroup]="form" (ngSubmit)="onSubmit()">
-        <h1>create account</h1>
+        <h1>Create account</h1>
         <br>
+        <label>Role</label>
         <select class="form-select" formControlName="role" aria-label="Default select example">
+<<<<<<< HEAD
           <option selected>Select your role</option>
+=======
+>>>>>>> 40fb03f63b1822fdddf33bbb88b65c4b6d25c3d7
           <option value="Client">Client</option>
           <option value="Service provider">Service provider</option>
 
@@ -23,7 +27,7 @@
 
         <br>
 
-        <label>Full Name</label>
+        <label>Name</label>
         <input type="text" formControlName="name" class="form-control"
           [ngClass]="{ 'is-invalid': submitted && f['name'].errors }" />
         <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
@@ -32,7 +36,7 @@
 
 
 
-        <label>Last name</label>
+        <label>Surname</label>
         <input type="text" formControlName="surname" class="form-control"
           [ngClass]="{ 'is-invalid': submitted && f['surname'].errors }" />
         <div *ngIf="submitted && f['surname'].errors" class="invalid-feedback">
@@ -46,7 +50,7 @@
         </div>
 
 
-        <label for="fname">mobile Number</label><br>
+        <label for="fname">Mobile Number</label><br>
         <input id="inputnumber" type="number" formControlName="cell_no" [ngClass]="{ 'is-invalid': submitted }"
           placeholder="" required="" autofocus="">
 
@@ -84,7 +88,7 @@
         </div>
         <br>
         <div class="form-group form-check">
-          <input type="checkbox" formControlName="acceptTerms" class="form-check-input"
+          <input type="checkbox" formControlName="acceptTerms" class="form-check-input2"
             [ngClass]="{ 'is-invalid': submitted && f['acceptTerms'].errors }" />
           <label for="acceptTerms" class="form-check-label">I have read and agree to the Terms</label>
           <div *ngIf="submitted && f['acceptTerms'].errors" class="invalid-feedback">
