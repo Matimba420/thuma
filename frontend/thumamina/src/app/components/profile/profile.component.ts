@@ -11,28 +11,32 @@ export class ProfileComponent implements OnInit {
 
   constructor(private service:UserService) { }
 
-
+id : any;
   People: Update[]=[
 
-    // {
-    //     name: " mown lawning ",
-    //     surname: "  The runner will go shopping on your behalf",
-    //     cell_no: 0,
-    //     email: "fs"
-    //   }
+    {
+        name: " mown lawning ",
+        surname: "  The runner will go shopping on your behalf",
+        cell_no: 0,
+        email: "fs"
+      }
   ];
   ngOnInit(): void {
-    this.getUser
+    this.id=localStorage.getItem("clientID");
+   this.getUser(this.id);
    
   }
 
   getUser(id:any){
     this.service.getUser(id).subscribe(res=>{
       this.People=res;
+      console.log(this.People);
+      
     
       
     });
 
+}
 }
 
 

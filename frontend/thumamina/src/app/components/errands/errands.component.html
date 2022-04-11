@@ -1,17 +1,11 @@
-<<<<<<< HEAD
 <app-nav></app-nav>
 <div class="wrapper"> 
 
 
-=======
-
-<app-nav></app-nav>
-<div class="wrapper"> 
->>>>>>> 40fb03f63b1822fdddf33bbb88b65c4b6d25c3d7
           <div class="card-deck">
             <div class="card" *ngFor="let item of items"   >
 
-              <img class="card-img-top" src="{{item.image}}" alt="Card image cap" [routerLink]="['/posting']" routerLinkActive="router-link-active" >
+              <img class="card-img-top" src="{{item.image}}" alt="Card image cap"  (click)="myFunction(item)" routerLinkActive="router-link-active" >
               <div class="card-body">
                    <h5 class="card-title" >{{item.name}}</h5>
                    <p class="card-text" style="text-align: center;"></p>
@@ -28,3 +22,5 @@
       
   
 </div>
+
+<!--[routerLink]="['/posting']"-->

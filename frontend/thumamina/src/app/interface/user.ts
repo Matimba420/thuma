@@ -13,9 +13,20 @@ export interface Update {
     surname: string;
     cell_no: number;
     email :string;
+   
     
 
 }
+
+export interface edit{
+    name: string;
+    surname: string;
+    cell_no: number;
+    password:string;
+    
+}
+
+
 
 
 export interface login{

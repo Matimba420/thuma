@@ -51,6 +51,7 @@ export class CreateComponent implements OnInit {
             localStorage.setItem("access", JSON.stringify(data));
             console.log(data)
             if(data[0].role=='Client'){
+              localStorage.setItem("clientID",data[0].id);
               this.router.navigateByUrl('/errands',{replaceUrl:true});
             }
             if(data[0].role=='Service provider'){

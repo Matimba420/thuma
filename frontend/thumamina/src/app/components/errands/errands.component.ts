@@ -1,6 +1,7 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { Service } from 'src/app/interface/service';
 import { ErrandsService } from 'src/app/services/errands.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-errands',
@@ -10,8 +11,8 @@ import { ErrandsService } from 'src/app/services/errands.service';
 export class ErrandsComponent implements OnInit {
   
 
-  constructor(private errandService:ErrandsService) { }
-
+  constructor(private errandService:ErrandsService, private router:Router, private route: ActivatedRoute) { }
+  data:any;
 
   ngOnInit(): void {
    this.getService()
@@ -20,34 +21,19 @@ export class ErrandsComponent implements OnInit {
 
   
   items: Service[] = [
-    // {
-    //   name: "Shopping",
-    //   description: " The runner will go shopping on your behalf  ",
-    //   cost: " R300",
-    //   imgurl: " "
-    // },{
-    //   name: " Queueing ",
-    //   description: "  The runner will go shopping on your behalf",
-    //   cost: "r2000.00",
-    //   imgurl: "fs"
-    // },
-    // {
-    //   name: " mown lawning ",
-    //   description: "  The runner will go shopping on your behalf",
-    //   cost: "r2000.00",
-    //   imgurl: "fs"
-    // },
-    // {
-    //   name: " mown lawning ",
-    //   description: "  The runner will go shopping on your behalf",
-    //   cost: "r2000.00",
-    //   imgurl: "fs"
-    // }
+ 
 
 
   ];
 
-
+myFunction(item: any){
+  console.log('Hello world');
+  localStorage.setItem("serviceID",item.id);
+  console.log(item.id);
+  this.router.navigateByUrl('/posting', {replaceUrl:true});
+  
+  
+}
 getService(){
     this.errandService.getService().subscribe((res:any)=>{
       console.log(res);
