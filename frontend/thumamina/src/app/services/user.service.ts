@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
-<<<<<<< HEAD
-import { Update, User } from '../interface/user';
-=======
-import { login, User } from '../interface/user';
->>>>>>> 40fb03f63b1822fdddf33bbb88b65c4b6d25c3d7
+import { Update, User,login} from '../interface/user';
+;
 
 @Injectable({
   providedIn: 'root'

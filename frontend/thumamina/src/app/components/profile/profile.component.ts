@@ -14,14 +14,15 @@ export class ProfileComponent implements OnInit {
 
   People: Update[]=[
 
-    {
-        name: " mown lawning ",
-        surname: "  The runner will go shopping on your behalf",
-        cell_no: 0,
-        email: "fs"
-      }
+    // {
+    //     name: " mown lawning ",
+    //     surname: "  The runner will go shopping on your behalf",
+    //     cell_no: 0,
+    //     email: "fs"
+    //   }
   ];
   ngOnInit(): void {
+    this.getUser
    
   }
 
@@ -35,4 +36,3 @@ export class ProfileComponent implements OnInit {
 }
 
 
-}

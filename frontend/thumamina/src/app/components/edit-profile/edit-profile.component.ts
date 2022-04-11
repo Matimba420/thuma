@@ -13,27 +13,19 @@ export class editProfileComponent implements OnInit {
     name: new FormControl(''),
     surname: new FormControl(''),
     cell_no: new FormControl(''),
-   email: new FormControl(''),
-   
-    
+   password: new FormControl('')
   });
 
   constructor(private service:UserService ) { }
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
+  
 
-  // update(){
-  //   this.service.updateUser(this.form[].id).subscribe((res:any)=>{
-  //     console.log(res)
-      
-  //   }
-  //   )
-
-
-
-
-  // ngOnInit(): void {
-  // }
+  update(id:any){
+    let data = this.form.value;
+    this.service.updateUser(data,id).subscribe(res =>{
+      console.log(res);
+    })
 
 }
