@@ -16,7 +16,15 @@ input[type="number"] {
     width: 100%;
     height: 50px;
 }
+.container{
+    background: rgb(174, 185, 189);
+    // background-position: bottom;
+    // background-repeat: repeat;
+    // background-size:contain;
+    height: 120vh;
+    width: 100%;
 
+}
 input[type="email"] {
     width: 100%;
     height: 50px;
@@ -46,7 +54,7 @@ p{
 
 .liv{
     position: floor($number: 22%);
-    background:linear-gradient(#223C50,#223C50);
+    background:linear-gradient(#223C50,#223C50 );
     margin-bottom: 3rem;
 
 }
