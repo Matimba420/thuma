@@ -8,6 +8,26 @@ export interface User {
 
 }
 
+export interface Update {
+    name: string;
+    surname: string;
+    cell_no: number;
+    email :string;
+   
+    
+
+}
+
+export interface edit{
+    name: string;
+    surname: string;
+    cell_no: number;
+    password:string;
+    
+}
+
+
+
 
 export interface login{
     cell_no: number;
