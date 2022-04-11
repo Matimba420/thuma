@@ -318,8 +318,8 @@ const updateClient = async (req,res) =>{
     const id = req.params.id;
     const {cell_no } = req.body;
     const {password} = req.body;
-    const {name} = req.body
-    const {surname} = req.body
+    const {name} = req.body;
+    const {surname} = req.body;
 
     
   
@@ -368,6 +368,33 @@ const getAllRunners = (req, res) => {
     });
 };
 
+const updateStatus = async (req,res) =>{
+    const id = req.params.id;
+    const {status } = req.body;
+    pool.query(queries.updateStatus,[status,id],(error, results) =>{
+        if(this.error){
+            console.log("error:"+error);
+            res.status(404).send(error);
+            throw error;
+        }
+        res.status(200).json("Status updated succesfully");
+    });
+};
+
+
+const addComment = async (req,res) =>{
+    const id = req.params.id;
+    const {comment } = req.body;
+    pool.query(queries.addComment,[comment,id],(error, results) =>{
+        if(this.error){
+            console.log("error:"+error);
+            res.status(404).send(error);
+            throw error;
+        }
+        res.status(200).json("Comment added succesfully");
+    });
+};
+
 
 
 module.exports = {
@@ -382,7 +409,7 @@ module.exports = {
     addServices,
     addAddress,
     getAddress,
-    //updateStatus
+    updateStatus,
 
     addRequest,
     getRequest,
@@ -391,7 +418,9 @@ module.exports = {
 
     updateClient,
     getAllRunners,
-    getAllClients
+    getAllClients,
+
+    addComment
 
     
 }

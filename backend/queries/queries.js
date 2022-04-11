@@ -17,7 +17,7 @@ const checkServiceExist = "SELECT * FROM service WHERE name=$1";
 const addAddress = "INSERT INTO address(street_address, suburb, city, postal_code) VALUES($1, $2, $3, $4)";
 const getAddress = "SELECT * FROM address";
 
-//const updateStatus = "UPDATE request SET status ='$1' WHERE id=$2";
+const updateStatus = "UPDATE request SET status =$1 WHERE id=$2";
 
 const addRequest ="INSERT INTO request(client_id,service_id,comment) VALUES($1, $2, $3)";
 const getRequest ="SELECT * FROM request where status = 'pending' ";
@@ -27,6 +27,9 @@ const getRequestByRunnerId ="SELECT * FROM request where runner_id=$1";
 const updateClient ="UPDATE users SET cell_no=$1, password=$2, name =$3, surname=$4, updated_at=current_date WHERE id = $5";
 const getAllClients = "SELECT * FROM users WHERE role ='Client' AND is_active = 'true' ";
 const getAllRunners= "SELECT * FROM users WHERE role ='Service provider' AND is_active = 'true' ";
+
+const addComment = "UPDATE request SET comment = $1 WHERE id=$2";
+
 
 
 module.exports ={
@@ -48,7 +51,7 @@ module.exports ={
 
     addAddress,
     getAddress,
-    //updateStatus
+    updateStatus,
     
 
     addRequest,
@@ -58,6 +61,9 @@ module.exports ={
 
     updateClient,
     getAllClients,
-    getAllRunners
+    getAllRunners,
+
+    addComment
+
     
 };
