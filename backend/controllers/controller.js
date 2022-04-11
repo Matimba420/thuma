@@ -14,6 +14,8 @@ const addClient = async (req,res) => {
         res.status(400).json({error:"Surname cannont be less than 2 characters"});
     }else if(cell_no.length>0 && cell_no.length<10){
         res.status(400).json({error:"Invalid Cell number"});
+    }else if(cell_no.length>10){
+        res.status(400).json({error:"Invalid Cell number"});
     }else if(password.length<8){
         res.status(400).json('Your Password should be longer than 7 characters');
     }else if(role.length<1){
@@ -61,7 +63,7 @@ const getClient = (req, res) => {
 const getClientById=(req,res) =>{
     const id =parseInt(req.params.client_id);
     
-    console.log('hello2');
+
 
 
     pool.query(queries.getClientById,[client_id],(error, results)=>{
@@ -315,7 +317,9 @@ const getRequestByRunnerId =(req,res) =>{
 const updateClient = async (req,res) =>{
     const id = req.params.id;
     const {cell_no } = req.body;
-    const {password} = req.body
+    const {password} = req.body;
+    const {name} = req.body
+    const {surname} = req.body
 
     
   
@@ -332,7 +336,7 @@ const updateClient = async (req,res) =>{
             }else{
             
     
-            pool.query(queries.updateClient,[cell_no, passwordHash,id],(error,results) =>{
+            pool.query(queries.updateClient,[cell_no, passwordHash, name, surname,id],(error,results) =>{
                 if (error) throw error;
                 res.status(200).send("User updated successfully")
             });

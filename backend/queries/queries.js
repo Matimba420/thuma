@@ -24,7 +24,7 @@ const getRequest ="SELECT * FROM request where status = 'pending' ";
 const getRequestByClientId ="SELECT * FROM request where client_id=$1";
 const getRequestByRunnerId ="SELECT * FROM request where runner_id=$1";
 
-const updateClient ="UPDATE users SET cell_no=$1, password=$2 WHERE id = $3";
+const updateClient ="UPDATE users SET cell_no=$1, password=$2, name =$3, surname=$4, updated_at=current_date WHERE id = $5";
 const getAllClients = "SELECT * FROM users WHERE role ='Client' AND is_active = 'true' ";
 const getAllRunners= "SELECT * FROM users WHERE role ='Service provider' AND is_active = 'true' ";
 
