@@ -16,10 +16,12 @@ export interface login{
 }
 
 export interface address{
+
    street_address: string;
    suburb: string;
    city:string;
    postal_code: number;
+   
 
 
      
