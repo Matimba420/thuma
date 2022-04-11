@@ -31,6 +31,7 @@ const getAllRunners= "SELECT * FROM users WHERE role ='Service provider' AND is_
 const addComment = "UPDATE request SET comment = $1 WHERE id=$2";
 
 
+
 module.exports ={
     // clientLogin,
     addClient,
