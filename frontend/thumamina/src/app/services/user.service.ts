@@ -9,7 +9,7 @@ import { edit, User,login} from '../interface/user';
 })
 export class UserService {
 
-  private baseUrl = 'http://localhost:4304/api/clients';
+  private baseUrl = 'http://localhost:4304/api/clients/';
 
   constructor(private http:HttpClient) { }
 
@@ -32,7 +32,7 @@ getUser(id: any): Observable<any>{
 }
   //update
   updateUser(user: edit, id: edit): Observable<any>{
-    return this.http.put<any>(`${this.baseUrl}/${id}`, user)
+    return this.http.put<any>(`${this.baseUrl}${id}`, user)
   }
 
   userLogin(login: login): Observable<any>{
