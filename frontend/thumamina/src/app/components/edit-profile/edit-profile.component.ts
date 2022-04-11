@@ -8,32 +8,34 @@ import { FormGroup, FormBuilder ,FormControl} from '@angular/forms';
   styleUrls: ['./edit-profile.component.css']
 })
 export class editProfileComponent implements OnInit {
+  id: any;
+  user: any;
 
   form: FormGroup = new FormGroup({
     name: new FormControl(''),
     surname: new FormControl(''),
     cell_no: new FormControl(''),
-   email: new FormControl(''),
-   
-    
+   password: new FormControl('')
   });
 
   constructor(private service:UserService ) { }
+
   ngOnInit(): void {
+    this.id = localStorage.getItem("clientID");
+    this.user = localStorage.getItem("access");
+    console.log(this.user);
+    
+    this.update(this.id);
     throw new Error('Method not implemented.');
   }
+  
 
-  // update(){
-  //   this.service.updateUser(this.form[].id).subscribe((res:any)=>{
-  //     console.log(res)
-      
-  //   }
-  //   )
+  update(id:any){
+    let data = this.form.value;
+    id = this.id;
+    this.service.updateUser(data,id).subscribe(res =>{
+      console.log(res);
+    })
 
-
-
-
-  // ngOnInit(): void {
-  // }
-
+}
 }
