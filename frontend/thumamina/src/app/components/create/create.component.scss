@@ -26,9 +26,12 @@ label{
 }
 h1{color: whitesmoke;
 font-family:'Times New Roman', Times, serif;
-align-content: center;}
+align-content: center;
+text-align: center;
+font-size:xx-large }
 p{
     color: aliceblue;
+    text-align: center;
 }
 
 .liv{
@@ -38,5 +41,16 @@ p{
 }
 
 .container{
-    margin-top: 5rem;
+    margin-top: 0rem;
+    height: 100pc;
 }
+
+
+
+img{
+    width:100%;
+    height: auto;
+    margin-left: 0%;
+    margin-right: 0%;
+}
+

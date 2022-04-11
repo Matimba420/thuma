@@ -16,6 +16,8 @@ const addClient = async (req,res) => {
         res.status(400).json({error:"Invalid Cell number"});
     }else if(password.length<8){
         res.status(400).json('Your Password should be longer than 7 characters');
+    }else if(role.length<1){
+        res.status(400).json('Please enter your role');
     }else{
 
         //check if email exists
@@ -63,12 +65,11 @@ const getClientById=(req,res) =>{
 
 
     pool.query(queries.getClientById,[client_id],(error, results)=>{
-        if(!results) return res.status(400).send("invalid input")
-        console.log('hello1');
+        if(!results){
+            return res.status(400).send("invalid input");
+        }
         if(!results.rows.length){ 
-            res.status(404).send('user not found')
-            console.log('hello');
-            //throw error
+            res.status(404).send('user not found');
         }else{
             res.status(200).json(results.rows);
         }
@@ -198,10 +199,10 @@ const addServices = async (req,res) => {
 
 const addAddress = async (req,res) => {
     // const {firstname, lastname, cell_no, password} = req.body;
-     const {street_address, surburb, city, postal_code} = req.body
+     const {street_address, suburb, city, postal_code} = req.body
      
             pool.query(queries.addAddress, 
-                [street_address, surburb, city, postal_code],
+                [street_address, suburb, city, postal_code],
                 (error,results)=>{
                 if(error){ 
                     res.status(500).json({error: 'invalid input'})
@@ -355,6 +356,28 @@ const cancelRequest= async (req,res)=>{
     });
 };
 
+//get users by roles
+const getAllClients = (req, res) => {
+    pool.query(queries.getAllClients,(error, results) => {
+        if(this.error){
+            console.log("error:"+error);
+            res.status(404).send(error);
+            throw error;
+        }
+        res.status(200).json(results);
+    });
+};
+
+const getAllRunners = (req, res) => {
+    pool.query(queries.getAllRunners,(error, results) => {
+        if(this.error){
+            console.log("error:"+error);
+            res.status(404).send(error);
+            throw error;
+        }
+        res.status(200).json(results);
+    });
+};
 
 
 
@@ -379,6 +402,9 @@ module.exports = {
 
     updateClient,
 
-    cancelRequest
+    cancelRequest,
+    getAllRunners,
+    getAllClients
+
     
 }
