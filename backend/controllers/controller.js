@@ -14,6 +14,8 @@ const addClient = async (req,res) => {
         res.status(400).json({error:"Surname cannont be less than 2 characters"});
     }else if(cell_no.length>0 && cell_no.length<10){
         res.status(400).json({error:"Invalid Cell number"});
+    }else if(cell_no.length>10){
+        res.status(400).json({error:"Invalid Cell number"});
     }else if(password.length<8){
         res.status(400).json('Your Password should be longer than 7 characters');
     }else if(role.length<1){
@@ -59,12 +61,12 @@ const getClient = (req, res) => {
 };
 
 const getClientById=(req,res) =>{
-    const id =parseInt(req.params.client_id);
+    const id =parseInt(req.params.id);
     
-    console.log('hello2');
 
 
-    pool.query(queries.getClientById,[client_id],(error, results)=>{
+
+    pool.query(queries.getClientById,[id],(error, results)=>{
         if(!results){
             return res.status(400).send("invalid input");
         }
@@ -315,7 +317,9 @@ const getRequestByRunnerId =(req,res) =>{
 const updateClient = async (req,res) =>{
     const id = req.params.id;
     const {cell_no } = req.body;
-    const {password} = req.body
+    const {password} = req.body;
+    const {name} = req.body;
+    const {surname} = req.body;
 
     
   
@@ -332,7 +336,7 @@ const updateClient = async (req,res) =>{
             }else{
             
     
-            pool.query(queries.updateClient,[cell_no, passwordHash,id],(error,results) =>{
+            pool.query(queries.updateClient,[cell_no, passwordHash, name, surname,id],(error,results) =>{
                 if (error) throw error;
                 res.status(200).send("User updated successfully")
             });
@@ -364,6 +368,33 @@ const getAllRunners = (req, res) => {
     });
 };
 
+const updateStatus = async (req,res) =>{
+    const id = req.params.id;
+    const {status } = req.body;
+    pool.query(queries.updateStatus,[status,id],(error, results) =>{
+        if(this.error){
+            console.log("error:"+error);
+            res.status(404).send(error);
+            throw error;
+        }
+        res.status(200).json("Status updated succesfully");
+    });
+};
+
+
+const addComment = async (req,res) =>{
+    const id = req.params.id;
+    const {comment } = req.body;
+    pool.query(queries.addComment,[comment,id],(error, results) =>{
+        if(this.error){
+            console.log("error:"+error);
+            res.status(404).send(error);
+            throw error;
+        }
+        res.status(200).json("Comment added succesfully");
+    });
+};
+
 
 
 module.exports = {
@@ -378,7 +409,7 @@ module.exports = {
     addServices,
     addAddress,
     getAddress,
-    //updateStatus
+    updateStatus,
 
     addRequest,
     getRequest,
@@ -387,7 +418,9 @@ module.exports = {
 
     updateClient,
     getAllRunners,
-    getAllClients
+    getAllClients,
+
+    addComment
 
     
 }

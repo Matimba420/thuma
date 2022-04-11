@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
   register(){
     this.service.addUser(this.form.value).subscribe((res:any)=>{
       console.log(res)
-      
+      alert(res);
     }
     )
 
@@ -55,7 +55,7 @@ export class LoginComponent implements OnInit {
         surname: ['',[Validators.required,Validators.minLength(2),Validators.maxLength(20)]],
         cell_no: ['', [Validators.required,Validators.pattern("^[0-9]*$"),Validators.minLength(2), Validators.maxLength(10)]],
       email:[],
-      role:[''],
+      role: [''],
         password: [
           '',
           [
