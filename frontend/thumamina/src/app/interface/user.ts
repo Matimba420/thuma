@@ -8,8 +8,7 @@ export interface User {
 
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 
 export interface login{
     cell_no: number;
@@ -27,9 +26,7 @@ export interface address{
 
 
 }
-=======
-=======
->>>>>>> 222972bebf6cbb9f21d1e2ed5b7c815db98081dc
+
 export interface Update {
     name: string;
     surname: string;
@@ -40,9 +37,7 @@ export interface Update {
 
 }
 
-<<<<<<< HEAD
->>>>>>> 867e5259c57596edfe1d966eed6b6f6928ac38e0
-=======
+
 export interface edit{
     name: string;
     surname: string;
@@ -58,4 +53,4 @@ export interface login{
     cell_no: number;
     password :string;
 }
->>>>>>> 222972bebf6cbb9f21d1e2ed5b7c815db98081dc
+

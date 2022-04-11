@@ -22,11 +22,6 @@ export class PostingComponent implements OnInit {
   });
   submitted: boolean | undefined;
 
-  
-
-
-
-
 
   constructor(private service: AddressService) { }
 
@@ -38,7 +33,12 @@ export class PostingComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAddress;
+
+
+    
   }
+
+  
 
 
   onSubmit(): void {
