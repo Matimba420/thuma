@@ -55,11 +55,7 @@ export class LoginComponent implements OnInit {
         surname: ['',[Validators.required,Validators.minLength(2),Validators.maxLength(20)]],
         cell_no: ['', [Validators.required,Validators.pattern("^[0-9]*$"),Validators.minLength(2), Validators.maxLength(10)]],
       email:[],
-<<<<<<< HEAD
-      role:[''],
-=======
       role: [''],
->>>>>>> 867e5259c57596edfe1d966eed6b6f6928ac38e0
         password: [
           '',
           [
