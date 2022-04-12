@@ -21,5 +21,12 @@ export class AddressService {
     return this.http.post<any>('http://localhost:4304/api/requests', request);
 
   }
+
+  getMaxId(client_id:any):Observable<any>{
+    return this.http.get<any>('http://localhost:4304/api/maxId/client_id');
   }
+
+
+  }
+  
 
