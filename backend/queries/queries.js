@@ -21,6 +21,7 @@ const updateStatus = "UPDATE request SET status =$1 WHERE id=$2";
 
 const addRequest ="INSERT INTO request(client_id,service_id,comment) VALUES($1, $2, $3)";
 const getRequest ="SELECT * FROM request where status = 'pending' ";
+const getMaxId ="select id from request where client_id=$1 order by id desc limit 1";
 const getRequestByClientId ="SELECT * FROM request where client_id=$1";
 const getRequestByRunnerId ="SELECT * FROM request where runner_id=$1";
 
@@ -63,7 +64,8 @@ module.exports ={
     getAllClients,
     getAllRunners,
 
-    addComment
+    addComment,
+    getMaxId
 
     
 };

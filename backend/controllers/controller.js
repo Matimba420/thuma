@@ -242,7 +242,7 @@ const getAddress = (req, res) => {
 
      
 const addRequest = async (req,res) => {
-    // const {firstname, lastname, cell_no, password} = req.body;
+   
      const {client_id,service_id,comment} = req.body
     
             pool.query(queries.addRequest, 
@@ -252,7 +252,7 @@ const addRequest = async (req,res) => {
                     res.status(500).json({error: 'invalid input'})
                     throw error;
                 }else{
-                         // addUserMailer(name, surname, cell_no, email, password);
+    
                     res.status(201).json("Request created successfully");
                 }
             });
@@ -395,7 +395,19 @@ const addComment = async (req,res) =>{
     });
 };
 
+const getMaxId = async (req, res) => {
+    const client_id=req.params.id
 
+    console.log(req.params);
+    pool.query(queries.getMaxId,[client_id],(error, results) => {
+        if(error){
+            console.log("error:"+error);
+            res.status(404).send(error);
+            throw error;
+        }
+        res.status(200).json(results.rows);
+    });
+};
 
 module.exports = {
     addClient,
@@ -420,7 +432,8 @@ module.exports = {
     getAllRunners,
     getAllClients,
 
-    addComment
+    addComment,
+    getMaxId
 
     
 }
