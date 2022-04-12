@@ -396,14 +396,14 @@ const addComment = async (req,res) =>{
 };
 
 const getMaxId = async (req, res) => {
-    const client_id=req.params.id
+    const client_id=req.params.client_id
 
     console.log(req.params);
     pool.query(queries.getMaxId,[client_id],(error, results) => {
         if(error){
             console.log("error:"+error);
             res.status(404).send(error);
-            throw error;
+            throw error; 
         }
         res.status(200).json(results.rows);
     });

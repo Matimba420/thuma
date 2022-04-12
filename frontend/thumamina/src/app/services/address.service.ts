@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class AddressService {
 
-  private baseUrl = 'http://localhost:4304/api/address/';
+  private baseUrl = 'http://localhost:4304/api/address';
 
   constructor(private http:HttpClient) { }
 
@@ -23,10 +23,10 @@ export class AddressService {
   }
 
   getMaxId(client_id:any):Observable<any>{
-    return this.http.get<any>('http://localhost:4304/api/maxId/client_id');
+    return this.http.get<any>(`http://localhost:4304/api/maxId/${client_id}`);
   }
 
 
-  }
+}
   
 
