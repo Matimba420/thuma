@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { AddressService } from 'src/app/services/address.service';
+import { UserService } from 'src/app/services/user.service';
 //import { FormControl, FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 
 
@@ -12,25 +14,58 @@ export class PostingComponent implements OnInit {
   form: FormGroup = new FormGroup({
     comment: new FormControl (''),
     street_address: new FormControl(''),
-    surburb: new FormControl(''),
+    suburb: new FormControl(''),
     city: new FormControl(''),
     postal_code: new FormControl(''),
    
 
 
   });
-  submitted: boolean | undefined;
-
   
+  clientId:any;
+  serviceId:any;
+  submitted: boolean | undefined;
+reqdata : any = {};
 
+  constructor(private service: AddressService) { }
 
+  addRequest(){
 
+    this.reqdata = {
+    client_id: this.clientId,
+    service_id : this.serviceId,
+    comment : this.form.value.comment
+    }
+    console.log(this.reqdata);
+    
+    this.service.addRequest(this.reqdata).subscribe((res:any)=>{
+      console.log(res)
+    })
+  }
 
+  getAddress(){
 
-  constructor() { }
+    this.addRequest();
+    
+    this.service.getAddress(this.form.value).subscribe((res:any)=>{
+      console.log(res)
+      //console.log(this.form.value.comment);
+      
+    })
+  }
 
   ngOnInit(): void {
+    this.getAddress;
+    this.clientId=localStorage.getItem("clientID");
+    this.serviceId=localStorage.getItem("serviceID");
+
+
+
+
+    
   }
+
+  
 
 
   onSubmit(): void {
