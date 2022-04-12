@@ -13,6 +13,8 @@ import { ErrandsComponent } from './components/errands/errands.component';
 import { TrackComponent } from './components/track/track.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PostingComponent } from './components/posting/posting.component';
+import { SuccessMassageComponent } from './components/success-massage/success-massage.component';
+import { PaymentsComponent } from './components/payments/payments.component';
 // import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 
@@ -21,6 +23,8 @@ const routes: Routes = [{
 },
 {path:'track',component:TrackComponent},
 {path:'posting',component:PostingComponent},
+{path:'success',component:SuccessMassageComponent},
+{path:'pay',component:PaymentsComponent},
 {
   path:'land',component:LandingComponent
 },

@@ -21,6 +21,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PostingComponent } from './components/posting/posting.component';
 import { BackButtonComponent } from './components/back-button/back-button.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { SuccessMassageComponent } from './components/success-massage/success-massage.component';
+import { PaymentsComponent } from './components/payments/payments.component';
 // import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 @NgModule({
@@ -42,6 +44,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     DashboardComponent,
   
    ProfileComponent,
+      SuccessMassageComponent,
+      PaymentsComponent,
       //  EditProfileComponent
   ],
   imports: [
