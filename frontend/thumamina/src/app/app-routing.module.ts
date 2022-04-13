@@ -15,6 +15,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { PostingComponent } from './components/posting/posting.component';
 import { editProfileComponent } from './components/edit-profile/edit-profile.component';
 import { RequestComponent } from './components/request/request.component';
+import { RatingsComponent } from './components/ratings/ratings.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 const routes: Routes = [{
@@ -35,8 +37,9 @@ const routes: Routes = [{
 {path:'errands', component:ErrandsComponent},
 {path:'profile', component:ProfileComponent},
 {path:'edit', component:editProfileComponent},
-{path:'request', component:RequestComponent}
-
+{path:'request', component:RequestComponent},
+{path:'ratings', component:RatingsComponent},
+{path:'footer', component:FooterComponent}
 ];
 
 
