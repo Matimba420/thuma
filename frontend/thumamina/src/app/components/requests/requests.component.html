@@ -16,9 +16,15 @@
         <div class="card">
            
             <div class="card-body">
-              <h5 class="card-title">{{this.request.errand}}</h5> 
-              <h5 class="card-title">{{this.request.client}}</h5>
-               
+              <div class="row">
+                <div class="col">
+                  <h5 class="card-title">{{this.request.errand}}</h5> 
+                </div>
+                <div class="col">
+                  <h5 class="card-title justify-content-end" style="text-align: end;" >{{this.request.client}}</h5>
+                </div>
+              </div>
+              
               <p class="card-text"> {{this.request.address}}</p>
               <p class="card-text"> "{{this.request.comment}}"</p>
               <a href="#" class="btn btn-primary">Accept</a>

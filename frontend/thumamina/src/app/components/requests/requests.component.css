@@ -13,10 +13,14 @@ h1{
 .btn{
     background-color: #223c50;
     border-radius: 15px;
-    height: 25px;
+    align-items: flex-end;
     text-align: center;
 }
 
 .card{
     display:flex;
+}
+
+h5{
+   
 }
