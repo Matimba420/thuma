@@ -20,10 +20,10 @@ const getAddress = "SELECT * FROM address";
 const updateStatus = "UPDATE request SET status =$1 WHERE id=$2";
 
 const addRequest ="INSERT INTO request(client_id,service_id,comment) VALUES($1, $2, $3) returning id";
-const getRequest ="SELECT * FROM request where status = 'pending' ";
-const getMaxId ="select id from request where client_id= $1 order by id desc limit 1";
-const getRequestByClientId ="SELECT * FROM request where client_id=$1";
-const getRequestByRunnerId ="SELECT * FROM request where runner_id=$1";
+const getRequest =" SELECT s.name AS errand , concat(u.name ,' ', u.surname) AS name, comment, concat(a.street_address,', ', a.suburb,', ',  a.city,', ',  a.postal_code) AS address FROM request r,users u, service s, address a WHERE r.client_id=u.id AND r.service_id = s.id AND a.request_id=r.id AND r.status = 'pending' ";
+const getMaxId ="SELECT id FROM request WHERE client_id= $1 ORDER BY id DESC LIMIT 1";
+const getRequestByClientId ="SELECT s.name AS errand , concat(u.name ,' ', u.surname) AS runner_name, comment, concat(a.street_address,', ', a.suburb,', ',  a.city,', ',  a.postal_code) AS address, status FROM request r,users u, service s, address a WHERE r.runner_id=u.id AND r.service_id = s.id AND a.request_id=r.id AND client_id =$1";
+const getRequestByRunnerId ="SELECT s.name AS errand , concat(u.name ,' ', u.surname) AS client_name, comment, concat(a.street_address,', ', a.suburb,', ',  a.city,', ',  a.postal_code) AS address, status FROM request r,users u, service s, address a WHERE r.client_id=u.id AND r.service_id = s.id AND a.request_id=r.id AND runner_id =$1";
 
 const updateClient ="UPDATE users SET cell_no=$1, password=$2, name =$3, surname=$4, updated_at=current_date WHERE id = $5";
 const getAllClients = "SELECT * FROM users WHERE role ='Client' AND is_active = 'true' ";
@@ -31,6 +31,8 @@ const getAllRunners= "SELECT * FROM users WHERE role ='Service provider' AND is_
 
 const addComment = "UPDATE request SET comment = $1 WHERE id=$2";
 
+const getRunnerEarnings = "SELECT s.name AS errand , concat(u.name ,' ', u.surname) AS client_name, cost FROM request r,users u, service s WHERE r.client_id=u.id AND r.service_id = s.id AND runner_id =$1"
+const getTotal = " SELECT SUM(cost) AS total FROM request r, service s WHERE s.id =r.service_id AND r.runner_id=$1 "
 
 
 module.exports ={
@@ -65,7 +67,9 @@ module.exports ={
     getAllRunners,
 
     addComment,
-    getMaxId
+    getMaxId,
+    getRunnerEarnings,
+    getTotal
 
     
 };

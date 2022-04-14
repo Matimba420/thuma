@@ -29,6 +29,9 @@ router.get('/runner', controller.getAllRunners);
 
 router.put('/requests/:id', controller.addComment);
 
+router.get('/earnings/:runner_id', controller.getRunnerEarnings);
+router.get('/total/:runner_id', controller.getTotal);
+
 
 
 

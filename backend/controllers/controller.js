@@ -409,6 +409,48 @@ const getMaxId = async (req, res) => {
     });
 };
 
+const getRunnerEarnings =(req,res) =>{
+    const runner_id = req.params.runner_id;
+    // console.log(client_id)
+   
+
+
+    pool.query(queries.getRunnerEarnings,[runner_id],(error, results)=>{
+        if(!results) return res.status(400).send("invalid input")
+       
+        if(!results.rows.length){ 
+            res.status(404).send('request not found')
+            console.log(results.rows);
+            
+            //throw error
+        }else{
+            res.status(200).json(results.rows);
+        }
+    } );
+};
+
+
+const getTotal =(req,res) =>{
+    const runner_id = req.params.runner_id;
+    // console.log(client_id)
+   
+
+
+    pool.query(queries.getTotal,[runner_id],(error, results)=>{
+        if(!results) return res.status(400).send("invalid input")
+       
+        if(!results.rows.length){ 
+            res.status(404).send('request not found')
+            console.log(results.rows);
+            
+            //throw error
+        }else{
+            res.status(200).json(results.rows);
+        }
+    } );
+};
+
+
 module.exports = {
     addClient,
     getClient,
@@ -433,7 +475,9 @@ module.exports = {
     getAllClients,
 
     addComment,
-    getMaxId
+    getMaxId,
+    getRunnerEarnings,
+    getTotal
 
     
 }
