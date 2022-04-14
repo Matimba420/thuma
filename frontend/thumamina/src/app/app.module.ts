@@ -24,6 +24,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { SuccessMassageComponent } from './components/success-massage/success-massage.component';
 import { PaymentsComponent } from './components/payments/payments.component';
 // import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { editProfileComponent } from './components/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,8 @@ import { PaymentsComponent } from './components/payments/payments.component';
       SuccessMassageComponent,
       PaymentsComponent,
       //  EditProfileComponent
+   editProfileComponent
+       
   ],
   imports: [
     BrowserModule,

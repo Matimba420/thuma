@@ -14,8 +14,8 @@ import { TrackComponent } from './components/track/track.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PostingComponent } from './components/posting/posting.component';
 import { SuccessMassageComponent } from './components/success-massage/success-massage.component';
-import { PaymentsComponent } from './components/payments/payments.component';
 // import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { editProfileComponent } from './components/edit-profile/edit-profile.component';
 
 
 const routes: Routes = [{
@@ -24,7 +24,7 @@ const routes: Routes = [{
 {path:'track',component:TrackComponent},
 {path:'posting',component:PostingComponent},
 {path:'success',component:SuccessMassageComponent},
-{path:'pay',component:PaymentsComponent},
+
 {
   path:'land',component:LandingComponent
 },
@@ -37,7 +37,7 @@ const routes: Routes = [{
 {path:'run_home', component:RunnerHomeComponent},
 {path:'errands', component:ErrandsComponent},
 {path:'profile', component:ProfileComponent},
-// {path:'edit', component:EditProfileComponent}];
+{path:'edit', component:editProfileComponent},
 
 ];
 
