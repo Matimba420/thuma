@@ -9,12 +9,10 @@ import { CreateComponent } from './components/create/create.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RunnerHomeComponent } from './components/runner-home/runner-home.component';
 
-
 import { ErrandsComponent } from './components/errands/errands.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TrackComponent } from './components/track/track.component';
 import { NavComponent } from './components/nav/nav.component';
-
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
@@ -34,31 +32,25 @@ import { JobsComponent } from './components/jobs/jobs.component';
     RunnerHomeComponent,
     ErrandsComponent,
     TrackComponent,
-  
-  
-   
     NavComponent,
-   PostingComponent,
-   BackButtonComponent,
-   
+    PostingComponent,
+    BackButtonComponent,
+
     DashboardComponent,
-  
-   ProfileComponent,
-   editProfileComponent,
-<<<<<<< HEAD
-   RequestComponent
-=======
->>>>>>> 775863add808b8cb557cf50ea6f299fb52e17827
-       
-      JobsComponent
+
+    ProfileComponent,
+    editProfileComponent,
+    RequestComponent,
+
+    JobsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

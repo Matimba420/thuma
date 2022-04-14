@@ -14,14 +14,10 @@ import { TrackComponent } from './components/track/track.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PostingComponent } from './components/posting/posting.component';
 import { editProfileComponent } from './components/edit-profile/edit-profile.component';
-<<<<<<< HEAD
 import { RequestComponent } from './components/request/request.component';
 import { RatingsComponent } from './components/ratings/ratings.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { JobsComponent } from './components/jobs/jobs.component';
-=======
-import { JobsComponent } from './components/jobs/jobs.component';
->>>>>>> 775863add808b8cb557cf50ea6f299fb52e17827
 
 
 const routes: Routes = [{
