@@ -318,7 +318,7 @@ const updateClient = async (req,res) =>{
     const id = req.params.id;
     const {cell_no } = req.body;
     const {password} = req.body;
-    const {name} = req.body
+    const {name} = req.body;
     const {surname} = req.body
 
     
@@ -349,7 +349,7 @@ const cancelRequest= async (req,res)=>{
     const id = req.params.id;
     const {name } = "";
     const {client_id } = "";
-    pool.query(queries.cancelRequest,[name,client_id,id],(error,results)=>{
+    pool.query(queries.cancelRequest,[name,id],(error,results)=>{
         if(error){ 
             console.status(404).json({error:'bad response '})
             throw error;
@@ -384,6 +384,113 @@ const getAllRunners = (req, res) => {
 };
 
 
+const getRunnerById=(req,res) =>{
+    const id =parseInt(req.params.id);
+
+
+    pool.query(queries.getRunnerById,[id],(error, results)=>{
+        if(!results) return res.status(400).send("invalid input")
+        if(!results.rows.length){ 
+            res.status(404).send('user not found')
+            //throw error
+        }else{
+            res.status(200).json(results.rows);
+        }
+    } );
+};
+
+const addRunner = async (req,res) => {
+    // const {firstname, lastname, cell_no, password} = req.body;
+     const {name, surname, cell_no, email, password, role} = req.body
+     if(name.length<3){
+         res.status(400).json({error:"Name cannont be less than 2 characters"});
+     }else if(surname.length<3){
+         res.status(400).json({error:"Surname cannont be less than 2 characters"});
+     }else if(cell_no.length>0 && cell_no.length<10){
+         res.status(400).json({error:"Invalid Cell number"});
+     }else if(cell_no.length>10){
+         res.status(400).json({error:"Invalid Cell number"});
+     }else if(password.length<8){
+         res.status(400).json('Your Password should be longer than 7 characters');
+     }else if(role.length<1){
+         res.status(400).json('Please enter your role');
+     }else{
+ 
+         //check if email exists
+         pool.query(queries.checkClientRunnerlExists, [cell_no], (error, results) => {
+             
+             if (results.rows.length){
+                 res.status(409).json({error:"Cell number Already exists"});
+                 
+             }else{
+                 const salt = bcrypt.genSaltSync(10)
+                 const hashedPassword = bcrypt.hashSync(password , salt)
+                 console.log(hashedPassword)
+                 pool.query(queries.addClient, 
+                     [name,surname, cell_no, email, hashedPassword,role],
+                     (error,results)=>{
+                     if(error){ 
+                         res.status(500).json({error: 'invalid input'})
+                         throw error;
+                     }else{
+                         // addUserMailer(name, surname, cell_no, email, password);
+                         res.status(201).json("User created successfully");
+                     }
+                 });
+             }
+         });
+     
+     }
+ }
+
+const removeRunner= (req, res) =>{
+    const id =parseInt(req.params.id);
+
+    pool.query(queries.getRunnerById,[id],(error, results)=>{
+        const noUserfound = !results.rows.length;
+        if(noUserfound){
+            res.send("User does not exist in the database.");
+        }else{
+            pool.query(queries.removeRunner,[id],(error, results)=>{
+                if(error) throw error;
+                res.status(200).send("user removed successfully");
+        });
+        }
+    });
+}
+
+const updateRunner = async (req,res) =>{
+    const id = req.params.id;
+    const {cell_no } = req.body;
+    const {password} = req.body;
+    const {name} = req.body
+    const {surname} = req.body
+
+    
+  
+    if(password.length<8){
+        res.status(400).send('Your Password should be longer than 7 characters');
+    }else{
+        
+        const salt= await bcrypt.genSalt(10);
+        const passwordHash = await bcrypt.hash(password, salt);
+        pool.query(queries.getRunnerById,[id],(error, results)=>{
+            const noUserfound = !results.rows.length;
+            if(noUserfound){
+                res.send("Runner does not exist in the database.");
+            }else{
+            
+    
+            pool.query(queries.updateRunner,[cell_no, passwordHash, name, surname,id],(error,results) =>{
+                if (error) throw error;
+                res.status(200).send("Runner updated successfully")
+            });
+            }
+        });
+    }   
+};
+
+
 
 module.exports = {
     addClient,
@@ -408,7 +515,12 @@ module.exports = {
 
     cancelRequest,
     getAllRunners,
-    getAllClients
+    getAllClients,
+
+    getRunnerById,
+    addRunner,
+    removeRunner,
+    updateRunner
 
     
 }

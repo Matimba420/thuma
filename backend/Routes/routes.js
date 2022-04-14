@@ -26,7 +26,11 @@ router.put('/clients/:id',controller.updateClient);
 router.get('/client', controller.getAllClients);
 router.get('/runner', controller.getAllRunners);
 
- router.put('/cancelRequest/:id', controller.cancelRequest);
+router.put('/cancelRequest/:id', controller.cancelRequest);
+router.get('/Runner/:id', controller.getRunnerById);
+router.post("/Runner/",controller.addRunner);
+router.delete('/Runner/:id',controller.removeRunner);
+router.put('/Runner/:id',controller.updateRunner);
 
 
  
