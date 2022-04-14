@@ -23,6 +23,7 @@ import { BackButtonComponent } from './components/back-button/back-button.compon
 import { ProfileComponent } from './components/profile/profile.component';
 import { editProfileComponent } from './components/edit-profile/edit-profile.component';
 import { RequestComponent } from './components/request/request.component';
+import { JobsComponent } from './components/jobs/jobs.component';
 
 @NgModule({
   declarations: [
@@ -44,8 +45,12 @@ import { RequestComponent } from './components/request/request.component';
   
    ProfileComponent,
    editProfileComponent,
+<<<<<<< HEAD
    RequestComponent
+=======
+>>>>>>> 775863add808b8cb557cf50ea6f299fb52e17827
        
+      JobsComponent
   ],
   imports: [
     BrowserModule,
