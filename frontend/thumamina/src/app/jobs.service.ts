@@ -11,9 +11,9 @@ export class JobsService {
 
   private baseUrl = 'http://localhost:4304/api/requests/';
 
-getJobs():Observable<any>{
+getJobs(runner_id:any):Observable<any>{
 
-  return this.http.get<any>(`${this.baseUrl}`);
+  return this.http.get<any>(`${this.baseUrl}${runner_id}`);
 }
 
 }

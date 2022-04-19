@@ -11,21 +11,33 @@ export class JobsComponent implements OnInit {
 
   constructor(private service:JobsService) { }
 
-  Jobs:Job[] = [];
-  id: any;
+  Jobs:Job[] = [
+
+  
+
+
+  ]
+  
+
+
+  runner_id: any;
 
   ngOnInit(): void {
 
-    this.id=localStorage.getItem("clientID");
+    this.runner_id=localStorage.getItem("runnerID");
    this.getJobs();
   }
 
   
   getJobs(){
-    this.service.getJobs().subscribe((res:any)=>{
-      console.log(res);
-      // this.Jobs = res;
-    });
+    this.service.getJobs(this.runner_id).subscribe((res=>{
+      this.Jobs = res;
+    }));
+      
+      
+      
+     
+   
   }
 
 

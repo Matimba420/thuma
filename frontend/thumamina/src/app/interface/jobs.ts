@@ -1,9 +1,8 @@
 export interface Job{
 
-    
-      client: string,
-      errand: string,
-      address: string,
-      status: string
+    errand: string,
+    client_name: string,
+    address: string,
+    status: string
     
 }
