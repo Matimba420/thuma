@@ -5,7 +5,7 @@ const pool = new Pool({
     host: "localhost",
     database: "smart-serve",
     port: "5433",
-    password: "123456!"
+    password: "Password"
 }); 
 
 module.exports = pool;
