@@ -11,8 +11,8 @@
         <input type="text" class="form-control" formControlName="street_address" placeholder="Street Address">
       </div>
       <div class="form-group col-md-6">
-        <label for="inputPassword4">Surburb</label>
-        <input type="text" class="form-control" formControlName="surburb" id="inputPassword4" placeholder="Surburb">
+        <label for="inputPassword4">Suburb</label>
+        <input type="text" class="form-control" formControlName="suburb" id="inputsuburb" placeholder="Suburb">
       </div>
     </div>
  
@@ -35,7 +35,7 @@
 
     <br>
     
-    <button (click)="myFunction()" type="submit" [routerLink]="['/land']" routerLinkActive = "router-link-active" class="btn btn-primary ">Request</button>
+    <button (click)="getAddress()" type="submit" [routerLink]="['/track']" routerLinkActive = "router-link-active" class="btn btn-primary ">Request</button>
   </form></div>
 
 
