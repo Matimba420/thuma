@@ -16,6 +16,8 @@ import { PostingComponent } from './components/posting/posting.component';
 import { RunnerComponent } from './components/runner/runner.component';
 import { DashComponent } from './components/dash/dash.component';
 // import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { editProfileComponent } from './components/edit-profile/edit-profile.component';
+import { RequestsComponent } from './components/requests/requests.component';
 
 
 const routes: Routes = [{
@@ -36,8 +38,10 @@ const routes: Routes = [{
 {path:'errands', component:ErrandsComponent},
 {path:'profile', component:ProfileComponent},
 {path:'runn',component:RunnerComponent},
-{path:'dashPage',component:DashComponent}
+{path:'dashPage',component:DashComponent},
 // {path:'edit', component:EditProfileComponent}];
+{path:'edit', component:editProfileComponent},
+{path: 'requests', component: RequestsComponent},
 
 ];
 

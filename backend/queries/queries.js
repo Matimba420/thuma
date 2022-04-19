@@ -24,16 +24,12 @@ const getRequest ="SELECT * FROM request where status = 'pending' ";
 const getRequestByClientId ="SELECT * FROM request where client_id=$1";
 const getRequestByRunnerId ="SELECT * FROM request where runner_id=$1";
 
-const updateClient ="UPDATE users SET cell_no=$1, password=$2, name =$3, surname=$4, updated_at=current_date WHERE id = $5";
+const updateClient ="UPDATE users SET cell_no=$1, password=$2 WHERE id = $3";
 const getAllClients = "SELECT * FROM users WHERE role ='Client' AND is_active = 'true' ";
-
 const getAllRunners= "SELECT * FROM users WHERE role ='Service provider' AND is_active = 'true' ";
-const getRunnerById = "SELECT * FROM users  WHERE id =$1 and is_active='true'"
 
 const cancelRequest = "UPDATE request SET client_id=(select id from users where name=$1), client_id=$2, is_available =true where id=$3";
-const checkClientRunnerlExists = "SELECT * FROM users WHERE cell_no= $1";
-const removeRunner ="UPDATE users  SET is_active='false' WHERE id=$1";
-const updateRunner="UPDATE users  SET cell_no=$1, password=$2 WHERE ID = $3"
+
 
 module.exports ={
     // clientLogin,
@@ -62,16 +58,10 @@ module.exports ={
     getRequestByRunnerId,
     getRequestByClientId,
 
-    updateClient,
-    cancelRequest,
+     updateClient,
+     cancelRequest,
     updateClient,
     getAllClients,
-
-    getAllRunners,
-    getRunnerById,
-    checkClientRunnerlExists,
-    removeRunner,
-    updateRunner
-
+    getAllRunners
     
 };

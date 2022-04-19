@@ -15,9 +15,10 @@ router.post('/services', controller.addServices);
 router.post('/address', controller.addAddress);
 router.get('/address', controller.getAddress); 
 
-//router.put('/updateStatus', controller.updateStatus);
+router.put('/updateStatus/:id', controller.updateStatus);
 router.post('/requests', controller.addRequest);
 router.get('/requests', controller.getRequest);
+router.get('/maxId/:client_id', controller.getMaxId); 
 router.get('/requests/client/:client_id', controller.getRequestByClientId);
 router.get('/requests/runner/:runner_id', controller.getRequestByRunnerId);
 
@@ -26,15 +27,16 @@ router.put('/clients/:id',controller.updateClient);
 router.get('/client', controller.getAllClients);
 router.get('/runner', controller.getAllRunners);
 
-router.put('/cancelRequest/:id', controller.cancelRequest);
-router.get('/Runner/:id', controller.getRunnerById);
-router.post("/Runner/",controller.addRunner);
-router.delete('/Runner/:id',controller.removeRunner);
-router.put('/Runner/:id',controller.updateRunner);
+router.put('/requests/:id', controller.addComment);
 
+router.get('/earnings/:runner_id', controller.getRunnerEarnings);
+router.get('/total/:runner_id', controller.getTotal);
 
- 
+router.get('/getReviews/:runner_id', controller.getReviews);
+router.get('/totalRating/:runner_id', controller.totalRating);
 
+router.get('/totalClients', controller.totalClients);
+router.get('/totalRunners', controller.totalRunners);
 
 
 

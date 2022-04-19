@@ -25,6 +25,8 @@ import { RunnerComponent } from './components/runner/runner.component';
 import { DashComponent } from './components/dash/dash.component';
 
 // import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { editProfileComponent } from './components/edit-profile/edit-profile.component';
+import { RequestsComponent } from './components/requests/requests.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,9 @@ import { DashComponent } from './components/dash/dash.component';
       DashComponent,
      
       //  EditProfileComponent
+   editProfileComponent,
+   RequestsComponent
+       
   ],
   imports: [
     BrowserModule,

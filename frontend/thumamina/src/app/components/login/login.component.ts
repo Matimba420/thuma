@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import  Validation from '../../utils/Validation';
 import { UserService } from 'src/app/services/user.service';
-import {Router} from '@angular/router';
+import {Router, ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/interface/user';
 
 @Component({
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   registerForm: FormGroup | undefined;
   option: any;
   selected:any;
-  constructor(private formBuilder: FormBuilder, private service: UserService){
+  constructor(private formBuilder: FormBuilder, private service: UserService, private router:Router, private route: ActivatedRoute ){
     
     registerForm: FormGroup ;
   }
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
   register(){
     this.service.addUser(this.form.value).subscribe((res:any)=>{
       console.log(res)
-      
+      alert(res);
     }
     )
 
@@ -100,6 +100,8 @@ export class LoginComponent implements OnInit {
   myFunction(){
     console.log(this.form.value);
     this.register();
+    //alert(res)
+    this.router.navigateByUrl('/log',{replaceUrl:true});
     
   }
   
