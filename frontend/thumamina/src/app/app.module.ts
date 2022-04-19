@@ -22,6 +22,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { editProfileComponent } from './components/edit-profile/edit-profile.component';
 
 import { JobsComponent } from './components/jobs/jobs.component';
+import { EarningsComponent } from './components/earnings/earnings.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { JobsComponent } from './components/jobs/jobs.component';
   
 
     JobsComponent,
+        EarningsComponent,
   ],
   imports: [
     BrowserModule,

@@ -11,12 +11,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class RatingsComponent implements OnInit {
   
+ratings:any
 
-  rating3: any
-  ratings: any
-  rating: any
-  form: any;
-  fb: any;
 
   constructor() { }
 
