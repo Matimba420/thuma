@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Requests } from 'src/app/interface/user';
+import { RequestsService } from 'src/app/services/requests.service';
 
 @Component({
   selector: 'app-requests',
@@ -7,18 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RequestsComponent implements OnInit {
 
-  constructor() { }
+  client_id:any;
+  requests:Requests[]=[]
 
-  request:any = {};
+  constructor(private service:RequestsService) { }
+
+ 
 
   ngOnInit(): void {
 
-    this.request={
-      client: "Sanelisiwe Sogiba",
-      errand: "Lawn Mowing",
-      address: "762 Block UU, Soshanguve, Pretoria, 0152",
-      comment: "Hit the bells at the gate and i will open the gate for you."
-    }
+  this.client_id=localStorage.getItem("clientId");
+  this.getRequests();
   }
+
+getRequests(){
+  this.service.getRequests().subscribe((res=>{
+    this.requests = res
+    console.log('hello');
+    console.log(res);
+    
+    
+  }));
+
+}
 
 }

@@ -61,3 +61,11 @@ export interface earnings{
     cost:number;
 }
 
+export interface Requests{
+    client_name: string;
+    comment:string;
+    errand: string;
+    address:string;
+
+}
+
