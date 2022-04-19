@@ -59,7 +59,7 @@ module.exports ={
     getRequestByClientId,
 
      updateClient,
-     cancelRequest,
+     cancelRequest
     updateClient,
     getAllClients,
     getAllRunners
