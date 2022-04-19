@@ -21,6 +21,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PostingComponent } from './components/posting/posting.component';
 import { BackButtonComponent } from './components/back-button/back-button.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { RunnerComponent } from './components/runner/runner.component';
+import { DashComponent } from './components/dash/dash.component';
+
 // import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 @NgModule({
@@ -42,6 +45,9 @@ import { ProfileComponent } from './components/profile/profile.component';
     DashboardComponent,
   
    ProfileComponent,
+      RunnerComponent,
+      DashComponent,
+     
       //  EditProfileComponent
   ],
   imports: [

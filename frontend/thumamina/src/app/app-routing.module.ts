@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreateComponent } from './components/create/create.component';
 
@@ -13,6 +13,8 @@ import { ErrandsComponent } from './components/errands/errands.component';
 import { TrackComponent } from './components/track/track.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PostingComponent } from './components/posting/posting.component';
+import { RunnerComponent } from './components/runner/runner.component';
+import { DashComponent } from './components/dash/dash.component';
 // import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 
@@ -33,6 +35,8 @@ const routes: Routes = [{
 {path:'run_home', component:RunnerHomeComponent},
 {path:'errands', component:ErrandsComponent},
 {path:'profile', component:ProfileComponent},
+{path:'runn',component:RunnerComponent},
+{path:'dashPage',component:DashComponent}
 // {path:'edit', component:EditProfileComponent}];
 
 ];
