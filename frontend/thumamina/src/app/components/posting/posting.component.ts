@@ -14,6 +14,7 @@ export class PostingComponent implements OnInit {
     comment: new FormControl (''),
     street_address: new FormControl(''),
     suburb: new FormControl(''),
+    surburb: new FormControl(''),
     city: new FormControl(''),
     postal_code: new FormControl(''),
    
@@ -21,6 +22,11 @@ export class PostingComponent implements OnInit {
 
   });
   submitted: boolean | undefined;
+
+  
+
+
+
 
 
   constructor(private service: AddressService) { }
@@ -53,13 +59,5 @@ export class PostingComponent implements OnInit {
   
   }
  
-  
-
-
-
-
-  
-  
-
 
 }

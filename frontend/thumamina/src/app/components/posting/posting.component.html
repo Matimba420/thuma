@@ -5,6 +5,8 @@
 
 
   <div class="col-sm"><form [formGroup]="form">
+  <div class="col-sm">
+    <form [formGroup]="form">
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputEmail4">Street Address</label>
@@ -13,6 +15,8 @@
       <div class="form-group col-md-6">
         <label for="inputPassword4">Suburb</label>
         <input type="text" class="form-control" formControlName="suburb" id="inputsuburb" placeholder="Suburb">
+        <label for="inputPassword4">Surburb</label>
+        <input type="text" class="form-control" formControlName="surburb" id="inputPassword4" placeholder="Surburb">
       </div>
     </div>
  
@@ -36,11 +40,11 @@
     <br>
     
     <button (click)="getAddress()" type="submit" [routerLink]="['/land']" routerLinkActive = "router-link-active" class="btn btn-primary ">Request</button>
+    <button (click)="myFunction()" type="submit" [routerLink]="['/land']" routerLinkActive = "router-link-active" class="btn btn-primary ">Request</button>
   </form></div>
 
 
   <div class="col-sm-2"></div>
-</div>
 
 
 

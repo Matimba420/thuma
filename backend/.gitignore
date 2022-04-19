@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+node_modules/
+=======
+>>>>>>> 79db3dd3c17787f69009f196f92f6a21200f29c3
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # Compiled output
@@ -10,7 +16,10 @@
 /node_modules
 npm-debug.log
 yarn-error.log
+<<<<<<< HEAD
 node_modules/
+=======
+>>>>>>> 79db3dd3c17787f69009f196f92f6a21200f29c3
 
 # IDEs and editors
 .idea/
@@ -41,3 +50,7 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+<<<<<<< HEAD
+=======
+>>>>>>> 9aeff0422867cea142c84290005d3ae6a9a1b53b
+>>>>>>> 79db3dd3c17787f69009f196f92f6a21200f29c3
