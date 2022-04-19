@@ -23,6 +23,7 @@ import { editProfileComponent } from './components/edit-profile/edit-profile.com
 import { RequestComponent } from './components/request/request.component';
 import { JobsComponent } from './components/jobs/jobs.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -18,6 +18,7 @@ import { RequestComponent } from './components/request/request.component';
 import { RatingsComponent } from './components/ratings/ratings.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { JobsComponent } from './components/jobs/jobs.component';
+import { RequestsComponent } from './components/requests/requests.component';
 
 
 const routes: Routes = [{
@@ -41,8 +42,9 @@ const routes: Routes = [{
 {path:'request', component:RequestComponent},
 {path:'ratings', component:RatingsComponent},
 {path:'footer', component:FooterComponent},
-{path:'jobs', component:JobsComponent}
+{path:'jobs', component:JobsComponent},
 
+{path: 'requests', component: RequestsComponent},
 
 ];
 
