@@ -29,16 +29,22 @@
 }
 
 .sidebar .nav-link {
-    color: #333;
+    
+    color: #333;;
 }
-.sidebar .nav-link1 {
+.sidebar .nav-link2 {
+    
     color: #0d6efd;
 }
-
-.sidebar .nav-link.active {
-  
+.sidebar .nav-link {
     color: #333;
 }
+
+/* .sidebar .nav-link.active {
+  
+    color: #333;
+    
+} */
 
 .navbar{
     background: linear-gradient(#2E93B7,#1C3D48);

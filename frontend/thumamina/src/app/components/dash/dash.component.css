@@ -30,9 +30,11 @@
 
 .sidebar .nav-link {
     color: #333;
+    
 }
-.sidebar .nav-link1 {
-    color: #0d6efd;
+.sidebar .nav-link {
+    
+    color: #333;
 }
 
 .sidebar .nav-link.active {
