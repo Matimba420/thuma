@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Job } from 'src/app/interface/jobs';
 import { JobsService } from 'src/app/jobs.service';
 
 @Component({
@@ -10,22 +11,20 @@ export class JobsComponent implements OnInit {
 
   constructor(private service:JobsService) { }
 
-  Jobs:any[] = [];
+  Jobs:Job[] = [];
+  id: any;
 
   ngOnInit(): void {
 
-    // this.request={
-    //   client: "Sanelisiwe Sogiba",
-    //   errand: "Lawn Mowing",
-    //   address: "762 Block UU, Soshanguve, Pretoria, 0152",
-    //   status: ''
-    // }
+    this.id=localStorage.getItem("clientID");
+   this.getJobs();
   }
 
+  
   getJobs(){
     this.service.getJobs().subscribe((res:any)=>{
       console.log(res);
-      this.Jobs = res;
+      // this.Jobs = res;
     });
   }
 

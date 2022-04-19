@@ -9,7 +9,7 @@ export class JobsService {
 
   constructor(private http:HttpClient) { }
 
-  private baseUrl = 'http://localhost:4304/api/requests/runner/:runner_id';
+  private baseUrl = 'http://localhost:4304/api/requests/';
 
 getJobs():Observable<any>{
 
