@@ -56,6 +56,7 @@ export class CreateComponent implements OnInit {
             }
             if(data[0].role=='Service provider'){
               this.router.navigateByUrl('/run_home',{replaceUrl:true});
+              localStorage.setItem("runnerID",data[0].id);
             }
             if(data[0].role=='Admin'){
               this.router.navigateByUrl('/dash',{replaceUrl:true});

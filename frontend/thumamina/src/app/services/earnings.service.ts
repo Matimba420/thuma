@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import{earnings}from'../interface/user';
+
 
 
 
@@ -11,16 +11,20 @@ import{earnings}from'../interface/user';
 })
 export class EarningsService {
 
-  private baseUrl = 'http://localhost:4304/api/earnings';
+  private baseUrl = 'http://localhost:4304/api/earnings/';
 
   constructor(private http:HttpClient){}
 
 
 
-  getEarnings(id:any):Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}${id}`)
+  getEarnings(runner_id:any):Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}${runner_id}`);
   
   
+}
+
+getTotal(runner_id:any):Observable<any>{
+  return this.http.get<any>('http://localhost:4304/api/total/' + runner_id);
 }
 
   }

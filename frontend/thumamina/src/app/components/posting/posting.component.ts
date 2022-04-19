@@ -43,7 +43,7 @@ addressData : any= {};
     this.reqdata = {
     client_id: this.clientId,
     service_id : this.serviceId,
-    comment : this.form.value.comment
+    //comment : this.form.value.comment
     
     }
 
@@ -52,7 +52,8 @@ addressData : any= {};
       street_address: this.form.value.street_address,
       suburb:this.form.value.suburb,
       city: this.form.value.city,
-      postal_code:this.form.value.postal_code
+      postal_code:this.form.value.postal_code,
+      comment:this.form.value.comment
     }
 
    
