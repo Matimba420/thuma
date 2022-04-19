@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 import { AddressService } from 'src/app/services/address.service';
 import { UserService } from 'src/app/services/user.service';
-//import { FormControl, FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators} from '@angular/forms';
 
 
 @Component({
@@ -11,14 +10,8 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./posting.component.css']
 })
 export class PostingComponent implements OnInit {
-  form: FormGroup = new FormGroup({
-    comment: new FormControl (''),
-    street_address: new FormControl(''),
-    suburb: new FormControl(''),
-    city: new FormControl(''),
-    postal_code: new FormControl(''),
 
-  });
+  form!:FormGroup;
   
   clientId:any;
   serviceId:any;
@@ -28,6 +21,22 @@ reqdata : any = {};
 addressData : any= {};
 
   constructor(private service: AddressService) { }
+
+  ngOnInit(): void {
+
+   this.form = new FormGroup({
+      street_address: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      comment: new FormControl('', [Validators.required, Validators.email]),
+      city: new FormControl('', Validators.required),
+      suburb: new FormControl('',Validators.required),
+      postal_code : new FormControl('',[Validators.required,Validators.maxLength(4),Validators.minLength(4)])
+    });
+
+    this.getAddress;
+    this.clientId=localStorage.getItem("clientID");
+    this.serviceId=localStorage.getItem("serviceID"); 
+  }
+
 
   addRequest(){
 
@@ -75,10 +84,9 @@ addressData : any= {};
     })
   }
 
-  ngOnInit(): void {
-    this.getAddress;
-    this.clientId=localStorage.getItem("clientID");
-    this.serviceId=localStorage.getItem("serviceID"); 
+ 
+  get f(){
+    return this.form.controls;
   }
 
   onSubmit(): void {
@@ -92,5 +100,6 @@ addressData : any= {};
     console.log(this.form.value);
   
   }
+
 
 }

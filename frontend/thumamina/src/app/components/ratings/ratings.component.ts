@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+// import { Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -8,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 
 })
 export class RatingsComponent implements OnInit {
-  ratings: { client: string; errand: string; address: string; comment: string; } | any;
+  
 
   rating3: any
+  ratings: any
+  rating: any
+  form: any;
+  fb: any;
 
   constructor() { }
 
@@ -21,8 +27,14 @@ export class RatingsComponent implements OnInit {
       client: "Zizi Zozi",
       errand: "Shopping",
       address: "44 Stanely Avenue, Braamfontein, Johannesburg, 2001",
-      comment: "The service was great and my dress fits me perfecly thank you.I recommend Zizi to everyone that wanna do shooping."
-    }
+      comment: "The service was great and my dress fits me perfecly thank you.I recommend Zizi to everyone that wanna do shooping.",
+      rating: 5,
+    };
+    // this.rating = 0;
+    // this.form = this.fb.group({
+    //   rating1: ['', Validators.required],
+    //   rating2: [4]
+    // });
 
     
   }
