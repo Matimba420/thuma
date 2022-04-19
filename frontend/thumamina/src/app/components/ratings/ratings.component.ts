@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 // import { Validators } from '@angular/forms';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Ratings } from 'src/app/interface/user';
+import { RatingsService } from 'src/app/services/ratings.service';
 
 
 @Component({
@@ -11,28 +13,27 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class RatingsComponent implements OnInit {
   
-ratings:any
+  ratings:Ratings[]= [];
+  runner_id:any;
 
+list = [1, 3, 4]
 
-  constructor() { }
+  constructor(private service:RatingsService) { }
 
   ngOnInit(): void {
 
-
-    this.ratings={
-      client: "Zizi Zozi",
-      errand: "Shopping",
-      address: "44 Stanely Avenue, Braamfontein, Johannesburg, 2001",
-      comment: "The service was great and my dress fits me perfecly thank you.I recommend Zizi to everyone that wanna do shooping.",
-      rating: 5,
-    };
-    // this.rating = 0;
-    // this.form = this.fb.group({
-    //   rating1: ['', Validators.required],
-    //   rating2: [4]
-    // });
-
+this.runner_id=localStorage.getItem("runnerID");
+this.getRatings()
     
+  }
+
+  getRatings(){
+    this.service.getRatings(this.runner_id).subscribe((res=>{
+     this.ratings= res;
+      console.log(this.ratings);
+   
+    }))
+
   }
 
 }

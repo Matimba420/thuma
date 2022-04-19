@@ -69,3 +69,10 @@ export interface Requests{
 
 }
 
+export interface Ratings{
+    errand:string;
+    client_name:string;
+    reason:string;
+    rating:number;
+}
+

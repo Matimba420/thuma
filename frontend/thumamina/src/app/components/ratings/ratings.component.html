@@ -18,25 +18,28 @@
 
 
 
+<div *ngFor="let item of list">
+  sf
+</div>
     <div class="col-sm-12">
         <h1>Ratings</h1>
  
-                  <div class="card">
+                  <div class="card" *ngFor="let rating of ratings">
            
                     <div class="card-body">
                       <div class="row">
                         <div class="col">
-                          <h5 class="card-title">{{this.ratings.errand}}</h5> 
+                          <h5 class="card-title">{{rating.errand}}</h5> 
                         </div>
                         <div class="col">
-                          <h5 class="card-title justify-content-end" style="text-align: end;" >{{this.ratings.client}}</h5>
+                          <h5 class="card-title justify-content-end" style="text-align: end;" >{{rating.client_name}}</h5>
                         </div>
                       </div>
                       
-                      <p class="card-text"> {{this.ratings.comment}}</p>
+                      <p class="card-text"> {{rating.reason}}</p>
                     
 
-                      <p class="card-text "style="text-align: end;"> {{this.ratings.rating}} ⭐️</p>
+                      <p class="card-text "style="text-align: end;"> {{rating.rating}} ⭐️</p>
                    
                     </div>
                   </div>
