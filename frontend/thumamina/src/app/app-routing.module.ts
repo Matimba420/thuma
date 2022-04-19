@@ -18,6 +18,7 @@ import { SuccessMassageComponent } from './components/success-massage/success-ma
 import { editProfileComponent } from './components/edit-profile/edit-profile.component';
 import { RunnerReqComponent } from './components/runner-req/runner-req.component';
 import { RequestsComponent } from './components/requests/requests.component';
+import { RunnerProfileComponent } from './components/runner-profile/runner-profile.component';
 
 
 const routes: Routes = [{
@@ -42,6 +43,7 @@ const routes: Routes = [{
 {path:'edit', component:editProfileComponent},
 {path:'req',component:RunnerReqComponent},
 {path: 'requests', component: RequestsComponent},
+{path:'run_p',component:RunnerProfileComponent}
 
 ];
 

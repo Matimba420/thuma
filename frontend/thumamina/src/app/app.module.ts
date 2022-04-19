@@ -26,6 +26,8 @@ import { PaymentsComponent } from './components/payments/payments.component';
 // import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { editProfileComponent } from './components/edit-profile/edit-profile.component';
 import { RequestsComponent } from './components/requests/requests.component';
+import { RunnerProfileComponent } from './components/runner-profile/runner-profile.component';
+import { Nav2Component } from './components/nav2/nav2.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { RequestsComponent } from './components/requests/requests.component';
       //  EditProfileComponent
    editProfileComponent,
    editProfileComponent,
-   RequestsComponent
+   RequestsComponent,
+   RunnerProfileComponent,
+   Nav2Component
        
   ],
   imports: [
