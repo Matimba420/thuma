@@ -450,6 +450,70 @@ const getTotal =(req,res) =>{
     } );
 };
 
+const getReviews =(req,res) =>{
+    const runner_id = req.params.runner_id;
+    // console.log(client_id)
+   
+
+
+    pool.query(queries.getReviews,[runner_id],(error, results)=>{
+        if(!results) return res.status(400).send("invalid input")
+       
+        if(!results.rows.length){ 
+            res.status(404).send('request not found')
+            console.log(results.rows);
+            
+            //throw error
+        }else{
+            res.status(200).json(results.rows);
+        }
+    } );
+};
+
+const totalRating =(req,res) =>{
+    const runner_id = req.params.runner_id;
+    // console.log(client_id)
+   
+
+
+    pool.query(queries.totalRating,[runner_id],(error, results)=>{
+        if(!results) return res.status(400).send("invalid input")
+       
+        if(!results.rows.length){ 
+            res.status(404).send('request not found')
+            console.log(results.rows);
+            
+            //throw error
+        }else{
+            res.status(200).json(results.rows);
+        }
+    } );
+};
+
+
+
+const totalClients = (req, res) => {
+    pool.query(queries.totalClients,(error, results) => {
+        if(this.error){
+            console.log("error:"+error);
+            res.status(404).send(error);
+            throw error;
+        }
+        res.status(200).json(results.rows);
+    });
+};
+
+
+const totalRunners = (req, res) => {
+    pool.query(queries.totalRunners,(error, results) => {
+        if(this.error){
+            console.log("error:"+error);
+            res.status(404).send(error);
+            throw error;
+        }
+        res.status(200).json(results.rows);
+    });
+};
 
 module.exports = {
     addClient,
@@ -477,7 +541,13 @@ module.exports = {
     addComment,
     getMaxId,
     getRunnerEarnings,
-    getTotal
+    getTotal,
+
+    getReviews,
+    totalRating,
+
+    totalClients,
+    totalRunners
 
     
 }
