@@ -1,4 +1,4 @@
-const clientLogin = "SELECT id, firstname, lastname, cell_no, email, role FROM users WHERE password=$1 AND cell_no=$2 or email=$2";
+
 const addClient = "INSERT into users (name, surname, cell_no, email, password, role) values($1, $2, $3, $4, $5, $6)";
 const checkClientCelllExists = "SELECT * FROM users WHERE cell_no= $1";
 const checkClientEmailExists = "SELECT * FROM users WHERE email= $1";
@@ -32,11 +32,16 @@ const getAllRunners= "SELECT * FROM users WHERE role ='Service provider' AND is_
 const addComment = "UPDATE request SET comment = $1 WHERE id=$2";
 
 const getRunnerEarnings = "SELECT s.name AS errand , concat(u.name ,' ', u.surname) AS client_name, cost FROM request r,users u, service s WHERE r.client_id=u.id AND r.service_id = s.id AND runner_id =$1"
-const getTotal = " SELECT SUM(cost) AS total FROM request r, service s WHERE s.id =r.service_id AND r.runner_id=$1 "
+const getTotal = " SELECT SUM(cost) AS total FROM request r, service s WHERE s.id =r.service_id AND r.runner_id=$1 ";
 
+const getReviews = " SELECT s.name AS errand, CONCAT(u.name,' ',u.surname) AS client_name, reason, rating FROM service s, users u, review r, request rq WHERE u.id=r.client_id AND r.request_id=rq.id AND s.id=r.id AND r.runner_id=$1 ";
+const totalRating = " select avg(rating) from review where runner_id=$1 ";
+
+const totalClients = " SELECT COUNT(*) AS clients FROM users WHERE role ='Client' ";
+const totalRunners = " SELECT COUNT(*) AS runners FROM users WHERE role ='Service provider' ";
 
 module.exports ={
-    // clientLogin,
+   
     addClient,
     checkClientCelllExists,
     checkClientEmailExists,
@@ -69,7 +74,13 @@ module.exports ={
     addComment,
     getMaxId,
     getRunnerEarnings,
-    getTotal
+    getTotal,
+
+    getReviews,
+    totalRating,
+
+    totalRunners,
+    totalClients
 
     
 };
