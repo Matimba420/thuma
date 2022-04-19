@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-runner-req',
-  templateUrl: './runner-req.component.html',
-  styleUrls: ['./runner-req.component.css']
+  selector: 'app-requests',
+  templateUrl: './requests.component.html',
+  styleUrls: ['./requests.component.css']
 })
-export class RunnerReqComponent implements OnInit {
+export class RequestsComponent implements OnInit {
 
   constructor() { }
-  
+
   request:any = {};
 
   ngOnInit(): void {

@@ -21,7 +21,7 @@ export interface address{
    suburb: string;
    city:string;
    postal_code: number;
-   
+
 
 
      
@@ -48,6 +48,12 @@ export interface edit{
     
 }
 
+export interface request{
+    comment: string;
+    clientId: number;
+    serviceId: number;
+    
+}
 
 
 

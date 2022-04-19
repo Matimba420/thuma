@@ -18,6 +18,7 @@ router.get('/address', controller.getAddress);
 router.put('/updateStatus/:id', controller.updateStatus);
 router.post('/requests', controller.addRequest);
 router.get('/requests', controller.getRequest);
+router.get('/maxId/:client_id', controller.getMaxId); 
 router.get('/requests/client/:client_id', controller.getRequestByClientId);
 router.get('/requests/runner/:runner_id', controller.getRequestByRunnerId);
 
@@ -27,6 +28,9 @@ router.get('/client', controller.getAllClients);
 router.get('/runner', controller.getAllRunners);
 
 router.put('/requests/:id', controller.addComment);
+
+router.get('/earnings/:runner_id', controller.getRunnerEarnings);
+router.get('/total/:runner_id', controller.getTotal);
 
 
 

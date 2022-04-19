@@ -10,13 +10,7 @@
     z-index: 99;
 }
 
-@media (max-width: 767.98px) {
-    .sidebar {
-        top: 11.5rem;
-        padding: 0;
-    }
-}
-    
+
 .navbar {
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .1);
 }
@@ -30,13 +24,24 @@
 }
 
 .sidebar .nav-link {
-    color: #333;
+    color: rgb(255, 255, 255);
 }
 
 .sidebar .nav-link.active {
-    color: #0d6efd;
+    color: #000000;
 }
 
 .navbar{
     background: linear-gradient(#183742,#1C3D48);
+}
+.offcanvas-body{
+    background: linear-gradient(#183742,#1C3D48);
+}
+
+.offcanvas{
+    background: linear-gradient(#183742,#1C3D48);
+}
+h5{
+    color: rgb(0, 0, 0);
+    font-size: xx-large;
 }
