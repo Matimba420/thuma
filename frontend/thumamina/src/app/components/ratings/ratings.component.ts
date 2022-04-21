@@ -13,26 +13,27 @@ import { RatingsService } from 'src/app/services/ratings.service';
 })
 export class RatingsComponent implements OnInit {
   
-  ratings:Ratings[]= [];
   runner_id:any;
-
-list = [1, 3, 4]
+  ratings:Ratings[]= [];
 
   constructor(private service:RatingsService) { }
 
   ngOnInit(): void {
 
 this.runner_id=localStorage.getItem("runnerID");
-this.getRatings()
+this.getRatings();
     
   }
 
   getRatings(){
     this.service.getRatings(this.runner_id).subscribe((res=>{
      this.ratings= res;
-      console.log(this.ratings);
+    
+      console.log(res);
    
-    }))
+    }));
+
+    console.log('helloo')
 
   }
 
