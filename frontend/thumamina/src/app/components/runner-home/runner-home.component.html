@@ -1,4 +1,4 @@
-
+<!-- 
   <div class="container">
     <div class="row">
       <div class="col-sm-6">
@@ -38,4 +38,37 @@
               </div>
         </div>
       </div>
-  </div>
+  </div> -->
+
+
+<app-nav></app-nav>
+
+<div class="wrapper"> 
+
+ 
+
+
+
+
+          <div class="card-deck">
+            <div class="card" *ngFor="let item of items"   >
+
+              <!-- <img class="card-img-top" src="{{item.image}}" alt="Card image cap"  (click)="myFunction(item)" routerLinkActive="router-link-active" > -->
+              <div class="card-body">
+                   <h5 class="card-title" >{{item.earnings}}</h5>
+                   <p class="card-text" style="text-align: center;"></p>
+                   <br>
+                     <p class="dis" >{{item.request}}</p>
+                     <br>
+                     <p class="para" >R{{item.jobs}}</p>
+                     <br>
+                     <p class="para" >R{{item.ratings}}</p>
+            </div>
+               
+                
+           
+              </div>
+            </div>
+      
+  
+</div>

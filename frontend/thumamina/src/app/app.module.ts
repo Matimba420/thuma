@@ -20,6 +20,11 @@ import { JobsComponent } from './components/jobs/jobs.component';
 import { EarningsComponent } from './components/earnings/earnings.component';
 import { RequestsComponent } from './components/requests/requests.component';
 import { RatingsComponent } from './components/ratings/ratings.component';
+import { RateComponent } from './components/rate/rate.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+
 
 @NgModule({
   declarations: [
@@ -38,17 +43,20 @@ import { RatingsComponent } from './components/ratings/ratings.component';
     editProfileComponent,
     JobsComponent,
     EarningsComponent,
-    ProfileComponent,
-    editProfileComponent,
     RequestsComponent,
     JobsComponent,
     RatingsComponent,
+   RequestsComponent,
+   JobsComponent,
+   RateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent],
