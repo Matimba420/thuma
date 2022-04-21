@@ -4,6 +4,7 @@ import  Validation from '../../utils/Validation';
 import { UserService } from 'src/app/services/user.service';
 import {Router, ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/interface/user';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -73,6 +74,10 @@ export class LoginComponent implements OnInit {
     );
     
     
+  }
+
+  alertWithSuccess(){
+    Swal.fire('Thank you...', 'You succesfully registered!', 'success')
   }
   get f(): { [key: string]: AbstractControl } {
     return this.form.controls;

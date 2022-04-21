@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AddressService } from 'src/app/services/address.service';
 import { UserService } from 'src/app/services/user.service';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -10,6 +11,8 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
   styleUrls: ['./posting.component.css']
 })
 export class PostingComponent implements OnInit {
+
+ 
 
   form!:FormGroup;
   
@@ -26,7 +29,7 @@ addressData : any= {};
 
    this.form = new FormGroup({
       street_address: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      comment: new FormControl('', [Validators.required, Validators.email]),
+      comment: new FormControl('', [Validators.required]),
       city: new FormControl('', Validators.required),
       suburb: new FormControl('',Validators.required),
       postal_code : new FormControl('',[Validators.required,Validators.maxLength(4),Validators.minLength(4)])
@@ -36,6 +39,14 @@ addressData : any= {};
     this.clientId=localStorage.getItem("clientID");
     this.serviceId=localStorage.getItem("serviceID"); 
   }
+
+
+  
+
+  alertWithSuccess(){
+    Swal.fire('Thank you...', 'Your post is succesfully sent😉!', 'success')
+  }
+  
 
 
   addRequest(){
@@ -76,6 +87,9 @@ addressData : any= {};
 
   async getAddress(){
 
+
+    
+
     this.addRequest();
 
     await this.getMaxId()
@@ -84,6 +98,10 @@ addressData : any= {};
       console.log(res)
     })
   }
+
+
+
+
 
  
   get f(){
