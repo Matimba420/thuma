@@ -19,6 +19,7 @@ import { editProfileComponent } from './components/edit-profile/edit-profile.com
 import { RunnerReqComponent } from './components/runner-req/runner-req.component';
 import { RequestsComponent } from './components/requests/requests.component';
 import { RunnerProfileComponent } from './components/runner-profile/runner-profile.component';
+import { HistoryComponent } from './components/history/history.component';
 
 
 const routes: Routes = [{
@@ -43,7 +44,8 @@ const routes: Routes = [{
 {path:'edit', component:editProfileComponent},
 {path:'req',component:RunnerReqComponent},
 {path: 'requests', component: RequestsComponent},
-{path:'run_p',component:RunnerProfileComponent}
+{path:'run_p',component:RunnerProfileComponent},
+{path:'history',component:HistoryComponent}
 
 ];
 

@@ -28,6 +28,7 @@ import { editProfileComponent } from './components/edit-profile/edit-profile.com
 import { RequestsComponent } from './components/requests/requests.component';
 import { RunnerProfileComponent } from './components/runner-profile/runner-profile.component';
 import { Nav2Component } from './components/nav2/nav2.component';
+import { HistoryComponent } from './components/history/history.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { Nav2Component } from './components/nav2/nav2.component';
    editProfileComponent,
    RequestsComponent,
    RunnerProfileComponent,
-   Nav2Component
+   Nav2Component,
+   HistoryComponent
        
   ],
   imports: [

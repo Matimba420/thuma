@@ -16,6 +16,11 @@ input[type="number"] {
     width: 100%;
     height: 50px;
 }
+.btn-2{
+    border-radius:16px;
+    background-color: rgb(255, 255, 255);
+    width: 5rem;
+     }
 .container{
     background:linear-gradient(#223C50,#223C50 );
     // background-position: bottom;
@@ -23,6 +28,7 @@ input[type="number"] {
     // background-size:contain;
     height: 120vh;
     width: 100%;
+    height: 100%;
 
 }
 input[type="email"] {
