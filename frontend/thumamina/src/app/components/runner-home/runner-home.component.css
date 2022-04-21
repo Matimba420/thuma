@@ -1,24 +1,6 @@
-/* .card{
-    background:linear-gradient(#223C50,#223C50);
-    margin-top: 2rem;
-    width:fit-content;
-    color: white;
-    font-family: Lora;
-}
-
-.col-sm-6{
-    align-items: right;
-}
-
-.container{
-    margin-top: 5rem;
-}
-
-.h1{
-    text-align: center;
-} */
 
 
+/* 
 * {
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
@@ -26,17 +8,7 @@
     padding: 0;
   }
   
-  /*body {
-    margin: 2rem;
-    color: #414b56;
-    
-  }/*
-  /* .card-deck{
-      margin-top: 50px;
-      align-items: flex-start;
-  } */
-  
-  /* Basic design of blog card */
+
   .wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -45,19 +17,19 @@
   
   
   .card:hover {  /* blog post hover */
-    transform: scale(1.05);
+    /* transform: scale(1.05);
     box-shadow: 0px 2px 40px #d7dfe2;
   }
   
-  
+   */ */
   /* Blog post design starts from here */
-  .card {
+  /* .card {
     overflow: hidden;
-    box-shadow: 0px 2px 20px #d7dfe2; /* Card outline shadow */
-    background: white; /* post background color */
+    box-shadow: 0px 2px 20px #d7dfe2;
+    background:#223C50; 
     border-radius: 0.5rem;
     position: relative;
-    width: 350px; /* post card width */
+    width: 90%;
     margin: 2pc;
     margin-top: 20px;
     transition: 250ms all ease-in-out;
@@ -65,11 +37,10 @@
   }
   
   
-  
-  /* Design of # tags, heading, description starts from here */
+ 
   .card-body {
     margin: 3rem 1.5rem 1rem 1rem;
-    /* margin: 1rem 0 0.5rem; */
+  
     
   }
   .card-text{
@@ -88,4 +59,52 @@
   .dis{
     font-weight: lighter;
     text-align: center;
+  } */
+  
+  /* .cards {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
   }
+
+  @media (min-width: 600px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+  }
+  html { font-size: 22px; }
+body { padding: 1rem; }
+
+.card {
+  background-color: dodgerblue;
+  color: white;
+  padding: 1rem;
+  height: 4rem;
+} */
+
+
+html { font-size: 22px; }
+body { padding: 1rem; }
+
+.card {
+  background-color: dodgerblue;
+  color: white;
+  padding: 1rem;
+  height: 4rem;
+}
+
+.cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+/* Screen larger than 600px? 2 column */
+@media (min-width: 600px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Screen larger than 900px? 3 columns */
+@media (min-width: 900px) {
+  .cards { grid-template-columns: repeat(3, 1fr); }
+}

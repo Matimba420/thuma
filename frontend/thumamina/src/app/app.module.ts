@@ -26,6 +26,8 @@ import { JobsComponent } from './components/jobs/jobs.component';
 import { RequestsComponent } from './components/requests/requests.component';
 import { RateComponent } from './components/rate/rate.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxStarRatingModule } from 'ngx-star-rating';
+import { ForgotComponent } from './components/forgot/forgot.component';
 
 
 
@@ -53,7 +55,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
    RequestsComponent,
        
       JobsComponent,
-              RateComponent
+              RateComponent,
+              ForgotComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +64,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    NgxStarRatingModule
    
   ],
   providers: [],

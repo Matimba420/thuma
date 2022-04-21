@@ -16,6 +16,7 @@ import { PostingComponent } from './components/posting/posting.component';
 import { editProfileComponent } from './components/edit-profile/edit-profile.component';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { RequestsComponent } from './components/requests/requests.component';
+import { RateComponent } from './components/rate/rate.component';
 
 
 const routes: Routes = [{
@@ -39,6 +40,7 @@ const routes: Routes = [{
 {path:'jobs', component:JobsComponent},
 
 {path: 'requests', component: RequestsComponent},
+{path: 'rate', component: RateComponent}
 
 ];
 

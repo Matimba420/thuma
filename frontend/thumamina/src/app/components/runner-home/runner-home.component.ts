@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Job } from 'src/app/interface/jobs';
+import { Job ,Home} from 'src/app/interface/jobs';
 
 @Component({
   selector: 'app-runner-home',
@@ -8,11 +8,15 @@ import { Job } from 'src/app/interface/jobs';
 })
 export class RunnerHomeComponent implements OnInit {
 
-  items: Job[] = [
+  items: Home[] = [{ "earnings":"FSHGDHDV",
+    "request":"HGSHGDH",
+    "jobs": "GFGHGGV",
+    "ratings": "string"
 
- 
+   
+    
 
-
+  }
   ];
 
 
