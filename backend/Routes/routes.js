@@ -40,6 +40,8 @@ router.get('/totalRunners', controller.totalRunners);
 
 router.put('/acceptRequest', controller.acceptRequest);
 
+router.post('/rateServices', controller.rateServices);
+
 
 
  
