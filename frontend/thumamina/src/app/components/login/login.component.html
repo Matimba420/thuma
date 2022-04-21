@@ -97,7 +97,7 @@
         <br>
 
 
-        <button class="button" (click)="alertWithSuccess()" (click)="myFunction()"> CREATE ACCOUNT</button>
+        <button class="button" (click)="alertWithSuccess()"     [disabled]="!form?.valid" (click)="myFunction()"> CREATE ACCOUNT</button>
 
 
         
