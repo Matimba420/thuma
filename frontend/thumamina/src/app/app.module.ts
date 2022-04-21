@@ -19,6 +19,7 @@ import { editProfileComponent } from './components/edit-profile/edit-profile.com
 import { JobsComponent } from './components/jobs/jobs.component';
 import { EarningsComponent } from './components/earnings/earnings.component';
 import { RequestsComponent } from './components/requests/requests.component';
+import { RatingsComponent } from './components/ratings/ratings.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { RequestsComponent } from './components/requests/requests.component';
     editProfileComponent,
     RequestsComponent,
     JobsComponent,
+    RatingsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,8 @@
+<app-nav></app-nav>
 <div class="container-fluid" >
+   
     <div class="row" >
-        <div class="col-sm-auto bg-light sticky-top" >
+        <!-- <div class="col-sm-auto bg-light sticky-top" >
             <div class="d-flex flex-sm-column flex-row flex-nowrap bg-light align-items-center sticky-top" >
                
                 <div class="dropdown">
@@ -14,10 +16,10 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="col-sm p-3 min-vh-100">
 
-
+<h1>Job History</h1>
                  
                     <div class="card mt-3"  *ngFor="let job of Jobs">
            
@@ -33,13 +35,16 @@
                           
                           <p class="card-text"> {{job.address}}</p>
 
-                          <p class="card-text">  "{{job.status}}"</p>
-                          <label for="{{job.status}}">Status:</label>
+                        
+                          <!--label for="{{job.status}}">Status: Completed</!--label-->
+                         
+                           <select >
+                            <option value="">{{job.status}}</option>
+                            <option value="In progress">In progress</option>
+                            <option value="Completed">Completed</option>
+                    </select>
 
-                           <select name="cars" id="cars">
-                            <option value="volvo">Pending</option>
-                            <option value="saab">Accepted</option>
-                        </select>
+                    <button>save</button>
 
  </div> 
 </div>
