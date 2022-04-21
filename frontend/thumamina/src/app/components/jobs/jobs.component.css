@@ -26,9 +26,7 @@ h1{
 }
 
 
- /* .d-flex{
-    background-color: #223c50;
- }   */
- /* .dropdown{
-    background-color: #223c50;   
- } */
+.button{
+    margin-inline-end: 4rem;
+}
+

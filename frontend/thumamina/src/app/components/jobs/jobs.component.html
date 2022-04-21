@@ -37,14 +37,15 @@
 
                         
                           <!--label for="{{job.status}}">Status: Completed</!--label-->
-                         
-                           <select >
+                        <form [formGroup]="form"  (ngSubmit)="onSubmit()">
+                           <select formControlName="status"  >
                             <option value="">{{job.status}}</option>
                             <option value="In progress">In progress</option>
                             <option value="Completed">Completed</option>
-                    </select>
+                            </select>
+                        </form>
 
-                    <button>save</button>
+                    <button (click)="myFunction()">save</button>
 
  </div> 
 </div>
