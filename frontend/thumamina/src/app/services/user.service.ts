@@ -19,6 +19,11 @@ export class UserService {
   
   }
 
+  addRunner(user:User):Observable<any>{
+    return this.http.post<any>(`http://localhost:4304/api/runner`, user);
+  
+  }
+
 //read user
   getUsers(): Observable<any>{
     return this.http.get<any>(this.baseUrl);

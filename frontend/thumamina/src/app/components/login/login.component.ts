@@ -36,12 +36,25 @@ export class LoginComponent implements OnInit {
 
 
   register(){
-    this.service.addUser(this.form.value).subscribe((res:any)=>{
-      console.log(res)
-      alert(res);
+    if(this.form.value.role==='Client')
+    {
+      this.service.addUser(this.form.value).subscribe((res:any)=>{
+        console.log(res)
+        alert(res);
+      }
+      )
+  
     }
-    )
-
+    else if(this.form.value.role==='Service provider')
+    {
+      this.service.addRunner(this.form.value).subscribe((res:any)=>{
+        console.log(res)
+        alert(res);
+      }
+      )
+  
+    }
+   
   
   }
   ngOnInit(): void {
