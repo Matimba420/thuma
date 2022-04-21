@@ -13,7 +13,7 @@ export class JobsService {
 
 getJobs(runner_id:any):Observable<any>{
 
-  return this.http.get<any>(`${this.baseUrl}${runner_id}`);
+  return this.http.get<any>(`${this.baseUrl}/${runner_id}`);
 }
 
 }

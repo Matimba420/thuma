@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Job } from 'src/app/interface/jobs';
 
 @Component({
   selector: 'app-runner-home',
@@ -6,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./runner-home.component.css']
 })
 export class RunnerHomeComponent implements OnInit {
+
+  items: Job[] = [
+
+ 
+
+
+  ];
+
 
   constructor() { }
 

@@ -24,6 +24,11 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { editProfileComponent } from './components/edit-profile/edit-profile.component';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { RequestsComponent } from './components/requests/requests.component';
+import { RateComponent } from './components/rate/rate.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+
 
 @NgModule({
   declarations: [
@@ -47,13 +52,16 @@ import { RequestsComponent } from './components/requests/requests.component';
    editProfileComponent,
    RequestsComponent,
        
-      JobsComponent
+      JobsComponent,
+              RateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
