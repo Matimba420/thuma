@@ -40,6 +40,8 @@ const totalRating = " select avg(rating) from review where runner_id=$1 ";
 const totalClients = " SELECT COUNT(*) AS clients FROM users WHERE role ='Client' ";
 const totalRunners = " SELECT COUNT(*) AS runners FROM users WHERE role ='Service provider' ";
 
+const acceptRequest = " UPDATE request SET status='Accepted', runner_id=$1 WHERE id=$2 ";
+
 module.exports ={
    
     addClient,
@@ -80,7 +82,8 @@ module.exports ={
     totalRating,
 
     totalRunners,
-    totalClients
+    totalClients,
+    acceptRequest
 
     
 };

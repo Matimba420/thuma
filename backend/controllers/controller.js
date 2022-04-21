@@ -515,6 +515,20 @@ const totalRunners = (req, res) => {
     });
 };
 
+
+const acceptRequest = async (req,res) =>{
+    const {runner_id} = req.body;
+    const {id} = req.body;
+    pool.query(queries.acceptRequest,[runner_id,id],(error, results) =>{
+        if(error){
+            console.log("error:"+error);
+            res.status(404).send(error);
+            throw error;
+        }
+        res.status(200).json("Request accepted succesfully");
+    });
+};
+
 module.exports = {
     addClient,
     getClient,
@@ -547,7 +561,9 @@ module.exports = {
     totalRating,
 
     totalClients,
-    totalRunners
+    totalRunners,
+
+    acceptRequest
 
     
 }
