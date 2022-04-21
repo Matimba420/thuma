@@ -1,36 +1,47 @@
-<app-nav></app-nav>
-<br>
+<!-- <app-nav></app-nav> -->
+<br />
 
 <div class="container">
-    <div class="row">
-      <div class="col-sm-3">
-          <ul>Requests</ul>
-          <ul>My Jobs</ul>
-          <ul>Earnings</ul>
-          <ul>Ratings</ul>
-      </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <ul>
+        Requests
+      </ul>
+      <ul>
+        My Jobs
+      </ul>
+      <ul>
+        Earnings
+      </ul>
+      <ul>
+        Ratings
+      </ul>
+    </div>
 
-      <div class="col-sm-9">
-          <h1>Requests</h1>
+    <div class="col-sm-9">
+      <h1>Requests</h1>
 
-        <div class="card">
-           
-            <div class="card-body">
-              <div class="row">
-                <div class="col">
-                  <h5 class="card-title">{{this.request.errand}}</h5> 
-                </div>
-                <div class="col">
-                  <h5 class="card-title justify-content-end" style="text-align: end;" >{{this.request.client}}</h5>
-                </div>
-              </div>
-              
-              <p class="card-text"> {{this.request.address}}</p>
-              <p class="card-text"> "{{this.request.comment}}"</p>
-              <a href="#" class="btn btn-primary">Accept</a>
+      <div class="card mt-3" *ngFor="let request of requests">
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <h5 class="card-title">{{ request.errand }}</h5>
+            </div>
+            <div class="col">
+              <h5
+                class="card-title justify-content-end"
+                style="text-align: end"
+              >
+                {{ request.client_name }}
+              </h5>
             </div>
           </div>
 
+          <p class="card-text">{{ request.address }}</p>
+          <p class="card-text">"{{ request.comment }}"</p>
+          <a href="#" class="btn btn-primary">Accept</a>
+        </div>
       </div>
     </div>
+  </div>
 </div>

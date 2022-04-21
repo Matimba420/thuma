@@ -14,12 +14,7 @@ export class ProfileComponent implements OnInit {
 id : any;
   People: Update[]=[
 
-    {
-        name: " mown lawning ",
-        surname: "  The runner will go shopping on your behalf",
-        cell_no: 0,
-        email: "fs"
-      }
+    
   ];
   ngOnInit(): void {
     this.id=localStorage.getItem("clientID");

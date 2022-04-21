@@ -17,10 +17,14 @@ node_modules/
 npm-debug.log
 yarn-error.log
 <<<<<<< HEAD
+<<<<<<< HEAD
 node_modules/
 =======
 >>>>>>> 79db3dd3c17787f69009f196f92f6a21200f29c3
 
+=======
+.env
+>>>>>>> c0a149d057a3c897c867cff525c9513e858652c9
 # IDEs and editors
 .idea/
 .project

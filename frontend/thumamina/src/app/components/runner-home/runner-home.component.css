@@ -1,11 +1,7 @@
 .card{
     background:linear-gradient(#223C50,#223C50);
     margin-top: 2rem;
-    width:fit-content;
     color: white;
-    font-family: Lora;
-    margin-right: 1rem;
-   
 }
 
 .col-sm-6{

@@ -32,6 +32,13 @@ router.put('/requests/:id', controller.addComment);
 router.get('/earnings/:runner_id', controller.getRunnerEarnings);
 router.get('/total/:runner_id', controller.getTotal);
 
+router.get('/getReviews/:runner_id', controller.getReviews);
+router.get('/totalRating/:runner_id', controller.totalRating);
+
+router.get('/totalClients', controller.totalClients);
+router.get('/totalRunners', controller.totalRunners);
+
+router.put('/acceptRequest', controller.acceptRequest);
 
 
 

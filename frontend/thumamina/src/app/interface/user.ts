@@ -22,11 +22,6 @@ export interface address{
    city:string;
    postal_code: number;
 
-
-
-     
-
-
 }
 
 export interface Update {
@@ -35,8 +30,6 @@ export interface Update {
     cell_no: number;
     email :string;
    
-    
-
 }
 
 
@@ -60,5 +53,26 @@ export interface request{
 export interface login{
     cell_no: number;
     password :string;
+}
+
+export interface earnings{
+    client_name:string;
+    errand:string;
+    cost:number;
+}
+
+export interface Requests{
+    client_name: string;
+    comment:string;
+    errand: string;
+    address:string;
+
+}
+
+export interface Ratings{
+    errand:string;
+    client_name:string;
+    reason:string;
+    rating:number;
 }
 
