@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Service } from 'src/app/interface/service';
 
 @Component({
   selector: 'app-history',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryComponent implements OnInit {
 
+
   constructor() { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
 
-}
+     
+    }
+  }
+  
+
