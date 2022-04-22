@@ -12,8 +12,8 @@ export class DashboardComponent implements OnInit {
   numClients:any;
   runners:any=[];
   numRunners:any;
-  runner_id:any;
-  total:any;
+  
+ 
 
   constructor(private service:DashService) { }
   
@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
     // this.getClients();
     this.getRunners();
     this.getClients();
-    this.runner_id=localStorage.getItem("runnerID");
+   
    
   }
 
@@ -38,7 +38,7 @@ export class DashboardComponent implements OnInit {
   }
   getRunners(){
     this.service.getRunners().subscribe((res: any)=>{
-      // console.log(res)
+      console.log(res)
       this.runners=res;
       this.numRunners=this.runners.length;
       console.log('num Service Prov: '+this.numRunners);
