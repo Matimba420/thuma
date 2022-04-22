@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
+<<<<<<< HEAD
 import { Update, User,login, edit } from '../interface/user';
+=======
+import { login, User } from '../interface/user';
+>>>>>>> cf00f1ce0106862329e181694d0b45d023e715d8
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +23,11 @@ export class UserService {
   
   }
 
+  addRunner(user:User):Observable<any>{
+    return this.http.post<any>(`http://localhost:4304/api/runner`, user);
+  
+  }
+
 //read user
   getUsers(): Observable<any>{
     return this.http.get<any>(this.baseUrl);
@@ -30,8 +39,8 @@ export class UserService {
     return this.http.get<any>(`${this.baseUrl}/${id}`)
   }
   //update
-  updateUser(user: edit, id: edit): Observable<any>{
-    return this.http.put<any>(`${this.baseUrl}${id}`, user)
+  updateUser(user: Date, id: Date): Observable<any>{
+    return this.http.put<any>(`${this.baseUrl}/${id}`, user)
   }
 
   userLogin(login: login): Observable<any>{
@@ -44,3 +53,5 @@ export class UserService {
   }
 
 }
+
+

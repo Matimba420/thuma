@@ -49,9 +49,55 @@ const addClient = async (req,res) => {
     }
 }
 
+
+const addRunner = async (req,res) => {
+    // const {firstname, lastname, cell_no, password} = req.body;
+     const {name, surname, cell_no, email, password, role} = req.body
+     if(name.length<3){
+         res.status(400).json({error:"Name cannont be less than 2 characters"});
+     }else if(surname.length<3){
+         res.status(400).json({error:"Surname cannont be less than 2 characters"});
+     }else if(cell_no.length>0 && cell_no.length<10){
+         res.status(400).json({error:"Invalid Cell number"});
+     }else if(cell_no.length>10){
+         res.status(400).json({error:"Invalid Cell number"});
+     }else if(password.length<8){
+         res.status(400).json('Your Password should be longer than 7 characters');
+     }else if(role.length<1){
+         res.status(400).json('Please enter your role');
+     }else{
+ 
+         //check if email exists
+         pool.query(queries.checkClientCelllExists, [cell_no], (error, results) => {
+             
+             if (results.rows.length){
+                 res.status(409).json({error:"Cell number Already exists"});
+                 
+             }else{
+                 const salt = bcrypt.genSaltSync(10)
+                 const hashedPassword = bcrypt.hashSync(password , salt)
+                 console.log(hashedPassword)
+                 pool.query(queries.addRunner, 
+                     [name,surname, cell_no, email, hashedPassword,role],
+                     (error,results)=>{
+                     if(error){ 
+                         res.status(500).json({error: 'invalid input'})
+                         throw error;
+                     }else{
+                         // addUserMailer(name, surname, cell_no, email, password);
+                         res.status(201).json("User created successfully");
+                     }
+                 });
+             }
+         });
+     
+     }
+ }
+
+
 const getClient = (req, res) => {
     pool.query(queries.getClients,(error, results) => {
-        if(this.error){
+        if(error){
             console.log("error:"+error);
             res.status(404).send(error);
             throw error;
@@ -530,8 +576,39 @@ const totalRunners = (req, res) => {
     });
 };
 
+
+const acceptRequest = async (req,res) =>{
+    const {runner_id} = req.body;
+    const {id} = req.body;
+    pool.query(queries.acceptRequest,[runner_id,id],(error, results) =>{
+        if(error){
+            console.log("error:"+error);
+            res.status(404).send(error);
+            throw error;
+        }
+        res.status(200).json("Request accepted succesfully");
+    });
+};
+
+const rateServices = async (req,res) =>{
+    const {runner_id} = req.body;
+    const {client_id } = req.body;
+    const {rating} = req.body;
+    const {reason} = req.body;
+    const {request_id } = req.body;
+    pool.query(queries.rateServices,[runner_id,client_id,rating, reason,request_id ],(error, results) =>{
+        if(error){
+            console.log("error:"+error);
+            res.status(404).send(error);
+            throw error;
+        }
+        res.status(200).json("Review added succesfully");
+    });
+};
+
 module.exports = {
     addClient,
+    addRunner,
     getClient,
     removeClient,
     getClientById,
@@ -564,7 +641,10 @@ module.exports = {
     totalRating,
 
     totalClients,
-    totalRunners
+    totalRunners,
+
+    acceptRequest,
+    rateServices
 
     
 }

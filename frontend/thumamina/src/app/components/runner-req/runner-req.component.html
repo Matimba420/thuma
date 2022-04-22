@@ -1,0 +1,78 @@
+
+<nav class="navbar navbar-light fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#" style="color:aliceblue;font-size:x-large;">Smart serve</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h1 class="offcanvas-title" id="offcanvasNavbarLabel" style="color:rgb(255, 255, 255);font-size:x-large;">smart serve</h1>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" style="color:aliceblue;font-size:x-large;">Requests</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color:aliceblue;font-size:x-large;">Earnings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color:aliceblue;font-size:x-large;">My jobs</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="color:aliceblue;font-size:x-large;" >
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+        <br>
+        <br>
+        <main class="col-md-12 ml-sm-auto col-lg-14 px-md-4 py-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Requests</li>
+                </ol>
+            </nav>
+            
+            <div class="row">
+                <div class="col-md-9 col-xl-12 mb-4 mb-lg-0">
+                    <div class="card">
+                        
+                      
+                          <div class="card">
+           
+                            <div class="card-body">
+                              <div class="row">
+                                <div class="col">
+                                  <h5 class="card-title">{{this.request.errand}}</h5> 
+                                </div>
+                                <div class="col">
+                                  <h5 class="card-title justify-content-end" style="text-align: end;" >{{this.request.client}}</h5>
+                                </div>
+                              </div>
+                              
+                              <p class="card-text"> {{this.request.address}}</p>
+                              <p class="card-text"> "{{this.request.comment}}"</p>
+                              <a href="#" class="btn btn-primary">Accept</a>
+                            </div>
+                          </div>
+                
+                        </div>
+                    </div>
+           </div>
+ 
+        </main>
+  
+
