@@ -28,6 +28,13 @@ import { RequestsComponent } from './components/requests/requests.component';
 import { RunnerProfileComponent } from './components/runner-profile/runner-profile.component';
 import { Nav2Component } from './components/nav2/nav2.component';
 import { HistoryComponent } from './components/history/history.component';
+import { RateComponent } from './components/rate/rate.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxStarRatingModule } from 'ngx-star-rating';
+import { ForgotComponent } from './components/forgot/forgot.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -66,12 +73,21 @@ import { HistoryComponent } from './components/history/history.component';
     editProfileComponent,
     RequestsComponent,
     JobsComponent,
+   editProfileComponent,
+   RequestsComponent,
+       
+      JobsComponent,
+              RateComponent,
+              ForgotComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    NgxStarRatingModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent],

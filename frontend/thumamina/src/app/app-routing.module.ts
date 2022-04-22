@@ -27,6 +27,7 @@ import { JobsComponent } from './components/jobs/jobs.component';
 import { RequestsComponent } from './components/requests/requests.component';
 import { RunnerProfileComponent } from './components/runner-profile/runner-profile.component';
 import { HistoryComponent } from './components/history/history.component';
+import { RateComponent } from './components/rate/rate.component';
 
 
 const routes: Routes = [{
@@ -50,7 +51,7 @@ const routes: Routes = [{
 {path:'profile', component:ProfileComponent},
 {path:'runn',component:RunnerComponent},
 {path:'dashPage',component:DashComponent},
-// {path:'edit', component:EditProfileComponent}];
+ //{path:'edit', component:EditProfileComponent};
 {path:'edit', component:editProfileComponent},
 {path:'req',component:RunnerReqComponent},
 {path:'ratings', component:RatingsComponent},
@@ -60,7 +61,8 @@ const routes: Routes = [{
 
 {path: 'requests', component: RequestsComponent},
 {path:'run_p',component:RunnerProfileComponent},
-{path:'history',component:HistoryComponent}
+{path:'history',component:HistoryComponent},
+{path: 'rate', component: RateComponent}
 
 ];
 
