@@ -1,5 +1,6 @@
 
 const addClient = "INSERT into users (name, surname, cell_no, email, password, role) values($1, $2, $3, $4, $5, $6)";
+const addRunner = "INSERT into users (name, surname, cell_no, email, password, role, is_active) values($1, $2, $3, $4, $5, $6, false)";
 const checkClientCelllExists = "SELECT * FROM users WHERE cell_no= $1";
 const checkClientEmailExists = "SELECT * FROM users WHERE email= $1";
 const checkClientEmailCellNoExists="SELECT * FROM users WHERE email= $1 or cell_no=$2 and is_active='true'";
@@ -14,7 +15,7 @@ const getServices= "SELECT * FROM service";
 const addServices ="INSERT INTO service(name,description, cost, image) VALUES($1, $2, $3, $4)";
 const checkServiceExist = "SELECT * FROM service WHERE name=$1";
 
-const addAddress = "INSERT INTO address(street_address, suburb, city, postal_code) VALUES($1, $2, $3, $4)";
+const addAddress = "INSERT INTO address(street_address, suburb, city, postal_code, request_id) VALUES($1, $2, $3, $4, $5)";
 const getAddress = "SELECT * FROM address";
 
 const updateStatus = "UPDATE request SET status =$1 WHERE id=$2";
@@ -43,9 +44,12 @@ const totalRunners = " SELECT COUNT(*) AS runners FROM users WHERE role ='Servic
 const acceptRequest = " UPDATE request SET status='Accepted', runner_id=$1 WHERE id=$2 ";
 const rateServices = " INSERT INTO review (runner_id, client_id, rating, reason, request_id) VALUES($1, $2, $3, $4, $5) ";
 
+const runnerRequests =  " SELECT * FROM users WHERE is_active =false ";
+
 module.exports ={
    
     addClient,
+    addRunner,
     checkClientCelllExists,
     checkClientEmailExists,
     getClients,
@@ -86,7 +90,8 @@ module.exports ={
     totalClients,
     acceptRequest,
 
-    rateServices
+    rateServices,
+    runnerRequests
 
     
 };

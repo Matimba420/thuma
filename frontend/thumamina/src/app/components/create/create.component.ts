@@ -50,16 +50,17 @@ export class CreateComponent implements OnInit {
             this.isloading=false;
             localStorage.setItem("access", JSON.stringify(data));
             console.log(data)
-            if(data[0].role=='Client'){
+            if(data[0].role=='Client' && data[0].is_active===true){
               localStorage.setItem("clientID",data[0].id);
               this.router.navigateByUrl('/errands',{replaceUrl:true});
             }
-            if(data[0].role=='Service provider'){
+            if(data[0].role=='Service provider' && data[0].is_active===true){
               this.router.navigateByUrl('/run_home',{replaceUrl:true});
               localStorage.setItem("runnerID",data[0].id);
             }
-            if(data[0].role=='Admin'){
+            if(data[0].role=='Admin' && data[0].is_active===true){
               this.router.navigateByUrl('/dash',{replaceUrl:true});
+              localStorage.setItem("adminID",data[0].id);
             }
             
           },
@@ -78,6 +79,7 @@ export class CreateComponent implements OnInit {
 
   }
 
+    
 
 
 
@@ -98,7 +100,7 @@ export class CreateComponent implements OnInit {
   }
   }
 
-
+  
   ngOnInit(): void {
 
     this.registerForm = this.formBuilder.group({

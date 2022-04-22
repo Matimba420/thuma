@@ -1,95 +1,7 @@
-
-
-/* 
-* {
-    box-sizing: border-box;
-    font-family: "Inter", sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-
-  .wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
-  }
-  
-  
-  .card:hover {  /* blog post hover */
-    /* transform: scale(1.05);
-    box-shadow: 0px 2px 40px #d7dfe2;
-  }
-  
-   */ */
-  /* Blog post design starts from here */
-  /* .card {
-    overflow: hidden;
-    box-shadow: 0px 2px 20px #d7dfe2;
-    background:#223C50; 
-    border-radius: 0.5rem;
-    position: relative;
-    width: 90%;
-    margin: 2pc;
-    margin-top: 20px;
-    transition: 250ms all ease-in-out;
-    cursor: pointer;
-  }
-  
-  
- 
-  .card-body {
-    margin: 3rem 1.5rem 1rem 1rem;
-  
-    
-  }
-  .card-text{
-      margin-top: 2px;
-  }
-  .card-title{
-      font-family: serif;
-  }
-  
-  h5{
-    font-weight: bolder;
-    text-align: center
-  }
-  .para{font-weight: bold;
-    text-align: center;}
-  .dis{
-    font-weight: lighter;
-    text-align: center;
-  } */
-  
-  /* .cards {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-gap: 1rem;
-  }
-
-  @media (min-width: 600px) {
-    .cards { grid-template-columns: repeat(2, 1fr); }
-  }
-  html { font-size: 22px; }
-body { padding: 1rem; }
-
-.card {
-  background-color: dodgerblue;
-  color: white;
-  padding: 1rem;
-  height: 4rem;
-} */
-
-
-html { font-size: 22px; }
-body { padding: 1rem; }
-
-.card {
-  background-color: dodgerblue;
-  color: white;
-  padding: 1rem;
-  height: 4rem;
+.card{
+    background:linear-gradient(#223C50,#223C50);
+    margin-top: 2rem;
+    color: white;
 }
 
 .cards {
@@ -104,7 +16,6 @@ body { padding: 1rem; }
   .cards { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Screen larger than 900px? 3 columns */
-@media (min-width: 900px) {
-  .cards { grid-template-columns: repeat(3, 1fr); }
+.h1{
+    text-align: center;
 }

@@ -1,10 +1,10 @@
 const express = require("express");
-const userRouter = require('./routes/routes');
+const userRouter = require('./Routes/routes');
 const bodyParser = require("body-parser") 
 const cors = require('cors');
 
 const app = express();
-const port = 4304;
+const port = process.env.PORT || 4304;
 
 var corsOption ={
     origin: 'http://localhost:4303',

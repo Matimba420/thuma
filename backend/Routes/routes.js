@@ -3,6 +3,7 @@ const controller = require('../controllers/controller')
 const router = Router();
 
 router.post('/clients', controller.addClient);
+router.post('/runner', controller.addRunner);
 router.get('/clients', controller.getClient);
 router.post('/clients/login', controller.clientLogin);
 router.get('/clients/:id', controller.getClientById);
@@ -42,9 +43,10 @@ router.put('/acceptRequest', controller.acceptRequest);
 
 router.post('/rateServices', controller.rateServices);
 
+router.get('/runnerRequests', controller. runnerRequests);
+
 
 
  
-
 
 module.exports= router;

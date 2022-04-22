@@ -13,7 +13,10 @@ import { ErrandsComponent } from './components/errands/errands.component';
 import { TrackComponent } from './components/track/track.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PostingComponent } from './components/posting/posting.component';
+import { SuccessMassageComponent } from './components/success-massage/success-massage.component';
+// import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { editProfileComponent } from './components/edit-profile/edit-profile.component';
+import { RunnerReqComponent } from './components/runner-req/runner-req.component';
 import { EarningsComponent } from './components/earnings/earnings.component';
 
 import { RatingsComponent } from './components/ratings/ratings.component';
@@ -21,6 +24,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { RequestsComponent } from './components/requests/requests.component';
 import { RateComponent } from './components/rate/rate.component';
+import { RunnerProfileComponent } from './components/runner-profile/runner-profile.component';
+import { HistoryComponent } from './components/history/history.component';
 
 
 const routes: Routes = [{
@@ -28,6 +33,8 @@ const routes: Routes = [{
 },
 {path:'track',component:TrackComponent},
 {path:'posting',component:PostingComponent},
+{path:'success',component:SuccessMassageComponent},
+
 {
   path:'land',component:LandingComponent
 },
@@ -41,13 +48,16 @@ const routes: Routes = [{
 {path:'errands', component:ErrandsComponent},
 {path:'profile', component:ProfileComponent},
 {path:'edit', component:editProfileComponent},
+{path:'req',component:RunnerReqComponent},
 {path:'ratings', component:RatingsComponent},
 {path:'footer', component:FooterComponent},
 {path:'jobs', component:JobsComponent},
 {path:'earnings', component:EarningsComponent},
 
 {path: 'requests', component: RequestsComponent},
-{path: 'rate', component: RateComponent}
+{path: 'rate', component: RateComponent},
+{path:'run_p',component:RunnerProfileComponent},
+{path:'history',component:HistoryComponent}
 
 ];
 
