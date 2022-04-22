@@ -2,7 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreateComponent } from './components/create/create.component';
 
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashboardComponent } from './components/dashboard/client/dashboard.component';
 
 import { LandingComponent } from './components/landing/landing.component';
 import { LoginComponent } from './components/login/login.component';
@@ -13,13 +13,10 @@ import { ErrandsComponent } from './components/errands/errands.component';
 import { TrackComponent } from './components/track/track.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PostingComponent } from './components/posting/posting.component';
-<<<<<<< HEAD
 import { RunnerComponent } from './components/runner/runner.component';
 import { DashComponent } from './components/dash/dash.component';
-=======
 import { SuccessMassageComponent } from './components/success-massage/success-massage.component';
->>>>>>> cf00f1ce0106862329e181694d0b45d023e715d8
-// import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+//import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { editProfileComponent } from './components/edit-profile/edit-profile.component';
 import { RunnerReqComponent } from './components/runner-req/runner-req.component';
 import { EarningsComponent } from './components/earnings/earnings.component';

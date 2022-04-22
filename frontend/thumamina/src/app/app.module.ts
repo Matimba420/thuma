@@ -11,18 +11,15 @@ import { ErrandsComponent } from './components/errands/errands.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TrackComponent } from './components/track/track.component';
 import { NavComponent } from './components/nav/nav.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashboardComponent } from './components/dashboard/client/dashboard.component';
 import { PostingComponent } from './components/posting/posting.component';
 import { BackButtonComponent } from './components/back-button/back-button.component';
 import { ProfileComponent } from './components/profile/profile.component';
-<<<<<<< HEAD
 import { RunnerComponent } from './components/runner/runner.component';
 import { DashComponent } from './components/dash/dash.component';
 
-=======
 import { SuccessMassageComponent } from './components/success-massage/success-massage.component';
 import { PaymentsComponent } from './components/payments/payments.component';
->>>>>>> cf00f1ce0106862329e181694d0b45d023e715d8
 // import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { editProfileComponent } from './components/edit-profile/edit-profile.component';
 import { JobsComponent } from './components/jobs/jobs.component';
@@ -47,17 +44,14 @@ import { HistoryComponent } from './components/history/history.component';
     DashboardComponent,
   
    ProfileComponent,
-<<<<<<< HEAD
       RunnerComponent,
       DashComponent,
      
       //  EditProfileComponent
-=======
       SuccessMassageComponent,
       PaymentsComponent,
       //  EditProfileComponent
    editProfileComponent,
->>>>>>> cf00f1ce0106862329e181694d0b45d023e715d8
    editProfileComponent,
    RequestsComponent,
    RunnerProfileComponent,
