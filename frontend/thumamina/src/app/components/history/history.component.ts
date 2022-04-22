@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Service } from 'src/app/interface/service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-history',
@@ -9,12 +10,18 @@ import { Service } from 'src/app/interface/service';
 export class HistoryComponent implements OnInit {
 
 
-  constructor() { }
+  constructor(private service:UserService, ) { }
 
     ngOnInit(): void {
+    
 
      
     }
+    getRequestsByClientid(){
+      
+    }
+ 
   }
+
   
 
