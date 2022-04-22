@@ -11,6 +11,9 @@ export class RequestsComponent implements OnInit {
 
   client_id:any;
   requests:Requests[]=[]
+  request_id:any;
+
+  reqData: any;
 
   constructor(private service:RequestsService) { }
 
@@ -26,11 +29,17 @@ getRequests(){
   this.service.getRequests().subscribe((res=>{
     this.requests = res
     console.log('hello');
-    console.log(res);
-    
+    console.log(res[0].id);
+   // localStorage.setItem("requestID", this.requests.id);
+    this.reqData = res[0].id;
+    localStorage.setItem("reqData",this.reqData);
     
   }));
 
+}
+myFunction(){
+  console.log('hello');
+  console.log(this.requests);
 }
 
 }

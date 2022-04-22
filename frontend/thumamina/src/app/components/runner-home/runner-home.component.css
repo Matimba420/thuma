@@ -1,110 +1,47 @@
 
-
-/* 
-* {
-    box-sizing: border-box;
-    font-family: "Inter", sans-serif;
-    margin: 0;
-    padding: 0;
+/* Float four columns side by side */
+.column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
   }
   
-
-  .wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
+  /* Remove extra left and right margins, due to padding */
+  .row {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
   }
   
-  
-  .card:hover {  /* blog post hover */
-    /* transform: scale(1.05);
-    box-shadow: 0px 2px 40px #d7dfe2;
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
   }
   
-   */ */
-  /* Blog post design starts from here */
-  /* .card {
-    overflow: hidden;
-    box-shadow: 0px 2px 20px #d7dfe2;
-    background:#223C50; 
-    border-radius: 0.5rem;
-    position: relative;
-    width: 90%;
-    margin: 2pc;
-    margin-top: 20px;
-    transition: 250ms all ease-in-out;
-    cursor: pointer;
-  }
-  
-  
- 
-  .card-body {
-    margin: 3rem 1.5rem 1rem 1rem;
-  
-    
-  }
-  .card-text{
-      margin-top: 2px;
-  }
-  .card-title{
-      font-family: serif;
-  }
-  
-  h5{
-    font-weight: bolder;
-    text-align: center
-  }
-  .para{font-weight: bold;
-    text-align: center;}
-  .dis{
-    font-weight: lighter;
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
     text-align: center;
-  } */
-  
-  /* .cards {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-gap: 1rem;
+    background-color: #f1f1f1;
   }
-
-  @media (min-width: 600px) {
-    .cards { grid-template-columns: repeat(2, 1fr); }
-  }
-  html { font-size: 22px; }
-body { padding: 1rem; }
-
-.card {
-  background-color: dodgerblue;
-  color: white;
-  padding: 1rem;
-  height: 4rem;
-} */
-
-
-html { font-size: 22px; }
-body { padding: 1rem; }
-
-.card {
-  background-color: dodgerblue;
-  color: white;
-  padding: 1rem;
-  height: 4rem;
+.col-sm-6{
+    align-items: right;
 }
 
-.cards {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-gap: 1rem;
+.container{
+    margin-top: 5rem;
 }
 
-/* Screen larger than 600px? 2 column */
-@media (min-width: 600px) {
-  .cards { grid-template-columns: repeat(2, 1fr); }
-}
-
-/* Screen larger than 900px? 3 columns */
-@media (min-width: 900px) {
-  .cards { grid-template-columns: repeat(3, 1fr); }
+.h1{
+    text-align: center;
+    font-family: Lora;
+    font-weight: lighter;
 }

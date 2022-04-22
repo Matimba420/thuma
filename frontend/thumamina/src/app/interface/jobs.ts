@@ -6,13 +6,3 @@ export interface Job{
     status: string
     
 }
-
-export interface Home{
-
-    earnings: string,
-    request: string,
-    jobs: string,
-    ratings: string
-    
-}
-

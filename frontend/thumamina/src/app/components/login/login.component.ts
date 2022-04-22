@@ -4,6 +4,7 @@ import  Validation from '../../utils/Validation';
 import { UserService } from 'src/app/services/user.service';
 import {Router, ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/interface/user';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -36,25 +37,12 @@ export class LoginComponent implements OnInit {
 
 
   register(){
-    if(this.form.value.role==='Client')
-    {
-      this.service.addUser(this.form.value).subscribe((res:any)=>{
-        console.log(res)
-        alert(res);
-      }
-      )
-  
+    this.service.addUser(this.form.value).subscribe((res:any)=>{
+      console.log(res)
+      alert(res);
     }
-    else if(this.form.value.role==='Service provider')
-    {
-      this.service.addRunner(this.form.value).subscribe((res:any)=>{
-        console.log(res)
-        alert(res);
-      }
-      )
-  
-    }
-   
+    )
+
   
   }
   ngOnInit(): void {
@@ -86,6 +74,10 @@ export class LoginComponent implements OnInit {
     );
     
     
+  }
+
+  alertWithSuccess(){
+    Swal.fire('Thank you...', 'You succesfully register!', 'success')
   }
   get f(): { [key: string]: AbstractControl } {
     return this.form.controls;

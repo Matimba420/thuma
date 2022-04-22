@@ -18,10 +18,10 @@ const checkServiceExist = "SELECT * FROM service WHERE name=$1";
 const addAddress = "INSERT INTO address(street_address, suburb, city, postal_code, request_id) VALUES($1, $2, $3, $4, $5)";
 const getAddress = "SELECT * FROM address";
 
-//const updateStatus = "UPDATE request SET status ='$1' WHERE id=$2";
+const updateStatus = "UPDATE request SET status ='$1' WHERE id=$2";
 
 const addRequest ="INSERT INTO request(client_id,service_id,comment) VALUES($1, $2, $3) returning id";
-const getRequest =" SELECT s.name AS errand , concat(u.name ,' ', u.surname) AS client_name, comment, concat(a.street_address,', ', a.suburb,', ',  a.city,', ',  a.postal_code) AS address FROM request r,users u, service s, address a WHERE r.client_id=u.id AND r.service_id = s.id AND a.request_id=r.id AND r.status = 'pending' ";
+const getRequest =" SELECT s.name AS errand , concat(u.name ,' ', u.surname) AS client_name, comment, concat(a.street_address,', ', a.suburb,', ',  a.city,', ',  a.postal_code) AS address, r.id FROM request r,users u, service s, address a WHERE r.client_id=u.id AND r.service_id = s.id AND a.request_id=r.id AND r.status = 'pending' ";
 const getMaxId ="SELECT id FROM request WHERE client_id= $1 ORDER BY id DESC LIMIT 1";
 const getRequestByClientId ="SELECT s.name AS errand , concat(u.name ,' ', u.surname) AS runner_name, comment, concat(a.street_address,', ', a.suburb,', ',  a.city,', ',  a.postal_code) AS address, status FROM request r,users u, service s, address a WHERE r.runner_id=u.id AND r.service_id = s.id AND a.request_id=r.id AND client_id =$1";
 const getRequestByRunnerId ="SELECT s.name AS errand , concat(u.name ,' ', u.surname) AS client_name, concat(a.street_address,', ', a.suburb,', ',  a.city,', ',  a.postal_code) AS address, status FROM request r,users u, service s, address a WHERE r.client_id=u.id AND r.service_id = s.id AND a.request_id=r.id AND runner_id =$1";
@@ -32,6 +32,11 @@ const getAllRunners= "SELECT * FROM users WHERE role ='Service provider' AND is_
 
 const cancelRequest = "UPDATE request SET client_id=(select id from users where name=$1), client_id=$2, is_available =true where id=$3";
 
+const getReviews = " SELECT s.name AS errand, CONCAT(u.name,' ',u.surname) AS client_name, reason, rating FROM service s, users u, review r, request rq WHERE u.id=r.client_id AND r.request_id=rq.id AND s.id=r.id AND r.runner_id=$1 ";
+const totalRating = " select to_char(avg(rating), '9D99') AS avg from review where runner_id=$1 ";
+
+const totalClients = " SELECT COUNT(*) AS clients FROM users WHERE role ='Client' ";
+const totalRunners = " SELECT COUNT(*) AS runners FROM users WHERE role ='Service provider' ";
 
 const acceptRequest = " UPDATE request SET status='Accepted', runner_id=$1 WHERE id=$2 ";
 const rateServices = " INSERT INTO review (runner_id, client_id, rating, reason, request_id) VALUES($1, $2, $3, $4, $5) ";
@@ -58,7 +63,7 @@ module.exports ={
 
     addAddress,
     getAddress,
-    //updateStatus
+    updateStatus,
     
 
     addRequest,
@@ -77,11 +82,11 @@ module.exports ={
     // getRunnerEarnings,
     // getTotal,
 
-    // getReviews,
-    // totalRating,
+     getReviews,
+    totalRating,
 
-    // totalRunners,
-    // totalClients,
+     totalRunners,
+    totalClients,
     acceptRequest,
 
     rateServices,
