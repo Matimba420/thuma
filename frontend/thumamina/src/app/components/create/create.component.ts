@@ -99,7 +99,9 @@ export class CreateComponent implements OnInit {
     
   }
   }
-
+    create(){
+      this.router.navigateByUrl('/create',{replaceUrl:true});
+    }
   
   ngOnInit(): void {
 
