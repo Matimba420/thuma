@@ -15,6 +15,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PostingComponent } from './components/posting/posting.component';
 import { BackButtonComponent } from './components/back-button/back-button.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { SuccessMassageComponent } from './components/success-massage/success-massage.component';
+import { PaymentsComponent } from './components/payments/payments.component';
+// import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { editProfileComponent } from './components/edit-profile/edit-profile.component';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { EarningsComponent } from './components/earnings/earnings.component';
@@ -25,6 +28,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
+import { RunnerProfileComponent } from './components/runner-profile/runner-profile.component';
+import { Nav2Component } from './components/nav2/nav2.component';
+import { HistoryComponent } from './components/history/history.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +45,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PostingComponent,
     BackButtonComponent,
     DashboardComponent,
+  
+   ProfileComponent,
+      SuccessMassageComponent,
+      PaymentsComponent,
+      //  EditProfileComponent
+   editProfileComponent,
+   editProfileComponent,
+   RequestsComponent,
+   RunnerProfileComponent,
+   Nav2Component,
+   HistoryComponent,
+       
     ProfileComponent,
     editProfileComponent,
     JobsComponent,

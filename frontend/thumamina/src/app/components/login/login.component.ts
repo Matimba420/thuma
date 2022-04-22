@@ -77,7 +77,7 @@ export class LoginComponent implements OnInit {
   }
 
   alertWithSuccess(){
-    Swal.fire('Thank you...', 'You succesfully registered!', 'success')
+    Swal.fire('Thank you...', 'You succesfully register!', 'success')
   }
   get f(): { [key: string]: AbstractControl } {
     return this.form.controls;

@@ -9,6 +9,8 @@
  
 
 
+<div class="wrapper"> 
+
 
 
           <div class="card-deck">
@@ -26,6 +28,13 @@
                
                 
            
+              <img class="card-img-top" src="../../../assets/shopping.jpg" alt="Card image cap" [routerLink]="['/posting']" routerLinkActive="router-link-active" >
+              <div class="card-body">
+                <h5 class="card-title" style="text-align: center;">{{item.name}}</h5>
+                <p class="card-text" style="text-align: center;"></p>
+                <p>{{item.description}}</p>
+                <p style="text-align: center;">{{item.cost}}</p>
+                
               </div>
             </div>
       
@@ -33,3 +42,4 @@
 </div>
 
 <!--[routerLink]="['/posting']"-->
+</div>

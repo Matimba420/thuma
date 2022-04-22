@@ -1,5 +1,6 @@
 
 const addClient = "INSERT into users (name, surname, cell_no, email, password, role) values($1, $2, $3, $4, $5, $6)";
+const addRunner = "INSERT into users (name, surname, cell_no, email, password, role, is_active) values($1, $2, $3, $4, $5, $6, false)";
 const checkClientCelllExists = "SELECT * FROM users WHERE cell_no= $1";
 const checkClientEmailExists = "SELECT * FROM users WHERE email= $1";
 const checkClientEmailCellNoExists="SELECT * FROM users WHERE email= $1 or cell_no=$2 and is_active='true'";
@@ -46,6 +47,7 @@ const rateServices = " INSERT INTO review (runner_id, client_id, rating, reason,
 module.exports ={
    
     addClient,
+    addRunner,
     checkClientCelllExists,
     checkClientEmailExists,
     getClients,
