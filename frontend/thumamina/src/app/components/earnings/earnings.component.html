@@ -1,0 +1,34 @@
+
+<!-- <app-nav></app-nav> -->
+<br>
+<div class="col-sm-12">
+
+  <h1>Earnings</h1>
+
+  <div class="card mt-3"  *ngFor="let item of earnings"  >
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <h5 class="card-title">{{ item.errand }}</h5>
+        </div>
+        <div class="col">
+          <h4 class="card-title" >
+            {{ item.client_name }}
+          </h4>
+        </div>
+        <div class="col">
+          <h5 class="card-title ">
+            {{ item.cost }}
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <div class="col">
+    <h5 class="card-text" style="text-align: end">
+      Total:R{{this.total}}
+    </h5>
+  </div> 
+</div>

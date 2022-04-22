@@ -14,6 +14,10 @@ import { TrackComponent } from './components/track/track.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PostingComponent } from './components/posting/posting.component';
 import { editProfileComponent } from './components/edit-profile/edit-profile.component';
+import { EarningsComponent } from './components/earnings/earnings.component';
+
+import { RatingsComponent } from './components/ratings/ratings.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { RequestsComponent } from './components/requests/requests.component';
 import { RateComponent } from './components/rate/rate.component';
@@ -37,7 +41,10 @@ const routes: Routes = [{
 {path:'errands', component:ErrandsComponent},
 {path:'profile', component:ProfileComponent},
 {path:'edit', component:editProfileComponent},
+{path:'ratings', component:RatingsComponent},
+{path:'footer', component:FooterComponent},
 {path:'jobs', component:JobsComponent},
+{path:'earnings', component:EarningsComponent},
 
 {path: 'requests', component: RequestsComponent},
 {path: 'rate', component: RateComponent}

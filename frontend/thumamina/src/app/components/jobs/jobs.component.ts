@@ -11,12 +11,7 @@ export class JobsComponent implements OnInit {
 
   constructor(private service:JobsService) { }
 
-  Jobs:Job[] = [
-
-  
-
-
-  ]
+  Jobs:Job[] = [ ]
   
 
 
@@ -32,6 +27,9 @@ export class JobsComponent implements OnInit {
   getJobs(){
     this.service.getJobs(this.runner_id).subscribe((res=>{
       this.Jobs = res;
+      console.log('Hello');
+      console.log(res);
+      
     }));
       
       

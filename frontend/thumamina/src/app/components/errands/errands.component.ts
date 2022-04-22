@@ -8,14 +8,24 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './errands.component.html',
   styleUrls: ['./errands.component.css']
 })
+
+
 export class ErrandsComponent implements OnInit {
   
+
+  clientId: any;
+  serviceId: any;
+
+  reqdata:any = {};
+
 
   constructor(private errandService:ErrandsService, private router:Router, private route: ActivatedRoute) { }
   data:any;
 
   ngOnInit(): void {
    this.getService()
+   this.clientId=localStorage.getItem("clientID");
+  this.serviceId=localStorage.getItem("serviceID"); 
   }
 
 
@@ -41,4 +51,16 @@ getService(){
     });
   }
 
+  addRequest(){
+
+    this.reqdata = {
+    client_id: this.clientId,
+    service_id : this.serviceId,
+    //comment : this.form.value.comment
+
+    
+    
+    }
+
+}
 }

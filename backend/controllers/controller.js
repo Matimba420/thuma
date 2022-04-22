@@ -51,7 +51,7 @@ const addClient = async (req,res) => {
 
 const getClient = (req, res) => {
     pool.query(queries.getClients,(error, results) => {
-        if(this.error){
+        if(error){
             console.log("error:"+error);
             res.status(404).send(error);
             throw error;
@@ -515,6 +515,36 @@ const totalRunners = (req, res) => {
     });
 };
 
+
+const acceptRequest = async (req,res) =>{
+    const {runner_id} = req.body;
+    const {id} = req.body;
+    pool.query(queries.acceptRequest,[runner_id,id],(error, results) =>{
+        if(error){
+            console.log("error:"+error);
+            res.status(404).send(error);
+            throw error;
+        }
+        res.status(200).json("Request accepted succesfully");
+    });
+};
+
+const rateServices = async (req,res) =>{
+    const {runner_id} = req.body;
+    const {client_id } = req.body;
+    const {rating} = req.body;
+    const {reason} = req.body;
+    const {request_id } = req.body;
+    pool.query(queries.rateServices,[runner_id,client_id,rating, reason,request_id ],(error, results) =>{
+        if(error){
+            console.log("error:"+error);
+            res.status(404).send(error);
+            throw error;
+        }
+        res.status(200).json("Review added succesfully");
+    });
+};
+
 module.exports = {
     addClient,
     getClient,
@@ -547,7 +577,10 @@ module.exports = {
     totalRating,
 
     totalClients,
-    totalRunners
+    totalRunners,
+
+    acceptRequest,
+    rateServices
 
     
 }
