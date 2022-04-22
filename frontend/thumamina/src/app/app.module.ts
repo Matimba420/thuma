@@ -22,6 +22,7 @@ import { editProfileComponent } from './components/edit-profile/edit-profile.com
 import { JobsComponent } from './components/jobs/jobs.component';
 import { EarningsComponent } from './components/earnings/earnings.component';
 import { RequestsComponent } from './components/requests/requests.component';
+import { RatingsComponent } from './components/ratings/ratings.component';
 import { RateComponent } from './components/rate/rate.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxStarRatingModule } from 'ngx-star-rating';
@@ -53,7 +54,7 @@ import { HistoryComponent } from './components/history/history.component';
        
       JobsComponent,
               RateComponent,
-              ForgotComponent
+              ForgotComponent,
       SuccessMassageComponent,
       PaymentsComponent,
       //  EditProfileComponent
@@ -68,10 +69,12 @@ import { HistoryComponent } from './components/history/history.component';
     editProfileComponent,
     JobsComponent,
     EarningsComponent,
-    ProfileComponent,
-    editProfileComponent,
     RequestsComponent,
     JobsComponent,
+    RatingsComponent,
+   RequestsComponent,
+   JobsComponent,
+   RateComponent
   ],
   imports: [
     BrowserModule,

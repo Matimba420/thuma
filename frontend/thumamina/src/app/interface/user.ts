@@ -75,4 +75,9 @@ export interface Ratings{
     reason:string;
     rating:number;
 }
-
+export interface total{
+    errand:string;
+    client_name:string;
+    reason:string;
+    rating:number;
+}
