@@ -62,9 +62,12 @@
                     
                     
     
-<!--                 
+<!--           
+        
                 </div> -->
-                <div class="row">
+
+                <div class="container_2">
+                  <div class="row">
                     <div class="col-12 col-xl-8 mb-4 mb-lg-0">
                         <div class="card">
                             <h5 class="card-header">Client Side</h5>
@@ -84,13 +87,13 @@
                                           </tr>
                                         </thead>
                                         <tbody>
-                                          <tr>
+                                          <tr  *ngFor="let person of clients">
                                             <th scope="row">142</th>
                                          
-                                            <td>Matimba</td>
-                                            <td>chauke</td>
-                                            <td>Matimba@Gmail.com</td>
-                                            <td>0656199822</td>
+                                            <td>{{person.name}}</td>
+                                            <td>{{person.surname}}</td>
+                                            <td>{{person.email}}</td>
+                                            <td>{{person.cell_no}}</td>
                                             <td>Brixton</td>
                                             <td><a href="#" class="btn btn-sm btn-primary ">View</a></td>
                                             
@@ -108,6 +111,8 @@
                  
                 </div>
             
+                </div>
+                
             </main>
         </div>
     </div>

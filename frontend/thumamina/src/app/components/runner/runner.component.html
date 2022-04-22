@@ -85,13 +85,13 @@
                                           </tr>
                                         </thead>
                                         <tbody>
-                                          <tr>
+                                          <tr *ngFor = "let person of runners">
                                             <th scope="row">142</th>
                                          
-                                            <td>Matimba</td>
-                                            <td>chauke</td>
-                                            <td>Matimba@Gmail.com</td>
-                                            <td>0656199822</td>
+                                            <td>{{person.name}}</td>
+                                            <td>{{person.surname}}</td>
+                                            <td>{{person.email}}</td>
+                                            <td>{{person.cell_no}}</td>
                                             <td>Brixton</td>
                                          
                                             
