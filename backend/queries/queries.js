@@ -14,7 +14,7 @@ const getServices= "SELECT * FROM service";
 const addServices ="INSERT INTO service(name,description, cost, image) VALUES($1, $2, $3, $4)";
 const checkServiceExist = "SELECT * FROM service WHERE name=$1";
 
-const addAddress = "INSERT INTO address(street_address, suburb, city, postal_code) VALUES($1, $2, $3, $4)";
+const addAddress = "INSERT INTO address(street_address, suburb, city, postal_code, request_id) VALUES($1, $2, $3, $4, $5)";
 const getAddress = "SELECT * FROM address";
 
 const updateStatus = "UPDATE request SET status =$1 WHERE id=$2";

@@ -34,10 +34,16 @@ addressData : any= {};
       suburb: new FormControl('',Validators.required),
       postal_code : new FormControl('',[Validators.required,Validators.maxLength(4),Validators.minLength(4)])
     });
-
+    
     this.getAddress;
     this.clientId=localStorage.getItem("clientID");
     this.serviceId=localStorage.getItem("serviceID"); 
+    this.getMaxId()
+    
+
+     
+    
+    
   }
 
 
@@ -58,41 +64,35 @@ addressData : any= {};
     
     }
 
+    
+
+   
+    console.log(this.addressData);
+  
+    
+  }
+
+   getMaxId(){
+    this.service.getMaxId(this.clientId).subscribe((res:any)=>{
+      this.request_id=res;
+      this.addressData.request_id = res;
+      localStorage.setItem("request_id", res[0].id);
+      this.request_id=localStorage.getItem("request_id");
+      console.log('The request id is :' + this.request_id);
+    })
+  }
+
+  async getAddress(){
+
     this.addressData ={
-      request_id:this.request_id,
+      request_id:localStorage.getItem("request_id"),
       street_address: this.form.value.street_address,
       suburb:this.form.value.suburb,
       city: this.form.value.city,
       postal_code:this.form.value.postal_code,
       comment:this.form.value.comment
     }
-
-   
-    console.log(this.addressData);
-    
-  let obj =  this.service.addRequest(this.reqdata);
-   obj.subscribe((res:any)=>{
-    console.log(res)
-  });
-    
-  }
-
-  async getMaxId(){
-    this.service.getMaxId(this.clientId).subscribe((res:any)=>{
-      this.request_id=res;
-      this.addressData.request_id = res;
-      console.log(this.request_id);
-    })
-  }
-
-  async getAddress(){
-
-
-    
-
-    this.addRequest();
-
-    await this.getMaxId()
+  
     
     this.service.getAddress(this.addressData).subscribe((res:any)=>{
       console.log(res)
