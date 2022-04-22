@@ -25,6 +25,8 @@ import { RequestsComponent } from './components/requests/requests.component';
 import { RatingsComponent } from './components/ratings/ratings.component';
 import { RateComponent } from './components/rate/rate.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -74,6 +76,7 @@ import { HistoryComponent } from './components/history/history.component';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FormsModule
    
   ],
   providers: [],

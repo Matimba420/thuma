@@ -14,6 +14,7 @@ export class RequestsComponent implements OnInit {
   request_id:any;
 
   reqData: any;
+  runner_id: string;
 
   constructor(private service:RequestsService) { }
 
@@ -23,6 +24,7 @@ export class RequestsComponent implements OnInit {
 
   this.client_id=localStorage.getItem("clientId");
   this.getRequests();
+  this.runner_id= localStorage.getItem("runnerID");
   }
 
 getRequests(){
@@ -37,9 +39,9 @@ getRequests(){
   }));
 
 }
-myFunction(){
+myFunction(request){
   console.log('hello');
-  console.log(this.requests);
+  console.log(request.id);
 }
 
 }
