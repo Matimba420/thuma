@@ -15,7 +15,7 @@ const getServices= "SELECT * FROM service";
 const addServices ="INSERT INTO service(name,description, cost, image) VALUES($1, $2, $3, $4)";
 const checkServiceExist = "SELECT * FROM service WHERE name=$1";
 
-const addAddress = "INSERT INTO address(street_address, suburb, city, postal_code) VALUES($1, $2, $3, $4)";
+const addAddress = "INSERT INTO address(street_address, suburb, city, postal_code, request_id) VALUES($1, $2, $3, $4, $5)";
 const getAddress = "SELECT * FROM address";
 
 //const updateStatus = "UPDATE request SET status ='$1' WHERE id=$2";
@@ -35,6 +35,8 @@ const cancelRequest = "UPDATE request SET client_id=(select id from users where 
 
 const acceptRequest = " UPDATE request SET status='Accepted', runner_id=$1 WHERE id=$2 ";
 const rateServices = " INSERT INTO review (runner_id, client_id, rating, reason, request_id) VALUES($1, $2, $3, $4, $5) ";
+
+const runnerRequests =  " SELECT * FROM users WHERE is_active =false ";
 
 module.exports ={
     // clientLogin,
@@ -70,19 +72,20 @@ module.exports ={
     getAllClients,
     getAllRunners,
 
-    addComment,
+    // addComment,
     getMaxId,
-    getRunnerEarnings,
-    getTotal,
+    // getRunnerEarnings,
+    // getTotal,
 
-    getReviews,
-    totalRating,
+    // getReviews,
+    // totalRating,
 
-    totalRunners,
-    totalClients,
+    // totalRunners,
+    // totalClients,
     acceptRequest,
 
-    rateServices
+    rateServices,
+    runnerRequests
 
     
 };
