@@ -76,7 +76,7 @@ export interface Ratings{
 
 export interface History{
     errand: string
-    service_provider:string
+    runner_name:string
     date: Date
     status:string
 

@@ -12,6 +12,7 @@ export class RequestsComponent implements OnInit {
   client_id:any;
   requests:Requests[]=[]
   request_id:any;
+  accept:any;
 
   reqData: any;
   runner_id: string;
@@ -21,6 +22,9 @@ export class RequestsComponent implements OnInit {
  
 
   ngOnInit(): void {
+
+
+    this.acceptRequest();
 
   this.client_id=localStorage.getItem("clientId");
   this.getRequests();
@@ -39,6 +43,12 @@ getRequests(){
   }));
 
 }
+
+acceptRequest(){this.service.accept(this.runner_id).subscribe((res=>{
+  this.accept = res ;
+console.log(res);
+
+}))}
 myFunction(request){
   console.log('hello');
   console.log(request.id);

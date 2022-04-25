@@ -20,7 +20,7 @@
               <hr>
             
               <p class="card-text">Date={{today | date : "dd.MM.y"}}<small class="text-muted">date:{{this.item.date}}</small></p>
-              <p class="card-text">Service Provider:<small class="text-muted">{{this.item.service_provider}}</small></p>
+              <p class="card-text">Service Provider:<small class="text-muted">{{this.item.runner_name}}</small></p>
               <div class="col-md-12 text-right">
                 <button type="button" [routerLink]="['/rate']" class="btn btn-warning ml-2">Rate</button>
             </div>

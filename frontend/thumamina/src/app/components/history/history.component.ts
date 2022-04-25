@@ -12,7 +12,7 @@ export class HistoryComponent implements OnInit {
 
   item:History;
   
-
+  id : any;
    today:Date;
 
 
@@ -24,13 +24,13 @@ export class HistoryComponent implements OnInit {
       this.getHistory();
       const now= new Date();
       console.log(now.toLocaleDateString());
-
+      this.id=localStorage.getItem("clientID");
     }
 
     
 
     getHistory(){
-      this.service.getHistory(id).subscribe((res=>{
+      this.service.getHistory(this.id).subscribe((res=>{
         this.item=res;
         console.log(this.item)
       }))
@@ -41,7 +41,4 @@ export class HistoryComponent implements OnInit {
 
   
 
-function id(id: any) {
-  throw new Error('Function not implemented.');
-}
 
