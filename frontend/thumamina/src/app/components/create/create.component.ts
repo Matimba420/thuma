@@ -102,7 +102,9 @@ user:any;
     
   }
   }
-
+    create(){
+      this.router.navigateByUrl('/create',{replaceUrl:true});
+    }
   
   ngOnInit(): void {
 
