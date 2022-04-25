@@ -79,6 +79,7 @@ export class CreateComponent implements OnInit {
 
   }
 
+    
 
 
 
@@ -98,8 +99,10 @@ export class CreateComponent implements OnInit {
     
   }
   }
-
-
+    create(){
+      this.router.navigateByUrl('/create',{replaceUrl:true});
+    }
+  
   ngOnInit(): void {
 
     this.registerForm = this.formBuilder.group({

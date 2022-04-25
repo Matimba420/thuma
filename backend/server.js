@@ -1,10 +1,10 @@
 const express = require("express");
-const userRouter = require('./routes/routes');
-const bodyParser = require("body-parser") 
+const userRouter = require('./Routes/routes');
+
 const cors = require('cors');
 
 const app = express();
-const port = 4304;
+const port = process.env.PORT || 4304;
 
 var corsOption ={
     origin: 'http://localhost:4303',
@@ -12,9 +12,9 @@ var corsOption ={
 
 app.use(cors(corsOption));
 
-app.use(bodyParser.json());
+app.use(express.json());
 
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.urlencoded({extended:true}));
 
 app.use(express.json());
 

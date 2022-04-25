@@ -102,7 +102,7 @@ const getClient = (req, res) => {
             res.status(404).send(error);
             throw error;
         }
-        res.status(200).json(results);
+        res.status(200).json(results.rows);
     });
 };
 
@@ -248,7 +248,7 @@ const addServices = async (req,res) => {
 const addAddress = async (req,res) => {
     // const {firstname, lastname, cell_no, password} = req.body;
      const {street_address, suburb, city, postal_code, request_id} = req.body
-     console.log(request_id);
+     
             pool.query(queries.addAddress, 
                 [street_address, suburb, city, postal_code, request_id],
                 (error,results)=>{
@@ -309,7 +309,7 @@ const addRequest = async (req,res) => {
 
 const getRequest = (req, res) => {
     pool.query(queries.getRequest,(error, results) => {
-        if(this.error){
+        if(error){
             console.log("error:"+error);
             res.status(404).send(error);
             throw error;
@@ -591,6 +591,17 @@ const rateServices = async (req,res) =>{
     });
 };
 
+const runnerRequests = (req, res) => {
+    pool.query(queries.runnerRequests,(error, results) => {
+        if(error){
+            console.log("error:"+error);
+            res.status(404).send(error);
+            throw error;
+        }
+        res.status(200).json(results.rows);
+    });
+};
+
 module.exports = {
     addClient,
     addRunner,
@@ -627,7 +638,8 @@ module.exports = {
     totalRunners,
 
     acceptRequest,
-    rateServices
+    rateServices,
+    runnerRequests
 
     
 }
