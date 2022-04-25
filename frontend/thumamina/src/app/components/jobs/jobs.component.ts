@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, NgForm} from '@angular/forms';
 import { Job } from 'src/app/interface/jobs';
 import { JobsService } from 'src/app/jobs.service';
 
@@ -17,9 +17,9 @@ export class JobsComponent implements OnInit {
 
   Jobs:Job[] = [ ]
 
-  submitted = false;
+  isSubmitted = false;
   
-
+ 
 
   runner_id: any;
 
@@ -27,7 +27,22 @@ export class JobsComponent implements OnInit {
 
     this.runner_id=localStorage.getItem("runnerID");
    this.getJobs();
+
+
+  
+   
   }
+  submitForm(form: NgForm) {
+    this.isSubmitted = true;
+    if(!form.valid) {
+      return false;
+    } 
+    else {
+     return JSON.stringify(form.value)
+
+    }
+  }
+
 
   
   getJobs(){
@@ -35,31 +50,31 @@ export class JobsComponent implements OnInit {
       this.Jobs = res;
       console.log('Hello');
       console.log(res);
+
       
     }));
+
+    
       
+
    
       
      
    
-  }
+  };
 
-  myFunction() {
-    console.log(this.form.status);  
+  myFunction(job) {
+    console.log(this.form.value.status);  
+    console.log(job.id);
+    
     
   }
   
   onSubmit(): void {
-    this.submitted = true;
-    if (this.form.invalid) {
-      return;
-    }
-    console.log(JSON.stringify(this.form.value, null, 2));
 
-
-  
 
 
 
 }
+
 }
