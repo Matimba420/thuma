@@ -1,4 +1,29 @@
-<!-- 
+
+<body>
+  <nav class="navbar navbar-light fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="color:aliceblue;font-size:x-large;">Smart serve</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h1 class="offcanvas-title" id="offcanvasNavbarLabel" style="color:rgb(255, 255, 255);font-size:x-large;">smart serve</h1>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+ 
+              
+                <li><a  routerLink="/log">Sign out</a></li>
+              
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+    <!-- 
 <body>
     <nav class="navbar navbar-light bg-light p-3">
         <div class="d-flex col-12 col-md-3 col-lg-2 mb-2 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
@@ -157,11 +182,10 @@
               <div class="navi">
                   <ul>
                       <li class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
-                      <li><a href="#"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Runners</span></a></li>
+                      <li><a routerLink="/runn"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Runners</span></a></li>
                       <!-- <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Statistics</span></a></li> -->
-                      <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Calender</span></a></li>
-                      <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Users</span></a></li>
-                      <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Setting</span></a></li>
+                      <li><a routerLink="/dash"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Clients</span></a></li>
+                      <li><a routerLink="/log"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Sign out</span></a></li>
                   </ul>
               </div>
           </div>
@@ -218,41 +242,20 @@
                   </header>
               </div>
               <div class="user-dashboard">
-                  <h1>Hello, S Sogiba</h1>
+                  <h1>Hello, </h1>
                   <div class="row">
                       <div class="col-md-5 col-sm-5 col-xs-12 gutter">
 
                           <div class="sales">
-                              <h2>Total number of runners</h2>
-
-                              <div class="btn-group">
-                                  <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      <span>Period:</span> Last Year
-                                  </button>
-                                  <div class="dropdown-menu">
-                                      <a href="#">2012</a>
-                                      <a href="#">2014</a>
-                                      <a href="#">2015</a>
-                                      <a href="#">2016</a>
-                                  </div>
-                              </div>
+                              <h2>Total number of runners: {{this.numRunners[0].runners}}</h2>
+   
                           </div>
                       </div>
                       <div class="col-md-7 col-sm-7 col-xs-12 gutter">
 
                           <div class="sales report">
-                              <h2>Total number of Clients</h2>
-                              <div class="btn-group">
-                                  <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      <span>Period:</span> Last Year
-                                  </button>
-                                  <div class="dropdown-menu">
-                                      <a href="#">2012</a>
-                                      <a href="#">2014</a>
-                                      <a href="#">2015</a>
-                                      <a href="#">2016</a>
-                                  </div>
-                              </div>
+                              <h2>Total number of Clients: {{this.numClients[0].clients}}</h2>
+                             
                           </div>
                       </div>
                   </div>

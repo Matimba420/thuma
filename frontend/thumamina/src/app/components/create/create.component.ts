@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
 export class CreateComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,private router: Router, private route:ActivatedRoute, private service:UserService) { }
 
-
+user:any;
 
   // role:any ='client';
   isloading:boolean=false;
@@ -50,6 +50,9 @@ export class CreateComponent implements OnInit {
             this.isloading=false;
             localStorage.setItem("access", JSON.stringify(data));
             console.log(data)
+            this.user=data[0].name + ' ' + data[0].surname;
+            console.log(this.user);
+            
             if(data[0].role=='Client' && data[0].is_active===true){
               localStorage.setItem("clientID",data[0].id);
               this.router.navigateByUrl('/errands',{replaceUrl:true});
@@ -59,7 +62,7 @@ export class CreateComponent implements OnInit {
               localStorage.setItem("runnerID",data[0].id);
             }
             if(data[0].role=='Admin' && data[0].is_active===true){
-              this.router.navigateByUrl('/dash',{replaceUrl:true});
+              this.router.navigateByUrl('/dashPage',{replaceUrl:true});
               localStorage.setItem("adminID",data[0].id);
             }
             

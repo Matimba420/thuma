@@ -1,6 +1,8 @@
 
 
 <app-nav></app-nav>
+<br>
+<h1 style="text-align: center;">Choose your errand</h1>
 
 <div class="wrapper"> 
 
@@ -14,7 +16,7 @@
           <div class="card-deck">
             <div class="card" *ngFor="let item of items"   >
 
-              <img class="card-img-top" src="{{item.image}}" alt="Card image cap"  (click)="myFunction(item)" routerLinkActive="router-link-active" >
+              <img class="card-img-top" src="{{item.image}}" alt="Card image cap"  (click)="myFunction(item)" >
               <div class="card-body">
                    <h5 class="card-title" >{{item.name}}</h5>
                    <p class="card-text" style="text-align: center;"></p>

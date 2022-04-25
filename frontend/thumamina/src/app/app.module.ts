@@ -11,10 +11,13 @@ import { ErrandsComponent } from './components/errands/errands.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TrackComponent } from './components/track/track.component';
 import { NavComponent } from './components/nav/nav.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashboardComponent } from './components/dashboard/client/dashboard.component';
 import { PostingComponent } from './components/posting/posting.component';
 import { BackButtonComponent } from './components/back-button/back-button.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { RunnerComponent } from './components/runner/runner.component';
+import { DashComponent } from './components/dash/dash.component';
+
 import { SuccessMassageComponent } from './components/success-massage/success-massage.component';
 import { PaymentsComponent } from './components/payments/payments.component';
 // import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
@@ -25,6 +28,14 @@ import { RequestsComponent } from './components/requests/requests.component';
 import { RunnerProfileComponent } from './components/runner-profile/runner-profile.component';
 import { Nav2Component } from './components/nav2/nav2.component';
 import { HistoryComponent } from './components/history/history.component';
+import { RatingsComponent } from './components/ratings/ratings.component';
+import { RateComponent } from './components/rate/rate.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxStarRatingModule } from 'ngx-star-rating';
+import { ForgotComponent } from './components/forgot/forgot.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -41,6 +52,10 @@ import { HistoryComponent } from './components/history/history.component';
     DashboardComponent,
   
    ProfileComponent,
+      RunnerComponent,
+      DashComponent,
+     
+      //  EditProfileComponent
       SuccessMassageComponent,
       PaymentsComponent,
       //  EditProfileComponent
@@ -55,16 +70,23 @@ import { HistoryComponent } from './components/history/history.component';
     editProfileComponent,
     JobsComponent,
     EarningsComponent,
-    ProfileComponent,
-    editProfileComponent,
     RequestsComponent,
     JobsComponent,
+   editProfileComponent,
+   RequestsComponent,
+       
+      JobsComponent,
+              RateComponent,
+              ForgotComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    NgxStarRatingModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent],

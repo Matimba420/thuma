@@ -9,11 +9,11 @@ export class JobsService {
 
   constructor(private http:HttpClient) { }
 
-  private baseUrl = 'http://localhost:4304/api/requests/runner/';
+  private baseUrl = 'http://localhost:4304/api/requests/runner';
 
 getJobs(runner_id:any):Observable<any>{
 
-  return this.http.get<any>(`${this.baseUrl}${runner_id}`);
+  return this.http.get<any>(`${this.baseUrl}/${runner_id}`);
 }
 
 }

@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
-import { login, User } from '../interface/user';
+import { Update, User,login, edit } from '../interface/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
+  addRunner(value: any) {
+    throw new Error('Method not implemented.');
+  }
   private baseUrl = 'http://localhost:4304/api/clients/';
 
   constructor(private http:HttpClient) { }
@@ -19,10 +22,6 @@ export class UserService {
   
   }
 
-  addRunner(user:User):Observable<any>{
-    return this.http.post<any>(`http://localhost:4304/api/runner`, user);
-  
-  }
 
 //read user
   getUsers(): Observable<any>{
