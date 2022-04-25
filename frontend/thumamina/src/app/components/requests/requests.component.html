@@ -1,4 +1,3 @@
-
 <app-navbar></app-navbar>
 <br>
 <div class="grid-container">
@@ -21,15 +20,17 @@
         >
           {{ request.client_name }}
         </h5>
+          <p class="card-text">{{ request.address }}</p>
+          <p class="card-text">"{{ request.comment }}"</p>
+          <a class="btn btn-primary"  (click)="acceptRequest()"  >Accept</a>
+        </div>
       </div>
     </div>
 
-    <p class="card-text">{{ request.address }}</p>
-    <p class="card-text">"{{ request.comment }}"</p>
-    <a href="#" class="btn btn-primary">Accept</a>
+  
   </div>
 </div> 
        
      
-</div>
+
 
