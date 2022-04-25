@@ -10,7 +10,7 @@ import { FormGroup, FormBuilder ,FormControl} from '@angular/forms';
 export class editProfileComponent implements OnInit {
   id: any;
   user: any;
-
+  
   form: FormGroup = new FormGroup({
     name: new FormControl(''),
     surname: new FormControl(''),

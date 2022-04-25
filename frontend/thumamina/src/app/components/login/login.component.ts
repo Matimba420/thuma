@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import  Validation from '../../utils/Validation';
 import { UserService } from 'src/app/services/user.service';
-import {Router} from '@angular/router';
+import {Router, ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/interface/user';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -29,7 +30,7 @@ export class LoginComponent implements OnInit {
   registerForm: FormGroup | undefined;
   option: any;
   selected:any;
-  constructor(private formBuilder: FormBuilder, private service: UserService){
+  constructor(private formBuilder: FormBuilder, private service: UserService, private router:Router, private route: ActivatedRoute ){
     
     registerForm: FormGroup ;
   }
@@ -74,6 +75,10 @@ export class LoginComponent implements OnInit {
     
     
   }
+
+  alertWithSuccess(){
+    Swal.fire('Thank you...', 'You succesfully register!', 'success')
+  }
   get f(): { [key: string]: AbstractControl } {
     return this.form.controls;
   }
@@ -100,6 +105,8 @@ export class LoginComponent implements OnInit {
   myFunction(){
     console.log(this.form.value);
     this.register();
+    //alert(res)
+    this.router.navigateByUrl('/log',{replaceUrl:true});
     
   }
   

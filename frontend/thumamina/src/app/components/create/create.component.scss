@@ -12,6 +12,12 @@
     width: 100%;
   }
 
+  .btn-2{margin-right:1rem;
+    border-radius:16px;
+    background-color: rgb(255, 255, 255);
+    width: 10rem;
+     }
+
 input[type="number"] {
     width: 100%;
     height: 50px;
@@ -24,11 +30,7 @@ label{
     color: aliceblue;
     padding-top: 0px;
 }
-h1{color: whitesmoke;
-font-family:'Times New Roman', Times, serif;
-align-content: center;
-text-align: center;
-font-size:xx-large }
+
 p{
     color: aliceblue;
     text-align: center;
@@ -37,27 +39,21 @@ p{
 .liv{
     position: floor($number: 22%);
     background:linear-gradient(#223C50,#223C50);
-    // margin-top: 50pc;
     height: 100%;
     width: 100%;
     margin-bottom: 50px;
 }
 
-// .container{
-//     margin-top: 0rem;
-//     height: 100pc;
-// }
 .what{
-    height: 50rem;
-    padding-top: 50%;
+    height: 47rem;
+    // padding-top: 50%;
+    padding-bottom: 20%;
     
 }
 
-
 img{
     width:100%;
-    height: auto;
-    margin-left: 0%;
-    margin-right: 0%;
+    height: 60%;
+   
 }
 

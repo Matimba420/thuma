@@ -21,11 +21,6 @@ export interface address{
    suburb: string;
    city:string;
    postal_code: number;
-   
-
-
-     
-
 
 }
 
@@ -35,8 +30,6 @@ export interface Update {
     cell_no: number;
     email :string;
    
-    
-
 }
 
 
@@ -48,6 +41,12 @@ export interface edit{
     
 }
 
+export interface request{
+    comment: string;
+    clientId: number;
+    serviceId: number;
+    
+}
 
 
 
@@ -56,3 +55,31 @@ export interface login{
     password :string;
 }
 
+export interface earnings{
+    client_name:string;
+    errand:string;
+    cost:number;
+}
+
+export interface Requests{
+    client_name: string;
+    comment:string;
+    errand: string;
+    address:string;
+
+}
+
+export interface Ratings{
+    errand:string;
+    client_name:string;
+    reason:string;
+    rating:number;
+}
+
+
+export interface History{
+    errand: string
+    service_provider:string
+    date: Date
+    status:string
+}

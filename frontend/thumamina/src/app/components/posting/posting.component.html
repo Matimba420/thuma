@@ -4,15 +4,24 @@
   <div class="col-sm-2"></div>
 
 
-  <div class="col-sm"><form [formGroup]="form">
+  <div class="col-sm">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputEmail4">Street Address</label>
         <input type="text" class="form-control" formControlName="street_address" placeholder="Street Address">
+        <div *ngIf="f['street_address'].touched && f['street_address'].invalid" class="alert alert-danger">
+          <div *ngIf="f['street_address'].errors && f['street_address'].errors['required']">street address is required.</div>
+          <div *ngIf="f['street_address'].errors && f['street_address'].errors['minlength']">street address should be 3 character.</div>
+      </div>
       </div>
       <div class="form-group col-md-6">
         <label for="inputPassword4">Suburb</label>
         <input type="text" class="form-control" formControlName="suburb" id="inputsuburb" placeholder="Suburb">
+        <div *ngIf="f['suburb'].touched && f['suburb'].invalid" class="alert alert-danger">
+          <div *ngIf="f['suburb'].errors && f['suburb'].errors['required']">suburb is required.</div>
+          <div *ngIf="f['suburb'].errors && f['suburb'].errors['minlength']">suburb should be 3 character.</div>
+      </div>
       </div>
     </div>
  
@@ -20,27 +29,39 @@
       <div class="form-group col-md-6">
         <label for="inputCity">City</label>
         <input type="text" class="form-control" formControlName="city" id="inputCity">
+        <div *ngIf="f['city'].touched && f['city'].invalid" class="alert alert-danger">
+          <div *ngIf="f['city'].errors && f['city'].errors['required']">city is required.</div>
+          <div *ngIf="f['city'].errors && f['city'].errors['minlength']">city should be 3 character.</div>
+      </div>
       </div>
       
       <div class="form-group col-md-6">
         <label for="inputZip">Postal Code</label>
         <input type="text" class="form-control" formControlName="postal_code" id="inputZip">
+        <div *ngIf="f['postal_code'].touched && f['postal_code'].invalid" class="alert alert-danger">
+          <div *ngIf="f['postal_code'].errors && f['postal_code'].errors['required']">postal code is required.</div>
+          <div *ngIf="f['postal_code'].errors && f['postal_code'].errors['minlength']">postal code should be 3 character.</div>
+      </div>
       </div>
     </div>
 
     <div class="form-floating">
       <textarea class="form-control"  formControlName="comment" placeholder="write your post here" id="floatingTextarea2" style="height: 100px"></textarea>
       <label for="floatingTextarea2">Comments</label>
+      <div *ngIf="f['comment'].touched && f['comment'].invalid" class="alert alert-danger">
+        <div *ngIf="f['comment'].errors && f['comment'].errors['required']">comment is required.</div>
+        <div *ngIf="f['comment'].errors && f['comment'].errors['minlength']">comment should be 3 character.</div>
+    </div>
     </div>
 
     <br>
     
-    <button (click)="getAddress()" type="submit" [routerLink]="['/land']" routerLinkActive = "router-link-active" class="btn btn-primary ">Request</button>
-  </form></div>
+    <button (click)="alertWithSuccess()" (click)="getAddress()"  [disabled]="!form?.valid"  type="submit" [routerLink]="['/history']" routerLinkActive = "router-link-active" class="btn btn-primary ">Request</button>
+  </form>
+</div>
 
 
   <div class="col-sm-2"></div>
-</div>
 
 
 

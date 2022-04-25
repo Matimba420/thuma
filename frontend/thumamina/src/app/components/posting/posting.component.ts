@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 import { AddressService } from 'src/app/services/address.service';
-//import { FormControl, FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
+import { FormGroup, FormControl, Validators} from '@angular/forms';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -10,36 +11,102 @@ import { AddressService } from 'src/app/services/address.service';
   styleUrls: ['./posting.component.css']
 })
 export class PostingComponent implements OnInit {
-  form: FormGroup = new FormGroup({
-    comment: new FormControl (''),
-    street_address: new FormControl(''),
-    suburb: new FormControl(''),
-    city: new FormControl(''),
-    postal_code: new FormControl(''),
-   
 
+ 
 
-  });
+  form!:FormGroup;
+  
+  clientId:any;
+  serviceId:any;
+  request_id:any;
   submitted: boolean | undefined;
-
+reqdata : any = {};
+addressData : any= {};
 
   constructor(private service: AddressService) { }
 
-  getAddress(){
-    this.service.getAddress(this.form.value).subscribe((res:any)=>{
+  ngOnInit(): void {
+
+   this.form = new FormGroup({
+      street_address: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      comment: new FormControl('', [Validators.required]),
+      city: new FormControl('', Validators.required),
+      suburb: new FormControl('',Validators.required),
+      postal_code : new FormControl('',[Validators.required,Validators.maxLength(4),Validators.minLength(4)])
+    });
+    
+    this.getAddress;
+    this.clientId=localStorage.getItem("clientID");
+    this.serviceId=localStorage.getItem("serviceID"); 
+    this.getMaxId()
+    
+
+     
+    
+    
+  }
+
+
+  
+
+  alertWithSuccess(){
+    Swal.fire('Thank you...', 'Your post is succesfully sent😉!', 'success')
+  }
+  
+
+
+  addRequest(){
+
+    this.reqdata = {
+    client_id: this.clientId,
+    service_id : this.serviceId,
+    //comment : this.form.value.comment
+    
+    }
+
+    
+
+   
+    console.log(this.addressData);
+  
+    
+  }
+
+   getMaxId(){
+    this.service.getMaxId(this.clientId).subscribe((res:any)=>{
+      this.request_id=res;
+      this.addressData.request_id = res;
+      localStorage.setItem("request_id", res[0].id);
+      this.request_id=localStorage.getItem("request_id");
+      console.log('The request id is :' + this.request_id);
+    })
+  }
+
+  async getAddress(){
+
+    this.addressData ={
+      request_id:localStorage.getItem("request_id"),
+      street_address: this.form.value.street_address,
+      suburb:this.form.value.suburb,
+      city: this.form.value.city,
+      postal_code:this.form.value.postal_code,
+      comment:this.form.value.comment
+    }
+  
+    
+    this.service.getAddress(this.addressData).subscribe((res:any)=>{
       console.log(res)
     })
   }
 
-  ngOnInit(): void {
-    this.getAddress;
 
 
-    
+
+
+ 
+  get f(){
+    return this.form.controls;
   }
-
-  
-
 
   onSubmit(): void {
     this.submitted = true;
@@ -52,14 +119,6 @@ export class PostingComponent implements OnInit {
     console.log(this.form.value);
   
   }
- 
-  
-
-
-
-
-  
-  
 
 
 }
