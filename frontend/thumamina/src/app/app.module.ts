@@ -33,6 +33,7 @@ import { FormsModule } from '@angular/forms';
 import { RunnerProfileComponent } from './components/runner-profile/runner-profile.component';
 import { Nav2Component } from './components/nav2/nav2.component';
 import { HistoryComponent } from './components/history/history.component';
+import { SettingsComponent } from './components/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { HistoryComponent } from './components/history/history.component';
     RatingsComponent,
    RequestsComponent,
    JobsComponent,
-   RateComponent
+   RateComponent,
+   SettingsComponent
   ],
   imports: [
     BrowserModule,

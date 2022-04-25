@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Service } from 'src/app/interface/service';
-import { UserService } from 'src/app/services/user.service';
+import { HistoryService } from 'src/app/services/history.service';
+import { History } from 'src/app/interface/user';
 
 @Component({
   selector: 'app-history',
@@ -10,18 +10,41 @@ import { UserService } from 'src/app/services/user.service';
 export class HistoryComponent implements OnInit {
 
 
-  constructor(private service:UserService, ) { }
+  item:History;
+  
+
+today:Date;
+
+
+
+  constructor(private service:HistoryService) { }
 
     ngOnInit(): void {
     
 
+      this.getHistory();
+      const now= new Date();
+      console.log(now.toLocaleDateString());
+
+
      
     }
-    getRequestsByClientid(){
-      
+
+    
+
+    getHistory(){
+      this.service.getHistory(id).subscribe((res=>{
+        this.item=res;
+        console.log(this.item)
+      }))
     }
- 
   }
 
   
+
+  
+
+function id(id: any) {
+  throw new Error('Function not implemented.');
+}
 

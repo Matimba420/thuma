@@ -14,16 +14,17 @@
         <div class="row g-0">
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title">Shopping 
+              <h5 class="card-title">{{this.item.errand}}
 
               </h5> 
               <hr>
             
-              <p class="card-text">Date:<small class="text-muted">yesterday</small></p>
-              <p class="card-text">service provider:<small class="text-muted">Lesego</small></p>
+              <p class="card-text">Date={{today | date : "dd.MM.y"}}<small class="text-muted">yesterday</small></p>
+              <p class="card-text">{{this.item.service_provider}}<small class="text-muted">Lesego</small></p>
               <div class="col-md-12 text-right">
                 <button type="button" class="btn btn-warning ml-2">Rate</button>
             </div>
+            <p>{{this.item.status}}</p>
             </div>
           </div>
         </div>
