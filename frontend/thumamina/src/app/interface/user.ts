@@ -76,3 +76,10 @@ export interface Ratings{
     rating:number;
 }
 
+
+export interface History{
+    errand: string
+    service_provider:string
+    date: Date
+    status:string
+}
