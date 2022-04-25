@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { RunnerService } from 'src/app/services/runner.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-runner-home',
   templateUrl: './runner-home.component.html',

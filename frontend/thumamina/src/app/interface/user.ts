@@ -81,5 +81,11 @@ export interface History{
     errand: string
     service_provider:string
     date: Date
-    status:string
+    status:string}
+    
+export interface total{
+    errand:string;
+    client_name:string;
+    reason:string;
+    rating:number;
 }

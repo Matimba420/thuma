@@ -23,6 +23,7 @@ import { RatingsComponent } from './components/ratings/ratings.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { RequestsComponent } from './components/requests/requests.component';
+import { RateComponent } from './components/rate/rate.component';
 import { RunnerProfileComponent } from './components/runner-profile/runner-profile.component';
 import { HistoryComponent } from './components/history/history.component';
 import { PaymentsComponent } from './components/payments/payments.component';
@@ -56,6 +57,7 @@ const routes: Routes = [{
 {path:'earnings', component:EarningsComponent},
 
 {path: 'requests', component: RequestsComponent},
+{path: 'rate', component: RateComponent},
 {path:'run_p',component:RunnerProfileComponent},
 {path:'history',component:HistoryComponent},
 {path:'payment',component:PaymentsComponent},

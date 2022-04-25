@@ -3,12 +3,13 @@
   .circle {
     margin-top: 2rem;
     border-radius: 50%;
-    width: 100%;
-    padding-bottom: 100%;
+    width: 50%;
+    padding-bottom: 50%;
     background: #fff;
     position:relative;
     overflow:hidden;
     z-index:2;
+    margin-left: 5rem;
   }
   .image {
       
@@ -35,10 +36,11 @@
     align-items: center;
   }
   
-  .btn{
-    margin: 0;
+  .btn1{
+
+    size-adjust: 12rem;
     position: absolute;
- margin-left: 6rem;
+ text-align: center;
     
   }
   h1{
