@@ -555,7 +555,7 @@ const totalRating =(req,res) =>{
 
 const totalClients = (req, res) => {
     pool.query(queries.totalClients,(error, results) => {
-        if(this.error){
+        if(error){
             console.log("error:"+error);
             res.status(404).send(error);
             throw error;
@@ -567,7 +567,7 @@ const totalClients = (req, res) => {
 
 const totalRunners = (req, res) => {
     pool.query(queries.totalRunners,(error, results) => {
-        if(this.error){
+        if(error){
             console.log("error:"+error);
             res.status(404).send(error);
             throw error;
