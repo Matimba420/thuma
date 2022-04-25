@@ -5,7 +5,7 @@
 <div class="container">
   <div class="column">
     <div class="card" (click)="earnings()">
-      <h5 class="card-title" style="font-weight: bolder; font-family: unset;">Total earnings</h5>
+      <h5 class="card-title"  routerLink="/earnings"  style="font-weight: bolder; font-family: unset;">Total earnings</h5>
     <br>
       <h1>R {{this.total[0].total}}</h1>
     </div>
@@ -15,7 +15,7 @@
     <div class="card" (click)="request()">
       <h5 class="fa fa-search"style="font-weight: bolder; font-family: unset;">Requests</h5>
       <br>
-      <img routerLink="/" style="height:60px" src="../../../assets/search-outline (1).svg" alt="">
+      <img routerLink="/requests" style="height:60px" src="../../../assets/search-outline (1).svg" alt="">
   
 
     </div>
@@ -23,7 +23,7 @@
   
   <div class="column">
     <div class="card" (click)="jobs()">
-      <h5 class="card-title"style="font-weight: bolder; font-family: unset;">Jobs</h5>
+      <h5 class="card-title"  routerLink="/jobs" style="font-weight: bolder; font-family: unset;">Jobs</h5>
         <br>  
       <img style="height:60px" src="../../../assets/briefcase-outline.svg" alt="">
    
@@ -32,7 +32,7 @@
     
   <div class="column">
     <div class="card" (click)="ratings()">
-      <h5 class="card-title"style="font-weight: bolder; font-family: unset;">Ratings</h5>
+      <h5 class="card-title"  routerLink="/ratings" style="font-weight: bolder; font-family: unset;">Ratings</h5>
         <br>  
       <h1>{{totalRating[0].avg}}</h1>
    
