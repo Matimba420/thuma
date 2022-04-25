@@ -46,6 +46,8 @@ export class LoginComponent implements OnInit {
   
   }
   ngOnInit(): void {
+
+
     this.registerForm = this.formBuilder.group({
      
     });
@@ -72,6 +74,9 @@ export class LoginComponent implements OnInit {
         validators: [Validation.match('password', 'confirmPassword')]
       }
     );
+
+
+
     
     
   }
@@ -109,6 +114,7 @@ export class LoginComponent implements OnInit {
     this.router.navigateByUrl('/log',{replaceUrl:true});
     
   }
+  
   
 
 }

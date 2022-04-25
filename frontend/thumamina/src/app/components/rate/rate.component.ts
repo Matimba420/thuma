@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-rate',
@@ -7,11 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RateComponent implements OnInit {
 
-  
+ form:any = FormGroup ;
+  rating3: any;
 
-  constructor() { }
+
+  constructor(private fb: FormBuilder) { 
+
+   
+  }
 
   ngOnInit(): void {
+
+    this.rating3 = 0;
+    this.form = this.fb.group({
+      rating: ['', Validators.required],
+    })
   }
 
 }
