@@ -414,7 +414,7 @@ const getAllClients = (req, res) => {
             res.status(404).send(error);
             throw error;
         }
-        res.status(200).json(results);
+        res.status(200).json(results.rows);
     });
 };
 
@@ -425,7 +425,7 @@ const getAllRunners = (req, res) => {
             res.status(404).send(error);
             throw error;
         }
-        res.status(200).json(results);
+        res.status(200).json(results.rows);
     });
 };
 
@@ -617,6 +617,33 @@ const runnerRequests = (req, res) => {
     });
 };
 
+ 
+const deactivate = async (req, res) => {
+    const { id } = req.params;
+
+    try{
+        const deletedUser = await pool.query('UPDATE users set status = false WHERE user_id = $1', [id]);
+
+        if(deletedUser.rowCount){
+            res.status(200).json({
+                message: 'User successfully Deactivated.'
+            });
+        }else{
+            res.status(400).json({
+                message: 'User you seek to deactivate does not exist.'
+            });
+        }
+
+    }catch(err){
+        console.log(err)
+        res.status(503).json({
+            message: "Internal server error",
+            error:err
+        })
+    }
+}
+
+
 module.exports = {
     addClient,
     addRunner,
@@ -656,7 +683,8 @@ module.exports = {
 
     acceptRequest,
     rateServices,
-    runnerRequests
+    runnerRequests,
+    deactivate
 
     
 }
