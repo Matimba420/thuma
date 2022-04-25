@@ -25,8 +25,6 @@ today:Date;
       const now= new Date();
       console.log(now.toLocaleDateString());
 
-
-     
     }
 
     
