@@ -95,7 +95,7 @@
           </div>
         </div>
         <br>
-        <button class="button" (click)="myFunction()" style="margin-bottom: 2rem;"> CREATE ACCOUNT</button>
+        <button class="button"  (click)="alertWithSuccess()"  (click)="myFunction()" [disabled]="!form?.valid" style="margin-bottom: 2rem;"> CREATE ACCOUNT</button>
         <p style="text-align: center;">or</p>
       <p style="text-align: center;color: aliceblue;">already an account?  <button type="button" class="btn-2">Login</button>
       </p>
