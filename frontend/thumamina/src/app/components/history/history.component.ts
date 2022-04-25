@@ -13,7 +13,7 @@ export class HistoryComponent implements OnInit {
   item:History;
   
 
-today:Date;
+   today:Date;
 
 
 

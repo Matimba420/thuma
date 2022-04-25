@@ -27,6 +27,8 @@ import { RateComponent } from './components/rate/rate.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
+import { NgxStarRatingModule } from 'ngx-star-rating';
+import { ForgotComponent } from './components/forgot/forgot.component';
 
 
 
@@ -49,6 +51,12 @@ import { HistoryComponent } from './components/history/history.component';
     DashboardComponent,
   
    ProfileComponent,
+   editProfileComponent,
+   RequestsComponent,
+       
+      JobsComponent,
+              RateComponent,
+              ForgotComponent,
       SuccessMassageComponent,
       PaymentsComponent,
       //  EditProfileComponent
@@ -76,7 +84,8 @@ import { HistoryComponent } from './components/history/history.component';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    NgxStarRatingModule
    
   ],
   providers: [],

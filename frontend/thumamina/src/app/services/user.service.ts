@@ -11,7 +11,7 @@ export class UserService {
   addRunner(value: any) {
     throw new Error('Method not implemented.');
   }
-  private baseUrl = 'http://localhost:4304/api/clients';
+  private baseUrl = 'http://localhost:4304/api/clients/';
 
   constructor(private http:HttpClient) { }
 

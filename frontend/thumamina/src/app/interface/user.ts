@@ -5,10 +5,7 @@ export interface User {
     email :string;
     password :string;
     confimpassword :string;
-
 }
-
-
 
 export interface login{
     cell_no: number;
@@ -82,4 +79,11 @@ export interface History{
     service_provider:string
     date: Date
     status:string
+
+}
+export interface total{
+    errand:string;
+    client_name:string;
+    reason:string;
+    rating:number;
 }

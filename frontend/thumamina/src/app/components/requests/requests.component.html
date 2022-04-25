@@ -24,11 +24,30 @@
             </div>
           </div>
 
+<div class="card mt-3" *ngFor="let request of requests">
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <h5 class="card-title">{{ request.errand }}</h5>
+      </div>
+      <div class="col">
+        <h5
+          class="card-title justify-content-end"
+          style="text-align: end"
+        >
+          {{ request.client_name }}
+        </h5>
           <p class="card-text">{{ request.address }}</p>
           <p class="card-text">"{{ request.comment }}"</p>
           <a class="btn btn-primary" (click)="myFunction(request)">Accept</a>
         </div>
       </div>
     </div>
+
+  
   </div>
-</div>
+</div> 
+       
+     
+
+

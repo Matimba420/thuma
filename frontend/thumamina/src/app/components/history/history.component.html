@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar></app-navbar> 
 
 
 <br>
@@ -19,10 +19,10 @@
               </h5> 
               <hr>
             
-              <p class="card-text">Date={{today | date : "dd.MM.y"}}<small class="text-muted"></small></p>
+              <p class="card-text">Date={{today | date : "dd.MM.y"}}<small class="text-muted">date:{{this.item.date}}</small></p>
               <p class="card-text">Service Provider:<small class="text-muted">{{this.item.service_provider}}</small></p>
               <div class="col-md-12 text-right">
-                <button type="button" class="btn btn-warning ml-2">Rate</button>
+                <button type="button" [routerLink]="['/rate']" class="btn btn-warning ml-2">Rate</button>
             </div>
 
             <p class="card-text">Status:<small class="text-muted">{{this.item.status}}</small></p>

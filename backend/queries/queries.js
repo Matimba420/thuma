@@ -23,7 +23,7 @@ const updateStatus = "UPDATE request SET status =$1 WHERE id=$2";
 const addRequest ="INSERT INTO request(client_id,service_id,comment) VALUES($1, $2, $3) returning id";
 const getRequest =" SELECT s.name AS errand , concat(u.name ,' ', u.surname) AS client_name, comment, concat(a.street_address,', ', a.suburb,', ',  a.city,', ',  a.postal_code) AS address, r.id FROM request r,users u, service s, address a WHERE r.client_id=u.id AND r.service_id = s.id AND a.request_id=r.id AND r.status = 'pending' ";
 const getMaxId ="SELECT id FROM request WHERE client_id= $1 ORDER BY id DESC LIMIT 1";
-const getRequestByClientId ="SELECT s.name AS errand , concat(u.name ,' ', u.surname) AS runner_name, comment, concat(a.street_address,', ', a.suburb,', ',  a.city,', ',  a.postal_code) AS address, status FROM request r,users u, service s, address a WHERE r.runner_id=u.id AND r.service_id = s.id AND a.request_id=r.id AND client_id =$1";
+const getRequestByClientId ="SELECT s.name AS errand , concat(u.name ,' ', u.surname) AS runner_name, comment, concat(a.street_address,', ', a.suburb,', ',  a.city,', ',  a.postal_code) AS address, status FROM request r,users u, service s, address a WHERE r.runner_id=u.id AND r.service_id = s.id AND a.request_id=r.id AND r.client_id =$1";
 const getRequestByRunnerId ="SELECT s.name AS errand , concat(u.name ,' ', u.surname) AS client_name, concat(a.street_address,', ', a.suburb,', ',  a.city,', ',  a.postal_code) AS address, status, r.id FROM request r,users u, service s, address a WHERE r.client_id=u.id AND r.service_id = s.id AND a.request_id=r.id AND runner_id =$1";
 
 const updateClient ="UPDATE users SET cell_no=$1, password=$2, name =$3, surname=$4, updated_at=current_date WHERE id = $5";
@@ -43,6 +43,8 @@ const totalRunners = " SELECT COUNT(*) AS runners FROM users WHERE role ='Servic
 
 const acceptRequest = " UPDATE request SET status='Accepted', runner_id=$1 WHERE id=$2 ";
 const rateServices = " INSERT INTO review (runner_id, client_id, rating, reason, request_id) VALUES($1, $2, $3, $4, $5) ";
+
+const runnerRequests =  " SELECT * FROM users WHERE is_active =false ";
 
 module.exports ={
    
@@ -88,7 +90,8 @@ module.exports ={
     totalClients,
     acceptRequest,
 
-    rateServices
+    rateServices,
+    runnerRequests
 
     
 };
