@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/interface/user';
-import { AddressService } from 'src/app/services/address.service';
+import { AdminService } from 'src/app/services/admin.service';
 
 
 @Component({
@@ -16,13 +16,18 @@ runners:any=[];
 numClients:any;
 numRunners:any;
 
-  constructor(private service:UserService) { }
-
+  constructor(private service:UserService, private admin: AdminService) { }
+ 
+  ngOnInit(): void {
+    this.getClients();
+    
+  }
+  
 getClients(){
-  this.service.getUsers().subscribe((res:any)=>{
+  this.admin.getAllClients().subscribe((res:any)=>{
     console.log(res)
     this.clients=res;
-    this.numClients = this.clients.length;
+   
 
   })
 }
@@ -31,10 +36,7 @@ getClients(){
 
 
 
-  ngOnInit(): void {
-    this.getClients();
-    
-  }
+  
 
 }
 

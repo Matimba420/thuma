@@ -76,3 +76,13 @@ export interface Ratings{
     rating:number;
 }
 
+export interface Runner{
+    id:number;
+        name: string;
+        surname: string;
+        cell_no: number;
+        email:string;
+        role: string;
+       
+}
+
