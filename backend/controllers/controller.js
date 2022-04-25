@@ -248,7 +248,7 @@ const addServices = async (req,res) => {
 const addAddress = async (req,res) => {
     // const {firstname, lastname, cell_no, password} = req.body;
      const {street_address, suburb, city, postal_code, request_id} = req.body
-     
+     console.log(request_id);
             pool.query(queries.addAddress, 
                 [street_address, suburb, city, postal_code, request_id],
                 (error,results)=>{

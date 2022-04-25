@@ -25,6 +25,7 @@ import { JobsComponent } from './components/jobs/jobs.component';
 import { RequestsComponent } from './components/requests/requests.component';
 import { RunnerProfileComponent } from './components/runner-profile/runner-profile.component';
 import { HistoryComponent } from './components/history/history.component';
+import { PaymentsComponent } from './components/payments/payments.component';
 
 
 const routes: Routes = [{
@@ -55,8 +56,8 @@ const routes: Routes = [{
 
 {path: 'requests', component: RequestsComponent},
 {path:'run_p',component:RunnerProfileComponent},
-{path:'history',component:HistoryComponent}
-
+{path:'history',component:HistoryComponent},
+{path:'payment',component:PaymentsComponent}
 ];
 
 

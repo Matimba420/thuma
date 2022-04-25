@@ -1,22 +1,4 @@
-.col-sm-3{
-    color: white;
-    background-color: #223c50;
-    text-align: center;
-}
-
-
 h1{
     text-align: center;
     font-family: Lora;
-}
-
-.btn{
-    background-color: #223c50;
-    border-radius: 15px;
-    height: 25px;
-    text-align: center;
-}
-
-.card{
-    display:flex;
 }

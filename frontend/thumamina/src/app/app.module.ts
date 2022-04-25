@@ -22,6 +22,12 @@ import { editProfileComponent } from './components/edit-profile/edit-profile.com
 import { JobsComponent } from './components/jobs/jobs.component';
 import { EarningsComponent } from './components/earnings/earnings.component';
 import { RequestsComponent } from './components/requests/requests.component';
+import { RatingsComponent } from './components/ratings/ratings.component';
+import { RateComponent } from './components/rate/rate.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+
 import { RunnerProfileComponent } from './components/runner-profile/runner-profile.component';
 import { Nav2Component } from './components/nav2/nav2.component';
 import { HistoryComponent } from './components/history/history.component';
@@ -55,16 +61,20 @@ import { HistoryComponent } from './components/history/history.component';
     editProfileComponent,
     JobsComponent,
     EarningsComponent,
-    ProfileComponent,
-    editProfileComponent,
     RequestsComponent,
     JobsComponent,
+    RatingsComponent,
+   RequestsComponent,
+   JobsComponent,
+   RateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Job } from 'src/app/interface/jobs';
 import { JobsService } from 'src/app/jobs.service';
 
@@ -8,10 +9,15 @@ import { JobsService } from 'src/app/jobs.service';
   styleUrls: ['./jobs.component.css']
 })
 export class JobsComponent implements OnInit {
+  form: FormGroup = new FormGroup({
+    status: new FormControl('')
+  });
 
   constructor(private service:JobsService) { }
 
   Jobs:Job[] = [ ]
+
+  submitted = false;
   
 
 
@@ -32,11 +38,28 @@ export class JobsComponent implements OnInit {
       
     }));
       
-      
+   
       
      
    
   }
 
+  myFunction() {
+    console.log(this.form.status);  
+    
+  }
+  
+  onSubmit(): void {
+    this.submitted = true;
+    if (this.form.invalid) {
+      return;
+    }
+    console.log(JSON.stringify(this.form.value, null, 2));
 
+
+  
+
+
+
+}
 }
