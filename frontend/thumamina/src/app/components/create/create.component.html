@@ -1,63 +1,82 @@
-
-
-
-   
-  <body>
+<body>
   <div class="container">
-    
-    <div class="row" >
-      <div class="col-sm-6">
-        
-      </div>
+    <div class="row">
+      <div class="col-sm"></div>
 
+      <div class="col-sm liv mt-0 mb-0">
+        <form class="what" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <img
+            routerLink="/land"
+            width="12rem"
+            height="1rem"
+            src="../../../assets/smart serve-logos_white.png"
+            alt=""
+          />
 
-      <div class="col-sm liv mt-0" > 
-        
-          <form class="what" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <br />
 
-          <img routerLink="/land" width="12rem" height="1rem" src="../../../assets/smart serve-logos_white.png" alt="">
-
-            <!-- <div class="img" routerLink="/land">
-              <img width="12rem" height="1rem" src="../../../assets/smart serve-logos_white.png" alt="">
-            </div> -->
-          
-       
-
-            
-            <br>
-            
-            
-            <div class="form-group mb-4">
-              <input id="inputnumber" type="number" formControlName="cell_no"  [ngClass]="{ 'is-invalid': submitted && f.number.errors }"
-               placeholder="phone number" required="" autofocus="" >
-              <br>
-              <div *ngIf="submitted && f.number.errors" class="invalid-feedback">
-                  <div *ngIf="f.number.errors.required">PhoneNumber is required</div>
-                  <div *ngIf="f.number.errors.number">must be a valid number</div>
+          <div class="form-group mb-4">
+            <input
+              id="inputnumber"
+              type="number"
+              formControlName="cell_no"
+              [ngClass]="{ 'is-invalid': submitted && f.number.errors }"
+              placeholder="phone number"
+              required=""
+              autofocus=""
+            />
+            <br />
+            <div *ngIf="submitted && f.number.errors" class="invalid-feedback">
+              <div *ngIf="f.number.errors.required">
+                PhoneNumber is required
               </div>
+              <div *ngIf="f.number.errors.number">must be a valid number</div>
+            </div>
           </div>
           <div class="form-group mb-3">
-            <input id="inputPassword" type="password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Password" required="" >
-            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-              <div *ngIf="f.phonenumber.errors.pattern || f.phonenumber.errors.maxlength || f.phonenumber.errors.minlength">Phone number must be at least 10 numbers</div>
-                <div *ngIf="f.password.errors.required">Password is required</div>
+            <input
+              id="inputPassword"
+              type="password"
+              formControlName="password"
+              [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+              placeholder="Password"
+              required=""
+            />
+            <div
+              *ngIf="submitted && f.password.errors"
+              class="invalid-feedback"
+            >
+              <div
+                *ngIf="
+                  f.phonenumber.errors.pattern ||
+                  f.phonenumber.errors.maxlength ||
+                  f.phonenumber.errors.minlength
+                "
+              >
+                Phone number must be at least 10 numbers
+              </div>
+              <div *ngIf="f.password.errors.required">Password is required</div>
             </div>
-        </div>
-          <button class="button "(click)="signIn()" >LOGIN</button>
-      
-        <ul class="list-group list-group-flush">
-          
-        <button type="button" class="btn btn-link">forgot password?</button>
-        <br>
-        <p style="color: aliceblue;"  >Don't have an account?<button type="button" class="btn-2" routerLink="/create" >Create account</button></p>
+          </div>
+          <button class="button" (click)="signIn()">LOGIN</button>
 
-        </ul>
-      </form>
-
+          <ul class="list-group list-group-flush">
+            <button type="button" class="btn btn-link">forgot password?</button>
+            <br />
+            <p style="color: aliceblue">
+              Don't have an account?<button
+                type="button"
+                class="btn-2"
+                routerLink="/create"
+              >
+                Create account
+              </button>
+            </p>
+          </ul>
+        </form>
       </div>
-
 
       <div class="col-sm"></div>
     </div>
   </div>
- </body>
+</body>

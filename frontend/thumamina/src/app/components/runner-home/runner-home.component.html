@@ -1,19 +1,19 @@
 <app-navbar></app-navbar>
 
-<br>
+
 
 <div class="container">
   <div class="column">
     <div class="card"routerLink="/earnings" >
       <h5 class="card-title" style="font-weight: bolder; font-family: unset;" >Todays earnings</h5>
     <br>
-      <h1>R {{this.total[0].total}}</h1>
+      <h1 style="color: rgb(109, 78, 38);">R {{this.total[0].total}}</h1>
     </div>
   </div>
   
   <div class="column">
     <div class="card">
-      <h5 class="fa fa-search"style="font-weight: bolder; font-family: unset;">Requests</h5>
+      <h5 style="font-weight: bolder; font-family: unset;">Requests</h5>
       <br>
       <img routerLink="/requests" style="height:60px" src="../../../assets/search-outline (1).svg" alt="">
   
@@ -25,7 +25,7 @@
     <div class="card">
       <h5 class="card-title"style="font-weight: bolder; font-family: unset;">Jobs</h5>
         <br>  
-      <img style="height:60px"  routerLink="/jobs" src="../../../assets/briefcase-outline.svg" alt="">
+      <img style="height:60px"   routerLink="/jobs" src="../../../assets/briefcase-outline.svg" alt="">
    
     </div>
   </div>
@@ -35,7 +35,7 @@
       <h5 class="card-title"  routerLink="/ratings" style="font-weight: bolder; font-family: unset;">Ratings</h5>
       
         <br>  
-      <h1>{{totalRating[0].avg}}</h1>
+      <h1 style="color: rgb(107, 80, 44);">{{totalRating[0].avg}}</h1>
    
     </div>
   </div>
