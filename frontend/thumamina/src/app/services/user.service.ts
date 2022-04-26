@@ -31,11 +31,11 @@ export class UserService {
 
 //read user by id
   getUser(id: any): Observable<any>{
-    return this.http.get<any>(`${this.baseUrl}/${id}`)
+    return this.http.get<any>(`${this.baseUrl}${id}`)
   }
   //update
   updateUser(user: Date, id: Date): Observable<any>{
-    return this.http.put<any>(`${this.baseUrl}/${id}`, user)
+    return this.http.put<any>(`${this.baseUrl}${id}`, user)
   }
 
   userLogin(login: login): Observable<any>{

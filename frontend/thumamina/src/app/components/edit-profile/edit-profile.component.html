@@ -1,4 +1,7 @@
+
 <app-nav></app-nav>
+
+<header>Edit your profile</header>
 
 <div class="col-lg-8">
     <form  [formGroup]="form" >
@@ -22,7 +25,7 @@
             </div>
             <div class="row mb-3">
                 <div class="col-sm-3">
-                    <h6 class="mb-0">Mobile</h6>
+                    <h6 class="mb-0">Mobile Number</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
                     <input type="text" class="form-control" formControlName="cell_no" value="">
@@ -47,7 +50,7 @@
             <div class="row">
                 <div class="col-sm-3"></div>
                 <div class="col-sm-9 text-secondary">
-                    <input type="button" class="btn btn-primary px-4" style="background-color: #e77f58;" value="Save Changes" (click) = "update(id)" >
+                    <input type="button" class="btn btn-primary px-4" style="background-color: #e77f58;" [routerLink]="['/profile']"value="Save Changes" (click) = "update(id)" >
                 </div>
             </div>
         </div>
