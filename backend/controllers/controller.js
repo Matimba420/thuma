@@ -248,11 +248,7 @@ const addServices = async (req,res) => {
 const addAddress = async (req,res) => {
     // const {firstname, lastname, cell_no, password} = req.body;
      const {street_address, suburb, city, postal_code, request_id} = req.body
-<<<<<<< HEAD
-     
-=======
      console.log(request_id);
->>>>>>> 06d510052e0f4f0fc5ce93345511a25495601457
             pool.query(queries.addAddress, 
                 [street_address, suburb, city, postal_code, request_id],
                 (error,results)=>{
