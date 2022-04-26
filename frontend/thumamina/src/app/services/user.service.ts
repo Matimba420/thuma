@@ -35,7 +35,7 @@ export class UserService {
   }
   //update
   updateUser(user: Date, id: Date): Observable<any>{
-    return this.http.put<any>(`${this.baseUrl}/${id}`, user)
+    return this.http.put<any>(`${this.baseUrl}${id}`, user)
   }
 
   userLogin(login: login): Observable<any>{

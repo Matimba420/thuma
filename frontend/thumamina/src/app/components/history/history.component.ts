@@ -17,6 +17,7 @@ export class HistoryComponent implements OnInit {
   runnerId: any
 
   runnerName: any;
+  router: any;
 
   constructor(private service: HistoryService, private route: Router) {
     this.id1 = this.route.getCurrentNavigation().extras.state?.['id'];
@@ -29,6 +30,7 @@ export class HistoryComponent implements OnInit {
     console.log(now.toLocaleDateString());
 
     this.getData();
+    this.router.navigateByUrl('/rate', {replaceUrl:true});
     
   }
 

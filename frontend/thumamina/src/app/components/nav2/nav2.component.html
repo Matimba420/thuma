@@ -4,7 +4,7 @@
  <br>
 <nav class="navbar navbar-light fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#" style="color:aliceblue;font-size:x-large;">Smart serve</a>
+      <a class="navbar-brand" style="color:aliceblue;font-size:x-large;">Smart serve</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -34,7 +34,7 @@
               </a>
               
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="color:aliceblue;font-size:x-large;" >
-                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/profile']">Settings</a></li>
                 <li><a class="dropdown-item" href="#">Sign out</a></li>
               </ul>
             </li>
