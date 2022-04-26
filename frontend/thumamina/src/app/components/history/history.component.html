@@ -14,18 +14,19 @@
         <div class="row g-0">
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title">{{this.item.errand}}
+              <h5 class="card-title">{{item.errand}}
 
               </h5> 
               <hr>
             
-              <p class="card-text">Date={{today | date : "dd.MM.y"}}<small class="text-muted">date:{{this.item.date}}</small></p>
-              <p class="card-text">Service Provider:<small class="text-muted">{{this.item.runner_name}}</small></p>
+              <p class="card-text">Date={{today | date : "dd.MM.y"}}<small class="text-muted">date:{{item.date}}</small></p>
+              <p class="card-text">Service Provider:<small class="text-muted">{{runnerName}}</small></p>
+
               <div class="col-md-12 text-right">
-                <button type="button" [routerLink]="['/rate']" class="btn btn-warning ml-2">Rate</button>
+                <button type="button"    [routerLink]="['/rate']" class="btn btn-warning ml-2"routerLinkActive="router-link-active">Rate</button>
             </div>
 
-            <p class="card-text">Status:<small class="text-muted">{{this.item.status}}</small></p>
+            <p class="card-text">Status:<small class="text-muted">{{item.status}}</small></p>
      
             </div>
           </div>
