@@ -11,7 +11,7 @@ export class ProfileComponent implements OnInit {
 
   constructor(private service:UserService) { }
 
-id : any;
+  id : any;
   People: Update[]=[
 
     
