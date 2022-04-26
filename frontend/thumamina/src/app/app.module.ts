@@ -11,10 +11,13 @@ import { ErrandsComponent } from './components/errands/errands.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TrackComponent } from './components/track/track.component';
 import { NavComponent } from './components/nav/nav.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashboardComponent } from './components/dashboard/client/dashboard.component';
 import { PostingComponent } from './components/posting/posting.component';
 import { BackButtonComponent } from './components/back-button/back-button.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { RunnerComponent } from './components/runner/runner.component';
+import { DashComponent } from './components/dash/dash.component';
+
 import { SuccessMassageComponent } from './components/success-massage/success-massage.component';
 import { PaymentsComponent } from './components/payments/payments.component';
 // import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
@@ -22,6 +25,9 @@ import { editProfileComponent } from './components/edit-profile/edit-profile.com
 import { JobsComponent } from './components/jobs/jobs.component';
 import { EarningsComponent } from './components/earnings/earnings.component';
 import { RequestsComponent } from './components/requests/requests.component';
+import { RunnerProfileComponent } from './components/runner-profile/runner-profile.component';
+import { Nav2Component } from './components/nav2/nav2.component';
+import { HistoryComponent } from './components/history/history.component';
 import { RatingsComponent } from './components/ratings/ratings.component';
 import { RateComponent } from './components/rate/rate.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -32,9 +38,6 @@ import { ForgotComponent } from './components/forgot/forgot.component';
 
 
 
-import { RunnerProfileComponent } from './components/runner-profile/runner-profile.component';
-import { Nav2Component } from './components/nav2/nav2.component';
-import { HistoryComponent } from './components/history/history.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +54,10 @@ import { HistoryComponent } from './components/history/history.component';
     DashboardComponent,
   
    ProfileComponent,
+      RunnerComponent,
+      DashComponent,
+     
+      //  EditProfileComponent
    editProfileComponent,
    RequestsComponent,
        
@@ -73,10 +80,12 @@ import { HistoryComponent } from './components/history/history.component';
     EarningsComponent,
     RequestsComponent,
     JobsComponent,
-    RatingsComponent,
+   editProfileComponent,
    RequestsComponent,
-   JobsComponent,
-   RateComponent
+       
+      JobsComponent,
+              RateComponent,
+              ForgotComponent
   ],
   imports: [
     BrowserModule,

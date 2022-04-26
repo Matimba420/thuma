@@ -10,7 +10,7 @@ export interface User {
 export interface login{
     cell_no: number;
     password :string;
-}
+};
 
 export interface address{
 
@@ -71,6 +71,16 @@ export interface Ratings{
     client_name:string;
     reason:string;
     rating:number;
+}
+
+export interface Runner{
+    id:number;
+        name: string;
+        surname: string;
+        cell_no: number;
+        email:string;
+        role: string;
+       
 }
 
 
