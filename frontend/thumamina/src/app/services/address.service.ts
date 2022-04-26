@@ -27,6 +27,9 @@ export class AddressService {
   }
 
 
+  addComment(comData:any){
+    return this.http.put<any>('http://localhost:4304/api/requests/' + comData.id, comData);
+  }
 }
   
 

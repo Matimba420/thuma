@@ -4,25 +4,25 @@
 
 <div class="container">
   <div class="column">
-    <div class="card">
-      <h5 class="card-title" style="font-weight: bolder; font-family: unset;">Todays earnings</h5>
+    <div class="card" routerLink="/earnings">
+      <h5 class="card-title" style="font-weight: bolder; font-family: unset;">Total earnings</h5>
     <br>
       <h1>R {{this.total[0].total}}</h1>
     </div>
   </div>
   
   <div class="column">
-    <div class="card">
+    <div class="card" routerLink="/requests" >
       <h5 class="fa fa-search"style="font-weight: bolder; font-family: unset;">Requests</h5>
       <br>
-      <img routerLink="/" style="height:60px" src="../../../assets/search-outline (1).svg" alt="">
+      <img style="height:60px" src="../../../assets/search-outline (1).svg" alt="">
   
 
     </div>
   </div>
   
-  <div class="column">
-    <div class="card">
+  <div class="column" >
+    <div class="card" routerLink="/jobs">
       <h5 class="card-title"style="font-weight: bolder; font-family: unset;">Jobs</h5>
         <br>  
       <img style="height:60px" src="../../../assets/briefcase-outline.svg" alt="">
