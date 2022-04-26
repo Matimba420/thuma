@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreateComponent } from './components/create/create.component';
+import { AddErrandsComponent } from './components/add-errands/add-errands.component';
 
 import { DashboardComponent } from './components/dashboard/client/dashboard.component';
 
@@ -36,6 +37,7 @@ const routes: Routes = [{
 {path:'track',component:TrackComponent},
 {path:'posting',component:PostingComponent},
 {path:'success',component:SuccessMassageComponent},
+{path:'add',component:AddErrandsComponent},
 
 {
   path:'land',component:LandingComponent
