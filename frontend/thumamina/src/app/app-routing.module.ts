@@ -29,6 +29,7 @@ import { RequestsComponent } from './components/requests/requests.component';
 import { RateComponent } from './components/rate/rate.component';
 import { RunnerProfileComponent } from './components/runner-profile/runner-profile.component';
 import { HistoryComponent } from './components/history/history.component';
+import { UpdateErrandComponent } from './components/update-errand/update-errand.component';
 
 
 const routes: Routes = [{
@@ -38,6 +39,7 @@ const routes: Routes = [{
 {path:'posting',component:PostingComponent},
 {path:'success',component:SuccessMassageComponent},
 {path:'add',component:AddErrandsComponent},
+{path:'update',component:UpdateErrandComponent},
 
 {
   path:'land',component:LandingComponent
