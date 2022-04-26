@@ -1,8 +1,11 @@
 <app-navbar></app-navbar> 
 
 
-
     <div class="col-md-8" *ngFor="let item of People">
+      <form>
+        <input type="button" value="<" onclick="history.go(-1)">
+       </form>
+      
         <div class="card mb-3 &#xf2bd;" >
           <div class="card-body" >
             <div class="row">

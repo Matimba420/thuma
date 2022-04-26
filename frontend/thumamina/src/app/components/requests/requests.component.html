@@ -3,10 +3,6 @@
 <div class="grid-container">
     <br>
 <br>
-    
-           
-<h1>Requests</h1>
-<br /> <br>
 
 <div class="container">
   <div class="row">
@@ -15,7 +11,7 @@
     <div class="col-sm-9">
       <h1>Requests</h1>
 
-      <div class="card mt-3" *ngFor="let request of requests">
+      <!-- <div class="card mt-3" *ngFor="let request of requests">
         <div class="card-body">
           <div class="row">
             <div class="col">
@@ -29,7 +25,7 @@
                 {{ request.client_name }}
               </h5>
             </div>
-          </div>
+          </div> -->
 
 <div class="card mt-3" *ngFor="let request of requests">
   <div class="card-body">
@@ -40,15 +36,14 @@
           class="card-title justify-content-end"
           style="text-align: center"
         >
-          <!-- {{ request.client_name }} -->
+          {{ request.client_name }}
         </h5>
-<<<<<<< HEAD
-=======
+
           <p class="card-text">{{ request.address }}</p>
           <p class="card-text">"{{ request.comment }}"</p>
           <a class="btn btn-primary"  (click)="acceptRequest()"  >Accept</a>
         </div>
->>>>>>> bc269aa2f030782c3ac4472c2eb47e2cc710f404
+
       </div>
     </div>
 

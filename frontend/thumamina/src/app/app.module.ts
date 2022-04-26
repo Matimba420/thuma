@@ -85,7 +85,11 @@ import { ForgotComponent } from './components/forgot/forgot.component';
        
       JobsComponent,
               RateComponent,
-              ForgotComponent
+              ForgotComponent,
+    RatingsComponent,
+   RequestsComponent,
+   JobsComponent,
+   RateComponent
   ],
   imports: [
     BrowserModule,
