@@ -47,6 +47,10 @@ export class UserService {
     return this.http.delete<any[]>(`${this.baseUrl}${id}`);
   }
 
+  getRequestsByClientid(client_id:any):Observable<any>{
+    return this.http.get<any>('http://localhost:4304/api/requests/clients_id',client_id);
+  }
+
 }
 
 

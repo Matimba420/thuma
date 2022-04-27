@@ -35,7 +35,6 @@ create  table review(
 	runner_id integer,
 	client_id integer,
 	rating integer,
-	request_id integer,
 	reason varchar(255)
 );
 
@@ -78,11 +77,6 @@ on delete cascade;
 alter table review
 add foreign key(runner_id)
 references users(id)
-on delete cascade;
-
-alter table review
-add foreign key(request_id)
-references request(id)
 on delete cascade;
 
 
