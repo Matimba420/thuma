@@ -17,8 +17,11 @@ export class RequestsComponent implements OnInit {
   request_id:any;
   accept:any;
 
-  reqData: any;
-  runner_id: string;
+  reqData: any={
+    runner_id:"any",
+    id:"any"
+  };
+  runner_id: any;
 
   constructor(private service:RequestsService, private userService: UserService,private route : Router) { }
 
@@ -27,9 +30,9 @@ export class RequestsComponent implements OnInit {
   ngOnInit(): void {
 
 
-    // this.acceptRequest();
+   // this.acceptRequest();
 
-  this.client_id=localStorage.getItem("clientId");
+  
   this.getRequests();
   this.runner_id= localStorage.getItem("runnerID");
 
@@ -38,26 +41,32 @@ export class RequestsComponent implements OnInit {
 getRequests(){
   this.service.getRequests().subscribe((res=>{
     this.requests = res
-    console.log('hello');
+    console.log(res);
     console.log(res[0].id);
-   // localStorage.setItem("requestID", this.requests.id);
-    this.reqData = res[0].id;
-    localStorage.setItem("reqData",this.reqData);
+   
     
   }));
 
 }
 
 acceptRequest(){
-  this.service.accept(this.runner_id).subscribe((res=>{
+  this.service.accept(this.reqData).subscribe((res=>{
   this.accept = res ;
-console.log(res);
-this.route.navigateByUrl('history', {state :{id :this.runner_id} })
+  console.log(res);
 
 }))}
+
+
 myFunction(request){
   console.log('hello');
-  console.log(request.id);
+  console.log(request);
+  this.reqData.id=request;
+  this.reqData.runner_id=localStorage.getItem("runnerID");
+  console.log(this.reqData);
+
+  this.acceptRequest();
+  
+  
 }
 
 
