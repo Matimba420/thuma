@@ -19,7 +19,10 @@ export class JobsComponent implements OnInit {
 
   isSubmitted = false;
   
- 
+  errand: any={
+    id:"any",
+    status:"any"
+  };
 
   runner_id: any;
 
@@ -54,18 +57,27 @@ export class JobsComponent implements OnInit {
       
     }));
 
-    
-      
-
    
-      
-     
    
   };
 
+
+  updateJob(){
+    this.service.updateStatus(this.errand).subscribe((res=>{
+      console.log('updated');
+      
+    }))
+
+  }
+
+
   myFunction(job) {
-    console.log(this.form.value.status);  
-    console.log(job.id);
+    this.errand.id=job.id;
+    this.errand.status=this.form.value.status;
+   // console.log(this.form.value.status);  
+   // console.log(job.id );
+   console.log(this.errand);
+   this.updateJob();
     
     
   }

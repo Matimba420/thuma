@@ -248,7 +248,6 @@ const addServices = async (req,res) => {
 const addAddress = async (req,res) => {
     // const {firstname, lastname, cell_no, password} = req.body;
      const {street_address, suburb, city, postal_code, request_id} = req.body
-     
      console.log(request_id);
             pool.query(queries.addAddress, 
                 [street_address, suburb, city, postal_code, request_id],
@@ -556,7 +555,7 @@ const totalRating =(req,res) =>{
 
 const totalClients = (req, res) => {
     pool.query(queries.totalClients,(error, results) => {
-        if(this.error){
+        if(error){
             console.log("error:"+error);
             res.status(404).send(error);
             throw error;
@@ -568,7 +567,7 @@ const totalClients = (req, res) => {
 
 const totalRunners = (req, res) => {
     pool.query(queries.totalRunners,(error, results) => {
-        if(this.error){
+        if(error){
             console.log("error:"+error);
             res.status(404).send(error);
             throw error;

@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreateComponent } from './components/create/create.component';
+import { AddErrandsComponent } from './components/add-errands/add-errands.component';
 
 import { DashboardComponent } from './components/dashboard/client/dashboard.component';
 
@@ -25,9 +26,9 @@ import { RatingsComponent } from './components/ratings/ratings.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { RequestsComponent } from './components/requests/requests.component';
+import { RateComponent } from './components/rate/rate.component';
 import { RunnerProfileComponent } from './components/runner-profile/runner-profile.component';
 import { HistoryComponent } from './components/history/history.component';
-import { RateComponent } from './components/rate/rate.component';
 
 
 const routes: Routes = [{
@@ -36,6 +37,7 @@ const routes: Routes = [{
 {path:'track',component:TrackComponent},
 {path:'posting',component:PostingComponent},
 {path:'success',component:SuccessMassageComponent},
+{path:'add',component:AddErrandsComponent},
 
 {
   path:'land',component:LandingComponent
@@ -60,9 +62,9 @@ const routes: Routes = [{
 {path:'earnings', component:EarningsComponent},
 
 {path: 'requests', component: RequestsComponent},
+{path: 'rate', component: RateComponent},
 {path:'run_p',component:RunnerProfileComponent},
-{path:'history',component:HistoryComponent},
-{path: 'rate', component: RateComponent}
+{path:'history',component:HistoryComponent}
 
 ];
 

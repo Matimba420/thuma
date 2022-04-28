@@ -16,8 +16,8 @@ getJobs(runner_id:any):Observable<any>{
   return this.http.get<any>(`${this.baseUrl}/${runner_id}`);
 }
 
-updateStatus(id:any):Observable<any>{
-return this.http.put<any>('http://localhost:4304/api/updateStatus/', + id);
+updateStatus(errand:any):Observable<any>{
+return this.http.put<any>('http://localhost:4304/api/updateStatus/'+ errand.id, errand);
 }
 
 

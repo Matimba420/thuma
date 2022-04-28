@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 06d510052e0f4f0fc5ce93345511a25495601457
 <app-navbar></app-navbar>
 <br>
 <div class="grid-container">
     <br>
 <br>
-    
-           
-<h1>Requests</h1>
-<br /> <br>
 
 <div class="container">
   <div class="row">
@@ -19,7 +11,7 @@
     <div class="col-sm-9">
       <h1>Requests</h1>
 
-      <div class="card mt-3" *ngFor="let request of requests">
+      <!-- <div class="card mt-3" *ngFor="let request of requests">
         <div class="card-body">
           <div class="row">
             <div class="col">
@@ -33,41 +25,33 @@
                 {{ request.client_name }}
               </h5>
             </div>
-          </div>
+          </div> -->
 
 <div class="card mt-3" *ngFor="let request of requests">
   <div class="card-body">
     <div class="row">
-      <div class="col">
-        <h5 class="card-title">{{ request.errand }}</h5>
-      </div>
+      
       <div class="col">
         <h5
           class="card-title justify-content-end"
-          style="text-align: end"
+          style="text-align: center"
         >
           {{ request.client_name }}
         </h5>
-<<<<<<< HEAD
       </div>
     </div>
 
-    <p class="card-text">{{ request.address }}</p>
-    <p class="card-text">"{{ request.comment }}"</p>
-    <a class="btn btn-primary">Accept</a>
-=======
-<<<<<<< HEAD
-=======
+
           <p class="card-text">{{ request.address }}</p>
           <p class="card-text">"{{ request.comment }}"</p>
-          <a class="btn btn-primary"  (click)="acceptRequest()"  >Accept</a>
+          <a class="btn btn-primary"  (click)="myFunction(request.id)" routerLink="/jobs" >Accept</a>
         </div>
->>>>>>> bc269aa2f030782c3ac4472c2eb47e2cc710f404
+
       </div>
     </div>
 
   
->>>>>>> 06d510052e0f4f0fc5ce93345511a25495601457
+
   </div>
 </div> 
        

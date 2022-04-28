@@ -5,40 +5,47 @@ import { History } from 'src/app/interface/user';
 @Component({
   selector: 'app-history',
   templateUrl: './history.component.html',
-  styleUrls: ['./history.component.css']
+  styleUrls: ['./history.component.css'],
 })
 export class HistoryComponent implements OnInit {
+ 
 
-
-  item:History;
+  items:History;
   
-  id : any;
+  client_id : any;
    today:Date;
 
+   
 
+
+  
 
   constructor(private service:HistoryService) { }
 
     ngOnInit(): void {
 
+      
+      
+  
+      this.client_id=localStorage.getItem("clientID");
+  
+      
       this.getHistory();
-      const now= new Date();
-      console.log(now.toLocaleDateString());
-      this.id=localStorage.getItem("clientID");
     }
 
+    getId(item){
+      
+      console.log('Runner ID :' + item.runner_id);
+      localStorage.setItem("runner_id", item.runner_id);
+    }
     
 
     getHistory(){
-      this.service.getHistory(this.id).subscribe((res=>{
-        this.item=res;
-        console.log(this.item)
+      this.service.getHistory(this.client_id).subscribe((res=>{
+        this.items=res;
+        console.log(this.items)
+        console.log(this.client_id);
+
       }))
     }
   }
-
-  
-
-  
-
-

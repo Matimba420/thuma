@@ -13,7 +13,7 @@ export class HistoryService {
   constructor(private http:HttpClient) { }
 
 getHistory(client_id:any):Observable<any>{
-  return this.http.get<any>(`${this.baseUrl}/${client_id}`)
+  return this.http.get<any>(`${this.baseUrl}/` +client_id)
 }
 
 

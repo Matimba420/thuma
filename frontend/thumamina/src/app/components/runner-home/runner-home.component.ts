@@ -31,6 +31,7 @@ getTotal(){
     this.total =res;
     console.log(this.total);
     
+    
   }))
 }
 
