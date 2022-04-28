@@ -83,24 +83,6 @@ user:any;
   }
 
     
-
-
-
-
- 
-
-  nextPage();{
-    // console.log(this.registerForm.value.role);
-    
-    // if (this.registerForm.value.role==="Service provider"){
-    //   this.router.navigateByUrl('/run_home',{replaceUrl:true});
-    // }
-    // if (this.registerForm.value.role==="Client"){
-    //   this.router.navigateByUrl('/items',{replaceUrl:true});
-    // }
-    
-    
-  }
   }
     create(){
       this.router.navigateByUrl('/create',{replaceUrl:true});

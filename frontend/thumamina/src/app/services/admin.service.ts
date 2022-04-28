@@ -48,7 +48,9 @@ export class AdminService {
     
   }
   
-  
+  addService(errand):Observable<any>{
+    return this.http.post<any>(`http://localhost:4304/api/services`, errand);
+  }
 
 }
 

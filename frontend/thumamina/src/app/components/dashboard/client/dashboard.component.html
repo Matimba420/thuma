@@ -59,14 +59,14 @@
                         </thead>
                         <tbody>
                           <tr  *ngFor="let person of clients">
-                            <th scope="row">14</th>
+                            <th scope="row">{{person.id}}</th>
                          
                             <td>{{person.name}}</td>
                             <td>{{person.surname}}</td>
                             <td>{{person.email}}</td>
                             <td>{{person.cell_no}}</td>
                           
-                            <td><a  class="btn btn-sm btn-primary ">View</a></td>
+                            <td><a  class="btn btn-sm btn-primary "  (click)="myFunction()">View</a></td>
                             
                             <td><a  class="btn btn-sm btn-danger ">Delete</a></td>
                           </tr>

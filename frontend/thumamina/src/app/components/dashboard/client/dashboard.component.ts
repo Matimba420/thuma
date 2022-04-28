@@ -22,18 +22,27 @@ numRunners:any;
     this.getClients();
     
   }
+  id: any;
+  
   
 getClients(){
   this.admin.getAllClients().subscribe((res:any)=>{
     console.log(res)
     this.clients=res;
-   
+    
 
   })
 }
 
 
+myFunction(person){
+  //console.log('hello');
 
+  //this.id=person.id;
+  //console.log('the id: '+ this.id);
+  console.log(person.id);
+  
+}
 
 
   
