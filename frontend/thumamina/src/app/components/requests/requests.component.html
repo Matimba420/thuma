@@ -38,16 +38,20 @@
         >
           {{ request.client_name }}
         </h5>
+      </div>
+    </div>
+
 
           <p class="card-text">{{ request.address }}</p>
           <p class="card-text">"{{ request.comment }}"</p>
-          <a class="btn btn-primary"  (click)="acceptRequest()"  >Accept</a>
+          <a class="btn btn-primary"  (click)="myFunction(request.id)" routerLink="/jobs" >Accept</a>
         </div>
 
       </div>
     </div>
 
   
+
   </div>
 </div> 
        

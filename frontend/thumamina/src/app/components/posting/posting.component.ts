@@ -23,6 +23,11 @@ export class PostingComponent implements OnInit {
 reqdata : any = {};
 addressData : any= {};
 
+comData:any ={
+  id:"any",
+  comment:"any"
+}
+
   constructor(private service: AddressService) { }
 
   ngOnInit(): void {
@@ -93,14 +98,23 @@ addressData : any= {};
       comment:this.form.value.comment
     }
   
-    
+    this.comData.comment=this.form.value.comment;
+    this.comData.id=localStorage.getItem("request_id");
     this.service.getAddress(this.addressData).subscribe((res:any)=>{
       console.log(res)
+      console.log(this.comData);
+
+      this.addComment();
+      
     })
   }
 
-
-
+ 
+  addComment(){
+    this.service.addComment(this.comData).subscribe((res:any)=>{
+      console.log('comment added');
+    })
+  }
 
 
  
