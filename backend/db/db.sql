@@ -18,7 +18,7 @@ create  table request(
 	service_id integer,
 	status varchar(50) default 'pending',
 	comment varchar(255),
-	column req_date date default current_date
+	req_date date default current_date
 );
 
 create  table address(

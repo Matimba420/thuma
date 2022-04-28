@@ -1,4 +1,3 @@
-
 const addClient = "INSERT into users (name, surname, cell_no, email, password, role) values($1, $2, $3, $4, $5, $6)";
 const addRunner = "INSERT into users (name, surname, cell_no, email, password, role, is_active) values($1, $2, $3, $4, $5, $6, false)";
 const checkClientCelllExists = "SELECT * FROM users WHERE cell_no= $1";

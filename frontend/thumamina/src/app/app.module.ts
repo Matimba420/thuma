@@ -11,10 +11,13 @@ import { ErrandsComponent } from './components/errands/errands.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TrackComponent } from './components/track/track.component';
 import { NavComponent } from './components/nav/nav.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashboardComponent } from './components/dashboard/client/dashboard.component';
 import { PostingComponent } from './components/posting/posting.component';
 import { BackButtonComponent } from './components/back-button/back-button.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { RunnerComponent } from './components/runner/runner.component';
+import { DashComponent } from './components/dash/dash.component';
+
 import { SuccessMassageComponent } from './components/success-massage/success-massage.component';
 import { PaymentsComponent } from './components/payments/payments.component';
 // import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
@@ -25,6 +28,8 @@ import { RequestsComponent } from './components/requests/requests.component';
 import { RatingsComponent } from './components/ratings/ratings.component';
 import { RateComponent } from './components/rate/rate.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+
 import { NgxStarRatingModule } from 'ngx-star-rating';
 import { ForgotComponent } from './components/forgot/forgot.component';
 
@@ -82,6 +87,7 @@ import { HistoryComponent } from './components/history/history.component';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FormsModule,
     NgxStarRatingModule
    
   ],
