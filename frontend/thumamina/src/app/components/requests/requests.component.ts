@@ -1,6 +1,9 @@
+import { state } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Requests } from 'src/app/interface/user';
 import { RequestsService } from 'src/app/services/requests.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-requests',
@@ -20,7 +23,7 @@ export class RequestsComponent implements OnInit {
   };
   runner_id: any;
 
-  constructor(private service:RequestsService) { }
+  constructor(private service:RequestsService, private userService: UserService,private route : Router) { }
 
  
 
@@ -32,6 +35,7 @@ export class RequestsComponent implements OnInit {
   
   this.getRequests();
   this.runner_id= localStorage.getItem("runnerID");
+
   }
 
 getRequests(){
@@ -65,4 +69,10 @@ myFunction(request){
   
 }
 
+
+getUsers(){
+  this.userService.getUsers().subscribe((res) =>{
+    
+  })
+}
 }

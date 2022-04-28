@@ -14,9 +14,12 @@ export class DashComponent implements OnInit {
   numRunners:any;
   numClients:any;
 
+  person:any;
+
   ngOnInit(): void {
     this.getTotalRunners();
     this.getTotalClients();
+    this.getRunnerReq();
   }
 
   getTotalRunners(){
@@ -33,5 +36,12 @@ export class DashComponent implements OnInit {
     })
   }
 
+  getRunnerReq(){
+    this.service.getRunnerRequests().subscribe((res:any)=>{
+      this.person=res;
+      console.log(this.person);
+      
+    })
+  }
 
 }

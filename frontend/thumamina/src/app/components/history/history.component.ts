@@ -5,10 +5,10 @@ import { History } from 'src/app/interface/user';
 @Component({
   selector: 'app-history',
   templateUrl: './history.component.html',
-  styleUrls: ['./history.component.css']
+  styleUrls: ['./history.component.css'],
 })
 export class HistoryComponent implements OnInit {
-
+ 
 
   items:History;
   
@@ -18,13 +18,14 @@ export class HistoryComponent implements OnInit {
    
 
 
+  
 
   constructor(private service:HistoryService) { }
 
     ngOnInit(): void {
 
       
-      const now= new Date();
+      
   
       this.client_id=localStorage.getItem("clientID");
   
@@ -48,9 +49,3 @@ export class HistoryComponent implements OnInit {
       }))
     }
   }
-
-  
-
-  
-
-

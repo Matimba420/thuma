@@ -25,6 +25,9 @@ import { editProfileComponent } from './components/edit-profile/edit-profile.com
 import { JobsComponent } from './components/jobs/jobs.component';
 import { EarningsComponent } from './components/earnings/earnings.component';
 import { RequestsComponent } from './components/requests/requests.component';
+import { RunnerProfileComponent } from './components/runner-profile/runner-profile.component';
+import { Nav2Component } from './components/nav2/nav2.component';
+import { HistoryComponent } from './components/history/history.component';
 import { RatingsComponent } from './components/ratings/ratings.component';
 import { RateComponent } from './components/rate/rate.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -32,12 +35,10 @@ import { FormsModule } from '@angular/forms';
 
 import { NgxStarRatingModule } from 'ngx-star-rating';
 import { ForgotComponent } from './components/forgot/forgot.component';
+import { AddErrandsComponent } from './components/add-errands/add-errands.component';
 
 
 
-import { RunnerProfileComponent } from './components/runner-profile/runner-profile.component';
-import { Nav2Component } from './components/nav2/nav2.component';
-import { HistoryComponent } from './components/history/history.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,10 @@ import { HistoryComponent } from './components/history/history.component';
     DashboardComponent,
   
    ProfileComponent,
+      RunnerComponent,
+      DashComponent,
+     
+      //  EditProfileComponent
    editProfileComponent,
    RequestsComponent,
        
@@ -76,10 +81,17 @@ import { HistoryComponent } from './components/history/history.component';
     EarningsComponent,
     RequestsComponent,
     JobsComponent,
+   editProfileComponent,
+   RequestsComponent,
+       
+      JobsComponent,
+              RateComponent,
+              ForgotComponent,
     RatingsComponent,
    RequestsComponent,
    JobsComponent,
-   RateComponent
+   RateComponent,
+   AddErrandsComponent
   ],
   imports: [
     BrowserModule,

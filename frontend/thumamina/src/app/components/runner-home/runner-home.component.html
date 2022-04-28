@@ -25,14 +25,15 @@
     <div class="card" routerLink="/jobs">
       <h5 class="card-title"style="font-weight: bolder; font-family: unset;">Jobs</h5>
         <br>  
-      <img style="height:60px" src="../../../assets/briefcase-outline.svg" alt="">
+      <img style="height:60px"  routerLink="/jobs" src="../../../assets/briefcase-outline.svg" alt="">
    
     </div>
   </div>
     
   <div class="column">
     <div class="card" (click)="ratings()">
-      <h5 class="card-title"style="font-weight: bolder; font-family: unset;">Ratings</h5>
+      <h5 class="card-title"  routerLink="/ratings" style="font-weight: bolder; font-family: unset;">Ratings</h5>
+      
         <br>  
       <h1>{{totalRating[0].avg}}</h1>
    

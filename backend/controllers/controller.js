@@ -309,7 +309,7 @@ const addRequest = async (req,res) => {
 
 const getRequest = (req, res) => {
     pool.query(queries.getRequest,(error, results) => {
-        if(this.error){
+        if(error){
             console.log("error:"+error);
             res.status(404).send(error);
             throw error;
