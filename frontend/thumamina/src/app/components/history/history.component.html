@@ -10,22 +10,22 @@
  </form>
     <h1>SERVICE HISTORY</h1>
     <br>
-    <div class="card mb-3" style="max-width: 540px;">
+    <div class="card mb-3"  *ngFor="let item of items" style="max-width: 540px;">
         <div class="row g-0">
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title">{{this.item.errand}}
+              <h5 class="card-title">{{item.errand}}
 
               </h5> 
               <hr>
             
-              <p class="card-text">Date={{today | date : "dd.MM.y"}}<small class="text-muted">date:{{this.item.date}}</small></p>
-              <p class="card-text">Service Provider:<small class="text-muted">{{this.item.runner_name}}</small></p>
+              <p class="card-text"><small class="text-muted">Date: {{this.item.date}}</small></p>
+              <p class="card-text">Service Provider: <small class="text-muted">{{this.item.runner_name}}</small></p>
               <div class="col-md-12 text-right">
-                <button type="button" [routerLink]="['/rate']" class="btn btn-warning ml-2">Rate</button>
+                <button type="button"  class="btn btn-warning ml-2" (click)="getId(item)" [routerLink]="['/rate']">Rate</button>
             </div>
 
-            <p class="card-text">Status:<small class="text-muted">{{this.item.status}}</small></p>
+            <p class="card-text">Status: <small class="text-muted">{{this.item.status}}</small></p>
      
             </div>
           </div>

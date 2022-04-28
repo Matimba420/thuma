@@ -45,6 +45,8 @@ router.post('/rateServices', controller.rateServices);
 
 router.get('/runnerRequests', controller. runnerRequests);
 
+router.put('/deactivate/:id', controller.deactivate);
+
 
 
  

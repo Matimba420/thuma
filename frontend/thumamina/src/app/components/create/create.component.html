@@ -14,11 +14,15 @@
       <div class="col-sm liv mt-0" > 
         
           <form class="what" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-            <div class="img" routerLink="/land">
+
+          <img routerLink="/land" width="12rem" height="1rem" src="../../../assets/smart serve-logos_white.png" alt="">
+
+            <!-- <div class="img" routerLink="/land">
               <img width="12rem" height="1rem" src="../../../assets/smart serve-logos_white.png" alt="">
-            </div>
+            </div> -->
           
        
+
             
             <br>
             
@@ -45,7 +49,7 @@
           
         <button type="button" class="btn btn-link">forgot password?</button>
         <br>
-        <p style="color: aliceblue;">Don't have an account?<button type="button" (click)="create()" class="btn-2" >Create account</button></p>
+        <p style="color: aliceblue;"  >Don't have an account?<button type="button" class="btn-2" routerLink="/create" >Create account</button></p>
 
         </ul>
       </form>
