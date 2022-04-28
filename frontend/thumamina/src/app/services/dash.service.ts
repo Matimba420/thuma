@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 })
 export class DashService {
 
-  private baseUrl = 'http://localhost:4304/api//totalClients'
+  private baseUrl = 'http://localhost:4304/api/totalClients'
 
   constructor(private http:HttpClient) { }
 
@@ -15,7 +15,7 @@ export class DashService {
   }
 
   getRunners():Observable<any>{
-    return this.http.get<any>('http://localhost:4304/api//totalClients');
+    return this.http.get<any>('http://localhost:4304/api/totalClients');
   }
 
 }

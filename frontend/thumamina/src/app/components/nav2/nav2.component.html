@@ -4,41 +4,38 @@
  <br>
 <nav class="navbar navbar-light fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" style="color:aliceblue;font-size:x-large;">Smart serve</a>
+      <a class="navbar-brand" type="button" value="<" onclick="history.go(-1)" style="color:aliceblue;"><img src="../../../assets/smart serve-logos_white.png" alt=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
-          <h1 class="offcanvas-title" id="offcanvasNavbarLabel" style="color:rgb(255, 255, 255);font-size:x-large;">smart serve</h1>
-          <button mat-button (click)= "onLogout()">Logout</button>  
+          <a class="navbar-brand" type="button" value="<" onclick="history.go(-1)" style="color:aliceblue;"><img src="../../../assets/smart serve-logos_white.png" alt=""></a>
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" routerLink="/requests" style="color:aliceblue;font-size:x-large;">Requests</a>
+              <a aria-current="page" routerLink="/requests" style="color:aliceblue;font-size:x-large;">Requests</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/Earnings" style="color:aliceblue;font-size:x-large;">Earnings</a>
+              <a routerLink="/earnings" style="color:aliceblue;font-size:x-large;">Earnings</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/jobs" style="color:aliceblue;font-size:x-large;">My jobs</a>
+              <a  routerLink="/jobs" style="color:aliceblue;font-size:x-large;">My jobs</a>
             </li> <li class="nav-item">
-              <a class="nav-link" routerLink="/Ratings" style="color:aliceblue;font-size:x-large;">Ratings</a>
+              <a routerLink="/Ratings">Ratings</a>
             </li>
 
-
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                
+            <li >
+              <a  id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               </a>
               
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="color:aliceblue;font-size:x-large;" >
-                <li><a class="dropdown-item" [routerLink]="['/profile']">Settings</a></li>
-                <li><a class="dropdown-item" href="#">Sign out</a></li>
-              </ul>
-            </li>
+              
+                <li><a [routerLink]="['/profile']">Profile</a></li>
+                <li><a  [routerLink]="['/land']" routerLinkActive="router-link-active" >Sign out</a></li>
+             
+            
           </ul>
         </div>
       </div>

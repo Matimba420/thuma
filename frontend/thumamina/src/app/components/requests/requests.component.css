@@ -8,16 +8,45 @@
 h1{
     text-align: center;
     font-family: Lora;
+    
 }
 
 .btn{
-    background-color: #223c50;
+    
     border-radius: 15px;
     align-items: flex-end;
     text-align: center;
+    width: 12rem;
+    margin-left: 4.4rem;
 }
 
 .card{
     display:flex;
 }
 
+.card{
+    box-shadow: 0 4px 8px 0 rgba(211, 0, 0, 0.2);
+    background:#ffffff
+  }
+
+h4{font-family: 'Montserrat';
+    font-family: 'Oswald', sans-serif;
+    font-weight: lighter;
+  ;}
+
+  h5{
+      font-weight:normal;
+      font-size: 1.6rem;
+      
+  }
+  h6{
+      font-display:inherit;
+  }
+.text{
+    font-weight: 100rem;
+}
+
+h6{font-weight: 200rem;
+    background-color: orange;
+    border-radius: 15px;
+text-align: center;}
