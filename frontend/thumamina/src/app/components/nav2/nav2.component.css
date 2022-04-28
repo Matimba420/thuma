@@ -10,6 +10,13 @@
         z-index: 999;
     }
 }
+img{
+    width: 100px;
+    height: 100px;
+    margin-top: 0rem;
+    margin-right:5rem;
+    margin-bottom: 0rem;
+}
 
 .sidebar .nav-link {
     color: rgb(255, 255, 255);
@@ -33,3 +40,6 @@ h5{
     color: rgb(0, 0, 0);
     font-size: xx-large;
 }
+
+a{ color:aliceblue;
+    font-size:x-large;}

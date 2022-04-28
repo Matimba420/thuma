@@ -2,18 +2,23 @@
 
 <app-navbar></app-navbar>
 
+<br>
+<br>
+<br>
+<br>
+<form>
 
-    <br>
-      <h1 >Profile</h1>
+ </form>
+    
+
+      <h1>Profile</h1>
+      <hr class="colorgraph">
 
 
-
-    <div class="col-md-8" *ngFor="let item of People">
-      <form>
-        <input type="button" value="<" onclick="history.go(-1)">
-       </form>
+    <div class="col-md-8 mb-5" *ngFor="let item of People">
+     
       
-        <div class="card mb-3 &#xf2bd;" >
+        <div class="card mb-5 &#xf2bd;" >
           <div class="card-body" >
             
             <div class="row">
@@ -60,7 +65,7 @@
               <div class="row">
                 <div class="col-sm-3"></div>
                 <div class="col-sm-9 text-secondary">
-                    <input type="button" class="btn btn-primary px-4" style="background-color: #e77f58;" value="Edit" [routerLink]="['/edit']" routerLinkActive="router-link-active">
+                    <input type="button" class="btn btn-primary btn-block" style="background-color: #e77f58;" value="Edit" [routerLink]="['/edit']" routerLinkActive="router-link-active">
                 </div>
 
              
@@ -68,5 +73,6 @@
           </div>
         </div>
     </div>
+    <hr class="colorgraph">
 
     

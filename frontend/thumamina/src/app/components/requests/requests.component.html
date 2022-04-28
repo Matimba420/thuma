@@ -1,5 +1,6 @@
 <app-navbar></app-navbar>
 <br>
+
 <div class="grid-container">
     <br>
 <br>
@@ -8,24 +9,9 @@
   <div class="row">
 
 
-    <div class="col-sm-9">
+    <div class="col-sm-9 mt-5">
       <h1>Requests</h1>
 
-      <!-- <div class="card mt-3" *ngFor="let request of requests">
-        <div class="card-body">
-          <div class="row">
-            <div class="col">
-              <h5 class="card-title">{{ request.errand }}</h5>
-            </div>
-            <div class="col">
-              <h5
-                class="card-title justify-content-end"
-                style="text-align: end"
-              >
-                {{ request.client_name }}
-              </h5>
-            </div>
-          </div> -->
 
 <div class="card mt-3" *ngFor="let request of requests">
   <div class="card-body">
@@ -37,14 +23,16 @@
           style="text-align: center"
         >
           {{ request.client_name }}
+          <hr>
         </h5>
       </div>
     </div>
 
-
-          <p class="card-text">{{ request.address }}</p>
+<h6>Address</h6>
+          <p class="text card-text">{{ request.address }}</p>
+         <h6>Instructions</h6> 
           <p class="card-text">"{{ request.comment }}"</p>
-          <a class="btn btn-primary"  (click)="myFunction(request.id)" routerLink="/jobs" >Accept</a>
+          <a class="btn btn-outline-primary"  (click)="myFunction(request.id)" routerLink="/jobs" >Accept</a>
         </div>
 
       </div>
