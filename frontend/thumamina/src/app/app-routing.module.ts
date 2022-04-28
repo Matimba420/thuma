@@ -32,6 +32,7 @@ import { HistoryComponent } from './components/history/history.component';
 import { UpdateErrandComponent } from './components/update-errand/update-errand.component';
 import { PaymentsComponent } from './components/payments/payments.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import { GetErrandsComponent } from './get-errands/get-errands.component';
 
 
 const routes: Routes = [{
@@ -64,6 +65,7 @@ const routes: Routes = [{
 {path:'footer', component:FooterComponent},
 {path:'jobs', component:JobsComponent},
 {path:'earnings', component:EarningsComponent},
+{path:'availableErrands',component:GetErrandsComponent},
 
 {path: 'requests', component: RequestsComponent},
 {path: 'rate', component: RateComponent},
