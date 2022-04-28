@@ -21,6 +21,7 @@ import { SuccessMassageComponent } from './components/success-massage/success-ma
 import { editProfileComponent } from './components/edit-profile/edit-profile.component';
 import { RunnerReqComponent } from './components/runner-req/runner-req.component';
 import { EarningsComponent } from './components/earnings/earnings.component';
+import { ViewComponent } from './components/view/view.component';
 
 import { RatingsComponent } from './components/ratings/ratings.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -72,7 +73,8 @@ const routes: Routes = [{
 {path:'run_p',component:RunnerProfileComponent},
 {path:'history',component:HistoryComponent},
 {path:'payment',component:PaymentsComponent},
-{path:'settings',component:SettingsComponent}
+{path:'settings',component:SettingsComponent},
+{path:'view',component:ViewComponent}
 ];
 
 

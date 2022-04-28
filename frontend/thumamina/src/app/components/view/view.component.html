@@ -1,0 +1,45 @@
+
+                        <div class="container-fluid">
+                            <div class="row">
+                              
+                              <div class="card">
+                                <h5 class="card-header">Active Clients</h5>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                              <tr>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Full_Name</th>
+                                                <th scope="col">Last_Name</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">Mobile</th>
+                                                
+                                                <th scope="col">Action</th>
+                                        
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr  *ngFor="let person of clients">
+                                                <th scope="row">14</th>
+                                             
+                                                <td>{{person.name}}</td>
+                                                <td>{{person.surname}}</td>
+                                                <td>{{person.email}}</td>
+                                                <td>{{person.cell_no}}</td>
+                                                <td>{{person.email}}</td>
+                                                <td><a  class="btn btn-sm btn-primary ">View</a></td>
+                                                
+                                                <td><a  class="btn btn-sm btn-danger ">Delete</a></td>
+                                                
+                                              </tr>
+                                              
+                                          
+                                             
+                                          </table>
+                                    </div>
+                                    <!-- <a href="#" class="btn btn-block btn-light">View all</a> -->
+                                </div>
+                            </div>
+                            </div>
+                        </div>
