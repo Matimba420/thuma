@@ -261,7 +261,7 @@ const addRequest = async (req,res) => {
 
 const getRequest = (req, res) => {
     pool.query(queries.getRequest,(error, results) => {
-        if(this.error){
+        if(error){
             console.log("error:"+error);
             res.status(404).send(error);
             throw error;
@@ -572,7 +572,7 @@ const deactivate = async (req, res) => {
     const { id } = req.params;
 
     try{
-        const deletedUser = await pool.query('UPDATE users set status = false WHERE user_id = $1', [id]);
+        const deletedUser = await pool.query('UPDATE users set is_active = false WHERE id = $1', [id]);
 
         if(deletedUser.rowCount){
             res.status(200).json({

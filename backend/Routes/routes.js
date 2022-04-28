@@ -27,6 +27,8 @@ router.get('/client', controller.getAllClients);
 router.get('/runner', controller.getAllRunners);
 
 
+router.put('/deactivate/:id', controller.deactivate);
+
 
 
  
