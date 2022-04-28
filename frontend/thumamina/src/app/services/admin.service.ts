@@ -57,6 +57,10 @@ export class AdminService {
     return this.http.post<any>(`http://localhost:4304/api/services`, errand);
   }
 
+  getUserById(id:any):Observable<any>{
+    return this.http.get<any>(`http://localhost:4304/api/clients/` + id, id);
+  }
+
 }
 
 

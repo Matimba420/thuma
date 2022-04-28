@@ -33,6 +33,7 @@ import { UpdateErrandComponent } from './components/update-errand/update-errand.
 import { PaymentsComponent } from './components/payments/payments.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { GetErrandsComponent } from './get-errands/get-errands.component';
+import { RunViewComponent } from './components/run-view/run-view.component';
 
 
 const routes: Routes = [{
@@ -72,7 +73,8 @@ const routes: Routes = [{
 {path:'run_p',component:RunnerProfileComponent},
 {path:'history',component:HistoryComponent},
 {path:'payment',component:PaymentsComponent},
-{path:'settings',component:SettingsComponent}
+{path:'settings',component:SettingsComponent},
+{path: 'runView', component:RunViewComponent}
 ];
 
 

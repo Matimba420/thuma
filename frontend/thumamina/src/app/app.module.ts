@@ -38,6 +38,7 @@ import { ForgotComponent } from './components/forgot/forgot.component';
 import { AddErrandsComponent } from './components/add-errands/add-errands.component';
 import { UpdateErrandComponent } from './components/update-errand/update-errand.component';
 import { GetErrandsComponent } from './get-errands/get-errands.component';
+import { RunViewComponent } from './components/run-view/run-view.component';
 
 
 
@@ -95,7 +96,8 @@ import { GetErrandsComponent } from './get-errands/get-errands.component';
    RateComponent,
    AddErrandsComponent,
    UpdateErrandComponent,
-   GetErrandsComponent
+   GetErrandsComponent,
+   RunViewComponent
   ],
   imports: [
     BrowserModule,

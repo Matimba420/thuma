@@ -59,12 +59,12 @@ const getClient = (req, res) => {
 };
 
 const getClientById=(req,res) =>{
-    const id =parseInt(req.params.client_id);
+    const id =parseInt(req.params.id);
     
     console.log('hello2');
 
 
-    pool.query(queries.getClientById,[client_id],(error, results)=>{
+    pool.query(queries.getClientById,[id],(error, results)=>{
         if(!results){
             return res.status(400).send("invalid input");
         }
