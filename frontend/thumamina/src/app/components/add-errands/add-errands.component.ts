@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/services/admin.service';
 import { FormBuilder,FormControl,FormGroup, Validators } from '@angular/forms';
+import {Router, ActivatedRoute } from '@angular/router';
 
 import Swal from 'sweetalert2';
 
@@ -29,7 +30,7 @@ addErrandForm: any = new FormGroup({
 }) ;
 
 
-  constructor( private service:AdminService) { }
+  constructor( private service:AdminService,  private router:Router, private route: ActivatedRoute ) { }
 
   ngOnInit(): void {
    
@@ -55,6 +56,8 @@ addErrandForm: any = new FormGroup({
     
     this.service.addService(this.addErrandForm.value).subscribe((res=>{
      console.log(res);
+     Swal.fire('Thank you admin', 'Errands Successfully Added!', 'success')
+     this.router.navigateByUrl('/availableErrands',{replaceUrl:true});
  
     }));
   }

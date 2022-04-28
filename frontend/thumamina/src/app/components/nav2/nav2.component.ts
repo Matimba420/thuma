@@ -6,10 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav2.component.css']
 })
 export class Nav2Component implements OnInit {
+  isAuthenticated: boolean;
+  token: any;
+  authStatusListener: any;
+  authService: any;
 
   constructor() { }
 
   ngOnInit(): void {
+    
   }
+  onLogout(){  
+    this.token = null;  
+    this.isAuthenticated = false; 
+    this.authStatusListener.next(false);  
 
+    this.authService.logout();  
+
+      
+  } 
 }
