@@ -8,13 +8,14 @@
 
   <div class="card mt-3"  *ngFor="let item of earnings"  >
     <div class="card-body">
-      <div class="row">
+      <div class="row-list">
         <div class="col">
-          <h5 class="card-title">{{ item.errand }}</h5>
+          <h2 class="card-title">{{ item.client_name }}</h2>
+          <hr>
         </div>
         <div class="col">
           <h4 class="card-title" >
-            {{ item.client_name }}
+            {{ item.errand }}
           </h4>
         </div>
         <div class="col">
@@ -28,8 +29,8 @@
   <br>
 
   <div class="col">
-    <h5 class="card-text" style="text-align: end">
+    <h6 class="card-text" style="text-align: end">
       Total:R{{this.total}}
-    </h5>
+    </h6>
   </div> 
 </div>

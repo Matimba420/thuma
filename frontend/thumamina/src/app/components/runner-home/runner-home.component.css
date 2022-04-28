@@ -27,10 +27,10 @@
   
   /* Style the counter cards */
   .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(211, 0, 0, 0.2);
     padding: 16px;
     text-align: center;
-    background-color: #f1f1f1;
+    background:#ffffff
   }
 .col-sm-6{
     align-items: right;
@@ -44,4 +44,9 @@
     text-align: center;
     font-family: Lora;
     font-weight: lighter;
+    
+   
 }
+h5{ color:#000000;
+  ;}
+/* body{background: linear-gradient(#ffffff, #ebe3e3)} */
