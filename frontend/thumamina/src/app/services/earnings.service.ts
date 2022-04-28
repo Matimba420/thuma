@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 export class EarningsService {
 
   private baseUrl = 'http://localhost:4304/api/earnings/';
-
+  
   constructor(private http:HttpClient){}
 
 

@@ -36,6 +36,7 @@ import { FormsModule } from '@angular/forms';
 import { NgxStarRatingModule } from 'ngx-star-rating';
 import { ForgotComponent } from './components/forgot/forgot.component';
 import { AddErrandsComponent } from './components/add-errands/add-errands.component';
+import { UpdateErrandComponent } from './components/update-errand/update-errand.component';
 
 
 
@@ -91,7 +92,8 @@ import { AddErrandsComponent } from './components/add-errands/add-errands.compon
    RequestsComponent,
    JobsComponent,
    RateComponent,
-   AddErrandsComponent
+   AddErrandsComponent,
+   UpdateErrandComponent
   ],
   imports: [
     BrowserModule,

@@ -29,6 +29,9 @@ import { RequestsComponent } from './components/requests/requests.component';
 import { RateComponent } from './components/rate/rate.component';
 import { RunnerProfileComponent } from './components/runner-profile/runner-profile.component';
 import { HistoryComponent } from './components/history/history.component';
+import { UpdateErrandComponent } from './components/update-errand/update-errand.component';
+import { PaymentsComponent } from './components/payments/payments.component';
+import { SettingsComponent } from './components/settings/settings.component';
 
 
 const routes: Routes = [{
@@ -38,6 +41,7 @@ const routes: Routes = [{
 {path:'posting',component:PostingComponent},
 {path:'success',component:SuccessMassageComponent},
 {path:'add',component:AddErrandsComponent},
+{path:'update',component:UpdateErrandComponent},
 
 {
   path:'land',component:LandingComponent
@@ -64,8 +68,9 @@ const routes: Routes = [{
 {path: 'requests', component: RequestsComponent},
 {path: 'rate', component: RateComponent},
 {path:'run_p',component:RunnerProfileComponent},
-{path:'history',component:HistoryComponent}
-
+{path:'history',component:HistoryComponent},
+{path:'payment',component:PaymentsComponent},
+{path:'settings',component:SettingsComponent}
 ];
 
 
