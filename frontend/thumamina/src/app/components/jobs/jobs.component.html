@@ -1,6 +1,11 @@
 <app-navbar></app-navbar>
-<br> <br>
-<div class="container-fluid" >
+<br> 
+<br>
+<br>
+<br>
+<br>
+
+<div class="container-fluid " >
    
     <div class="row" >
      
@@ -17,22 +22,26 @@
                             </div>
                             <div class="col">
                               <h5 class="card-title justify-content-end" style="text-align: end;" >{{job.client_name}}</h5>
+                              
                             </div>
                           </div>
+                          <hr style="color: chocolate;">
                           
                           <p class="card-text"> {{job.address}}</p>
 
                         
                           <!--label for="{{job.status}}">Status: Completed</!--label-->
                         <form [formGroup]="form"  (ngSubmit)="onSubmit()">
-                           <select formControlName="status"  >
+                           <select class="btn-lg btn-group dropdown-toggle" formControlName="status"  >
                             <option value="">{{job.status}}</option>
                             <option value="In progress">In progress</option>
                             <option value="Completed">Completed</option>
                             </select>
                         </form>
 
-                    <button (click)="myFunction(job)">save</button>
+                        <br>
+
+                    <button class="btn2  btn-lg btn-block" (click)="myFunction(job)">save</button>
 
  </div> 
 </div>
