@@ -43,7 +43,8 @@ const totalRunners = " SELECT COUNT(*) AS runners FROM users WHERE role ='Servic
 const acceptRequest = " UPDATE request SET status='Accepted', runner_id=$1 WHERE id=$2 ";
 const rateServices = " INSERT INTO review (runner_id, client_id, rating, reason, request_id) VALUES($1, $2, $3, $4, $5) ";
 
-const runnerRequests =  " SELECT * FROM users WHERE is_active =false ";
+const runnerRequests =  " SELECT * FROM users WHERE is_active =false AND role='Service provider' ";
+const acceptRunner = "UPDATE users SET is_active= true WHERE id=$1"
 
 module.exports ={
    
@@ -90,7 +91,8 @@ module.exports ={
     acceptRequest,
 
     rateServices,
-    runnerRequests
+    runnerRequests,
+    acceptRunner
 
     
 };

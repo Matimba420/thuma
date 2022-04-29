@@ -62,6 +62,10 @@ export class AdminService {
     return this.http.get<any>(`http://localhost:4304/api/clients/` + id, id);
   }
 
+  acceptRunner(id:any):Observable<any>{
+    return this.http.put<any>('http://localhost:4304/api/runner/'+ id, {id: id});
+  }
+
 }
 
 

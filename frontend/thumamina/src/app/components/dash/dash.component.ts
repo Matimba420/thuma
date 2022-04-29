@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/services/admin.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -65,5 +66,21 @@ export class DashComponent implements OnInit {
 
   }
 
+  myFunction(person){
+    console.log(person.id);
+
+    this.service.acceptRunner(person.id).subscribe((res:any)=>{
+      console.log(res);
+      this.getRunnerReq();
+      return Swal.fire({
+        title: 'Success!',
+        text: 'Successfully Accepted',
+        icon: 'success',
+        confirmButtonText: 'Ok'
+      })
+    })
+    
+    
+  }
 
 }
