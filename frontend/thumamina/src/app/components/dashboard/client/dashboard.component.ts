@@ -36,12 +36,23 @@ getClients(){
 
 
 myFunction(person){
-  //console.log('hello');
+  console.log('hello');
 
   //this.id=person.id;
   //console.log('the id: '+ this.id);
-  console.log(person.id);
+  //console.log(person.id);
+  localStorage.setItem("clientId",person.id);
+  console.log(localStorage.getItem("clientId"));
   
+  
+}
+
+logOut()
+{
+  localStorage.clear();
+  console.log('hi Zizi');
+  
+  localStorage.removeItem("")
 }
 
 

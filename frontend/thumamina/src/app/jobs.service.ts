@@ -20,6 +20,10 @@ updateStatus(errand:any):Observable<any>{
 return this.http.put<any>('http://localhost:4304/api/updateStatus/'+ errand.id, errand);
 }
 
+getRequest(client_id:any):Observable<any>{
+
+  return this.http.get<any>('http://localhost:4304/api/requests/client/' + client_id, client_id);
+}
 
 
 }

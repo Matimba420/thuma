@@ -39,6 +39,7 @@ import { AddErrandsComponent } from './components/add-errands/add-errands.compon
 import { UpdateErrandComponent } from './components/update-errand/update-errand.component';
 import { GetErrandsComponent } from './get-errands/get-errands.component';
 import { RunViewComponent } from './components/run-view/run-view.component';
+import { ClientViewComponent } from './components/client-view/client-view.component';
 
 
 
@@ -97,7 +98,8 @@ import { RunViewComponent } from './components/run-view/run-view.component';
    AddErrandsComponent,
    UpdateErrandComponent,
    GetErrandsComponent,
-   RunViewComponent
+   RunViewComponent,
+   ClientViewComponent
   ],
   imports: [
     BrowserModule,
