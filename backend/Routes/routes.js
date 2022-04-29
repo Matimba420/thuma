@@ -4,6 +4,7 @@ const router = Router();
 
 router.post('/clients', controller.addClient);
 router.post('/runner', controller.addRunner);
+router.put('/runner/:id', controller.acceptRunner);
 router.get('/clients', controller.getClient);
 router.post('/clients/login', controller.clientLogin);
 router.get('/clients/:id', controller.getClientById);

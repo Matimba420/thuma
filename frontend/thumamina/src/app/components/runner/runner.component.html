@@ -39,7 +39,7 @@
               
               <div class="navi">
                   <ul>
-                      <li class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
+                      <li class="active"><a href="/dashPage"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
                       <li><a routerLink="/runn"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Runners</span></a></li>
                       <li><a routerLink="/dash"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Clients</span></a></li>
                       <li><a routerLink="/availableErrands"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Errands</span></a></li>
@@ -90,8 +90,8 @@
                                       <td>{{person.surname}}</td>
                                       <td>{{person.email}}</td>
                                       <td>0{{person.cell_no}}</td>
-                                      <td><a  class="btn btn-sm btn-primary "(click)="myFunction()" routerLink="/runView">View</a></td>
-                                      <td><a  class="btn btn-sm btn-danger ">Deactivate</a></td>
+                                      <td><a  class="btn btn-sm btn-primary " routerLink="/runView">View</a></td>
+                                      <td><a  class="btn btn-sm btn-danger " (click)="myFunction()">Deactivate</a></td>
                                       
                                    
                                       

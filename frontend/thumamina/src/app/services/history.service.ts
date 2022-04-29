@@ -15,6 +15,4 @@ export class HistoryService {
 getHistory(client_id:any):Observable<any>{
   return this.http.get<any>(`${this.baseUrl}/` +client_id)
 }
-
-
 }

@@ -10,7 +10,14 @@
       </button>
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
+
           <a class="navbar-brand" type="button" value="<" onclick="history.go(-1)" style="color:aliceblue;"><img src="../../../assets/smart serve-logos_white.png" alt=""></a>
+
+          <h1 class="offcanvas-title" id="offcanvasNavbarLabel" style="color:rgb(255, 255, 255);font-size:x-large;">smart serve</h1>
+          <button mat-button (click)= "onLogout()">Logout</button>  
+
+          <a class="navbar-brand" type="button" value="<" onclick="history.go(-1)" style="color:aliceblue;"><img src="../../../assets/smart serve-logos_white.png" alt=""></a>
+
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
@@ -19,7 +26,13 @@
               <a aria-current="page" routerLink="/requests" style="color:aliceblue;font-size:x-large;">Requests</a>
             </li>
             <li class="nav-item">
+
               <a routerLink="/earnings" style="color:aliceblue;font-size:x-large;">Earnings</a>
+
+              <a class="nav-link" routerLink="/Earnings" style="color:aliceblue;font-size:x-large;">Earnings</a>
+
+              <a routerLink="/earnings" style="color:aliceblue;font-size:x-large;">Earnings</a>
+
             </li>
             <li class="nav-item">
               <a  routerLink="/jobs" style="color:aliceblue;font-size:x-large;">My jobs</a>

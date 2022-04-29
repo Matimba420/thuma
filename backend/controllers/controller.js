@@ -643,6 +643,18 @@ const deactivate = async (req, res) => {
     }
 }
 
+const acceptRunner = async (req,res) =>{
+    const {id} = req.params;
+    pool.query(queries.acceptRunner,[id],(error, results) =>{
+        if(error){
+            console.log("error:"+error);
+            res.status(404).send(error);
+            throw error;
+        }
+        res.status(200).json("Request accepted succesfully");
+    });
+};
+
 
 module.exports = {
     addClient,
@@ -684,7 +696,8 @@ module.exports = {
     acceptRequest,
     rateServices,
     runnerRequests,
-    deactivate
+    deactivate,
+    acceptRunner
 
     
 }
