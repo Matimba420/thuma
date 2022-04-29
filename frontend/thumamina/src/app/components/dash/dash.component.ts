@@ -14,10 +14,14 @@ export class DashComponent implements OnInit {
 
   numRunners: any;
   numClients: any;
-
+  user: any;
   person: any;
+  
 
   ngOnInit(): void {
+    this.user=localStorage.getItem("user");
+    console.log(localStorage.getItem("user")+ " is a user");
+    
     this.getTotalRunners();
     this.getTotalClients();
     this.getRunnerReq();
@@ -45,22 +49,21 @@ export class DashComponent implements OnInit {
     })
   }
 
-  // deactivateUser(id: any) {
+  deactivateUser(id: any) {
 
-  //   this.deactivate.deactivateClient(id).subscribe({
-  //     next: (res) => {
+    this.deactivate.deactivateClient(id).subscribe({
+      next: (res) => {
 
-  //       this.getAllClient()
-  //       console.log(res)
-  //     },
-  //     error: (err) => {
-  //       console.log(err)
-  //     }
-  //   })
+        this.getTotalClients()
+        console.log(res)
+      },
+      error: (err) => {
+        console.log(err)
+      }
+    })
 
 
-  // }
-
+  }
 
 
 }

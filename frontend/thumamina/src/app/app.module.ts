@@ -38,7 +38,8 @@ import { ForgotComponent } from './components/forgot/forgot.component';
 import { AddErrandsComponent } from './components/add-errands/add-errands.component';
 import { UpdateErrandComponent } from './components/update-errand/update-errand.component';
 import { GetErrandsComponent } from './get-errands/get-errands.component';
-import { ViewComponent } from './components/view/view.component';
+import { RunViewComponent } from './components/run-view/run-view.component';
+import { ClientViewComponent } from './components/client-view/client-view.component';
 
 
 
@@ -57,13 +58,14 @@ import { ViewComponent } from './components/view/view.component';
     BackButtonComponent,
     DashboardComponent,
   
-   ProfileComponent,
+      ProfileComponent,
       RunnerComponent,
       DashComponent,
-     
+  
+   
       //  EditProfileComponent
-   editProfileComponent,
-   RequestsComponent,
+      editProfileComponent,
+      RequestsComponent,
        
       JobsComponent,
               RateComponent,
@@ -97,7 +99,8 @@ import { ViewComponent } from './components/view/view.component';
    AddErrandsComponent,
    UpdateErrandComponent,
    GetErrandsComponent,
-   ViewComponent
+   RunViewComponent,
+   ClientViewComponent
   ],
   imports: [
     BrowserModule,

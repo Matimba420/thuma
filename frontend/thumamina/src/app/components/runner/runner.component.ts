@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Runner } from 'src/app/interface/user';
 import { AdminService } from 'src/app/services/admin.service';
 
+
 @Component({
   selector: 'app-runner',
   templateUrl: './runner.component.html',
@@ -32,12 +33,11 @@ export class RunnerComponent implements OnInit {
   }
 
 
-  myFunction(){
-   // console.log(this.run_id);
-    this.service.deactivate(this.run_id).subscribe((res:any)=>{
-      console.log(res);
-      
-    })
+  myFunction(person){
+  
+    this.run_id=this.runners[0].id;
+    localStorage.setItem("runnerId", this.run_id);
+    console.log('This is the id :' +this.run_id);
     
   }
 

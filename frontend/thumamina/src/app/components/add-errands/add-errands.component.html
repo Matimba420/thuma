@@ -45,15 +45,12 @@
                         <li><a routerLink="/dash"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Clients</span></a></li>
                         <li><a routerLink="/availableErrands"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Errands</span></a></li>
                         <li><a routerLink="/add"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Add Serivices</span></a></li>
-                        <!-- <li><a routerLink="/log"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Sign out</span></a></li> -->
  
                     </ul>
                 </div>
             </div>
             <div class="col-md-10 col-sm-11 display-table-cell v-align">
   
-               
-
                 
                <div class=" f -align-center" >
 
@@ -62,17 +59,17 @@
     
 
 
-        <form>
+        <form class="form" [formGroup]="addErrandForm">
             <div class="col-lg-8">
 
-                <!-- <div class="card" style="justify-content: center;"> -->
+    
                     <div class="card-body">
                         <div class="row mb-3">
                             <div class="col-sm-3 ">
                                 <h6 class="mb-0">Image</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                <input type="text" class="form-control" formControlName="Image">
+                                <input type="text" class="form-control" formControlName="image">
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -81,7 +78,7 @@
                                 <img src="" alt="">
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                <input type="text" class="form-control" formControlName="Name">
+                                <input type="text" class="form-control" formControlName="name">
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -89,7 +86,7 @@
                                 <h6 class="mb-0">Description</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                <input type="text" class="form-control" formControlName="Desccription" value="">
+                                <input type="text" class="form-control" formControlName="description">
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -97,7 +94,7 @@
                                 <h6 class="mb-0">Cost</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                <input type="text" class="form-control" formControlName="text">
+                                <input type="number" class="form-control" formControlName="cost">
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -108,7 +105,7 @@
                             <div class="col-sm-9 text-secondary">
 
                                 <input type="button" class="btn btn-primary px-4" style="background-color: #e77f58;"
-                                    value="Add"  (click)="alertWithSuccess()">
+                                    value="Add"  (click)="addService()">
                             </div>
                         </div>
                     </div>

@@ -45,7 +45,7 @@
                       <li><a routerLink="/runn"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Runners</span></a></li>
                       <li><a routerLink="/dash"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Clients</span></a></li>
                       <li><a routerLink="/availableErrands"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Errands</span></a></li>
-                      <li><a routerLink="/log"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Sign out</span></a></li>
+                      <li><a ><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm" (click)="logOut()">Sign out</span></a></li>
                   </ul>
               </div>
           </div>
@@ -85,16 +85,16 @@
                                           </thead>
                                           <tbody>
                                             <tr  *ngFor="let person of clients">
-                                              <th scope="row">14</th>
+                                              <th scope="row">{{person.id}}</th>
                                            
                                               <td>{{person.name}}</td>
                                               <td>{{person.surname}}</td>
                                               <td>{{person.email}}</td>
-                                              <td>{{person.cell_no}}</td>
+                                              <td>0{{person.cell_no}}</td>
                                             
-                                              <td><a  class="btn btn-sm btn-primary ">View</a></td>
+                                              <td><a  class="btn btn-sm btn-primary " (click)="myFunction(person)" routerLink="/clientView">View</a></td>
                                               
-                                              <td><a  class="btn btn-sm btn-danger ">Delete</a></td>
+                                              <td><a  class="btn btn-sm btn-danger " (click)="getId(person)">Delete</a></td>
                                             </tr>
                                             
                                         

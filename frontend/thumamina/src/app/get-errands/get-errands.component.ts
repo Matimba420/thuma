@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Service } from '../interface/service';
+import { ErrandsService } from '../services/errands.service';
 
 @Component({
   selector: 'app-get-errands',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GetErrandsComponent implements OnInit {
 
-  constructor() { }
+  items: Service[] = [
+
+
+  ];
+  constructor(private errandService:ErrandsService) { }
 
   ngOnInit(): void {
+    this.getService();
   }
 
+
+  getService(){
+    this.errandService.getService().subscribe((res:any)=>{
+      console.log(res);
+      this.items = res;
+
+      
+      
+    });
+  }
 }

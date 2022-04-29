@@ -1,0 +1,166 @@
+
+
+
+<body>
+    <nav class="navbar navbar-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#" style="color:aliceblue;font-size:x-large;">Smart serve</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h1 class="offcanvas-title" id="offcanvasNavbarLabel" style="color:rgb(255, 255, 255);font-size:x-large;">Services</h1>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+   
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/update" style="color:aliceblue;font-size:x-large;">Update Serivices</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/add" style="color:aliceblue;font-size:x-large;">Add Serivices</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  routerLink="/dashPage" style="color:aliceblue;font-size:x-large;">Dashboard</a>
+              </li>
+                  <!-- <li><a  routerLink="/log">Sign out</a></li> -->
+                
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+  <body class="home">
+    <div class="container-fluid display-table">
+        <div class="row display-table-row">
+            <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
+                
+                <div class="navi">
+                    <ul>
+                        <li class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
+                        <li><a routerLink="/runn"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Runners</span></a></li>
+                        <li><a routerLink="/dash"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Clients</span></a></li>
+                        <li><a routerLink="/availableErrands"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Errands</span></a></li>
+                        <li><a routerLink="/log"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Sign out</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10 col-sm-11 display-table-cell v-align">
+  
+               
+                <div class="user-dashboard">
+                    
+                    
+                        <div class="container">
+                            <div class="row">
+                        
+  
+                          <h1 style="text-align: center;">
+                              Runner Details
+                          </h1>
+    
+                          <div class="container-fluid">
+                            <div class="row">
+                              
+                              <div class="card">
+                                
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                              <tr>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Surname</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">Mobile</th>
+                                                
+                                               
+                                        
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                               
+                                              <tr  *ngFor="let person of clients">
+                                                <th scope="row">{{person.id}}</th>
+                                             
+                                                <td>{{person.name}}</td>
+                                                <td>{{person.surname}}</td>
+                                                <td>{{person.email}}</td>
+                                                <td>0{{person.cell_no}}</td>
+                                              
+                                               
+                                              </tr>
+                                              
+                                          
+                                             
+                                          </table>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <h1 style="text-align: center;">
+                            Runner Errands
+                        </h1>
+
+                        <div class="card">
+                                
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                          <tr>
+                                            
+                                            <th scope="col">Client Name</th>
+                                            <th scope="col">Errand</th>
+                                            <th scope="col">Address</th>
+                                            <th scope="col">Status</th>
+                                            
+                                           
+                                    
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+                                          <tr *ngFor="let job of Jobs">
+                                            <th scope="row">{{job.client_name}}</th>
+                                         
+                                            <td>{{job.errand}}</td>
+                                            <td>{{job.address}}</td>
+                                            <td>{{job.status}}</td>
+                                            
+                                          
+                                           
+                                          </tr>
+                                          
+                                      
+                                         
+                                      </table>
+                                </div>
+                                <!-- <a href="#" class="btn btn-block btn-light">View all</a> -->
+                            </div>
+                        </div>
+
+                        
+                </div>
+            </div>
+        </div>
+  
+    </div>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  

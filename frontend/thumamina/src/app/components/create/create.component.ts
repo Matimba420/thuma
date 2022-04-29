@@ -51,7 +51,8 @@ user:any;
             localStorage.setItem("access", JSON.stringify(data));
             console.log(data)
             this.user=data[0].name + ' ' + data[0].surname;
-            console.log(this.user);
+            console.log(this.user + "is a user");
+            localStorage.setItem("user", this.user);
             
             if(data[0].role=='Client' && data[0].is_active===true){
               localStorage.setItem("clientID",data[0].id);
@@ -83,24 +84,6 @@ user:any;
   }
 
     
-
-
-
-
- 
-
-  nextPage();{
-    // console.log(this.registerForm.value.role);
-    
-    // if (this.registerForm.value.role==="Service provider"){
-    //   this.router.navigateByUrl('/run_home',{replaceUrl:true});
-    // }
-    // if (this.registerForm.value.role==="Client"){
-    //   this.router.navigateByUrl('/items',{replaceUrl:true});
-    // }
-    
-    
-  }
   }
     create(){
       this.router.navigateByUrl('/create',{replaceUrl:true});
