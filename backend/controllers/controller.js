@@ -14,6 +14,8 @@ const addClient = async (req,res) => {
         res.status(400).json({error:"Surname cannont be less than 2 characters"});
     }else if(cell_no.length>0 && cell_no.length<10){
         res.status(400).json({error:"Invalid Cell number"});
+    }else if(cell_no.length>10){
+        res.status(400).json({error:"Invalid Cell number"});
     }else if(password.length<8){
         res.status(400).json('Your Password should be longer than 7 characters');
     }else if(role.length<1){
@@ -47,21 +49,67 @@ const addClient = async (req,res) => {
     }
 }
 
+
+const addRunner = async (req,res) => {
+    // const {firstname, lastname, cell_no, password} = req.body;
+     const {name, surname, cell_no, email, password, role} = req.body
+     if(name.length<3){
+         res.status(400).json({error:"Name cannont be less than 2 characters"});
+     }else if(surname.length<3){
+         res.status(400).json({error:"Surname cannont be less than 2 characters"});
+     }else if(cell_no.length>0 && cell_no.length<10){
+         res.status(400).json({error:"Invalid Cell number"});
+     }else if(cell_no.length>10){
+         res.status(400).json({error:"Invalid Cell number"});
+     }else if(password.length<8){
+         res.status(400).json('Your Password should be longer than 7 characters');
+     }else if(role.length<1){
+         res.status(400).json('Please enter your role');
+     }else{
+ 
+         //check if email exists
+         pool.query(queries.checkClientCelllExists, [cell_no], (error, results) => {
+             
+             if (results.rows.length){
+                 res.status(409).json({error:"Cell number Already exists"});
+                 
+             }else{
+                 const salt = bcrypt.genSaltSync(10)
+                 const hashedPassword = bcrypt.hashSync(password , salt)
+                 console.log(hashedPassword)
+                 pool.query(queries.addRunner, 
+                     [name,surname, cell_no, email, hashedPassword,role],
+                     (error,results)=>{
+                     if(error){ 
+                         res.status(500).json({error: 'invalid input'})
+                         throw error;
+                     }else{
+                         // addUserMailer(name, surname, cell_no, email, password);
+                         res.status(201).json("User created successfully");
+                     }
+                 });
+             }
+         });
+     
+     }
+ }
+
+
 const getClient = (req, res) => {
     pool.query(queries.getClients,(error, results) => {
-        if(this.error){
+        if(error){
             console.log("error:"+error);
             res.status(404).send(error);
             throw error;
         }
-        res.status(200).json(results);
+        res.status(200).json(results.rows);
     });
 };
 
 const getClientById=(req,res) =>{
     const id =parseInt(req.params.id);
     
-    console.log('hello2');
+
 
 
     pool.query(queries.getClientById,[id],(error, results)=>{
@@ -202,7 +250,7 @@ const addAddress = async (req,res) => {
      const {street_address, suburb, city, postal_code, request_id} = req.body
      console.log(request_id);
             pool.query(queries.addAddress, 
-                [street_address, suburb, city, postal_code],
+                [street_address, suburb, city, postal_code, request_id],
                 (error,results)=>{
                 if(error){ 
                     res.status(500).json({error: 'invalid input'})
@@ -240,7 +288,7 @@ const getAddress = (req, res) => {
 
      
 const addRequest = async (req,res) => {
-    // const {firstname, lastname, cell_no, password} = req.body;
+   
      const {client_id,service_id,comment} = req.body
     
             pool.query(queries.addRequest, 
@@ -250,7 +298,7 @@ const addRequest = async (req,res) => {
                     res.status(500).json({error: 'invalid input'})
                     throw error;
                 }else{
-                         // addUserMailer(name, surname, cell_no, email, password);
+    
                     res.status(201).json("Request created successfully");
                 }
             });
@@ -315,7 +363,9 @@ const getRequestByRunnerId =(req,res) =>{
 const updateClient = async (req,res) =>{
     const id = req.params.id;
     const {cell_no } = req.body;
-    const {password} = req.body
+    const {password} = req.body;
+    const {name} = req.body;
+    const {surname} = req.body;
 
     
   
@@ -332,7 +382,7 @@ const updateClient = async (req,res) =>{
             }else{
             
     
-            pool.query(queries.updateClient,[cell_no, passwordHash,id],(error,results) =>{
+            pool.query(queries.updateClient,[cell_no, passwordHash, name, surname,id],(error,results) =>{
                 if (error) throw error;
                 res.status(200).send("User updated successfully")
             });
@@ -596,6 +646,7 @@ const deactivate = async (req, res) => {
 
 module.exports = {
     addClient,
+    addRunner,
     getClient,
     removeClient,
     getClientById,
@@ -606,7 +657,7 @@ module.exports = {
     addServices,
     addAddress,
     getAddress,
-    //updateStatus
+    updateStatus,
 
     addRequest,
     getRequest,
