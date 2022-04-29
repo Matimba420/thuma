@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, NgForm} from '@angular/forms';
 import { Job } from 'src/app/interface/jobs';
 import { JobsService } from 'src/app/jobs.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-jobs',
@@ -65,6 +66,12 @@ export class JobsComponent implements OnInit {
   updateJob(){
     this.service.updateStatus(this.errand).subscribe((res=>{
       console.log('updated');
+      return Swal.fire({
+        title: 'Success!',
+        text: 'Successfully Updated',
+        icon: 'success',
+        confirmButtonText: 'Ok'
+      })
       
     }))
 

@@ -49,9 +49,10 @@ export class AdminService {
   }
 
   deactivate(id:any):Observable<any>{
-    return this.http.get<any>(`http://localhost:4304/api/deactivate/${id}`);
+    return this.http.put<any>('http://localhost:4304/api/deactivate/' + id, {id: id});
     
   }
+  
   
   addService(errand):Observable<any>{
     return this.http.post<any>(`http://localhost:4304/api/services`, errand);

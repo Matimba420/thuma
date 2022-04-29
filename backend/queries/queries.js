@@ -38,7 +38,7 @@ const getReviews = " SELECT s.name AS errand, CONCAT(u.name,' ',u.surname) AS cl
 const totalRating = " select to_char(avg(rating), '9D99') AS avg from review where runner_id=$1 ";
 
 const totalClients = " SELECT COUNT(*) AS clients FROM users WHERE role ='Client' ";
-const totalRunners = " SELECT COUNT(*) AS runners FROM users WHERE role ='Service provider' ";
+const totalRunners = " SELECT COUNT(*) AS runners FROM users WHERE role ='Service provider' AND is_active = true";
 
 const acceptRequest = " UPDATE request SET status='Accepted', runner_id=$1 WHERE id=$2 ";
 const rateServices = " INSERT INTO review (runner_id, client_id, rating, reason, request_id) VALUES($1, $2, $3, $4, $5) ";

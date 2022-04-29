@@ -622,7 +622,7 @@ const deactivate = async (req, res) => {
     const { id } = req.params;
 
     try{
-        const deletedUser = await pool.query('UPDATE users set is_active = false WHERE id = $1', [id]);
+        const deletedUser = await pool.query('UPDATE users set is_active = false WHERE id = $1 RETURNING *', [id]);
 
         if(deletedUser.rowCount){
             res.status(200).json({
