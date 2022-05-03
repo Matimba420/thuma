@@ -48,7 +48,8 @@ user:any;
         this.service.userLogin(this.registerForm.value).subscribe({
           next:(data) =>{
             this.isloading=false;
-            localStorage.setItem("access", JSON.stringify(data));
+            // localStorage.setItem("access", JSON.stringify(data));
+            localStorage.setItem("access", JSON.stringify(data[0]));
             console.log(data)
             this.user=data[0].name + ' ' + data[0].surname;
             console.log(this.user + "is a user");
@@ -57,6 +58,7 @@ user:any;
             if(data[0].role=='Client' && data[0].is_active===true){
               localStorage.setItem("clientID",data[0].id);
               this.router.navigateByUrl('/errands',{replaceUrl:true});
+              localStorage.setItem("Role", data[0].role)
             }
             if(data[0].role=='Service provider' && data[0].is_active===true){
               this.router.navigateByUrl('/run_home',{replaceUrl:true});

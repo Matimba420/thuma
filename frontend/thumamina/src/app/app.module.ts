@@ -40,6 +40,7 @@ import { UpdateErrandComponent } from './components/update-errand/update-errand.
 import { GetErrandsComponent } from './get-errands/get-errands.component';
 import { RunViewComponent } from './components/run-view/run-view.component';
 import { ClientViewComponent } from './components/client-view/client-view.component';
+import { Nav3Component } from './components/nav3/nav3.component';
 
 
 
@@ -99,7 +100,8 @@ import { ClientViewComponent } from './components/client-view/client-view.compon
    UpdateErrandComponent,
    GetErrandsComponent,
    RunViewComponent,
-   ClientViewComponent
+   ClientViewComponent,
+   Nav3Component
   ],
   imports: [
     BrowserModule,
