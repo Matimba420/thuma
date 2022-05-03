@@ -34,25 +34,55 @@ export class GetErrandsComponent implements OnInit {
     });
   }
 
-  deleteService(item){
 
-    this.id=item.id;
-    this.service.deleteErrand(this.id).subscribe((res:any)=>{
-      console.log(res);
-      this.getService()
-      return Swal.fire({
-        title: 'Success!',
-        text: 'Successfully Deleted',
-        icon: 'success',
-        confirmButtonText: 'Ok'
+
+  deleteService(item){
+    Swal.fire({
+      title: 'Are you sure you want to delete this service?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete  it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Deleted!',
+          'Your service has been deleted.',
+          'success'
+        )
+        this.id=item.id;
+        this.service.deleteErrand(this.id).subscribe((res:any)=>{
+        console.log(res);
+        this.getService()
         
-      })
+        })
+      }
+    })
+  }
+
+
+
+
+  // deleteService(item){
+
+  //   this.id=item.id;
+  //   this.service.deleteErrand(this.id).subscribe((res:any)=>{
+  //     console.log(res);
+  //     this.getService()
+  //     return Swal.fire({
+  //       title: 'Success!',
+  //       text: 'Successfully Deleted',
+  //       icon: 'success',
+  //       confirmButtonText: 'Ok'
+        
+  //     })
       
-    });
+  //   });
  
     
     
-  }
+  // }
 
   
  

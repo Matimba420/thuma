@@ -43,35 +43,53 @@ myFunction(person){
   console.log(localStorage.getItem("clientId"));
  
   
-  
 }
 
 
-
-// admin deactivate clients by ID
-
-getId(person)
-{
-  this.id=person.id;
-  
-  this.admin.deactivate(this.id).subscribe((res:any)=>{
-    console.log(res);
-    this.getClients();
-
-  //A message that returns after the admin deactivated the account
-    return Swal.fire({
-      title: 'Success!',
-      text: 'Successfully Deactivated',
-      icon: 'success',
-      confirmButtonText: 'Cool'
-    })
-    
-  }, (err) => {
-    console.log(err)
+deactivate(person){
+  Swal.fire({
+    title: 'Are you sure you want to deactivate this user?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, deactivate  it!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        'Deactivated!',
+        'Your user has been deactivated.',
+        'success'
+      )
+      this.id=person.id;
+      this.admin.deactivate(this.id).subscribe((res:any)=>{
+            console.log(res);
+             this.getClients();
+          })
+    }
   })
-  
-  
 }
+
+// deactivate(person)
+// {
+//   this.id=person.id;
+  
+//   this.admin.deactivate(this.id).subscribe((res:any)=>{
+//     console.log(res);
+//     this.getClients();
+//     return Swal.fire({
+//       title: 'Success!',
+//       text: 'Successfully Deactivated',
+//       icon: 'success',
+//       confirmButtonText: 'Cool'
+//     })
+    
+//   }, (err) => {
+//     console.log(err)
+//   })
+  
+  
+// }
 
 
 logOut()

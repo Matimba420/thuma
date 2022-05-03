@@ -66,21 +66,30 @@ export class DashComponent implements OnInit {
 
   }
 
-  myFunction(person){
-    console.log(person.id);
 
-    this.service.acceptRunner(person.id).subscribe((res:any)=>{
-      console.log(res);
-      this.getRunnerReq();
-      return Swal.fire({
-        title: 'Success!',
-        text: 'Successfully Accepted',
-        icon: 'success',
-        confirmButtonText: 'Ok'
-      })
+  myFunction(person){
+    Swal.fire({
+      title: 'Are you sure you want to activate this user?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, reactivate  it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Activated!',
+          'Your file has been activated.',
+          'success'
+        )
+        
+        this.service.acceptRunner(person.id).subscribe((res:any)=>{
+               console.log(res);
+               this.getRunnerReq();
+            })
+      }
     })
-    
-    
   }
+
 
 }
