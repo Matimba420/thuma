@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Requests } from 'src/app/interface/user';
 import { RequestsService } from 'src/app/services/requests.service';
 import { UserService } from 'src/app/services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-requests',
@@ -23,7 +24,7 @@ export class RequestsComponent implements OnInit {
   };
   runner_id: any;
 
-  constructor(private service:RequestsService, private userService: UserService,private route : Router) { }
+  constructor(private service:RequestsService, private userService: UserService,private router:Router) { }
 
  
 
@@ -50,11 +51,38 @@ getRequests(){
 }
 
 acceptRequest(){
-  this.service.accept(this.reqData).subscribe((res=>{
-  this.accept = res ;
-  console.log(res);
+  Swal.fire({
+    title: 'Are you sure you want to accept this request?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, accept it!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        'Accepted!',
+        'Request has been accepted.',
+        'success'
+      )
+      this.router.navigateByUrl('/jobs', {replaceUrl:true});
+      this.service.accept(this.reqData).subscribe((res=>{
+        this.accept = res ;
+        console.log(res);
+      }))
+    }
+  })
+}
+        
 
-}))}
+
+
+// acceptRequest(){
+//   this.service.accept(this.reqData).subscribe((res=>{
+//   this.accept = res ;
+//   console.log(res);
+
+// }))}
 
 
 myFunction(request){

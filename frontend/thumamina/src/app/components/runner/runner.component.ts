@@ -35,24 +35,32 @@ export class RunnerComponent implements OnInit {
 
 
   myFunction(person){
-  
-    this.run_id=this.runners[0].id;
-    localStorage.setItem("runnerId", this.run_id);
-    console.log('This is the id :' +this.run_id);
-    this.service.deactivate(this.run_id).subscribe((res:any)=>{
-      console.log(res);
-      this.getRunners();
-      return Swal.fire({
-        title: 'Success!',
-        text: 'Successfully Deleted',
-        icon: 'success',
-        confirmButtonText: 'Ok'
-        
-      })
-      
+    Swal.fire({
+      title: 'Are you sure you want to deactivate this user?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, deactivate  it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Deactivated!',
+          'Your user has been deactivated.',
+          'success'
+        )
+        this.run_id=this.runners[0].id;
+     localStorage.setItem("runnerId", this.run_id);
+     console.log('This is the id :' +this.run_id);
+     this.service.deactivate(this.run_id).subscribe((res:any)=>{
+       console.log(res);
+        this.getRunners();
+            })
+      }
     })
-    
   }
+
+
 }
 
   // test(){
