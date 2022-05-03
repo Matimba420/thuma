@@ -8,9 +8,7 @@ import { Update, User,login, edit } from '../interface/user';
 })
 export class UserService {
 
-  addRunner(value: any) {
-    throw new Error('Method not implemented.');
-  }
+  
   private baseUrl = 'http://localhost:4304/api/clients/';
 
   constructor(private http:HttpClient) { }
@@ -22,6 +20,12 @@ export class UserService {
   
   }
 
+  //create runner
+  addRunner(user:User):Observable<any>{
+    return this.http.post<any>('http://localhost:4304/api/runner', user);
+  
+  }
+ 
 
 //read user
   getUsers(): Observable<any>{

@@ -24,7 +24,7 @@ numRunners:any;
   }
   id: any;
   
-  
+  //admin getting all users that are registered as clients
 getClients(){
   this.admin.getAllClients().subscribe((res:any)=>{
     console.log(res)
@@ -34,19 +34,21 @@ getClients(){
   })
 }
 
+// this function views clients by ID
+
 
 myFunction(person){
   console.log('hello');
-
-  //this.id=person.id;
-  //console.log('the id: '+ this.id);
-  //console.log(person.id);
   localStorage.setItem("clientId",person.id);
   console.log(localStorage.getItem("clientId"));
  
   
   
 }
+
+
+
+// admin deactivate clients by ID
 
 getId(person)
 {
@@ -55,6 +57,8 @@ getId(person)
   this.admin.deactivate(this.id).subscribe((res:any)=>{
     console.log(res);
     this.getClients();
+
+  //A message that returns after the admin deactivated the account
     return Swal.fire({
       title: 'Success!',
       text: 'Successfully Deactivated',

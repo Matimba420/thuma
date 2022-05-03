@@ -13,6 +13,7 @@ const getClientPasswordByCelllNo ="SELECT * FROM users WHERE cell_no=$1 ";
 const getServices= "SELECT * FROM service";
 const addServices ="INSERT INTO service(name,description, cost, image) VALUES($1, $2, $3, $4)";
 const checkServiceExist = "SELECT * FROM service WHERE name=$1";
+const deleteService = "DELETE FROM service WHERE id=$1";
 
 const addAddress = "INSERT INTO address(street_address, suburb, city, postal_code, request_id) VALUES($1, $2, $3, $4, $5)";
 const getAddress = "SELECT * FROM address";
@@ -45,6 +46,7 @@ const rateServices = " INSERT INTO review (runner_id, client_id, rating, reason,
 
 const runnerRequests =  " SELECT * FROM users WHERE is_active =false AND role='Service provider' ";
 const acceptRunner = "UPDATE users SET is_active= true WHERE id=$1"
+const getServiceById ="SELECT * FROM service WHERE id= $1";
 
 module.exports ={
    
@@ -92,7 +94,9 @@ module.exports ={
 
     rateServices,
     runnerRequests,
-    acceptRunner
+    acceptRunner,
+    deleteService,
+    getServiceById
 
     
 };

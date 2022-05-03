@@ -12,7 +12,9 @@ router.delete('/clients/:id', controller.removeClient);
 router.get('/clients/login/:email', controller.getClientByEmail);
 
 router.get('/services', controller.getServices);
+//router.get('/services/:id', controller.getServiceById);
 router.post('/services', controller.addServices);
+router.delete('/services/:id',controller.deleteService)
 
 router.post('/address', controller.addAddress);
 router.get('/address', controller.getAddress); 

@@ -1,32 +1,13 @@
 
-@media (min-width: 767.98px) {
-    .navbar {
-        top: 0;
-        position: sticky;
-        z-index: 999;
-    }
-}
-
-.sidebar .nav-link {
-    color: #333;
-}
-.sidebar .nav-link1 {
-    color: #0d6efd;
-}
-
-.sidebar .nav-link.active {
-  
-    color: #333;
-}
 
 .navbar{
-    background: linear-gradient(#2E93B7,#1C3D48);
+   background-color: #223C50;
 }
  */
 /*Main CSS*/
 
 .navbar {
-    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .1);
+    box-shadow: inset 0 -1px 0 rgba(219, 15, 15, 0.1);
 }
 
 @media (min-width: 767.98px) {
@@ -45,15 +26,15 @@
     color: #000000;
 }
 
-.navbar{
-    background: linear-gradient(#183742,#1C3D48);
-}
+/* .navbar{
+    background: linear-gradient(#e6ebec,#e8eaeb);
+} */
 .offcanvas-body{
     background: linear-gradient(#183742,#1C3D48);
 }
 
 .offcanvas{
-    background: linear-gradient(#183742,#1C3D48);
+    background: linear-gradient(#183742,#d3d5d6);
 }
 h5{
     color: rgb(0, 0, 0);
