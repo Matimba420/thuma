@@ -49,7 +49,7 @@ export class AdminService {
   }
 
   deactivate(id:any):Observable<any>{
-    return this.http.put<any>('http://localhost:4304/api/deactivate/' + id, {id: id});
+    return this.http.put<any>('http://localhost:4304/api/deactivate/'+id, {id: id});
     
   }
   
@@ -64,6 +64,10 @@ export class AdminService {
 
   acceptRunner(id:any):Observable<any>{
     return this.http.put<any>('http://localhost:4304/api/runner/'+ id, {id: id});
+  }
+
+  deleteErrand(id:any):Observable<any>{
+    return this.http.delete<any>('http://localhost:4304/api/services/'+id);
   }
 
 }

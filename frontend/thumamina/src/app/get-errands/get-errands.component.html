@@ -3,9 +3,9 @@
     <nav class="navbar navbar-light fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#" style="color:aliceblue;font-size:x-large;">Smart serve</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <!-- <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
           <span class="navbar-toggler-icon"></span>
-        </button>
+        </button> -->
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
             <h1 class="offcanvas-title" id="offcanvasNavbarLabel" style="color:rgb(255, 255, 255);font-size:x-large;">Services</h1>
@@ -87,7 +87,7 @@
                                                   <td>R{{item.cost}}</td>
                                                   <td><a  class="btn btn-sm btn-primary " routerLink="/update">Edit</a></td>
                                               
-                                              <td><a  class="btn btn-sm btn-danger ">Delete</a></td>
+                                              <td><a  class="btn btn-sm btn-danger " (click)="deleteService(item)">Delete</a></td>
                                                 
                       
                                                 

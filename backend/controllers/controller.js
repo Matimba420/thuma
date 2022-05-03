@@ -140,6 +140,22 @@ const removeClient = (req, res) =>{
         }
     });
 }
+
+const deleteService = (req, res) =>{
+    const id =parseInt(req.params.id);
+
+    pool.query(queries.getServiceById,[id],(error, results)=>{
+        const noService = !results.rows.length;
+        if(noService){
+            res.status(404).json("Errand does not exist in the database.");
+        }else{
+            pool.query(queries.deleteService,[id],(error, results)=>{
+                if(error) throw error;
+                res.status(200).json("Errand removed successfully");
+        });
+        }
+    });
+}
  
 
 const getClientByEmail=(req,res) =>{
@@ -697,7 +713,8 @@ module.exports = {
     rateServices,
     runnerRequests,
     deactivate,
-    acceptRunner
+    acceptRunner,
+    deleteService
 
     
 }
