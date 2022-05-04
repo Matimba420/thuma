@@ -45,6 +45,8 @@ myFunction(person){
   
 }
 
+// this function deactivate a user/client by ID
+
 
 deactivate(person){
   Swal.fire({
@@ -70,26 +72,7 @@ deactivate(person){
   })
 }
 
-// deactivate(person)
-// {
-//   this.id=person.id;
-  
-//   this.admin.deactivate(this.id).subscribe((res:any)=>{
-//     console.log(res);
-//     this.getClients();
-//     return Swal.fire({
-//       title: 'Success!',
-//       text: 'Successfully Deactivated',
-//       icon: 'success',
-//       confirmButtonText: 'Cool'
-//     })
-    
-//   }, (err) => {
-//     console.log(err)
-//   })
-  
-  
-// }
+
 
 
 logOut()
