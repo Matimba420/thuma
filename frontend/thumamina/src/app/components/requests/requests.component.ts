@@ -43,7 +43,7 @@ getRequests(){
   this.service.getRequests().subscribe((res=>{
     this.requests = res
     console.log(res);
-    console.log(res[0].id);
+   // console.log(res[0].id);
    
     
   }));
