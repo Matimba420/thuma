@@ -26,6 +26,7 @@ export class RunViewComponent implements OnInit {
 
 
   getJobs(){
+    
     this.jobService.getJobs(this.runnerId).subscribe((res=>{
       this.Jobs = res;
       console.log('Hello');

@@ -32,6 +32,12 @@ export class RunnerComponent implements OnInit {
     
     })
   }
+  getId(person){
+    localStorage.setItem("runnerId", person.id);
+    console.log(person.id);
+    
+
+  }
 
 
   myFunction(person){
