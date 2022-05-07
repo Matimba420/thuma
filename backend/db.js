@@ -9,13 +9,20 @@ const pool = new Pool({
     // }
 
     //connectionString: process.env.NODE_ENV=="production"? process.env.DB_URL : connectionString
-
             user: process.env.DB_USER,
             host:process.env.DB_HOST,
             database: process.env.DB_NAME,
             port: process.env.DB_PORT,
             password: process.env.DB_PWD
-
+        
 }); 
 
 module.exports = pool;
+
+// {
+//     user: process.env.DB_USER,
+//     host: "localhost",
+//     database: "smart-serve",
+//     port: "5433",
+//     password: "123456"
+// }

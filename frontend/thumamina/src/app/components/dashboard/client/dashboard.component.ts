@@ -24,7 +24,7 @@ numRunners:any;
   }
   id: any;
   
-  
+  //admin getting all users that are registered as clients
 getClients(){
   this.admin.getAllClients().subscribe((res:any)=>{
     console.log(res)
@@ -34,18 +34,18 @@ getClients(){
   })
 }
 
+// this function views clients by ID
+
 
 myFunction(person){
   console.log('hello');
-
-  //this.id=person.id;
-  //console.log('the id: '+ this.id);
-  //console.log(person.id);
   localStorage.setItem("clientId",person.id);
   console.log(localStorage.getItem("clientId"));
  
   
 }
+
+// this function deactivate a user/client by ID
 
 
 deactivate(person){
@@ -72,26 +72,7 @@ deactivate(person){
   })
 }
 
-// deactivate(person)
-// {
-//   this.id=person.id;
-  
-//   this.admin.deactivate(this.id).subscribe((res:any)=>{
-//     console.log(res);
-//     this.getClients();
-//     return Swal.fire({
-//       title: 'Success!',
-//       text: 'Successfully Deactivated',
-//       icon: 'success',
-//       confirmButtonText: 'Cool'
-//     })
-    
-//   }, (err) => {
-//     console.log(err)
-//   })
-  
-  
-// }
+
 
 
 logOut()
