@@ -6,6 +6,10 @@ img{
     margin-bottom: 0rem;
 }
 
+#row{
+    height: 100vh;
+}
+
 .navbar{
     background-color: #223C50;
  }
