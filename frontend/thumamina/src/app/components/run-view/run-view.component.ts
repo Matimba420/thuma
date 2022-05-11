@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Job } from 'src/app/interface/jobs';
 import { JobsService } from 'src/app/jobs.service';
 import { AdminService } from 'src/app/services/admin.service';
+import { RunnerService } from 'src/app/services/runner.service';
 
 @Component({
   selector: 'app-run-view',
@@ -10,11 +11,12 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class RunViewComponent implements OnInit {
 
-  constructor(private jobService: JobsService, private service:AdminService) { }
+  constructor(private jobService: JobsService, private service:AdminService, private runService:RunnerService) { }
   clients:any[];
   Jobs:Job[] = [ ];
   runnerId:any;
   id:any;
+  rating:any;
 
   ngOnInit(): void {
 
@@ -22,10 +24,19 @@ export class RunViewComponent implements OnInit {
     this.runnerId=localStorage.getItem("runnerId");
     this.getUserById();
     this.getJobs();
+    this.getTotalRating();
   }
 
+  getTotalRating(){
+    this.runService.getTotalRating(this.runnerId).subscribe((res=>{
+      this.rating =res;
+      console.log(this.rating);
+      
+    }))
+  }
 
   getJobs(){
+
     this.jobService.getJobs(this.runnerId).subscribe((res=>{
       this.Jobs = res;
       console.log('Hello');

@@ -4,7 +4,10 @@
 <body>
     <nav class="navbar navbar-light fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#" style="color:aliceblue;font-size:x-large;">Smart serve</a>
+        <!-- <a class="navbar-brand" href="#" style="color:aliceblue;font-size:x-large;">Smart serve</a> -->
+
+        <a class="navbar-brand" type="button" value="<" onclick="history.go(-1)" style="color:aliceblue;"><img src="../../../assets/smart serve-logos_white.png" alt=""></a>
+        
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,7 +39,7 @@
     
   <body class="home">
     <div class="container-fluid display-table">
-        <div class="row display-table-row">
+        <div class="row display-table-row" id="row">
             <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
                 
                 <div class="navi">
@@ -78,6 +81,7 @@
                                                 <th scope="col">Surname</th>
                                                 <th scope="col">Email</th>
                                                 <th scope="col">Mobile</th>
+                                                <th scope="col">Total rating</th>
                                                 
                                                
                                         
@@ -92,6 +96,7 @@
                                                 <td>{{person.surname}}</td>
                                                 <td>{{person.email}}</td>
                                                 <td>0{{person.cell_no}}</td>
+                                                <td>{{rating[0].avg}}</td>
                                               
                                                
                                               </tr>
@@ -121,6 +126,7 @@
                                             <th scope="col">Client Name</th>
                                             <th scope="col">Errand</th>
                                             <th scope="col">Address</th>
+                                            <th scope="col">Date</th>
                                             <th scope="col">Status</th>
                                             
                                            
@@ -134,6 +140,7 @@
                                          
                                             <td>{{job.errand}}</td>
                                             <td>{{job.address}}</td>
+                                            <td>{{job.date}}</td>
                                             <td>{{job.status}}</td>
                                             
                                           

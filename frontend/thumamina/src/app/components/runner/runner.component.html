@@ -1,12 +1,14 @@
 
-<body>
+<body class="body">
   <nav class="navbar navbar-light fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#" style="color:aliceblue;font-size:x-large;">Smart serve</a>
-      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <!-- <a class="navbar-brand" href="#" style="color:aliceblue;font-size:x-large;">Smart serve</a> -->
+      <a class="navbar-brand" type="button" value="<" onclick="history.go(-1)" style="color:aliceblue;"><img src="../../../assets/smart serve-logos_white.png" alt=""></a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
         <span class="navbar-toggler-icon"></span>
-      </button> -->
-      <!-- <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
           <h1 class="offcanvas-title" id="offcanvasNavbarLabel" style="color:rgb(255, 255, 255);font-size:x-large;">Services</h1>
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -21,20 +23,20 @@
               <a class="nav-link" routerLink="/add" style="color:aliceblue;font-size:x-large;">Add Serivices</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/dashPage" style="color:aliceblue;font-size:x-large;">Dashboard</a>
-            </li> -->
+              <a class="nav-link"  routerLink="/dashPage" style="color:aliceblue;font-size:x-large;">Dashboard</a>
+            </li>
                 <!-- <li><a  routerLink="/log">Sign out</a></li> -->
               
             
-          <!-- </ul>
-        </div> -->
-      <!-- </div> -->
+          </ul>
+        </div>
+      </div>
     </div>
   </nav>
   
-<body class="home">
+<div class="home">
   <div class="container-fluid display-table">
-      <div class="row display-table-row">
+      <div class="row display-table-row" id="row">
           <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
               
               <div class="navi">
@@ -90,8 +92,8 @@
                                       <td>{{person.surname}}</td>
                                       <td>{{person.email}}</td>
                                       <td>0{{person.cell_no}}</td>
-                                      <td><a  class="btn btn-sm btn-primary " routerLink="/runView">View</a></td>
-                                      <td><a  class="btn btn-sm btn-danger " (click)="myFunction()">Deactivate</a></td>
+                                      <td><a  class="btn btn-sm btn-primary " routerLink="/runView" (click)="getId(person)">View</a></td>
+                                      <td><a  class="btn btn-sm btn-danger " (click)="deactivate(person)">Deactivate</a></td>
                                       
                                    
                                       
@@ -109,6 +111,14 @@
       </div>
 
   </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</body>
+    
+  
 
 
 

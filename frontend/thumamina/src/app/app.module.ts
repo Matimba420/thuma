@@ -59,13 +59,14 @@ import { Nav3Component } from './components/nav3/nav3.component';
     BackButtonComponent,
     DashboardComponent,
   
-   ProfileComponent,
+      ProfileComponent,
       RunnerComponent,
       DashComponent,
-     
+  
+   
       //  EditProfileComponent
-   editProfileComponent,
-   RequestsComponent,
+      editProfileComponent,
+      RequestsComponent,
        
       JobsComponent,
               RateComponent,
