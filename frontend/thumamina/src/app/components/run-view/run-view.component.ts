@@ -17,6 +17,7 @@ export class RunViewComponent implements OnInit {
   runnerId:any;
   id:any;
   rating:any;
+  reviews:any;
 
   ngOnInit(): void {
 
@@ -25,12 +26,20 @@ export class RunViewComponent implements OnInit {
     this.getUserById();
     this.getJobs();
     this.getTotalRating();
+    this.getReviews();
   }
 
   getTotalRating(){
     this.runService.getTotalRating(this.runnerId).subscribe((res=>{
       this.rating =res;
       console.log(this.rating);
+      
+    }))
+  }
+  getReviews(){
+    this.runService.getReviews(this.runnerId).subscribe((res=>{
+      this.reviews =res;
+      console.log(this.reviews);
       
     }))
   }

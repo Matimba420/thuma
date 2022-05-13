@@ -74,12 +74,12 @@ export class DashComponent implements OnInit {
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, reactivate  it!'
+      confirmButtonText: 'Yes, activate  it!'
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire(
           'Activated!',
-          'Your file has been activated.',
+          'The user has been activated.',
           'success'
         )
         
