@@ -3,6 +3,7 @@ import { Job } from 'src/app/interface/jobs';
 import { JobsService } from 'src/app/jobs.service';
 import { AdminService } from 'src/app/services/admin.service';
 import { RunnerService } from 'src/app/services/runner.service';
+import { RatingsService } from 'src/app/services/ratings.service';
 
 @Component({
   selector: 'app-run-view',
@@ -11,7 +12,7 @@ import { RunnerService } from 'src/app/services/runner.service';
 })
 export class RunViewComponent implements OnInit {
 
-  constructor(private jobService: JobsService, private service:AdminService, private runService:RunnerService) { }
+  constructor(private jobService: JobsService, private service:AdminService, private runService:RunnerService, private rateService:RatingsService) { }
   clients:any[];
   Jobs:Job[] = [ ];
   runnerId:any;
@@ -26,7 +27,7 @@ export class RunViewComponent implements OnInit {
     this.getUserById();
     this.getJobs();
     this.getTotalRating();
-    this.getReviews();
+    this.getRatings();
   }
 
   getTotalRating(){
@@ -36,8 +37,8 @@ export class RunViewComponent implements OnInit {
       
     }))
   }
-  getReviews(){
-    this.runService.getReviews(this.runnerId).subscribe((res=>{
+  getRatings(){
+    this.rateService.getRatings(this.runnerId).subscribe((res=>{
       this.reviews =res;
       console.log(this.reviews);
       

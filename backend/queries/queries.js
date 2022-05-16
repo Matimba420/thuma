@@ -36,7 +36,7 @@ const addComment = "UPDATE request SET comment = $1 WHERE id=$2";
 const getRunnerEarnings = "SELECT s.name AS errand , concat(u.name ,' ', u.surname) AS client_name, cost FROM request r,users u, service s WHERE r.client_id=u.id AND r.service_id = s.id AND runner_id =$1"
 const getTotal = " SELECT SUM(cost) AS total FROM request r, service s WHERE s.id =r.service_id AND r.runner_id=$1 ";
 
-const getReviews = " SELECT s.name AS errand, CONCAT(u.name,' ',u.surname) AS client_name, reason, rating FROM service s, users u, review r, request rq WHERE u.id=r.client_id AND r.request_id=rq.id AND s.id=r.id AND r.runner_id=$1 ";
+const getReviews = " SELECT s.name AS errand, CONCAT(u.name,' ',u.surname) AS client_name,reason, rating  from users u, service s, review r, request rq where u.id=r.client_id and s.id=rq.service_id and r.request_id=rq.id and r.runner_id=$1";
 const totalRating = " select to_char(avg(rating), '9D99') AS avg from review where runner_id=$1 ";
 
 const totalClients = " SELECT COUNT(*) AS clients FROM users WHERE role ='Client' ";

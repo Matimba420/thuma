@@ -128,9 +128,6 @@
                                             <th scope="col">Address</th>
                                             <th scope="col">Date</th>
                                             <th scope="col">Status</th>
-                                            <th scope="col">Reviews</th>
-                                            
-                                            
                                            
                                     
                                           </tr>
@@ -159,6 +156,52 @@
                                 <!-- <a href="#" class="btn btn-block btn-light">View all</a> -->
                             </div>
                         </div>
+
+                        <h1 style="text-align: center;">
+                          Reviews and Ratings
+                      </h1>
+
+                      <div class="card">
+                              
+                          <div class="card-body">
+                              <div class="table-responsive">
+                                  <table class="table">
+                                      <thead>
+                                        <tr>
+                                          
+                                          <th scope="col">Client Name</th>
+                                          <th scope="col">Errand</th>
+                                          
+                                          <th scope="col">Comment</th>
+                                          <th scope="col">Rating</th>
+                                         
+                                  
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                          
+                                        <tr *ngFor="let review of reviews">
+                                          <th scope="row">{{review.client_name}}</th>
+                                       
+                                          
+                                          <td>{{review.errand}}</td>
+                                          
+                                          <td>{{review.reason}}</td>
+                                          <td>{{review.rating}}</td>
+
+                                          
+                                          
+                                        
+                                         
+                                        </tr>
+                                        
+                                    
+                                       
+                                    </table>
+                              </div>
+                              <!-- <a href="#" class="btn btn-block btn-light">View all</a> -->
+                          </div>
+                      </div>
 
                         
                 </div>
