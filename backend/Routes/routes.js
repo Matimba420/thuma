@@ -25,6 +25,7 @@ router.get('/requests', controller.getRequest);
 router.get('/maxId/:client_id', controller.getMaxId); 
 router.get('/requests/client/:client_id', controller.getRequestByClientId);
 router.get('/requests/runner/:runner_id', controller.getRequestByRunnerId);
+router.get('/pending/:client_id',controller.getPendingRequests)
 
 router.put('/clients/:id',controller.updateClient);
 

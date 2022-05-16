@@ -23,6 +23,11 @@ accept(runner_id:any):Observable<any>{
 
 }
 
+pending(client_id:any):Observable<any>{
+  return this.http.get<any>(`http://localhost:4304/api/pending/` + client_id);
+
+}
+
 
 
 

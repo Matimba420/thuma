@@ -10,6 +10,29 @@
  </form>
     <h1>SERVICE HISTORY</h1>
     <br>
+    <div class="card mb-3"  *ngFor="let req of reqs" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{req.errand}}
+
+            </h5> 
+            <hr>
+          
+            <p class="card-text"><small class="text-muted">Date: {{this.req.date}}</small></p>
+            <p class="card-text"><small class="text-muted">Instruction: {{this.req.comment}}</small></p>
+            
+            <div class="col-md-12 text-right">
+              
+          </div>
+
+          <p class="card-text">Status: <small class="text-muted">{{this.req.status}}</small></p>
+   
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
     <div class="card mb-3"  *ngFor="let item of items" style="max-width: 540px;">
         <div class="row g-0">
           <div class="col-md-8">

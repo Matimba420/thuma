@@ -23,8 +23,9 @@ const updateStatus = "UPDATE request SET status =$1 WHERE id=$2";
 const addRequest ="INSERT INTO request(client_id,service_id,comment) VALUES($1, $2, $3) returning id";
 const getRequest =" SELECT s.name AS errand , concat(u.name ,' ', u.surname) AS client_name, comment, concat(a.street_address,', ', a.suburb,', ',  a.city,', ',  a.postal_code) AS address, r.id FROM request r,users u, service s, address a WHERE r.client_id=u.id AND r.service_id = s.id AND a.request_id=r.id AND r.status = 'pending' ";
 const getMaxId ="SELECT id FROM request WHERE client_id= $1 ORDER BY id DESC LIMIT 1";
-const getRequestByClientId ="SELECT s.name AS errand , concat(u.name ,' ', u.surname) AS runner_name, comment, concat(a.street_address,', ', a.suburb,', ',  a.city,', ',  a.postal_code) AS address, status, to_char(req_date, 'DD-Mon-YYYY') AS date, r.runner_id FROM request r,users u, service s, address a WHERE r.runner_id=u.id AND r.service_id = s.id AND a.request_id=r.id AND client_id =$1 ORDER BY req_date DESC";
+const getRequestByClientId ="SELECT s.name AS errand , concat(u.name ,' ', u.surname) AS runner_name, comment, concat(a.street_address,', ', a.suburb,', ',  a.city,', ',  a.postal_code) AS address, status, to_char(req_date, 'DD-Mon-YYYY') AS date, r.runner_id FROM request r,users u, service s, address a WHERE r.runner_id =u.id AND r.service_id = s.id AND a.request_id=r.id AND r.client_id =$1 ORDER BY req_date DESC";
 const getRequestByRunnerId ="SELECT s.name AS errand , concat(u.name ,' ', u.surname) AS client_name, concat(a.street_address,', ', a.suburb,', ',  a.city,', ',  a.postal_code) AS address, status, r.id, to_char(req_date, 'DD-Mon-YYYY') AS date FROM request r,users u, service s, address a WHERE r.client_id=u.id AND r.service_id = s.id AND a.request_id=r.id AND runner_id =$1 ORDER BY req_date DESC";
+const getPendingRequests ="SELECT comment,s.name AS errand ,CONCAT(a.street_address,', ', a.suburb,', ',  a.city,', ',  a.postal_code) AS address, status, to_char(req_date, 'DD-Mon-YYYY') AS date FROM request r, service s, address a WHERE status='pending' AND s.id= r.service_id AND a.request_id=r.id AND r.client_id=$1"
 
 const updateClient ="UPDATE users SET cell_no=$1, password=$2, name =$3, surname=$4, updated_at=current_date WHERE id = $5";
 const getAllClients = "SELECT * FROM users WHERE role ='Client' AND is_active = 'true' ";
@@ -96,7 +97,8 @@ module.exports ={
     runnerRequests,
     acceptRunner,
     deleteService,
-    getServiceById
+    getServiceById,
+    getPendingRequests
 
     
 };

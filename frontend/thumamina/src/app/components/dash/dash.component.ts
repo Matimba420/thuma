@@ -85,8 +85,11 @@ export class DashComponent implements OnInit {
         
         this.service.acceptRunner(person.id).subscribe((res:any)=>{
                console.log(res);
+               this.getTotalRunners();
                this.getRunnerReq();
+               
             })
+            
       }
     })
   }

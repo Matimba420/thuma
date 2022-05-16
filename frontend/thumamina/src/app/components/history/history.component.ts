@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HistoryService } from 'src/app/services/history.service';
 import { History } from 'src/app/interface/user';
+import { RequestsService } from 'src/app/services/requests.service';
 
 @Component({
   selector: 'app-history',
@@ -11,6 +12,7 @@ export class HistoryComponent implements OnInit {
  
 
   items:History;
+  reqs:History;
   
   client_id : any;
    today:Date;
@@ -20,7 +22,7 @@ export class HistoryComponent implements OnInit {
 
   
 
-  constructor(private service:HistoryService) { }
+  constructor(private service:HistoryService, private reqService:RequestsService) { }
 
     ngOnInit(): void {
 
@@ -29,7 +31,7 @@ export class HistoryComponent implements OnInit {
   
       this.client_id=localStorage.getItem("clientID");
   
-      
+      this.pending();
       this.getHistory();
     }
 
@@ -48,4 +50,15 @@ export class HistoryComponent implements OnInit {
 
       }))
     }
+
+
+    pending(){
+      this.reqService.pending(this.client_id).subscribe((res=>{
+        this.reqs=res;
+        console.log(this.reqs)
+        console.log(this.client_id);
+
+      }))
+    }
+
   }
